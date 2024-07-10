@@ -1,3 +1,11 @@
+/*
+Youtube video I watched part of before making this particle system:
+https://www.youtube.com/watch?v=Yvz_axxWG4Y&t=715s
+don't forget to click!
+Eli Silver 7/9/2024
+*/
+
+
 const canvas=document.getElementById('canvas1');
 const ctx = canvas.getContext('2d');
 canvas.width = window.innerWidth;
