@@ -55,7 +55,7 @@
 			(color 0 0 0 0.0000)
 		)
 		(uuid "4babb748-278e-4430-a66a-20cd9b0b193f")
-		(property "Sheetname" "USB-HS"
+		(property "Sheetname" "USB"
 			(at 38.1 37.3884 0)
 			(effects
 				(font

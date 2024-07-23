@@ -335,11 +335,29 @@
           "label": "DNP",
           "name": "${DNP}",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "Grouped By Value",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -389,7 +407,7 @@
     ],
     [
       "4babb748-278e-4430-a66a-20cd9b0b193f",
-      "USB-HS"
+      "USB"
     ],
     [
       "12588020-3bb6-4766-98bd-8aed38e60ec0",
