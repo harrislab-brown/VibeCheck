@@ -266,7 +266,9 @@
       "version": 3
     },
     "net_colors": null,
-    "netclass_assignments": null,
+    "netclass_assignments": {
+      "/MCU/ACCEL_SPI_BUS": "SPI1_SCK"
+    },
     "netclass_patterns": []
   },
   "pcbnew": {
@@ -335,29 +337,11 @@
           "label": "DNP",
           "name": "${DNP}",
           "show": true
-        },
-        {
-          "group_by": false,
-          "label": "#",
-          "name": "${ITEM_NUMBER}",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "Description",
-          "name": "Description",
-          "show": false
-        },
-        {
-          "group_by": false,
-          "label": "LCSC",
-          "name": "LCSC",
-          "show": true
         }
       ],
       "filter_string": "",
       "group_symbols": true,
-      "name": "",
+      "name": "Grouped By Value",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -416,6 +400,10 @@
     [
       "719d72ab-d813-461f-9482-52ce573716fd",
       "Accelerometer_interface"
+    ],
+    [
+      "4d0578b7-7312-4298-97a0-94006dea87de",
+      "SPI ACCELEROMETER"
     ]
   ],
   "text_variables": {}
