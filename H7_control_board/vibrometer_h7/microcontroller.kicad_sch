@@ -4796,6 +4796,12 @@
 		(uuid "04d2f0e5-2417-415e-b1a1-40951b7213d3")
 	)
 	(junction
+		(at 149.86 172.72)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "07feded3-e191-4c9d-93ac-946904d7a502")
+	)
+	(junction
 		(at 74.93 142.24)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -4848,12 +4854,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5d9899d5-e666-41ba-8e10-d01dc7171fae")
-	)
-	(junction
-		(at 149.86 172.72)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5faabcd5-1931-46d9-947c-73f2f7de17a0")
 	)
 	(junction
 		(at 78.74 31.75)
@@ -6155,16 +6155,6 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 20.32) (xy 157.48 26.67)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "5834e79a-bb35-4dec-965c-464f00d88f5d")
-	)
-	(wire
-		(pts
 			(xy 194.31 44.45) (xy 175.26 44.45)
 		)
 		(stroke
@@ -6202,6 +6192,16 @@
 			(type default)
 		)
 		(uuid "5de30243-8746-4a07-af33-65fcc4fe4aed")
+	)
+	(wire
+		(pts
+			(xy 157.48 20.32) (xy 157.48 26.67)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6057c2c8-a47d-4d01-80d8-32f9b7a7241c")
 	)
 	(wire
 		(pts
@@ -7155,16 +7155,6 @@
 	)
 	(wire
 		(pts
-			(xy 149.86 172.72) (xy 149.86 175.26)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "cd35f182-40b6-4f64-b017-7ffd7eff3f92")
-	)
-	(wire
-		(pts
 			(xy 48.26 41.91) (xy 55.88 41.91)
 		)
 		(stroke
@@ -7452,6 +7442,16 @@
 			(type default)
 		)
 		(uuid "ef03611d-2e52-48cd-9893-5c0e261565cc")
+	)
+	(wire
+		(pts
+			(xy 149.86 175.26) (xy 149.86 172.72)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f19a5947-b762-4d9a-8474-4a841729fbb5")
 	)
 	(wire
 		(pts
@@ -8015,6 +8015,7 @@
 	)
 	(label "ACCEL.SCK1"
 		(at 194.31 110.49 180)
+		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8957,6 +8958,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
@@ -9022,6 +9024,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
@@ -9901,6 +9904,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
@@ -10122,6 +10126,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
@@ -10547,6 +10552,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
@@ -10884,71 +10890,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:GND")
-		(at 149.86 175.26 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "7e9cb1f2-d8fb-4391-8a28-fcf0b290e28d")
-		(property "Reference" "#PWR04"
-			(at 149.86 181.61 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "GND"
-			(at 149.86 179.324 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 149.86 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 149.86 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 149.86 175.26 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "c082206c-b4bd-4d5f-8dda-d82a7935e058")
-		)
-		(instances
-			(project ""
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR04")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 71.12 36.83 0)
 		(unit 1)
@@ -11050,6 +10991,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
@@ -11568,6 +11510,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
@@ -12323,6 +12266,7 @@
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
@@ -12359,6 +12303,72 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
 					(reference "#PWR09")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 149.86 175.26 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f08c7a07-bfd9-4a80-b1b6-c1c16b86c023")
+		(property "Reference" "#PWR04"
+			(at 149.86 181.61 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 149.86 179.324 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 149.86 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 149.86 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 149.86 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "db2581d2-d50f-4904-912c-de54b7b87466")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
+					(reference "#PWR04")
 					(unit 1)
 				)
 			)

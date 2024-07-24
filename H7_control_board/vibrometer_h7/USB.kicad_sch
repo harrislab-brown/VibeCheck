@@ -114,8 +114,8 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "J"
-				(at 0 22.225 0)
+			(property "Reference" "J1"
+				(at 8.89 19.558 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -123,7 +123,7 @@
 				)
 			)
 			(property "Value" "USB_C_Receptacle_USB2.0_16P"
-				(at 0 19.685 0)
+				(at 16.002 -19.304 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -149,6 +149,15 @@
 				)
 			)
 			(property "Description" "USB 2.0-only 16P Type-C Receptacle connector"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" ""
 				(at 0 0 0)
 				(effects
 					(font
@@ -489,7 +498,7 @@
 				)
 			)
 			(symbol "USB_C_Receptacle_USB2.0_16P_1_1"
-				(pin passive line
+				(pin power_out line
 					(at 0 -22.86 90)
 					(length 5.08)
 					(name "GND"
@@ -525,7 +534,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin power_out line
 					(at 15.24 15.24 180)
 					(length 5.08)
 					(name "VBUS"
@@ -3608,9 +3617,10 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
+		(fields_autoplaced yes)
 		(uuid "a255b88e-c2a0-4bc1-9a6a-01530d0b369b")
 		(property "Reference" "U3"
-			(at 211.074 55.118 0)
+			(at 207.01 52.07 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3618,7 +3628,7 @@
 			)
 		)
 		(property "Value" "AZ1117-3.3"
-			(at 213.614 65.024 0)
+			(at 207.01 54.61 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3636,7 +3646,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/AZ1117.pdf"
-			(at 207.01 58.42 0)
+			(at 207.01 48.514 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3645,7 +3655,7 @@
 			)
 		)
 		(property "Description" "1A 20V Fixed LDO Linear Regulator, 3.3V, SOT-89/SOT-223/TO-220/TO-252/TO-263"
-			(at 207.01 58.42 0)
+			(at 208.28 44.958 0)
 			(effects
 				(font
 					(size 1.27 1.27)
