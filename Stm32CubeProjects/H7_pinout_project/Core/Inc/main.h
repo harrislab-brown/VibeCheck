@@ -87,6 +87,8 @@ void Error_Handler(void);
 #define LED_ACCEL3_GPIO_Port GPIOD
 #define LED_UI_Pin GPIO_PIN_15
 #define LED_UI_GPIO_Port GPIOD
+#define LED_STROBE_Pin GPIO_PIN_6
+#define LED_STROBE_GPIO_Port GPIOC
 #define USB_DM_Pin GPIO_PIN_11
 #define USB_DM_GPIO_Port GPIOA
 #define USB_DP_Pin GPIO_PIN_12
