@@ -52,8 +52,6 @@ SPI_HandleTypeDef hspi4;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 
-PCD_HandleTypeDef hpcd_USB_OTG_HS;
-
 /* USER CODE BEGIN PV */
 
 /* USER CODE END PV */
@@ -67,7 +65,6 @@ static void MX_I2C2_Init(void);
 static void MX_SPI2_Init(void);
 static void MX_SPI3_Init(void);
 static void MX_SPI4_Init(void);
-static void MX_USB_OTG_HS_PCD_Init(void);
 static void MX_TIM4_Init(void);
 static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
@@ -116,7 +113,6 @@ int main(void)
   MX_SPI2_Init();
   MX_SPI3_Init();
   MX_SPI4_Init();
-  MX_USB_OTG_HS_PCD_Init();
   MX_TIM4_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
@@ -567,42 +563,6 @@ static void MX_TIM4_Init(void)
 }
 
 /**
-  * @brief USB_OTG_HS Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USB_OTG_HS_PCD_Init(void)
-{
-
-  /* USER CODE BEGIN USB_OTG_HS_Init 0 */
-
-  /* USER CODE END USB_OTG_HS_Init 0 */
-
-  /* USER CODE BEGIN USB_OTG_HS_Init 1 */
-
-  /* USER CODE END USB_OTG_HS_Init 1 */
-  hpcd_USB_OTG_HS.Instance = USB_OTG_HS;
-  hpcd_USB_OTG_HS.Init.dev_endpoints = 9;
-  hpcd_USB_OTG_HS.Init.speed = PCD_SPEED_FULL;
-  hpcd_USB_OTG_HS.Init.dma_enable = DISABLE;
-  hpcd_USB_OTG_HS.Init.phy_itface = USB_OTG_EMBEDDED_PHY;
-  hpcd_USB_OTG_HS.Init.Sof_enable = DISABLE;
-  hpcd_USB_OTG_HS.Init.low_power_enable = DISABLE;
-  hpcd_USB_OTG_HS.Init.lpm_enable = DISABLE;
-  hpcd_USB_OTG_HS.Init.vbus_sensing_enable = DISABLE;
-  hpcd_USB_OTG_HS.Init.use_dedicated_ep1 = DISABLE;
-  hpcd_USB_OTG_HS.Init.use_external_vbus = DISABLE;
-  if (HAL_PCD_Init(&hpcd_USB_OTG_HS) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USB_OTG_HS_Init 2 */
-
-  /* USER CODE END USB_OTG_HS_Init 2 */
-
-}
-
-/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -649,11 +609,11 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(SPI4_INT2_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : BIG_RED_BUTTON_Pin */
-  GPIO_InitStruct.Pin = BIG_RED_BUTTON_Pin;
+  /*Configure GPIO pins : MUTE_BUTTON_Pin BIG_RED_BUTTON_Pin */
+  GPIO_InitStruct.Pin = MUTE_BUTTON_Pin|BIG_RED_BUTTON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(BIG_RED_BUTTON_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pin : ACCEL_NCS1_Pin */
   GPIO_InitStruct.Pin = ACCEL_NCS1_Pin;

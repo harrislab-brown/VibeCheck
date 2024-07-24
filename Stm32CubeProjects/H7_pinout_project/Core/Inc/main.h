@@ -65,6 +65,8 @@ void Error_Handler(void);
 #define SPI4_CS_GPIO_Port GPIOE
 #define SPI4_INT2_Pin GPIO_PIN_13
 #define SPI4_INT2_GPIO_Port GPIOC
+#define MUTE_BUTTON_Pin GPIO_PIN_1
+#define MUTE_BUTTON_GPIO_Port GPIOB
 #define BIG_RED_BUTTON_Pin GPIO_PIN_2
 #define BIG_RED_BUTTON_GPIO_Port GPIOB
 #define ACCEL_NCS1_Pin GPIO_PIN_12
@@ -89,10 +91,6 @@ void Error_Handler(void);
 #define LED_UI_GPIO_Port GPIOD
 #define LED_STROBE_Pin GPIO_PIN_6
 #define LED_STROBE_GPIO_Port GPIOC
-#define USB_DM_Pin GPIO_PIN_11
-#define USB_DM_GPIO_Port GPIOA
-#define USB_DP_Pin GPIO_PIN_12
-#define USB_DP_GPIO_Port GPIOA
 #define SPI3_CS_Pin GPIO_PIN_0
 #define SPI3_CS_GPIO_Port GPIOD
 #define SPI3_INT1_Pin GPIO_PIN_1

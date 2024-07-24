@@ -7,6 +7,16 @@
 	(lib_symbols)
 	(wire
 		(pts
+			(xy 184.15 114.3) (xy 190.5 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "02c1000e-c231-45ac-ba55-c5165954ca7b")
+	)
+	(wire
+		(pts
 			(xy 101.6 71.12) (xy 114.3 71.12)
 		)
 		(stroke
@@ -134,6 +144,26 @@
 			(type default)
 		)
 		(uuid "8aa26541-f5b3-46fe-9b8b-2c75885c63d2")
+	)
+	(wire
+		(pts
+			(xy 184.15 76.2) (xy 184.15 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8ee88e53-c6bb-44a1-9215-faa57e2511ab")
+	)
+	(wire
+		(pts
+			(xy 177.8 76.2) (xy 184.15 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "98317a00-f7a6-4522-bedd-e41d233b90ea")
 	)
 	(wire
 		(pts
@@ -356,6 +386,26 @@
 			)
 			(uuid "ce9f082f-ae67-4065-974a-38a69845fd12")
 		)
+		(pin "LED_STROBE" input
+			(at 177.8 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "7005599d-ec81-498c-b3e8-c73c4d9bedc6")
+		)
+		(pin "MUTE_BUTTON" input
+			(at 114.3 73.66 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "82cdf595-f083-40ce-a5b2-b7d81f67d8d9")
+		)
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986"
@@ -494,6 +544,63 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986"
 					(page "3")
+				)
+			)
+		)
+	)
+	(sheet
+		(at 190.5 101.6)
+		(size 63.5 50.165)
+		(fields_autoplaced yes)
+		(stroke
+			(width 0.5)
+			(type solid)
+		)
+		(fill
+			(color 255 220 173 0.5020)
+		)
+		(uuid "4fe48606-f27d-4ac1-8d68-53a5c8e78c55")
+		(property "Sheetname" "STROBE"
+			(at 190.5 100.8884 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Sheetfile" "led_strobe.kicad_sch"
+			(at 190.5 152.3496 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left top)
+			)
+		)
+		(property "Field2" ""
+			(at 190.5 101.6 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "LED_STROBE" input
+			(at 190.5 114.3 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "55b2d243-1148-4a61-bb8b-287a69979680")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986"
+					(page "10")
 				)
 			)
 		)
