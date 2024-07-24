@@ -344,15 +344,15 @@
         },
         {
           "group_by": false,
-          "label": "LCSC",
-          "name": "LCSC",
+          "label": "Description",
+          "name": "Description",
           "show": false
         },
         {
           "group_by": false,
-          "label": "Description",
-          "name": "Description",
-          "show": false
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": true
         }
       ],
       "filter_string": "",
@@ -406,36 +406,16 @@
       "Root"
     ],
     [
-      "12588020-3bb6-4766-98bd-8aed38e60ec0",
-      "MCU"
-    ],
-    [
       "4babb748-278e-4430-a66a-20cd9b0b193f",
       "USB"
     ],
     [
+      "12588020-3bb6-4766-98bd-8aed38e60ec0",
+      "MCU"
+    ],
+    [
       "719d72ab-d813-461f-9482-52ce573716fd",
-      "ACCEL"
-    ],
-    [
-      "1264eea6-2da0-4b8c-9a4c-9121bcc9c76c",
-      "UI"
-    ],
-    [
-      "4d0578b7-7312-4298-97a0-94006dea87de",
-      "SPI ACCELEROMETER1"
-    ],
-    [
-      "e082b3de-4b18-4be4-ba81-d49e87b940c1",
-      "SPI ACCELEROMETER2"
-    ],
-    [
-      "d33e5db2-c968-4012-a875-f240ab3119de",
-      "SPI ACCELEROMETER3"
-    ],
-    [
-      "baa2f8d8-a947-4685-9d57-97bd2d075f25",
-      "AUDIO"
+      "Accelerometer_interface"
     ]
   ],
   "text_variables": {}

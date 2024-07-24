@@ -49,6 +49,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -57,6 +59,44 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define SPI4_INT1_Pin GPIO_PIN_3
+#define SPI4_INT1_GPIO_Port GPIOE
+#define SPI4_CS_Pin GPIO_PIN_4
+#define SPI4_CS_GPIO_Port GPIOE
+#define SPI4_INT2_Pin GPIO_PIN_13
+#define SPI4_INT2_GPIO_Port GPIOC
+#define BIG_RED_BUTTON_Pin GPIO_PIN_2
+#define BIG_RED_BUTTON_GPIO_Port GPIOB
+#define ACCEL_NCS1_Pin GPIO_PIN_12
+#define ACCEL_NCS1_GPIO_Port GPIOB
+#define ACCEL_SCK1_Pin GPIO_PIN_13
+#define ACCEL_SCK1_GPIO_Port GPIOB
+#define ACCEL_MISO1_Pin GPIO_PIN_14
+#define ACCEL_MISO1_GPIO_Port GPIOB
+#define ACCEL_MOSI1_Pin GPIO_PIN_15
+#define ACCEL_MOSI1_GPIO_Port GPIOB
+#define ACCEL_INTA1_Pin GPIO_PIN_8
+#define ACCEL_INTA1_GPIO_Port GPIOD
+#define ACCEL_INTB1_Pin GPIO_PIN_9
+#define ACCEL_INTB1_GPIO_Port GPIOD
+#define LED_ACCEL1_Pin GPIO_PIN_12
+#define LED_ACCEL1_GPIO_Port GPIOD
+#define LED_ACCEL2_Pin GPIO_PIN_13
+#define LED_ACCEL2_GPIO_Port GPIOD
+#define LED_ACCEL3_Pin GPIO_PIN_14
+#define LED_ACCEL3_GPIO_Port GPIOD
+#define LED_UI_Pin GPIO_PIN_15
+#define LED_UI_GPIO_Port GPIOD
+#define USB_DM_Pin GPIO_PIN_11
+#define USB_DM_GPIO_Port GPIOA
+#define USB_DP_Pin GPIO_PIN_12
+#define USB_DP_GPIO_Port GPIOA
+#define SPI3_CS_Pin GPIO_PIN_0
+#define SPI3_CS_GPIO_Port GPIOD
+#define SPI3_INT1_Pin GPIO_PIN_1
+#define SPI3_INT1_GPIO_Port GPIOD
+#define SPI3_INT2_Pin GPIO_PIN_2
+#define SPI3_INT2_GPIO_Port GPIOD
 
 /* USER CODE BEGIN Private defines */
 
