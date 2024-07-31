@@ -27,16 +27,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.965 66.675) (xy 100.965 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34bb6d18-a7fb-478f-88e8-ed6be3b6d7aa")
-	)
-	(wire
-		(pts
 			(xy 95.25 53.34) (xy 114.3 53.34)
 		)
 		(stroke
@@ -137,16 +127,6 @@
 	)
 	(wire
 		(pts
-			(xy 100.965 116.84) (xy 95.25 116.84)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7b4566ec-bbec-4003-aa6a-2628b1cde7cb")
-	)
-	(wire
-		(pts
 			(xy 114.3 64.135) (xy 98.425 64.135)
 		)
 		(stroke
@@ -194,16 +174,6 @@
 			(type default)
 		)
 		(uuid "b3232bde-828f-4e40-80a9-654389dd230b")
-	)
-	(wire
-		(pts
-			(xy 114.3 66.675) (xy 100.965 66.675)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "c2f0552e-0423-448b-a471-0b6780436f9c")
 	)
 	(wire
 		(pts
@@ -303,16 +273,6 @@
 				)
 				(justify left top)
 			)
-		)
-		(pin "LED_UI" input
-			(at 114.3 66.675 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "14590b06-c22e-4329-ba7a-da6d77816297")
 		)
 		(pin "ACCEL{SCK[1..3] MISO[1..3] MOSI[1..3] NCS[1..3] INTA[1..3] INTB[1..3]}"
 			input
@@ -482,16 +442,6 @@
 				(justify right)
 			)
 			(uuid "0e5eae5e-686b-42b1-b37a-a9be41717076")
-		)
-		(pin "LED_UI" input
-			(at 95.25 116.84 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "76f9e7eb-c1c7-4a30-86b4-a82478e6ed15")
 		)
 		(pin "MUTE_BUTTON" input
 			(at 95.25 119.38 0)

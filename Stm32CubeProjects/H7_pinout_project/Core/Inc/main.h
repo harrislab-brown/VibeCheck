@@ -83,14 +83,8 @@ void Error_Handler(void);
 #define ACCEL_INTA1_GPIO_Port GPIOD
 #define ACCEL_INTB1_Pin GPIO_PIN_9
 #define ACCEL_INTB1_GPIO_Port GPIOD
-#define LED_ACCEL1_Pin GPIO_PIN_12
-#define LED_ACCEL1_GPIO_Port GPIOD
-#define LED_ACCEL2_Pin GPIO_PIN_13
-#define LED_ACCEL2_GPIO_Port GPIOD
-#define LED_ACCEL3_Pin GPIO_PIN_14
-#define LED_ACCEL3_GPIO_Port GPIOD
-#define LED_UI_Pin GPIO_PIN_15
-#define LED_UI_GPIO_Port GPIOD
+#define LED_ACCEL_Pin GPIO_PIN_12
+#define LED_ACCEL_GPIO_Port GPIOD
 #define LED_STROBE_Pin GPIO_PIN_6
 #define LED_STROBE_GPIO_Port GPIOC
 #define SPI3_CS_Pin GPIO_PIN_0

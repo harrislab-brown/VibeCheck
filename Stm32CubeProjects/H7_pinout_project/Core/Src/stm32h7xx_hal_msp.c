@@ -472,16 +472,13 @@ void HAL_TIM_MspPostInit(TIM_HandleTypeDef* htim)
     __HAL_RCC_GPIOD_CLK_ENABLE();
     /**TIM4 GPIO Configuration
     PD12     ------> TIM4_CH1
-    PD13     ------> TIM4_CH2
-    PD14     ------> TIM4_CH3
-    PD15     ------> TIM4_CH4
     */
-    GPIO_InitStruct.Pin = LED_ACCEL1_Pin|LED_ACCEL2_Pin|LED_ACCEL3_Pin|LED_UI_Pin;
+    GPIO_InitStruct.Pin = LED_ACCEL_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_AF_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
     GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
     GPIO_InitStruct.Alternate = GPIO_AF2_TIM4;
-    HAL_GPIO_Init(GPIOD, &GPIO_InitStruct);
+    HAL_GPIO_Init(LED_ACCEL_GPIO_Port, &GPIO_InitStruct);
 
   /* USER CODE BEGIN TIM4_MspPostInit 1 */
 

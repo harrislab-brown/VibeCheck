@@ -3788,6 +3788,16 @@
 		)
 		(uuid "da916de9-8f60-43e7-9097-6adfd3a1a4c6")
 	)
+	(text "add resistors with solder bridges to set the current limit after assembly "
+		(exclude_from_sim no)
+		(at 203.2 133.35 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "fe2d565f-e9a1-478d-9ac9-9a786e0173dd")
+	)
 	(label "USB_SHLD"
 		(at 66.675 106.68 180)
 		(fields_autoplaced yes)
@@ -4988,7 +4998,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.diodes.com/assets/Datasheets/AZ1117.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2204281730_Diodes-Incorporated-AZ1117H-3-3TRG1_C110474.pdf"
 			(at 177.165 54.229 0)
 			(effects
 				(font
