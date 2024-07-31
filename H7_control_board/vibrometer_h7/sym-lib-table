@@ -1,0 +1,4 @@
+(sym_lib_table
+  (version 7)
+  (lib (name "vibrometer_project")(type "KiCad")(uri "${KIPRJMOD}/Libraries/vibrometer_project.kicad_sym")(options "")(descr ""))
+)

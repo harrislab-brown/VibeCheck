@@ -65,6 +65,8 @@ void Error_Handler(void);
 #define SPI4_CS_GPIO_Port GPIOE
 #define SPI4_INT2_Pin GPIO_PIN_13
 #define SPI4_INT2_GPIO_Port GPIOC
+#define MUTE_SIGNAL_Pin GPIO_PIN_6
+#define MUTE_SIGNAL_GPIO_Port GPIOA
 #define MUTE_BUTTON_Pin GPIO_PIN_1
 #define MUTE_BUTTON_GPIO_Port GPIOB
 #define BIG_RED_BUTTON_Pin GPIO_PIN_2
@@ -97,6 +99,10 @@ void Error_Handler(void);
 #define SPI3_INT1_GPIO_Port GPIOD
 #define SPI3_INT2_Pin GPIO_PIN_2
 #define SPI3_INT2_GPIO_Port GPIOD
+#define VCP_TX_Pin GPIO_PIN_6
+#define VCP_TX_GPIO_Port GPIOB
+#define VCP_RX_Pin GPIO_PIN_7
+#define VCP_RX_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

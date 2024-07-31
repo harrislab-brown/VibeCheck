@@ -672,14 +672,6 @@
 		(at 139.7 127)
 		(uuid "1c01de5a-0ad1-41b6-b297-f6f97d4405fd")
 	)
-	(no_connect
-		(at 138.43 88.9)
-		(uuid "6c53ceb0-5e89-46cb-86d0-cfa02891727f")
-	)
-	(no_connect
-		(at 138.43 50.8)
-		(uuid "d1e722a9-6c01-4b2d-ab3e-1a62e816b44c")
-	)
 	(bus_entry
 		(at 165.1 55.88)
 		(size 2.54 -2.54)
@@ -1184,6 +1176,16 @@
 	)
 	(wire
 		(pts
+			(xy 49.53 69.85) (xy 49.53 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "545ac468-729e-41b8-8425-18bf8c027403")
+	)
+	(wire
+		(pts
 			(xy 167.64 45.72) (xy 190.5 45.72)
 		)
 		(stroke
@@ -1241,6 +1243,26 @@
 			(type default)
 		)
 		(uuid "5b00d8b1-35e1-428a-84d9-181c08b71b68")
+	)
+	(wire
+		(pts
+			(xy 49.53 107.95) (xy 49.53 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5c53973f-bc5d-4e90-a3a9-1f87d32fea07")
+	)
+	(wire
+		(pts
+			(xy 138.43 88.9) (xy 151.13 88.9)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5dff8858-4452-411d-b5f5-a0799b4fd7fe")
 	)
 	(wire
 		(pts
@@ -1331,6 +1353,16 @@
 			(type default)
 		)
 		(uuid "72d8c493-b630-4bae-a2cf-1e34ba8f79ea")
+	)
+	(wire
+		(pts
+			(xy 151.13 88.9) (xy 151.13 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "74ffe8a2-1799-467a-a30a-17552433a9b1")
 	)
 	(wire
 		(pts
@@ -1584,6 +1616,16 @@
 	)
 	(wire
 		(pts
+			(xy 151.13 50.8) (xy 151.13 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bc892eca-206e-4638-8eb9-bd7c806034a7")
+	)
+	(wire
+		(pts
 			(xy 130.81 78.74) (xy 130.81 81.28)
 		)
 		(stroke
@@ -1631,6 +1673,16 @@
 			(type default)
 		)
 		(uuid "c8cb7eb5-4319-4503-9f96-6cb525e2c4b4")
+	)
+	(wire
+		(pts
+			(xy 151.13 69.85) (xy 49.53 69.85)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ca90a594-9040-4060-9a93-0ff429bab7b6")
 	)
 	(bus
 		(pts
@@ -1744,6 +1796,16 @@
 	)
 	(wire
 		(pts
+			(xy 151.13 107.95) (xy 49.53 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ea220b69-5f52-460f-81f0-c69bd8c10be7")
+	)
+	(wire
+		(pts
 			(xy 132.08 134.62) (xy 132.08 137.16)
 		)
 		(stroke
@@ -1761,6 +1823,16 @@
 			(type default)
 		)
 		(uuid "ea7e37a2-7afd-4356-92ea-9e5812f07444")
+	)
+	(wire
+		(pts
+			(xy 138.43 50.8) (xy 151.13 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ee275873-df21-44fa-9364-e4fb5e94189a")
 	)
 	(wire
 		(pts
@@ -1990,18 +2062,6 @@
 		)
 		(uuid "c29b651b-5ba8-4171-8b62-d83ecf275a42")
 	)
-	(hierarchical_label "LED_ACCEL2"
-		(shape input)
-		(at 49.53 88.9 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "02fe80d4-8d89-4a1f-8892-3c558d9a2169")
-	)
 	(hierarchical_label "ACCEL{SCK[1..3] MISO[1..3] MOSI[1..3] NCS[1..3] INTA[1..3] INTB[1..3]}"
 		(shape input)
 		(at 167.64 149.86 0)
@@ -2014,19 +2074,7 @@
 		)
 		(uuid "572f2399-3d61-4b0f-ba17-a5346b8cc1b4")
 	)
-	(hierarchical_label "LED_ACCEL3"
-		(shape input)
-		(at 49.53 127 180)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify right)
-		)
-		(uuid "86567d99-cfc0-4497-a5fd-ee903620c910")
-	)
-	(hierarchical_label "LED_ACCEL1"
+	(hierarchical_label "LED_ACCEL"
 		(shape input)
 		(at 49.53 50.8 180)
 		(fields_autoplaced yes)
@@ -2254,71 +2302,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 63.5 76.2 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1be3421a-85ab-464a-ad4f-117651f86eb2")
-		(property "Reference" "#PWR056"
-			(at 63.5 80.01 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "V_USB"
-			(at 63.5 72.39 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 63.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 63.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 63.5 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d6feba76-ef4f-4371-887e-38bb2977caec")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR056")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 185.42 60.96 0)
 		(unit 1)
@@ -2450,6 +2433,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5V")
+		(at 63.5 76.2 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3beafb0e-1fcf-41a0-b8a3-4718c50022f3")
+		(property "Reference" "#PWR056"
+			(at 63.5 80.01 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 63.5 72.263 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 63.5 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8b4e9ab4-837c-4726-9e16-8925f2605045")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
+					(reference "#PWR056")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 63.5 101.6 0)
 		(unit 1)
@@ -2511,6 +2559,71 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
 					(reference "#PWR057")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 64.77 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "423af79d-821e-4479-80c2-af426a9a8859")
+		(property "Reference" "#PWR058"
+			(at 64.77 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 64.77 110.363 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 64.77 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 64.77 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 64.77 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "aa9aea73-8dc2-4c36-9937-2b5440805317")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
+					(reference "#PWR058")
 					(unit 1)
 				)
 			)
@@ -3023,71 +3136,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 64.77 114.3 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ac2adca5-bc62-4d00-a911-c2a0a2b5c6b6")
-		(property "Reference" "#PWR058"
-			(at 64.77 118.11 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "V_USB"
-			(at 64.77 110.49 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 64.77 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 64.77 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 64.77 114.3 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d2554779-ed62-4330-bdd0-845a7c77a46c")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR058")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 64.77 139.7 0)
 		(unit 1)
@@ -3155,71 +3203,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 63.5 38.1 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ae153872-063e-4e53-82f2-b246aba9de7f")
-		(property "Reference" "#PWR054"
-			(at 63.5 41.91 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "V_USB"
-			(at 63.5 34.29 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 63.5 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 63.5 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 63.5 38.1 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "132302ac-ba52-41d5-b084-03360f5ef756")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR054")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "power:GND")
 		(at 63.5 63.5 0)
 		(unit 1)
@@ -3281,6 +3264,71 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
 					(reference "#PWR055")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 63.5 38.1 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b5c9209b-dbc8-416c-843d-3ec95e54c205")
+		(property "Reference" "#PWR054"
+			(at 63.5 41.91 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 63.5 34.163 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 63.5 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 63.5 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 63.5 38.1 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5c2bc331-e7d3-40a6-abe9-dd81bbee99dd")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
+					(reference "#PWR054")
 					(unit 1)
 				)
 			)
