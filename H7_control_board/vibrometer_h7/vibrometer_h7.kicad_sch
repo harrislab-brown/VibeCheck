@@ -541,7 +541,6 @@
 	(sheet
 		(at 190.5 101.6)
 		(size 63.5 50.165)
-		(fields_autoplaced yes)
 		(stroke
 			(width 0.5)
 			(type solid)
@@ -551,16 +550,16 @@
 		)
 		(uuid "4fe48606-f27d-4ac1-8d68-53a5c8e78c55")
 		(property "Sheetname" "STROBE"
-			(at 190.5 100.8884 0)
+			(at 192.405 106.68 0)
 			(effects
 				(font
-					(size 1.27 1.27)
+					(size 2.54 2.54)
 				)
 				(justify left bottom)
 			)
 		)
 		(property "Sheetfile" "led_strobe.kicad_sch"
-			(at 190.5 152.3496 0)
+			(at 190.5 152.5234 0)
 			(effects
 				(font
 					(size 1.27 1.27)

@@ -1527,6 +1527,26 @@
 		)
 		(uuid "4b94d349-d9d3-4c6f-ac43-4bf78e1cec1c")
 	)
+	(text "LEDs:\n\nC210311\nC210310\nC540978\n"
+		(exclude_from_sim no)
+		(at 97.79 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "6fa8e1be-2627-4c18-8253-cffd3a37e87b")
+	)
+	(text "IC to drive LEDs:\n\nDarlington transistors:\nC258198\nC549743\nC155225\n\nFETs:\nC469327\nC7527989\nC383245\nC459538"
+		(exclude_from_sim no)
+		(at 122.555 104.775 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "95742892-6d2d-4a2e-ae2b-c124848aa2c2")
+	)
 	(hierarchical_label "LED_STROBE"
 		(shape input)
 		(at 57.15 90.17 180)
