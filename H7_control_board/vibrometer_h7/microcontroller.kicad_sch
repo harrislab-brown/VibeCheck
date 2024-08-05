@@ -8071,7 +8071,7 @@
 	)
 	(text "GPIO HEADER"
 		(exclude_from_sim no)
-		(at 27.94 92.71 0)
+		(at 29.21 92.71 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8132,7 +8132,7 @@
 	)
 	(text "rout out a bank of pins to a standard 0.1\" gpio header\ninclude power and ground pins in the header\nlook at pin types / peripherals to make sure we break\nout useful peripherals, maybe an analog in?	"
 		(exclude_from_sim no)
-		(at 21.59 98.425 0)
+		(at 21.59 97.155 0)
 		(effects
 			(font
 				(size 1 1)
@@ -8154,7 +8154,7 @@
 	)
 	(text "FOR JOHN:"
 		(exclude_from_sim no)
-		(at 27.305 107.315 0)
+		(at 27.305 106.68 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -9653,7 +9653,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 49.53 173.99 0)
 			(effects
 				(font
@@ -10101,7 +10101,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 55.88 173.99 0)
 			(effects
 				(font
@@ -10245,7 +10245,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 234.95 114.3 0)
 			(effects
 				(font
@@ -10389,7 +10389,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 78.74 36.83 0)
 			(effects
 				(font
@@ -10467,7 +10467,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 48.26 36.83 0)
 			(effects
 				(font
@@ -10894,7 +10894,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 251.46 45.72 0)
 			(effects
 				(font
@@ -10972,7 +10972,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 242.57 45.72 0)
 			(effects
 				(font
@@ -11332,7 +11332,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
 			(at 33.02 60.96 0)
 			(effects
 				(font
@@ -11341,7 +11341,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_XKB-Connection-TS-1187A-B-A-B_C318884.pdf"
 			(at 33.02 60.96 0)
 			(effects
 				(font
@@ -11359,7 +11359,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C318884"
 			(at 33.02 66.04 0)
 			(effects
 				(font
@@ -11410,7 +11410,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 252.73 91.44 0)
 			(effects
 				(font
@@ -11488,7 +11488,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 71.12 36.83 0)
 			(effects
 				(font
@@ -11738,7 +11738,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 63.5 36.83 0)
 			(effects
 				(font
@@ -11816,7 +11816,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 234.95 91.44 0)
 			(effects
 				(font
@@ -12102,7 +12102,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 31.75 36.83 0)
 			(effects
 				(font
@@ -12256,7 +12256,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 55.88 36.83 0)
 			(effects
 				(font
@@ -12464,7 +12464,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 260.35 45.72 0)
 			(effects
 				(font
@@ -12767,7 +12767,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 40.64 36.83 0)
 			(effects
 				(font
@@ -13139,7 +13139,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 68.58 71.12 0)
 			(effects
 				(font

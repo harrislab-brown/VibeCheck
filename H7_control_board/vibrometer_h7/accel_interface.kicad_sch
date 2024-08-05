@@ -2205,6 +2205,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C965555"
+			(at 96.52 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "d0a306ac-b261-439a-99b7-fa2968622a42")
 		)
@@ -2272,6 +2281,15 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+			(at 130.81 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C965555"
 			(at 130.81 88.9 0)
 			(effects
 				(font
@@ -2683,6 +2701,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C965555"
+			(at 97.79 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "c354c091-043f-402f-a563-d82322715553")
 		)
@@ -2750,6 +2777,15 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+			(at 130.81 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C965555"
 			(at 130.81 50.8 0)
 			(effects
 				(font
@@ -2890,6 +2926,15 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+			(at 63.5 50.8 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C965555"
 			(at 63.5 50.8 0)
 			(effects
 				(font
@@ -3039,6 +3084,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C965555"
+			(at 132.08 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "b056e3d6-0c32-4009-9d03-148cb15000dc")
 		)
@@ -3106,6 +3160,15 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+			(at 64.77 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C965555"
 			(at 64.77 127 0)
 			(effects
 				(font
@@ -3388,6 +3451,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C965555"
+			(at 96.52 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "2"
 			(uuid "6ceb195e-139a-4e34-85e7-93cd7c082411")
 		)
@@ -3455,6 +3527,15 @@
 			)
 		)
 		(property "Description" "RGB LED with integrated controller, 2.0 x 2.0 mm, 12 mA"
+			(at 63.5 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C965555"
 			(at 63.5 88.9 0)
 			(effects
 				(font

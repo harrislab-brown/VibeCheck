@@ -3871,7 +3871,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 197.485 57.785 0)
 			(effects
 				(font
@@ -3937,7 +3937,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 157.48 107.95 0)
 			(effects
 				(font
@@ -4040,6 +4040,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C89855"
+			(at 173.99 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "5"
 			(uuid "c5617424-9db5-4358-8ef6-f2f04895686b")
 		)
@@ -4091,7 +4100,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 165.1 95.885 0)
 			(effects
 				(font
@@ -4157,7 +4166,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 61.595 111.76 0)
 			(effects
 				(font
@@ -4226,7 +4235,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 163.195 69.215 0)
 			(effects
 				(font
@@ -4369,7 +4378,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D2.0mm"
 			(at 163.195 57.785 0)
 			(effects
 				(font
@@ -4435,7 +4444,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x7.7"
 			(at 219.71 107.95 0)
 			(effects
 				(font
@@ -4444,7 +4453,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206161801_ROQANG-RVT1V151M0607_C3032176.pdf"
 			(at 219.71 107.95 0)
 			(effects
 				(font
@@ -4454,6 +4463,15 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
+			(at 219.71 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3032176"
 			(at 219.71 107.95 0)
 			(effects
 				(font
@@ -5617,7 +5635,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_USB:USB_C_Receptacle_GCT_USB4105-xx-A_16P_TopMnt_Horizontal"
 			(at 79.375 82.55 0)
 			(effects
 				(font
@@ -5626,7 +5644,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.usb.org/sites/default/files/documents/usb_type-c.zip"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1912111437_SHOU-HAN-TYPE-C16PIN_C393939.pdf"
 			(at 79.375 82.55 0)
 			(effects
 				(font
@@ -5644,7 +5662,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C393939"
 			(at 75.565 82.55 0)
 			(effects
 				(font
@@ -5873,7 +5891,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x5.4"
 			(at 189.865 69.215 0)
 			(effects
 				(font
@@ -5882,7 +5900,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_ROQANG-RVT1H220M0605_C72505.pdf"
 			(at 189.865 69.215 0)
 			(effects
 				(font
@@ -5900,7 +5918,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C72505 "
 			(at 189.865 69.215 0)
 			(effects
 				(font
@@ -6172,7 +6190,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 196.85 107.95 0)
 			(effects
 				(font
@@ -6280,6 +6298,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C2827654"
+			(at 118.745 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "5"
 			(uuid "14532848-9c0c-4852-8f9f-b600bf6af987")
 		)
@@ -6334,7 +6361,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x7.7"
 			(at 211.455 107.95 0)
 			(effects
 				(font
@@ -6343,7 +6370,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206161801_ROQANG-RVT1V151M0607_C3032176.pdf"
 			(at 211.455 107.95 0)
 			(effects
 				(font
@@ -6353,6 +6380,15 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
+			(at 211.455 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3032176"
 			(at 211.455 107.95 0)
 			(effects
 				(font

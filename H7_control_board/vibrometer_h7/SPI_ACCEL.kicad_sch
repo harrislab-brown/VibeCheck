@@ -2115,7 +2115,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 206.7052 72.39 0)
 			(effects
 				(font
@@ -2363,7 +2363,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 195.2752 72.39 0)
 			(effects
 				(font
@@ -2460,6 +2460,15 @@
 			)
 		)
 		(property "Description" "I2C/SPI, iNEMO inertial module: always-on 3D accelerometer and 3D gyroscope"
+			(at 165.1 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C967633"
 			(at 165.1 85.09 0)
 			(effects
 				(font
