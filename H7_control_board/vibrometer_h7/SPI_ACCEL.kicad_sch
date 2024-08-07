@@ -1516,7 +1516,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 72.39) (xy 205.74 76.2)
+			(xy 205.74 73.66) (xy 205.74 76.2)
 		)
 		(stroke
 			(width 0)
@@ -1543,16 +1543,6 @@
 			(type default)
 		)
 		(uuid "2653b0a6-4981-4c24-9a4a-c64e447dc23b")
-	)
-	(wire
-		(pts
-			(xy 226.06 64.77) (xy 226.06 68.58)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2cd4c507-2f0d-458e-b59d-fd15b63df87a")
 	)
 	(wire
 		(pts
@@ -1586,7 +1576,7 @@
 	)
 	(wire
 		(pts
-			(xy 214.63 64.77) (xy 217.17 64.77)
+			(xy 215.9 64.77) (xy 219.71 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1626,6 +1616,26 @@
 	)
 	(wire
 		(pts
+			(xy 194.31 66.04) (xy 194.31 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7f265f76-47d0-450f-a5f1-ea2550853d0e")
+	)
+	(wire
+		(pts
+			(xy 219.71 73.66) (xy 219.71 76.2)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "8870b35e-ee77-4632-a93b-bc6497490312")
+	)
+	(wire
+		(pts
 			(xy 133.35 90.17) (xy 149.86 90.17)
 		)
 		(stroke
@@ -1633,6 +1643,16 @@
 			(type default)
 		)
 		(uuid "8a82fcaa-7cdd-4da8-a2f7-dc888147a854")
+	)
+	(wire
+		(pts
+			(xy 205.74 66.04) (xy 205.74 64.77)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91627859-f848-4af0-ba61-dacb5330a613")
 	)
 	(wire
 		(pts
@@ -1646,7 +1666,7 @@
 	)
 	(wire
 		(pts
-			(xy 194.31 72.39) (xy 194.31 76.2)
+			(xy 194.31 73.66) (xy 194.31 76.2)
 		)
 		(stroke
 			(width 0)
@@ -1696,33 +1716,13 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 76.2) (xy 226.06 76.2)
+			(xy 205.74 76.2) (xy 219.71 76.2)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "c835d752-d447-417a-a6c2-fe34639b1a54")
-	)
-	(wire
-		(pts
-			(xy 226.06 73.66) (xy 226.06 76.2)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ce5b2ce1-9150-46c2-a3db-50e4dfdc1648")
-	)
-	(wire
-		(pts
-			(xy 224.79 64.77) (xy 226.06 64.77)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d21003bc-9ff4-436c-bc6b-9339e8f82d3f")
 	)
 	(wire
 		(pts
@@ -1736,7 +1736,7 @@
 	)
 	(wire
 		(pts
-			(xy 205.74 64.77) (xy 209.55 64.77)
+			(xy 205.74 64.77) (xy 210.82 64.77)
 		)
 		(stroke
 			(width 0)
@@ -1823,6 +1823,16 @@
 			(type default)
 		)
 		(uuid "ebd210f7-c0b8-4665-a8e3-7f8065dffa2b")
+	)
+	(wire
+		(pts
+			(xy 219.71 64.77) (xy 219.71 66.04)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f7224939-4fc2-4e76-813c-5a94a82600e8")
 	)
 	(wire
 		(pts
@@ -2090,7 +2100,7 @@
 	)
 	(symbol
 		(lib_id "Device:C")
-		(at 205.74 68.58 0)
+		(at 205.74 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2098,7 +2108,7 @@
 		(dnp no)
 		(uuid "06d0cef2-d633-405b-a62c-eefff102e1bc")
 		(property "Reference" "C602"
-			(at 207.01 66.04 0)
+			(at 207.01 67.31 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2107,7 +2117,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 207.01 71.374 0)
+			(at 207.01 72.644 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2115,8 +2125,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 206.7052 72.39 0)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+			(at 206.7052 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2124,8 +2134,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 205.74 68.58 0)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL05B104KB54PNC_C307331.pdf"
+			(at 205.74 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2134,7 +2144,16 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 205.74 68.58 0)
+			(at 205.74 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C307331"
+			(at 205.74 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2260,85 +2279,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 226.06 71.12 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "248def93-d160-4ad5-9c34-3e45b51b8bef")
-		(property "Reference" "R602"
-			(at 226.314 68.58 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "R"
-			(at 226.314 73.406 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" ""
-			(at 226.06 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 226.06 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 226.06 71.12 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "1ed0f52b-e432-4138-ae28-3315e1a6c245")
-		)
-		(pin "2"
-			(uuid "baa50bf2-5d0e-426b-9788-92e60773ac7a")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd/4d0578b7-7312-4298-97a0-94006dea87de"
-					(reference "R602")
-					(unit 1)
-				)
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd/d33e5db2-c968-4012-a875-f240ab3119de"
-					(reference "R802")
-					(unit 1)
-				)
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd/e082b3de-4b18-4be4-ba81-d49e87b940c1"
-					(reference "R702")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C")
-		(at 194.31 68.58 0)
+		(at 194.31 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2346,7 +2288,7 @@
 		(dnp no)
 		(uuid "27c68a00-1d64-4843-8e03-dd5e0360c07c")
 		(property "Reference" "C601"
-			(at 195.326 66.294 0)
+			(at 195.326 67.564 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2355,7 +2297,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 195.326 71.374 0)
+			(at 195.326 72.644 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2363,8 +2305,8 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
-			(at 195.2752 72.39 0)
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+			(at 195.2752 73.66 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2372,8 +2314,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 194.31 68.58 0)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL05B104KB54PNC_C307331.pdf"
+			(at 194.31 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2382,7 +2324,16 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor"
-			(at 194.31 68.58 0)
+			(at 194.31 69.85 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C307331"
+			(at 194.31 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2538,7 +2489,7 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 212.09 64.77 90)
+		(at 213.36 64.77 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -2546,7 +2497,7 @@
 		(dnp no)
 		(uuid "384959f8-8907-48d8-9e00-6d74fd88140f")
 		(property "Reference" "R601"
-			(at 210.312 63.754 90)
+			(at 211.582 63.754 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2555,7 +2506,7 @@
 			)
 		)
 		(property "Value" "0R"
-			(at 215.9 63.754 90)
+			(at 217.17 63.754 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2564,7 +2515,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 212.09 64.77 0)
+			(at 213.36 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2573,7 +2524,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 212.09 64.77 0)
+			(at 213.36 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2582,7 +2533,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 212.09 64.77 0)
+			(at 213.36 64.77 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3004,7 +2955,7 @@
 	)
 	(symbol
 		(lib_id "Device:LED")
-		(at 220.98 64.77 180)
+		(at 219.71 69.85 90)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3013,23 +2964,27 @@
 		(fields_autoplaced yes)
 		(uuid "ee2c74db-716a-4be3-97de-d9e10d18e10e")
 		(property "Reference" "D601"
-			(at 222.5675 57.15 0)
+			(at 223.52 70.1674 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
+				(hide yes)
 			)
 		)
 		(property "Value" "LED"
-			(at 222.5675 59.69 0)
+			(at 223.52 72.7074 90)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(justify right)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
-			(at 220.98 64.77 0)
+			(at 219.71 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3038,7 +2993,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 220.98 64.77 0)
+			(at 219.71 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3047,7 +3002,7 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
-			(at 220.98 64.77 0)
+			(at 219.71 69.85 0)
 			(effects
 				(font
 					(size 1.27 1.27)

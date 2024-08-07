@@ -1582,7 +1582,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 168.275 80.01 0)
 			(effects
 				(font
@@ -1591,7 +1591,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL05B104KB54PNC_C307331.pdf"
 			(at 168.275 80.01 0)
 			(effects
 				(font
@@ -1609,7 +1609,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C307331"
 			(at 168.275 80.01 0)
 			(effects
 				(font
@@ -1789,7 +1789,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c045aad7-9ad7-4775-bd4c-302af29f84e4")
-		(property "Reference" "SW?"
+		(property "Reference" "SW502"
 			(at 203.835 70.612 0)
 			(effects
 				(font
@@ -1850,7 +1850,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "SW?")
+					(reference "SW502")
 					(unit 1)
 				)
 			)
@@ -2192,7 +2192,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 87.63 80.01 0)
 			(effects
 				(font
@@ -2201,7 +2201,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL05B104KB54PNC_C307331.pdf"
 			(at 87.63 80.01 0)
 			(effects
 				(font
@@ -2219,7 +2219,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C307331"
 			(at 87.63 80.01 0)
 			(effects
 				(font
