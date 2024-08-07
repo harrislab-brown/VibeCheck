@@ -2105,7 +2105,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "06d0cef2-d633-405b-a62c-eefff102e1bc")
 		(property "Reference" "C602"
 			(at 207.01 67.31 0)
@@ -2285,7 +2285,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "27c68a00-1d64-4843-8e03-dd5e0360c07c")
 		(property "Reference" "C601"
 			(at 195.326 67.564 0)
@@ -2371,7 +2371,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "285ba139-61b3-4cfe-9fa2-720aaa3b78b1")
 		(property "Reference" "XL601"
 			(at 174.498 71.12 0)
@@ -2494,7 +2494,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "384959f8-8907-48d8-9e00-6d74fd88140f")
 		(property "Reference" "R601"
 			(at 211.582 63.754 90)
@@ -2571,7 +2571,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "3e410986-be0a-4cc5-add9-f1b3ad92272a")
 		(property "Reference" "J602"
 			(at 130.302 74.168 0)
@@ -2960,7 +2960,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "ee2c74db-716a-4be3-97de-d9e10d18e10e")
 		(property "Reference" "D601"

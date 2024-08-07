@@ -1182,10 +1182,9 @@
 		)
 		(uuid "e961f5cb-23bb-49d0-a98e-2ff792bc9355")
 	)
-	(text_box "BIG RED BUTTON"
-		(exclude_from_sim no)
-		(at 63.5 63.5 0)
-		(size 76.2 30.48)
+	(rectangle
+		(start 144.145 63.5)
+		(end 220.98 93.98)
 		(stroke
 			(width 0)
 			(type dash)
@@ -1193,18 +1192,11 @@
 		(fill
 			(type none)
 		)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left top)
-		)
-		(uuid "2734f95d-3d8b-4192-9fa3-49b219e1a5ec")
+		(uuid 2ddb685c-c5ee-42a6-999f-3941caf46475)
 	)
-	(text_box "SPEAKER MUTE"
-		(exclude_from_sim no)
-		(at 144.145 63.5 0)
-		(size 76.2 30.48)
+	(rectangle
+		(start 63.5 63.5)
+		(end 140.335 93.98)
 		(stroke
 			(width 0)
 			(type dash)
@@ -1212,13 +1204,29 @@
 		(fill
 			(type none)
 		)
+		(uuid b01296c4-6205-4434-8aea-3302285294ea)
+	)
+	(text "BIG RED BUTTON"
+		(exclude_from_sim no)
+		(at 64.77 66.04 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left top)
+			(justify left)
 		)
-		(uuid "38f048ab-a80c-4475-8f94-a5c60f8c82a9")
+		(uuid "292e379b-fbbf-42c2-a76f-114bf259fd2d")
+	)
+	(text "MUTE BUTTON"
+		(exclude_from_sim no)
+		(at 145.415 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "aa0de7cc-61f0-4939-bef0-ec9cfd203f56")
 	)
 	(label "BIG_RED_SW"
 		(at 183.515 74.93 0)
@@ -1360,7 +1368,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:Diodes_SOT-553"
 			(at 116.84 80.01 90)
 			(effects
 				(font

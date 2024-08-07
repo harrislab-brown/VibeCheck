@@ -1100,152 +1100,6 @@
 				)
 			)
 		)
-		(symbol "Device:FerriteBead"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "FB"
-				(at -3.81 0.635 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "FerriteBead"
-				(at 3.81 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at -1.778 0 90)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "Ferrite bead"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "L ferrite bead inductor filter"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Inductor_* L_* *Ferrite*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "FerriteBead_0_1"
-				(polyline
-					(pts
-						(xy 0 -1.27) (xy 0 -1.2192)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 1.27) (xy 0 1.2954)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -2.7686 0.4064) (xy -1.7018 2.2606) (xy 2.7686 -0.3048) (xy 1.6764 -2.159) (xy -2.7686 0.4064)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "FerriteBead_1_1"
-				(pin passive line
-					(at 0 3.81 270)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at 0 -3.81 90)
-					(length 2.54)
-					(name "~"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Device:LED"
 			(pin_numbers hide)
 			(pin_names
@@ -2733,12 +2587,6 @@
 		(uuid "811752ca-8df3-4321-accc-ad5d037204a9")
 	)
 	(junction
-		(at 156.21 100.33)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "916bf298-41bf-4354-ac6c-fad90c4e5a00")
-	)
-	(junction
 		(at 173.99 113.665)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2773,6 +2621,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d0eba1f2-fbcc-4591-960e-e91ed065f588")
+	)
+	(junction
+		(at 153.67 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fedd377a-817f-4d9d-9d7e-b35333e34a4d")
 	)
 	(no_connect
 		(at 90.805 95.25)
@@ -2974,7 +2828,7 @@
 	)
 	(wire
 		(pts
-			(xy 145.415 95.885) (xy 145.415 100.33)
+			(xy 145.415 94.615) (xy 145.415 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3154,16 +3008,6 @@
 	)
 	(wire
 		(pts
-			(xy 154.94 100.33) (xy 156.21 100.33)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7ffd8c79-2201-40fc-8ba0-0ccebb1b97ed")
-	)
-	(wire
-		(pts
 			(xy 100.965 62.23) (xy 100.965 67.31)
 		)
 		(stroke
@@ -3254,7 +3098,7 @@
 	)
 	(wire
 		(pts
-			(xy 145.415 100.33) (xy 147.32 100.33)
+			(xy 145.415 100.33) (xy 153.67 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3474,13 +3318,13 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 100.33) (xy 156.21 100.33)
+			(xy 153.67 100.33) (xy 157.48 100.33)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "d81148a6-47c2-4099-9fe3-c2bf9895e2d9")
+		(uuid "d99180d2-5e7d-4a9f-8f78-67b63f79bb03")
 	)
 	(wire
 		(pts
@@ -3534,7 +3378,7 @@
 	)
 	(wire
 		(pts
-			(xy 156.21 95.25) (xy 156.21 100.33)
+			(xy 153.67 96.52) (xy 153.67 100.33)
 		)
 		(stroke
 			(width 0)
@@ -3711,7 +3555,7 @@
 		)
 		(uuid "19fe3d86-8e6c-4127-85fe-1d6f490ba25a")
 	)
-	(text "I_set(A)=6K8ohm / R_set\n1.5A = 6k8/4k5 \nR_set = 4k5"
+	(text "I_set(A)=6K8ohm / R_set\n1.5A = 6k8/4k5 \nR_set = 4k5 ~=4k7"
 		(exclude_from_sim no)
 		(at 186.69 119.38 0)
 		(effects
@@ -3722,9 +3566,9 @@
 		)
 		(uuid "7d31462e-f17d-493d-96a1-b821967d2c1f")
 	)
-	(text "LOW ESR ALUMINUM OR TANTALUM POLARIZED CAPS"
+	(text "LOW ESR CAPS"
 		(exclude_from_sim no)
-		(at 201.93 127.635 0)
+		(at 214.63 98.425 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3867,17 +3711,6 @@
 			(justify left bottom)
 		)
 		(uuid "7c82d02c-a4b1-4362-ae79-47ca2c330fb7")
-	)
-	(label "LDO_5Vin"
-		(at 156.21 97.79 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left bottom)
-		)
-		(uuid "9df53dd4-4a37-43ad-94a4-4a6a8aff9486")
 	)
 	(label "CC2"
 		(at 91.44 74.93 0)
@@ -4156,7 +3989,7 @@
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
-		(at 156.21 95.25 0)
+		(at 153.67 96.52 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -4164,7 +3997,7 @@
 		(dnp no)
 		(uuid "188fdb0e-cbc6-44e3-a807-600ff1fd1a8b")
 		(property "Reference" "TP301"
-			(at 153.162 90.17 0)
+			(at 150.622 91.44 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4173,7 +4006,7 @@
 			)
 		)
 		(property "Value" "TP_V_USB"
-			(at 156.21 93.853 0)
+			(at 153.67 95.123 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4182,7 +4015,7 @@
 			)
 		)
 		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
-			(at 161.29 95.25 0)
+			(at 158.75 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4191,7 +4024,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 161.29 95.25 0)
+			(at 158.75 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4200,7 +4033,7 @@
 			)
 		)
 		(property "Description" "test point"
-			(at 156.21 95.25 0)
+			(at 153.67 96.52 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4669,8 +4502,8 @@
 				)
 			)
 		)
-		(property "Value" "100K"
-			(at 189.484 112.268 0)
+		(property "Value" "4k7"
+			(at 188.595 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4730,7 +4563,7 @@
 	)
 	(symbol
 		(lib_id "power:+5V")
-		(at 145.415 95.885 0)
+		(at 145.415 94.615 0)
 		(mirror y)
 		(unit 1)
 		(exclude_from_sim no)
@@ -4739,7 +4572,7 @@
 		(dnp no)
 		(uuid "636c43e8-776b-48ec-a12b-dab333465195")
 		(property "Reference" "#PWR070"
-			(at 145.415 99.695 0)
+			(at 145.415 98.425 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4748,7 +4581,7 @@
 			)
 		)
 		(property "Value" "V_USB"
-			(at 145.415 92.075 0)
+			(at 145.415 90.805 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4756,7 +4589,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 145.415 95.885 0)
+			(at 145.415 94.615 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4765,7 +4598,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 145.415 95.885 0)
+			(at 145.415 94.615 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4774,7 +4607,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 145.415 95.885 0)
+			(at 145.415 94.615 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4811,7 +4644,7 @@
 				)
 			)
 		)
-		(property "Value" "100K"
+		(property "Value" "100k"
 			(at 70.739 114.808 0)
 			(effects
 				(font
@@ -5345,73 +5178,6 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4babb748-278e-4430-a66a-20cd9b0b193f"
 					(reference "#PWR027")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:FerriteBead")
-		(at 151.13 100.33 90)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "aea38b89-21ba-498d-b627-5fa1d2f1eb36")
-		(property "Reference" "FB1"
-			(at 148.336 99.06 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "FerriteBead"
-			(at 151.13 104.394 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 151.13 102.108 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 151.13 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Ferrite bead"
-			(at 151.13 100.33 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "eacc6332-eb7f-425d-ad12-5e401bb477be")
-		)
-		(pin "2"
-			(uuid "65b14fd8-81e6-47f6-8c4d-c5878a98f2f4")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4babb748-278e-4430-a66a-20cd9b0b193f"
-					(reference "FB1")
 					(unit 1)
 				)
 			)

@@ -1854,16 +1854,6 @@
 		)
 		(uuid "fdbc0595-6142-4dd9-9797-a71454f2216e")
 	)
-	(text "LCSC#: C965555"
-		(exclude_from_sim no)
-		(at 52.578 43.942 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "92c88b12-08c9-456f-8249-cf7f63a003d8")
-	)
 	(label "ACCEL.NCS3"
 		(at 185.42 132.08 180)
 		(fields_autoplaced yes)
