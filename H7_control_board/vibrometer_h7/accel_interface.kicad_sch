@@ -2085,7 +2085,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "055365c2-d310-4db1-9457-7362fd24fbc6")
-		(property "Reference" "#PWR031"
+		(property "Reference" "#PWR0407"
 			(at 185.42 41.91 0)
 			(effects
 				(font
@@ -2135,7 +2135,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR031")
+					(reference "#PWR0407")
 					(unit 1)
 				)
 			)
@@ -2150,7 +2150,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "137e3a99-390c-4fb2-9008-c68dbb78158b")
-		(property "Reference" "D402"
+		(property "Reference" "D404"
 			(at 100.33 44.196 0)
 			(effects
 				(font
@@ -2219,7 +2219,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "D402")
+					(reference "D404")
 					(unit 1)
 				)
 			)
@@ -2234,7 +2234,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1a0c177b-c18f-408c-92e3-bd09fc438961")
-		(property "Reference" "D406"
+		(property "Reference" "D408"
 			(at 134.62 82.296 0)
 			(effects
 				(font
@@ -2303,7 +2303,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "D406")
+					(reference "D408")
 					(unit 1)
 				)
 			)
@@ -2318,7 +2318,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1d5b4ae5-2591-4481-a0b9-23c12ae4f707")
-		(property "Reference" "#PWR032"
+		(property "Reference" "#PWR0408"
 			(at 185.42 67.31 0)
 			(effects
 				(font
@@ -2369,7 +2369,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR032")
+					(reference "#PWR0408")
 					(unit 1)
 				)
 			)
@@ -2384,7 +2384,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1fdcb9fb-7681-419a-958b-30060650c47a")
-		(property "Reference" "#PWR035"
+		(property "Reference" "#PWR0411"
 			(at 185.42 118.11 0)
 			(effects
 				(font
@@ -2434,7 +2434,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR035")
+					(reference "#PWR0411")
 					(unit 1)
 				)
 			)
@@ -2449,7 +2449,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3beafb0e-1fcf-41a0-b8a3-4718c50022f3")
-		(property "Reference" "#PWR056"
+		(property "Reference" "#PWR0403"
 			(at 63.5 80.01 0)
 			(effects
 				(font
@@ -2499,7 +2499,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR056")
+					(reference "#PWR0403")
 					(unit 1)
 				)
 			)
@@ -2515,7 +2515,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "3f1938c9-7bb3-46c0-943a-93d2fddd963b")
-		(property "Reference" "#PWR057"
+		(property "Reference" "#PWR0404"
 			(at 63.5 107.95 0)
 			(effects
 				(font
@@ -2566,7 +2566,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR057")
+					(reference "#PWR0404")
 					(unit 1)
 				)
 			)
@@ -2581,7 +2581,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "423af79d-821e-4479-80c2-af426a9a8859")
-		(property "Reference" "#PWR058"
+		(property "Reference" "#PWR0405"
 			(at 64.77 118.11 0)
 			(effects
 				(font
@@ -2631,7 +2631,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR058")
+					(reference "#PWR0405")
 					(unit 1)
 				)
 			)
@@ -2646,7 +2646,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4e0998b9-2749-4f91-b85a-ea77b4613b80")
-		(property "Reference" "D408"
+		(property "Reference" "D406"
 			(at 101.6 120.396 0)
 			(effects
 				(font
@@ -2715,7 +2715,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "D408")
+					(reference "D406")
 					(unit 1)
 				)
 			)
@@ -2730,7 +2730,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "532c1c57-dda0-4ea7-af9e-522115f3e85e")
-		(property "Reference" "D403"
+		(property "Reference" "D407"
 			(at 134.62 44.196 0)
 			(effects
 				(font
@@ -2799,7 +2799,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "D403")
+					(reference "D407")
 					(unit 1)
 				)
 			)
@@ -2814,7 +2814,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "6364807d-0a69-4409-92dd-fd8a301fe448")
-		(property "Reference" "#PWR033"
+		(property "Reference" "#PWR0409"
 			(at 185.42 80.01 0)
 			(effects
 				(font
@@ -2864,7 +2864,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR033")
+					(reference "#PWR0409")
 					(unit 1)
 				)
 			)
@@ -2963,7 +2963,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "88af9357-104b-492c-bc28-de9666add188")
-		(property "Reference" "#PWR038"
+		(property "Reference" "#PWR0412"
 			(at 185.42 143.51 0)
 			(effects
 				(font
@@ -3014,7 +3014,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR038")
+					(reference "#PWR0412")
 					(unit 1)
 				)
 			)
@@ -3113,7 +3113,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a32ed457-d299-4e6f-8bd1-5d14bad0720d")
-		(property "Reference" "D407"
+		(property "Reference" "D403"
 			(at 68.58 120.396 0)
 			(effects
 				(font
@@ -3182,7 +3182,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "D407")
+					(reference "D403")
 					(unit 1)
 				)
 			)
@@ -3198,7 +3198,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "adcdcc04-e834-416f-84bf-1585c925c4b0")
-		(property "Reference" "#PWR059"
+		(property "Reference" "#PWR0406"
 			(at 64.77 146.05 0)
 			(effects
 				(font
@@ -3249,7 +3249,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR059")
+					(reference "#PWR0406")
 					(unit 1)
 				)
 			)
@@ -3265,7 +3265,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "aff1fbde-4f23-4dae-80ee-cd00c4ee066f")
-		(property "Reference" "#PWR055"
+		(property "Reference" "#PWR0402"
 			(at 63.5 69.85 0)
 			(effects
 				(font
@@ -3316,7 +3316,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR055")
+					(reference "#PWR0402")
 					(unit 1)
 				)
 			)
@@ -3331,7 +3331,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b5c9209b-dbc8-416c-843d-3ec95e54c205")
-		(property "Reference" "#PWR054"
+		(property "Reference" "#PWR0401"
 			(at 63.5 41.91 0)
 			(effects
 				(font
@@ -3381,7 +3381,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR054")
+					(reference "#PWR0401")
 					(unit 1)
 				)
 			)
@@ -3480,7 +3480,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f5b5b7f4-cc51-407b-817c-b99859a4db8e")
-		(property "Reference" "D404"
+		(property "Reference" "D402"
 			(at 67.31 82.296 0)
 			(effects
 				(font
@@ -3549,7 +3549,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "D404")
+					(reference "D402")
 					(unit 1)
 				)
 			)
@@ -3564,7 +3564,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f824ad8a-aa3b-4278-9872-538cd44be0f6")
-		(property "Reference" "#PWR034"
+		(property "Reference" "#PWR0410"
 			(at 185.42 105.41 0)
 			(effects
 				(font
@@ -3615,7 +3615,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd"
-					(reference "#PWR034")
+					(reference "#PWR0410")
 					(unit 1)
 				)
 			)
