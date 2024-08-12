@@ -2639,6 +2639,17 @@
 		)
 		(uuid "30161659-c0d7-4b84-b976-521c5cd5f474")
 	)
+	(text "https://www.ti.com/lit/an/sboa226/sboa226.pdf?ts=1723445954076&ref_url=https%253A%252F%252Fwww.google.com%252F"
+		(exclude_from_sim no)
+		(at 17.018 188.468 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left top)
+		)
+		(uuid "3ddbe6a8-b3c0-473b-9b74-9143c229cf51")
+	)
 	(text "Target C: 68uF\n3 parallel 22uF = 66uF\nlower ESR"
 		(exclude_from_sim no)
 		(at 231.902 135.382 0)
