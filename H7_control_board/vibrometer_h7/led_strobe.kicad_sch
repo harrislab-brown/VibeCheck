@@ -5,6 +5,108 @@
 	(uuid "15832099-734f-47bc-bfaa-96f0f9ec6432")
 	(paper "A4")
 	(lib_symbols
+		(symbol "Connector:TestPoint"
+			(pin_numbers hide)
+			(pin_names
+				(offset 0.762) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "TP"
+				(at 0 6.858 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "TestPoint"
+				(at 0 5.08 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" ""
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "~"
+				(at 5.08 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "test point"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "test point tp"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Pin* Test*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "TestPoint_0_1"
+				(circle
+					(center 0 3.302)
+					(radius 0.762)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "TestPoint_1_1"
+				(pin passive line
+					(at 0 0 90)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
 		(symbol "Device:C_Polarized_Small_US"
 			(pin_numbers hide)
 			(pin_names
@@ -1138,16 +1240,22 @@
 		(uuid "09555cb4-549e-424d-b59a-f5474c808cfe")
 	)
 	(junction
-		(at 144.78 97.79)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "0dd008b2-6bc5-43a4-af62-19d5aa527b3f")
-	)
-	(junction
 		(at 157.48 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "1d573d84-c140-4b18-8c61-c36b28be2539")
+	)
+	(junction
+		(at 133.35 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2974af44-1287-46af-a471-a54808232b54")
+	)
+	(junction
+		(at 195.58 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2a137577-4f1a-485e-a78d-2c6324f579d6")
 	)
 	(junction
 		(at 132.08 71.12)
@@ -1172,6 +1280,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "35818cef-cd3a-4332-94e8-6dbf197560fd")
+	)
+	(junction
+		(at 181.61 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3debefd2-a3d5-48b9-8022-a12b5e4168de")
 	)
 	(junction
 		(at 170.18 71.12)
@@ -1210,7 +1324,7 @@
 		(uuid "53569b38-0c29-4597-bb6c-2131a2ce49cc")
 	)
 	(junction
-		(at 72.39 110.49)
+		(at 82.55 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "535ee495-ed4b-42f9-839a-62f32ad7f8da")
@@ -1228,10 +1342,22 @@
 		(uuid "59cd4267-6d42-4628-a182-3590e4810223")
 	)
 	(junction
+		(at 184.15 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "5b8eecc2-39ed-4240-8247-0426cf809c70")
+	)
+	(junction
 		(at 170.18 97.79)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5bc210a0-c81e-4b67-b5a5-67696b185f39")
+	)
+	(junction
+		(at 144.78 97.79)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "647ac80a-c49e-4945-a98a-74ce6065dadb")
 	)
 	(junction
 		(at 220.98 71.12)
@@ -1252,12 +1378,6 @@
 		(uuid "6deda7f8-624a-450a-bf79-5d804163e914")
 	)
 	(junction
-		(at 91.44 100.33)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "7112db92-0736-46cf-bde4-32d3a49d1152")
-	)
-	(junction
 		(at 104.14 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1270,10 +1390,10 @@
 		(uuid "7ca73a91-e9d9-46ca-8820-67d38c31ec67")
 	)
 	(junction
-		(at 182.88 97.79)
+		(at 80.01 114.3)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "7cec910b-c44d-4507-ba18-fad9a8da8309")
+		(uuid "8e85b7a7-43dc-4fe3-8613-f21f2cd53cdd")
 	)
 	(junction
 		(at 129.54 100.33)
@@ -1336,6 +1456,12 @@
 		(uuid "b3be15c8-4e71-4ecf-b2dd-8e892a9b3c3f")
 	)
 	(junction
+		(at 91.44 100.33)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b5e539f6-0154-42d2-9eec-b9e2710616b5")
+	)
+	(junction
 		(at 119.38 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1348,16 +1474,16 @@
 		(uuid "c026e694-90cf-484f-ae17-584ddf4c7078")
 	)
 	(junction
+		(at 130.81 114.3)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "cd82f2f2-bacb-424d-808b-b952f7ddd9ad")
+	)
+	(junction
 		(at 91.44 71.12)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "d17d8372-41e4-48ee-a1c7-259482015af1")
-	)
-	(junction
-		(at 132.08 97.79)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "d217734d-41fc-41e1-b0c8-78cb69c95bf2")
 	)
 	(junction
 		(at 180.34 100.33)
@@ -1366,7 +1492,7 @@
 		(uuid "d4f25935-7ad8-407b-b0c8-28834d159cf2")
 	)
 	(junction
-		(at 83.82 119.38)
+		(at 93.98 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "da7e373b-2c3c-45be-8308-5acc67cbb7b9")
@@ -1384,16 +1510,22 @@
 		(uuid "e086e830-a9cc-4853-9d71-9a9ba7a775fe")
 	)
 	(junction
+		(at 144.78 123.19)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "e164ece5-380d-48a9-b161-51ab4fa94cc4")
+	)
+	(junction
 		(at 142.24 100.33)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "e1f0a152-dd58-44d7-955d-bc95a30e2476")
 	)
 	(junction
-		(at 195.58 97.79)
+		(at 195.58 123.19)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "f830ccba-c0c5-492d-8def-f32562898b0e")
+		(uuid "ef326ffd-4fa3-4c91-b681-2cf9f5321c83")
 	)
 	(junction
 		(at 129.54 71.12)
@@ -1441,7 +1573,7 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 97.79) (xy 83.82 105.41)
+			(xy 93.98 97.79) (xy 93.98 109.22)
 		)
 		(stroke
 			(width 0)
@@ -1551,6 +1683,16 @@
 	)
 	(wire
 		(pts
+			(xy 195.58 123.19) (xy 195.58 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1d98a638-ed80-43e4-92d5-d78bda73fb3e")
+	)
+	(wire
+		(pts
 			(xy 106.68 71.12) (xy 106.68 74.93)
 		)
 		(stroke
@@ -1591,7 +1733,27 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 119.38) (xy 83.82 121.92)
+			(xy 133.35 120.65) (xy 133.35 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "253fddfa-9150-49dd-a817-0eafcb668943")
+	)
+	(wire
+		(pts
+			(xy 195.58 119.38) (xy 195.58 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "259db221-3cae-4d6b-97c7-1fc804cbbda7")
+	)
+	(wire
+		(pts
+			(xy 93.98 123.19) (xy 93.98 125.73)
 		)
 		(stroke
 			(width 0)
@@ -1611,7 +1773,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 110.49) (xy 76.2 110.49)
+			(xy 82.55 114.3) (xy 86.36 114.3)
 		)
 		(stroke
 			(width 0)
@@ -1691,6 +1853,26 @@
 	)
 	(wire
 		(pts
+			(xy 181.61 114.3) (xy 184.15 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3bb27a1a-119e-4573-86e7-743162613e9f")
+	)
+	(wire
+		(pts
+			(xy 80.01 114.3) (xy 82.55 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3caba9bf-f407-4076-8c4e-f88d03688fbd")
+	)
+	(wire
+		(pts
 			(xy 233.68 80.01) (xy 233.68 83.82)
 		)
 		(stroke
@@ -1711,23 +1893,33 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 100.33) (xy 91.44 96.52)
+			(xy 195.58 97.79) (xy 195.58 109.22)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "421ff0b2-9503-4b1b-8f8e-58f182e1aede")
+		(uuid "46956617-951f-466c-bb52-f065879566c3")
 	)
 	(wire
 		(pts
-			(xy 72.39 110.49) (xy 72.39 111.76)
+			(xy 82.55 114.3) (xy 82.55 115.57)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "46dca6f1-efe5-4f79-9715-a5ee7cd5e533")
+	)
+	(wire
+		(pts
+			(xy 181.61 111.76) (xy 181.61 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "46ea7328-12a0-492e-afb3-87f81d15e4ef")
 	)
 	(wire
 		(pts
@@ -1758,6 +1950,16 @@
 			(type default)
 		)
 		(uuid "493ae032-6dec-471a-a850-007bec5d5447")
+	)
+	(wire
+		(pts
+			(xy 130.81 111.76) (xy 130.81 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4bbb2f87-9655-48bb-9356-023861410317")
 	)
 	(wire
 		(pts
@@ -1821,6 +2023,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 123.19) (xy 195.58 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "526968a5-06ed-4be8-880f-5c0d3dc19977")
+	)
+	(wire
+		(pts
 			(xy 67.31 71.12) (xy 76.2 71.12)
 		)
 		(stroke
@@ -1828,6 +2040,16 @@
 			(type default)
 		)
 		(uuid "52c1e5b3-6da8-4cba-92e3-4871f1c1498f")
+	)
+	(wire
+		(pts
+			(xy 80.01 111.76) (xy 80.01 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "55f38a6a-3026-4c17-a2c7-1d5fce3d2224")
 	)
 	(wire
 		(pts
@@ -1901,6 +2123,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 114.3) (xy 184.15 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6617b436-4ee9-4fd5-9fe7-01eb0548e494")
+	)
+	(wire
+		(pts
 			(xy 208.28 97.79) (xy 220.98 97.79)
 		)
 		(stroke
@@ -1918,16 +2150,6 @@
 			(type default)
 		)
 		(uuid "675e509e-0a8b-4cb1-bdc3-5b8b55c401be")
-	)
-	(wire
-		(pts
-			(xy 83.82 97.79) (xy 93.98 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "6824a608-922c-4014-b049-e798476c5041")
 	)
 	(wire
 		(pts
@@ -1991,6 +2213,26 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 114.3) (xy 133.35 115.57)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b46edfd-ad02-4505-b16e-aa5d18d2702f")
+	)
+	(wire
+		(pts
+			(xy 144.78 123.19) (xy 144.78 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6b6c30b7-eabc-4d37-9eae-eddb0f06aa5c")
+	)
+	(wire
+		(pts
 			(xy 142.24 100.33) (xy 142.24 96.52)
 		)
 		(stroke
@@ -2051,6 +2293,16 @@
 	)
 	(wire
 		(pts
+			(xy 76.2 114.3) (xy 80.01 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "73d8e836-c78e-4782-ad2d-d0dbfd822907")
+	)
+	(wire
+		(pts
 			(xy 119.38 97.79) (xy 132.08 97.79)
 		)
 		(stroke
@@ -2101,6 +2353,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 123.19) (xy 144.78 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "7afd6e5f-96c4-495f-9966-d48c573b4616")
+	)
+	(wire
+		(pts
 			(xy 231.14 71.12) (xy 233.68 71.12)
 		)
 		(stroke
@@ -2141,17 +2403,7 @@
 	)
 	(wire
 		(pts
-			(xy 182.88 97.79) (xy 195.58 97.79)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "83fec56f-2eda-4aec-981d-bb441a4db95b")
-	)
-	(wire
-		(pts
-			(xy 72.39 119.38) (xy 83.82 119.38)
+			(xy 82.55 123.19) (xy 93.98 123.19)
 		)
 		(stroke
 			(width 0)
@@ -2211,7 +2463,7 @@
 	)
 	(wire
 		(pts
-			(xy 63.5 110.49) (xy 72.39 110.49)
+			(xy 64.77 114.3) (xy 71.12 114.3)
 		)
 		(stroke
 			(width 0)
@@ -2271,13 +2523,13 @@
 	)
 	(wire
 		(pts
-			(xy 132.08 97.79) (xy 144.78 97.79)
+			(xy 127 114.3) (xy 130.81 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
-		(uuid "92d39c50-7868-4fe3-b12b-f9ffbba1f226")
+		(uuid "956d1596-0178-4d07-97a9-6f15707be2f6")
 	)
 	(wire
 		(pts
@@ -2288,6 +2540,16 @@
 			(type default)
 		)
 		(uuid "97048c6b-b410-42fa-8c17-5159e62ba705")
+	)
+	(wire
+		(pts
+			(xy 184.15 114.3) (xy 187.96 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97a55548-990b-43bb-a3c5-96e9d6058b1a")
 	)
 	(wire
 		(pts
@@ -2351,7 +2613,7 @@
 	)
 	(wire
 		(pts
-			(xy 72.39 116.84) (xy 72.39 119.38)
+			(xy 82.55 120.65) (xy 82.55 123.19)
 		)
 		(stroke
 			(width 0)
@@ -2361,7 +2623,17 @@
 	)
 	(wire
 		(pts
-			(xy 83.82 115.57) (xy 83.82 119.38)
+			(xy 144.78 97.79) (xy 144.78 109.22)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b0308be7-730f-4d37-9f50-02be8c8f66cb")
+	)
+	(wire
+		(pts
+			(xy 93.98 119.38) (xy 93.98 123.19)
 		)
 		(stroke
 			(width 0)
@@ -2461,6 +2733,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 120.65) (xy 184.15 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c6dd95d5-2c6e-4544-bf00-8aa5795d4656")
+	)
+	(wire
+		(pts
 			(xy 233.68 71.12) (xy 233.68 74.93)
 		)
 		(stroke
@@ -2531,6 +2813,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 114.3) (xy 181.61 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d409638b-0b4d-42e7-bd4b-1be288d60990")
+	)
+	(wire
+		(pts
 			(xy 208.28 71.12) (xy 208.28 74.93)
 		)
 		(stroke
@@ -2538,6 +2830,16 @@
 			(type default)
 		)
 		(uuid "da0ce390-f159-4c30-808b-2d05b95d84d2")
+	)
+	(wire
+		(pts
+			(xy 144.78 119.38) (xy 144.78 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "db9b070f-5809-434a-a709-496e7c338211")
 	)
 	(wire
 		(pts
@@ -2558,6 +2860,26 @@
 			(type default)
 		)
 		(uuid "dcf75876-79e3-4b55-a4ab-74c4b555ad13")
+	)
+	(wire
+		(pts
+			(xy 91.44 96.52) (xy 91.44 100.33)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "de04eb5d-4e58-4c69-a795-332a8defe405")
+	)
+	(wire
+		(pts
+			(xy 130.81 114.3) (xy 133.35 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e49b9c50-713b-485a-bdea-b94524c63030")
 	)
 	(wire
 		(pts
@@ -2611,6 +2933,16 @@
 	)
 	(wire
 		(pts
+			(xy 133.35 114.3) (xy 137.16 114.3)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "ff6c6435-9b37-4e0e-a177-af79642bcdc5")
+	)
+	(wire
+		(pts
 			(xy 132.08 97.79) (xy 132.08 91.44)
 		)
 		(stroke
@@ -2619,19 +2951,9 @@
 		)
 		(uuid "ffef641f-097d-4905-8dca-82f444940ba9")
 	)
-	(text "these need to be less than 10k!"
-		(exclude_from_sim no)
-		(at 175.768 68.58 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "018bfbbd-00aa-4249-8860-6b4557afef18")
-	)
 	(text "check if thi value is enough to discharge gate capacitance "
 		(exclude_from_sim no)
-		(at 72.39 127 0)
+		(at 53.594 133.096 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2642,7 +2964,7 @@
 	)
 	(text "LEDs:\n\nC210311\nC210310\nC540978\n"
 		(exclude_from_sim no)
-		(at 125.73 113.03 0)
+		(at 121.412 152.654 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2663,7 +2985,7 @@
 	)
 	(text "IC to drive LEDs:\n\nDarlington transistors:\nC258198\nC549743\nC155225\n\nFETs:\nC469327\nC7527989\nC383245\nC459538"
 		(exclude_from_sim no)
-		(at 151.13 120.65 0)
+		(at 154.686 160.02 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2671,9 +2993,33 @@
 		)
 		(uuid "95742892-6d2d-4a2e-ae2b-c124848aa2c2")
 	)
-	(hierarchical_label "LED_STROBE"
+	(hierarchical_label "LED_STROBE_2"
 		(shape input)
-		(at 63.5 110.49 180)
+		(at 127 114.3 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "3e84b04a-8856-46bf-a140-3c331cc61404")
+	)
+	(hierarchical_label "LED_STROBE_3"
+		(shape input)
+		(at 177.8 114.3 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "a28e9b63-d8f7-4721-8cce-3cbe4a6c232c")
+	)
+	(hierarchical_label "LED_STROBE_1"
+		(shape input)
+		(at 64.77 114.3 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -2684,169 +3030,16 @@
 		(uuid "ce4263f5-5a6b-417e-9bf7-4839fb7a794a")
 	)
 	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 170.18 77.47 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0427851c-d460-471f-97be-5c535e8c4e4e")
-		(property "Reference" "R8"
-			(at 173.482 75.184 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 173.482 79.248 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 170.18 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 170.18 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 170.18 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 170.18 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "808db9de-bc87-4f09-a6ef-558a9d23f0da")
-		)
-		(pin "2"
-			(uuid "e0520916-6f86-4ece-b706-f0d469ebcb4d")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R8")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 157.48 77.47 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "0f155cc4-829b-46e3-b606-2daa1c98973b")
-		(property "Reference" "R7"
-			(at 160.782 75.184 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 160.782 79.248 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 157.48 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 157.48 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 157.48 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 157.48 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "6c37a222-7ec7-4dc5-97d5-c5a5cb4b28c7")
-		)
-		(pin "2"
-			(uuid "7f91a51d-ed35-4840-aef5-7a25b03293b1")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Simulation_SPICE:NMOS")
-		(at 81.28 110.49 0)
+		(at 142.24 114.3 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "1995e138-ec67-4485-ac6c-c8fe6747b508")
-		(property "Reference" "Q1"
-			(at 87.63 109.2199 0)
+		(uuid "05a6dfa0-0d81-40c6-b4a4-2286b05bbd97")
+		(property "Reference" "Q1001"
+			(at 145.796 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2855,7 +3048,7 @@
 			)
 		)
 		(property "Value" "NMOS"
-			(at 87.63 111.7599 0)
+			(at 146.304 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2864,7 +3057,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 86.36 107.95 0)
+			(at 147.32 111.76 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2873,7 +3066,7 @@
 			)
 		)
 		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
-			(at 81.28 123.19 0)
+			(at 142.24 127 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2882,7 +3075,7 @@
 			)
 		)
 		(property "Description" "N-MOSFET transistor, drain/source/gate"
-			(at 81.28 110.49 0)
+			(at 142.24 114.3 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2891,7 +3084,7 @@
 			)
 		)
 		(property "Sim.Device" "NMOS"
-			(at 81.28 127.635 0)
+			(at 142.24 131.445 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2900,7 +3093,7 @@
 			)
 		)
 		(property "Sim.Type" "VDMOS"
-			(at 81.28 129.54 0)
+			(at 142.24 133.35 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2909,7 +3102,173 @@
 			)
 		)
 		(property "Sim.Pins" "1=D 2=G 3=S"
-			(at 81.28 125.73 0)
+			(at 142.24 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "b76be6ee-93b7-4454-9a6e-33ede06d914f")
+		)
+		(pin "1"
+			(uuid "da9baf42-f314-488c-9c67-08593e277198")
+		)
+		(pin "2"
+			(uuid "e360ac20-4d8b-4419-9da3-f281631009ee")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "Q1001")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 130.81 111.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "153962d2-cbd5-4df0-80cb-0bf13c195d19")
+		(property "Reference" "TP1002"
+			(at 127.254 106.934 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 133.35 109.7279 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 135.89 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 135.89 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 130.81 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b7e6efbf-0e56-488e-aae7-613c6ea69809")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "TP1002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:NMOS")
+		(at 91.44 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "1995e138-ec67-4485-ac6c-c8fe6747b508")
+		(property "Reference" "Q1"
+			(at 95.758 111.252 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "NMOS"
+			(at 95.758 117.602 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 96.52 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+			(at 91.44 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, drain/source/gate"
+			(at 91.44 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "NMOS"
+			(at 91.44 131.445 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 91.44 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 91.44 129.54 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -2930,82 +3289,6 @@
 			(project ""
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
 					(reference "Q1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 144.78 77.47 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1cd796f8-0243-488f-83a3-edfd7857aa70")
-		(property "Reference" "R6"
-			(at 148.082 75.184 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 148.082 79.248 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 144.78 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 144.78 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 144.78 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 144.78 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "b2920138-fa3c-4896-aa9f-44f6891566f9")
-		)
-		(pin "2"
-			(uuid "33e6eea7-2642-41ac-93fe-49283e6c4a20")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R6")
 					(unit 1)
 				)
 			)
@@ -3217,8 +3500,236 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 233.68 77.47 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "22eae7a2-921d-45c4-b8fc-f0e8acd11f3c")
+		(property "Reference" "R1015"
+			(at 236.982 75.184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "??"
+			(at 236.982 79.248 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 233.68 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 233.68 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 233.68 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 233.68 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "b3bb2bb1-82a8-484f-8ac2-94153bb54144")
+		)
+		(pin "2"
+			(uuid "b8f8fd89-bdfb-45cb-9d04-c72c92de1864")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 73.66 114.3 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "236cdf90-516d-40c0-8cc3-bf42629a32fd")
+		(property "Reference" "R1003"
+			(at 68.834 113.284 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "22R"
+			(at 76.708 113.284 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 73.66 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 73.66 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 73.66 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 73.66 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "396b4cbb-7f12-4599-a2a5-39a34e989061")
+		)
+		(pin "2"
+			(uuid "c172be0f-6220-4ccb-b7c4-ef7e13bd68ea")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1003")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 106.68 77.47 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "238ac52f-15cc-4f04-9894-14f05046036f")
+		(property "Reference" "R1005"
+			(at 109.982 75.184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "??"
+			(at 109.982 79.248 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 106.68 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 106.68 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 106.68 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 106.68 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "14942637-c2fa-405d-bee2-ab2c4a55025f")
+		)
+		(pin "2"
+			(uuid "e3bb9fa4-2e8d-440c-8112-154a926cffa8")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
-		(at 83.82 121.92 0)
+		(at 93.98 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
@@ -3227,7 +3738,7 @@
 		(fields_autoplaced yes)
 		(uuid "2466eb38-41f3-4270-844d-175c7f6f52dd")
 		(property "Reference" "#PWR01003"
-			(at 83.82 128.27 0)
+			(at 93.98 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3236,7 +3747,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 83.82 127 0)
+			(at 93.98 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3245,7 +3756,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 83.82 121.92 0)
+			(at 93.98 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3254,7 +3765,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 83.82 121.92 0)
+			(at 93.98 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3263,7 +3774,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 83.82 121.92 0)
+			(at 93.98 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3423,23 +3934,23 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 119.38 77.47 180)
+		(at 208.28 77.47 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "2af604f6-e544-41b8-a4d8-4662344bb8f7")
-		(property "Reference" "R4"
-			(at 122.682 75.184 0)
+		(uuid "39627748-67bb-4c58-8522-666f36d40716")
+		(property "Reference" "R1013"
+			(at 211.582 75.184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "10k"
-			(at 122.682 79.248 0)
+		(property "Value" "??"
+			(at 211.582 79.248 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3447,7 +3958,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 119.38 77.47 0)
+			(at 208.28 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3456,7 +3967,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 119.38 77.47 0)
+			(at 208.28 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3465,7 +3976,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 119.38 77.47 0)
+			(at 208.28 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3474,7 +3985,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 119.38 77.47 0)
+			(at 208.28 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3483,91 +3994,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "0de0f4cc-22f3-492c-b88a-be28826d36f8")
+			(uuid "806da635-60f3-407a-a72c-21ce374a37a0")
 		)
 		(pin "2"
-			(uuid "705432d8-6626-41b4-b9a1-dadffafd3a3a")
+			(uuid "61bc8501-2df4-449e-bf96-318cca82b009")
 		)
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R4")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 93.98 77.47 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "3651a1f4-e71d-40ed-86ed-c98163ed7e06")
-		(property "Reference" "R2"
-			(at 97.282 75.184 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 97.282 79.248 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 93.98 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 93.98 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 93.98 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 93.98 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d1068d41-5129-4bd5-9a6c-f29c436d5903")
-		)
-		(pin "2"
-			(uuid "0c27913c-67c4-4d84-b3cb-1812891f1eff")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R2")
+					(reference "R1013")
 					(unit 1)
 				)
 			)
@@ -3581,8 +4016,8 @@
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "41581dc0-301a-4d29-acf5-3524b11994e1")
-		(property "Reference" "R9"
+		(uuid "3a444b2f-3f41-4a51-96af-3a756b0c2822")
+		(property "Reference" "R1011"
 			(at 186.182 75.184 0)
 			(effects
 				(font
@@ -3590,7 +4025,7 @@
 				)
 			)
 		)
-		(property "Value" "10k"
+		(property "Value" "??"
 			(at 186.182 79.248 0)
 			(effects
 				(font
@@ -3635,15 +4070,91 @@
 			)
 		)
 		(pin "1"
-			(uuid "d58e650d-8e6f-49df-b3ad-fdf1a6d664a2")
+			(uuid "a8a2c11b-ce5d-407c-aabd-c88b625b1eb7")
 		)
 		(pin "2"
-			(uuid "05dbb175-e376-44d1-bc74-03cb55ceca4b")
+			(uuid "0854030d-cc4a-4f18-b203-a4fc7b96f043")
 		)
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R9")
+					(reference "R1011")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 119.38 77.47 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3cb20ad5-bcdf-4619-97ed-ab7481311a94")
+		(property "Reference" "R1006"
+			(at 122.682 75.184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "??"
+			(at 122.682 79.248 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 119.38 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 119.38 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 119.38 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 119.38 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "208ea9ef-26b7-4445-a84a-0270bf297113")
+		)
+		(pin "2"
+			(uuid "e0e32266-76af-4879-a01e-a180f7a9903a")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1006")
 					(unit 1)
 				)
 			)
@@ -3788,32 +4299,35 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 106.68 77.47 180)
+		(lib_id "power:GND")
+		(at 144.78 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "466dc6c4-c79c-40fa-bb7b-be4a5fae1f89")
-		(property "Reference" "R3"
-			(at 109.982 75.184 0)
+		(fields_autoplaced yes)
+		(uuid "45b77a3a-b4d8-4416-8a43-61354c434160")
+		(property "Reference" "#PWR01004"
+			(at 144.78 132.08 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
-		(property "Value" "10k"
-			(at 109.982 79.248 0)
+		(property "Value" "GND"
+			(at 144.78 130.81 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
+				(hide yes)
 			)
 		)
 		(property "Footprint" ""
-			(at 106.68 77.47 0)
+			(at 144.78 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3821,8 +4335,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
-			(at 106.68 77.47 0)
+		(property "Datasheet" ""
+			(at 144.78 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3830,17 +4344,8 @@
 				(hide yes)
 			)
 		)
-		(property "Description" "Resistor, small US symbol"
-			(at 106.68 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 106.68 77.47 0)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 144.78 125.73 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3849,15 +4354,88 @@
 			)
 		)
 		(pin "1"
-			(uuid "3f5d2d7c-0471-4c17-a46d-08de4c85fddb")
-		)
-		(pin "2"
-			(uuid "4dbc4677-75dd-430b-95d5-2be07762d211")
+			(uuid "2bde0e79-241c-4475-9846-92de3e46c285")
 		)
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R3")
+					(reference "#PWR01004")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 144.78 77.47 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "47d56adb-293b-4c0e-b387-2f0fd7cf2122")
+		(property "Reference" "R1008"
+			(at 148.082 75.184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "??"
+			(at 148.082 79.248 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 144.78 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 144.78 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 144.78 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 144.78 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "2e374d57-b9d4-43b4-85a2-fc1524eb991c")
+		)
+		(pin "2"
+			(uuid "08a05c51-31d5-4e17-96c7-836b04f2143c")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1008")
 					(unit 1)
 				)
 			)
@@ -3927,82 +4505,6 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
 					(reference "C1003")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 233.68 77.47 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "4bb98ea4-64a7-4c81-a51d-1100105fce43")
-		(property "Reference" "R13"
-			(at 236.982 75.184 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 236.982 79.248 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 233.68 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 233.68 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 233.68 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 233.68 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "eb9da336-1a92-4c94-a1dc-d0970baa6e27")
-		)
-		(pin "2"
-			(uuid "5ad12474-e935-463c-b0a3-561a9fc54fd3")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R13")
 					(unit 1)
 				)
 			)
@@ -4283,6 +4785,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 132.08 77.47 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "8408f76f-1ca0-4074-a2e4-42ca8aa6c373")
+		(property "Reference" "R1007"
+			(at 135.382 75.184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "??"
+			(at 135.382 79.248 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 132.08 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 132.08 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 132.08 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 132.08 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "141e26e4-4e1e-47c9-bff3-3f254bbb8859")
+		)
+		(pin "2"
+			(uuid "5455b60b-d9fd-4e74-b5f6-8b7da3ecd44b")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1007")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 218.44 93.98 0)
 		(unit 1)
@@ -4346,82 +4924,6 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
 					(reference "C1012")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 132.08 77.47 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "8ebbe117-b45b-48f8-9e00-2609a7572a98")
-		(property "Reference" "R5"
-			(at 135.382 75.184 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 135.382 79.248 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 132.08 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 132.08 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 132.08 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 132.08 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "a269cf86-53a5-4bf5-9b83-db8dc042b0a2")
-		)
-		(pin "2"
-			(uuid "e25a5b7f-7564-4c32-8044-1952790c0ae1")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R5")
 					(unit 1)
 				)
 			)
@@ -4635,6 +5137,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 93.98 77.47 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "95c161e1-594f-4f39-9148-8f396ae4a936")
+		(property "Reference" "R1004"
+			(at 97.282 75.184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "??"
+			(at 97.282 79.248 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 93.98 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 93.98 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 93.98 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 93.98 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8c1798fb-d3d4-4d32-b1b1-aeb5903264f9")
+		)
+		(pin "2"
+			(uuid "64c9be30-4e22-4a67-a9d0-e8a00bd79e23")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1004")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 116.84 93.98 0)
 		(unit 1)
@@ -4705,23 +5283,23 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 72.39 114.3 180)
+		(at 220.98 77.47 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "b056302e-c306-4bc0-93f3-e26e05c98171")
-		(property "Reference" "R1"
-			(at 75.692 112.014 0)
+		(uuid "a0323ede-6d3f-48c6-9691-a39bbc3832cc")
+		(property "Reference" "R1014"
+			(at 224.282 75.184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "10k"
-			(at 75.692 116.078 0)
+		(property "Value" "??"
+			(at 224.282 79.248 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4729,7 +5307,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 72.39 114.3 0)
+			(at 220.98 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4738,7 +5316,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 72.39 114.3 0)
+			(at 220.98 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4747,7 +5325,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 72.39 114.3 0)
+			(at 220.98 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4756,7 +5334,159 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 72.39 114.3 0)
+			(at 220.98 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "157b8802-1458-4fde-a890-8a57df7fe2d9")
+		)
+		(pin "2"
+			(uuid "4eb24cd9-583a-413a-acfa-90addf99f24b")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 170.18 77.47 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b05280ed-3adf-4a61-81b5-a7cb7f3db424")
+		(property "Reference" "R1010"
+			(at 173.482 75.184 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "??"
+			(at 173.482 79.248 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 170.18 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 170.18 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 170.18 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 170.18 77.47 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9a371842-ba80-42dc-afee-53bf41af42ed")
+		)
+		(pin "2"
+			(uuid "4fa73154-784f-4f0c-8a82-e54a758f8047")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1010")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 82.55 118.11 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b056302e-c306-4bc0-93f3-e26e05c98171")
+		(property "Reference" "R1"
+			(at 85.852 115.824 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 85.852 119.888 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 82.55 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 82.55 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 82.55 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 82.55 118.11 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4774,6 +5504,73 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
 					(reference "R1")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 80.01 111.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "b22a26e5-eabd-4966-b362-88da93f1674d")
+		(property "Reference" "TP1001"
+			(at 76.454 106.934 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 82.55 109.7279 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 85.09 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 85.09 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 80.01 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6978ad3a-6b6e-4b3a-b70b-8b3719c3fa5c")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "TP1001")
 					(unit 1)
 				)
 			)
@@ -4919,23 +5716,23 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 220.98 77.47 180)
+		(at 195.58 77.47 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "bdb83a36-7c4e-4bb6-b2c7-260fc265bae1")
-		(property "Reference" "R12"
-			(at 224.282 75.184 0)
+		(uuid "b8460b9a-c4c1-4d14-a7a6-e611c1f154d1")
+		(property "Reference" "R1012"
+			(at 198.882 75.184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "10k"
-			(at 224.282 79.248 0)
+		(property "Value" "??"
+			(at 198.882 79.248 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4943,7 +5740,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 220.98 77.47 0)
+			(at 195.58 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4952,7 +5749,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 220.98 77.47 0)
+			(at 195.58 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4961,7 +5758,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 220.98 77.47 0)
+			(at 195.58 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4970,7 +5767,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 220.98 77.47 0)
+			(at 195.58 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4979,15 +5776,15 @@
 			)
 		)
 		(pin "1"
-			(uuid "e4e69d85-787c-4fdf-9461-555a617e0be3")
+			(uuid "fedf91cc-0543-45af-b7c5-ac6b8803ae2e")
 		)
 		(pin "2"
-			(uuid "22004e3d-9827-4b1a-b1a4-7e540a1b4375")
+			(uuid "e28bf5aa-320a-42ae-ac6f-f9393fbaa4ec")
 		)
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R12")
+					(reference "R1012")
 					(unit 1)
 				)
 			)
@@ -5063,6 +5860,82 @@
 		)
 	)
 	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 184.15 118.11 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "c6f03435-2e29-468b-babb-1e13d2a8bfc5")
+		(property "Reference" "R1002"
+			(at 187.452 115.824 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 187.452 119.888 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 184.15 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 184.15 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 184.15 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 184.15 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9ce45750-5d01-4fe3-934e-7d20e38acc3a")
+		)
+		(pin "2"
+			(uuid "0bef65c6-b887-44ef-9b7d-0a8ef6b2cd97")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:LED")
 		(at 170.18 87.63 90)
 		(unit 1)
@@ -5132,82 +6005,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:R_Small_US")
-		(at 195.58 77.47 180)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d6d045a5-8f9e-4519-8999-e7a4d8fe8ea1")
-		(property "Reference" "R10"
-			(at 198.882 75.184 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "10k"
-			(at 198.882 79.248 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 195.58 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 195.58 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Resistor, small US symbol"
-			(at 195.58 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "LCSC" ""
-			(at 195.58 77.47 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "71717efb-30e5-4467-9b49-25b446c564c1")
-		)
-		(pin "2"
-			(uuid "777e9b9c-a878-454e-a3d4-fb4eb374ed65")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R10")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:LED")
 		(at 144.78 87.63 90)
 		(unit 1)
@@ -5271,6 +6068,73 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
 					(reference "D1005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:GND")
+		(at 195.58 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "dac4c7e2-8f90-4f5a-b1ea-6db0b9daee21")
+		(property "Reference" "#PWR01005"
+			(at 195.58 132.08 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "GND"
+			(at 195.58 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Footprint" ""
+			(at 195.58 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 195.58 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 195.58 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9aef8cd5-6963-4fd3-beee-226f7fe585b3")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "#PWR01005")
 					(unit 1)
 				)
 			)
@@ -5485,23 +6349,23 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
-		(at 208.28 77.47 180)
+		(at 157.48 77.47 180)
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
 		(dnp no)
-		(uuid "e3205340-66a1-470e-beb6-ad61b30b8056")
-		(property "Reference" "R11"
-			(at 211.582 75.184 0)
+		(uuid "ebdb57dd-9d01-4360-92d3-0d8416de22d6")
+		(property "Reference" "R1009"
+			(at 160.782 75.184 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Value" "10k"
-			(at 211.582 79.248 0)
+		(property "Value" "??"
+			(at 160.782 79.248 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5509,7 +6373,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 208.28 77.47 0)
+			(at 157.48 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5518,7 +6382,7 @@
 			)
 		)
 		(property "Datasheet" "~"
-			(at 208.28 77.47 0)
+			(at 157.48 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5527,7 +6391,7 @@
 			)
 		)
 		(property "Description" "Resistor, small US symbol"
-			(at 208.28 77.47 0)
+			(at 157.48 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5536,7 +6400,7 @@
 			)
 		)
 		(property "LCSC" ""
-			(at 208.28 77.47 0)
+			(at 157.48 77.47 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5545,15 +6409,182 @@
 			)
 		)
 		(pin "1"
-			(uuid "319bbd81-f3b6-4f52-ae82-3490d62618f6")
+			(uuid "ae193196-803f-4830-9407-b5de28ddbcb1")
 		)
 		(pin "2"
-			(uuid "5b67c4d7-b7c0-4e59-bf9c-f7523e5cc677")
+			(uuid "72f9c8e8-e89b-4826-b7b9-15e2d2a61282")
 		)
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R11")
+					(reference "R1009")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Simulation_SPICE:NMOS")
+		(at 193.04 114.3 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "f2845206-d9ce-4989-9245-88e5c746bc3a")
+		(property "Reference" "Q1002"
+			(at 199.39 113.0299 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "NMOS"
+			(at 199.39 115.5699 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" ""
+			(at 198.12 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+			(at 193.04 127 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "N-MOSFET transistor, drain/source/gate"
+			(at 193.04 114.3 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Device" "NMOS"
+			(at 193.04 131.445 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Type" "VDMOS"
+			(at 193.04 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Sim.Pins" "1=D 2=G 3=S"
+			(at 193.04 129.54 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "3"
+			(uuid "d51b2fbf-32a7-45cd-9b07-0286ed257abf")
+		)
+		(pin "1"
+			(uuid "1a4cfe29-eff3-48c0-b447-1df6264bc869")
+		)
+		(pin "2"
+			(uuid "3998d9f7-b99e-4c6a-bb06-db4326a12736")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "Q1002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 181.61 111.76 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f300fc3b-2aab-43cc-aab9-9ad8f0c75f96")
+		(property "Reference" "TP1003"
+			(at 178.054 106.934 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "TestPoint"
+			(at 184.15 109.7279 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+			(at 186.69 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 186.69 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 181.61 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "e736e4bb-a857-408f-b452-fe6aa5a8b2e1")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "TP1003")
 					(unit 1)
 				)
 			)
@@ -5688,6 +6719,82 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
 					(reference "#PWR01001")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 133.35 118.11 180)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "f91b5fc5-81c4-4571-b3e8-2db61b69ef8a")
+		(property "Reference" "R1001"
+			(at 136.652 115.824 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "10k"
+			(at 136.652 119.888 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 133.35 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 133.35 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 133.35 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" ""
+			(at 133.35 118.11 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "9710b99e-4e05-4303-bf77-39232210dd1e")
+		)
+		(pin "2"
+			(uuid "3c2ae076-785e-488c-af2f-aaff4cfc835b")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1001")
 					(unit 1)
 				)
 			)
