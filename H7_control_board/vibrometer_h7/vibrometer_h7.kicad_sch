@@ -7,13 +7,23 @@
 	(lib_symbols)
 	(wire
 		(pts
-			(xy 184.15 114.3) (xy 190.5 114.3)
+			(xy 185.42 114.3) (xy 190.5 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "02c1000e-c231-45ac-ba55-c5165954ca7b")
+	)
+	(wire
+		(pts
+			(xy 182.88 78.74) (xy 182.88 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "12bafcbb-cf3f-4ea5-854d-c3be6a675991")
 	)
 	(wire
 		(pts
@@ -97,6 +107,16 @@
 	)
 	(wire
 		(pts
+			(xy 177.8 81.28) (xy 180.34 81.28)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "67d35cd4-d45b-4294-8372-95e0a9d6d74f")
+	)
+	(wire
+		(pts
 			(xy 100.33 67.31) (xy 114.3 67.31)
 		)
 		(stroke
@@ -147,7 +167,7 @@
 	)
 	(wire
 		(pts
-			(xy 184.15 76.2) (xy 184.15 114.3)
+			(xy 185.42 76.2) (xy 185.42 114.3)
 		)
 		(stroke
 			(width 0)
@@ -157,7 +177,7 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 76.2) (xy 184.15 76.2)
+			(xy 177.8 76.2) (xy 185.42 76.2)
 		)
 		(stroke
 			(width 0)
@@ -177,6 +197,16 @@
 	)
 	(wire
 		(pts
+			(xy 182.88 116.84) (xy 190.5 116.84)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b7504d0a-49c7-49a3-8871-07da80b98bac")
+	)
+	(wire
+		(pts
 			(xy 95.25 55.88) (xy 114.3 55.88)
 		)
 		(stroke
@@ -184,6 +214,26 @@
 			(type default)
 		)
 		(uuid "ca23b4ce-061c-46e0-a61d-f9cddf6c5ebd")
+	)
+	(wire
+		(pts
+			(xy 177.8 78.74) (xy 182.88 78.74)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "cb73db59-a4ec-492e-8bfe-c6fb5f63b7ae")
+	)
+	(wire
+		(pts
+			(xy 180.34 119.38) (xy 190.5 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "d208b53d-9633-4aa0-9c56-7eab7f10bcb9")
 	)
 	(wire
 		(pts
@@ -204,6 +254,16 @@
 			(type default)
 		)
 		(uuid "dd7b8304-43fe-4283-9b82-5c6724801545")
+	)
+	(wire
+		(pts
+			(xy 180.34 81.28) (xy 180.34 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "e8bb2731-bd83-4e6a-a7a0-f6bebfc18f17")
 	)
 	(wire
 		(pts
@@ -356,16 +416,6 @@
 			)
 			(uuid "ce9f082f-ae67-4065-974a-38a69845fd12")
 		)
-		(pin "LED_STROBE" input
-			(at 177.8 76.2 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "7005599d-ec81-498c-b3e8-c73c4d9bedc6")
-		)
 		(pin "MUTE_BUTTON" input
 			(at 114.3 67.31 180)
 			(effects
@@ -395,6 +445,36 @@
 				(justify left)
 			)
 			(uuid "ce2dd59e-3e01-4afd-8422-ac88d1b30f61")
+		)
+		(pin "LED_STROBE_2" input
+			(at 177.8 78.74 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "ff90b7de-f66f-4495-a711-0ba02bd46f69")
+		)
+		(pin "LED_STROBE_1" input
+			(at 177.8 76.2 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "de1de945-b674-4361-ab80-0582ed4fae5f")
+		)
+		(pin "LED_STROBE_3" input
+			(at 177.8 81.28 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+			)
+			(uuid "c41ecae9-a240-4179-a2af-762f9fd9ec8a")
 		)
 		(instances
 			(project "vibrometer_h7"
@@ -576,7 +656,17 @@
 				(hide yes)
 			)
 		)
-		(pin "LED_STROBE" input
+		(pin "LED_STROBE_3" input
+			(at 190.5 119.38 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "3d122a08-da1b-4282-b81c-f51fda1d83f8")
+		)
+		(pin "LED_STROBE_1" input
 			(at 190.5 114.3 180)
 			(effects
 				(font
@@ -584,7 +674,17 @@
 				)
 				(justify left)
 			)
-			(uuid "55b2d243-1148-4a61-bb8b-287a69979680")
+			(uuid "12df7d9d-839b-4200-9589-766f7fbc387d")
+		)
+		(pin "LED_STROBE_2" input
+			(at 190.5 116.84 180)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+			(uuid "f6f53a1e-1867-4831-8651-c7ad744b07e7")
 		)
 		(instances
 			(project "vibrometer_h7"

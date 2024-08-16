@@ -2197,8 +2197,8 @@
 		(at 205.74 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(in_bom no)
+		(on_board no)
 		(dnp yes)
 		(uuid "06d0cef2-d633-405b-a62c-eefff102e1bc")
 		(property "Reference" "C602"
@@ -2304,7 +2304,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_JST:JST_SH_SM08B-SRSS-TB_1x08-1MP_P1.00mm_Horizontal"
 			(at 91.44 87.63 0)
 			(effects
 				(font
@@ -2313,7 +2313,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM08B-SRSS-TB-LF-SN_C160407.pdf"
 			(at 91.44 87.63 0)
 			(effects
 				(font
@@ -2323,6 +2323,15 @@
 			)
 		)
 		(property "Description" "Generic connector, single row, 01x08, script generated"
+			(at 91.44 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C160407"
 			(at 91.44 87.63 0)
 			(effects
 				(font
@@ -2377,8 +2386,8 @@
 		(at 194.31 69.85 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(in_bom no)
+		(on_board no)
 		(dnp yes)
 		(uuid "27c68a00-1d64-4843-8e03-dd5e0360c07c")
 		(property "Reference" "C601"
@@ -2463,8 +2472,8 @@
 		(at 165.1 85.09 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(in_bom no)
+		(on_board no)
 		(dnp yes)
 		(uuid "285ba139-61b3-4cfe-9fa2-720aaa3b78b1")
 		(property "Reference" "XL601"
@@ -2586,11 +2595,11 @@
 		(at 213.36 64.77 90)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(in_bom no)
+		(on_board no)
 		(dnp yes)
 		(uuid "384959f8-8907-48d8-9e00-6d74fd88140f")
-		(property "Reference" "R601"
+		(property "Reference" "R602"
 			(at 211.582 63.754 90)
 			(effects
 				(font
@@ -2644,15 +2653,15 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd/4d0578b7-7312-4298-97a0-94006dea87de"
-					(reference "R601")
+					(reference "R602")
 					(unit 1)
 				)
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd/d33e5db2-c968-4012-a875-f240ab3119de"
-					(reference "R801")
+					(reference "R802")
 					(unit 1)
 				)
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd/e082b3de-4b18-4be4-ba81-d49e87b940c1"
-					(reference "R701")
+					(reference "R702")
 					(unit 1)
 				)
 			)
@@ -2663,8 +2672,8 @@
 		(at 128.27 87.63 180)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(in_bom no)
+		(on_board no)
 		(dnp yes)
 		(uuid "3e410986-be0a-4cc5-add9-f1b3ad92272a")
 		(property "Reference" "J602"
@@ -2831,11 +2840,11 @@
 		(at 143.51 100.33 270)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(in_bom no)
+		(on_board no)
+		(dnp yes)
 		(uuid "58c39705-fe34-4ab1-b0a1-65cfda4706ae")
-		(property "Reference" "R602"
+		(property "Reference" "R601"
 			(at 143.764 102.362 90)
 			(effects
 				(font
@@ -2851,7 +2860,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 143.51 100.33 0)
 			(effects
 				(font
@@ -2860,7 +2869,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
 			(at 143.51 100.33 0)
 			(effects
 				(font
@@ -2878,7 +2887,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25744"
 			(at 143.51 100.33 0)
 			(effects
 				(font
@@ -2896,15 +2905,15 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd/4d0578b7-7312-4298-97a0-94006dea87de"
-					(reference "R602")
+					(reference "R601")
 					(unit 1)
 				)
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd/d33e5db2-c968-4012-a875-f240ab3119de"
-					(reference "R802")
+					(reference "R801")
 					(unit 1)
 				)
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/719d72ab-d813-461f-9482-52ce573716fd/e082b3de-4b18-4be4-ba81-d49e87b940c1"
-					(reference "R702")
+					(reference "R701")
 					(unit 1)
 				)
 			)
@@ -3136,8 +3145,8 @@
 		(at 219.71 69.85 90)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
+		(in_bom no)
+		(on_board no)
 		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "ee2c74db-716a-4be3-97de-d9e10d18e10e")

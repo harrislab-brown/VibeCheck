@@ -7218,16 +7218,6 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 34.29) (xy 123.19 34.29)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "551d7187-452c-456b-89f8-358d922d99bf")
-	)
-	(wire
-		(pts
 			(xy 214.63 101.6) (xy 214.63 102.87)
 		)
 		(stroke
@@ -7405,6 +7395,16 @@
 			(type default)
 		)
 		(uuid "6b112313-b90b-4e90-9abe-18a0c5f88ccb")
+	)
+	(wire
+		(pts
+			(xy 105.41 34.29) (xy 123.19 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6c008d01-534d-4ca1-bef1-8b49c321237a")
 	)
 	(wire
 		(pts
@@ -8823,7 +8823,7 @@
 	)
 	(text "rout out a bank of pins to a standard 0.1\" gpio header\ninclude power and ground pins in the header\nlook at pin types / peripherals to make sure we break\nout useful peripherals, maybe an analog in?	"
 		(exclude_from_sim no)
-		(at 213.614 29.21 0)
+		(at 228.346 25.146 0)
 		(effects
 			(font
 				(size 1 1)
@@ -8886,6 +8886,17 @@
 			(justify right bottom)
 		)
 		(uuid "12d80e2d-698e-49e1-9e68-91fa08197791")
+	)
+	(label "SWD_NRST"
+		(at 220.98 101.6 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1318dc2f-79b8-4ebe-99d3-2d9170e090ef")
 	)
 	(label "VCP_TX"
 		(at 220.98 152.4 0)
@@ -9260,17 +9271,6 @@
 			(justify left bottom)
 		)
 		(uuid "c3b499c6-f86d-4782-8e8c-408cfb88bf40")
-	)
-	(label "SWD_NRST"
-		(at 220.98 101.6 0)
-		(fields_autoplaced yes)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "ca86f80f-9a68-433c-9761-e7a208b1f5b2")
 	)
 	(label "SWD_NRST"
 		(at 105.41 34.29 0)
@@ -9919,7 +9919,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "0267616b-d6c6-4bb5-a3c8-5608a0cadf2b")
-		(property "Reference" "#PWR0213"
+		(property "Reference" "#PWR0215"
 			(at 156.21 24.13 0)
 			(effects
 				(font
@@ -9969,7 +9969,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR0213")
+					(reference "#PWR0215")
 					(unit 1)
 				)
 			)
@@ -9984,7 +9984,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "04e8bddf-1a76-4388-a453-ab885ed747b3")
-		(property "Reference" "R205"
+		(property "Reference" "R207"
 			(at 71.374 132.08 0)
 			(effects
 				(font
@@ -9992,7 +9992,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "10k"
 			(at 70.866 136.652 0)
 			(effects
 				(font
@@ -10000,7 +10000,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 68.58 134.62 0)
 			(effects
 				(font
@@ -10009,7 +10009,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
 			(at 68.58 134.62 0)
 			(effects
 				(font
@@ -10027,7 +10027,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25744"
 			(at 68.58 134.62 0)
 			(effects
 				(font
@@ -10045,7 +10045,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "R205")
+					(reference "R207")
 					(unit 1)
 				)
 			)
@@ -10126,7 +10126,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1f612b6c-caae-48b4-8716-beb360a5fab8")
-		(property "Reference" "#PWR0205"
+		(property "Reference" "#PWR0209"
 			(at 68.58 88.9 0)
 			(effects
 				(font
@@ -10177,7 +10177,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR0205")
+					(reference "#PWR0209")
 					(unit 1)
 				)
 			)
@@ -10275,7 +10275,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "24d214f6-803c-4c93-a79b-c5a9300cf46c")
-		(property "Reference" "R14"
+		(property "Reference" "R206"
 			(at 67.564 105.41 0)
 			(effects
 				(font
@@ -10283,7 +10283,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "10k"
 			(at 67.056 109.982 0)
 			(effects
 				(font
@@ -10291,7 +10291,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 64.77 107.95 0)
 			(effects
 				(font
@@ -10300,7 +10300,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
 			(at 64.77 107.95 0)
 			(effects
 				(font
@@ -10318,7 +10318,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25744"
 			(at 64.77 107.95 0)
 			(effects
 				(font
@@ -10336,7 +10336,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "R14")
+					(reference "R206")
 					(unit 1)
 				)
 			)
@@ -10378,7 +10378,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A225KBQNNNE_C377773.pdf"
 			(at 49.53 173.99 0)
 			(effects
 				(font
@@ -10396,7 +10396,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C377773"
 			(at 49.53 173.99 0)
 			(effects
 				(font
@@ -10429,7 +10429,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2963b520-c657-4e2e-998c-33d802aba704")
-		(property "Reference" "TP9"
+		(property "Reference" "TP202"
 			(at 69.342 101.6 0)
 			(effects
 				(font
@@ -10447,7 +10447,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 76.2 106.68 0)
 			(effects
 				(font
@@ -10480,7 +10480,7 @@
 		(instances
 			(project ""
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "TP9")
+					(reference "TP202")
 					(unit 1)
 				)
 			)
@@ -10511,7 +10511,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Connector_JST:JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal"
 			(at 22.86 149.86 0)
 			(effects
 				(font
@@ -10520,7 +10520,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_JST-SM04B-SRSS-TB-LF-SN_C160404.pdf"
 			(at 22.86 149.86 0)
 			(effects
 				(font
@@ -10538,7 +10538,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C160404"
 			(at 22.86 149.86 0)
 			(effects
 				(font
@@ -10578,7 +10578,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3474c611-7a7d-4f3d-a0c1-1933ed786e56")
-		(property "Reference" "Q202"
+		(property "Reference" "Q203"
 			(at 68.834 140.97 90)
 			(effects
 				(font
@@ -10645,7 +10645,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "Q202")
+					(reference "Q203")
 					(unit 1)
 				)
 			)
@@ -10660,7 +10660,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "374c93a9-cd9c-4125-8aa3-e66fed498f74")
-		(property "Reference" "#PWR0214"
+		(property "Reference" "#PWR0221"
 			(at 267.97 124.46 0)
 			(effects
 				(font
@@ -10711,7 +10711,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR0214")
+					(reference "#PWR0221")
 					(unit 1)
 				)
 			)
@@ -10818,7 +10818,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A225KBQNNNE_C377773.pdf"
 			(at 55.88 173.99 0)
 			(effects
 				(font
@@ -10836,7 +10836,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C377773"
 			(at 55.88 173.99 0)
 			(effects
 				(font
@@ -10935,7 +10935,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4f1b8aa2-1aeb-4f4c-890b-5b1bda6c609a")
-		(property "Reference" "C212"
+		(property "Reference" "C211"
 			(at 214.884 103.632 0)
 			(effects
 				(font
@@ -10998,7 +10998,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "C212")
+					(reference "C211")
 					(unit 1)
 				)
 			)
@@ -11013,7 +11013,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "4ff3ff93-c52b-4d58-80ec-1c443fdeb8bf")
-		(property "Reference" "#PWR0209"
+		(property "Reference" "#PWR0211"
 			(at 85.09 160.02 0)
 			(effects
 				(font
@@ -11064,7 +11064,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR0209")
+					(reference "#PWR0211")
 					(unit 1)
 				)
 			)
@@ -11235,7 +11235,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "56f2b451-c5c2-4fbf-a7e2-feb2237a0cd4")
-		(property "Reference" "#PWR0216"
+		(property "Reference" "#PWR0217"
 			(at 231.14 88.9 0)
 			(effects
 				(font
@@ -11286,7 +11286,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR0216")
+					(reference "#PWR0217")
 					(unit 1)
 				)
 			)
@@ -11301,8 +11301,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "59335f90-4835-469b-8299-abd7c430e52e")
-		(property "Reference" "J2"
-			(at 227.33 40.6399 90)
+		(property "Reference" "J202"
+			(at 259.08 38.1 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11409,7 +11409,7 @@
 		(instances
 			(project ""
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "J2")
+					(reference "J202")
 					(unit 1)
 				)
 			)
@@ -11424,7 +11424,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5a56bc46-7390-4b41-baa8-a57a34023de9")
-		(property "Reference" "R204"
+		(property "Reference" "R205"
 			(at 57.15 67.564 90)
 			(effects
 				(font
@@ -11432,7 +11432,7 @@
 				)
 			)
 		)
-		(property "Value" "330R"
+		(property "Value" "330"
 			(at 65.786 67.564 90)
 			(effects
 				(font
@@ -11440,7 +11440,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 62.23 68.58 0)
 			(effects
 				(font
@@ -11449,7 +11449,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2205311900_UNI-ROYAL-Uniroyal-Elec-0402WGF3300TCE_C25104.pdf"
 			(at 62.23 68.58 0)
 			(effects
 				(font
@@ -11467,7 +11467,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25104"
 			(at 62.23 68.58 0)
 			(effects
 				(font
@@ -11485,7 +11485,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "R204")
+					(reference "R205")
 					(unit 1)
 				)
 			)
@@ -11500,7 +11500,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5b71cd44-fd37-4b4f-993d-c5bef9e734ef")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR0208"
 			(at 53.34 105.41 0)
 			(effects
 				(font
@@ -11550,7 +11550,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR04")
+					(reference "#PWR0208")
 					(unit 1)
 				)
 			)
@@ -11630,7 +11630,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "67c935b0-927b-426c-b6a2-c5b3ad7cf9b5")
-		(property "Reference" "#PWR0210"
+		(property "Reference" "#PWR0212"
 			(at 100.33 44.45 0)
 			(effects
 				(font
@@ -11680,7 +11680,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR0210")
+					(reference "#PWR0212")
 					(unit 1)
 				)
 			)
@@ -11696,7 +11696,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "704784b8-2ba9-4385-b40e-86f7ac39ba1c")
-		(property "Reference" "J203"
+		(property "Reference" "J204"
 			(at 268.732 97.282 0)
 			(effects
 				(font
@@ -11762,7 +11762,7 @@
 		(instances
 			(project ""
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "J203")
+					(reference "J204")
 					(unit 1)
 				)
 			)
@@ -11785,7 +11785,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "10k"
 			(at 32.766 140.462 0)
 			(effects
 				(font
@@ -11793,7 +11793,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 30.48 138.43 0)
 			(effects
 				(font
@@ -11802,7 +11802,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
 			(at 30.48 138.43 0)
 			(effects
 				(font
@@ -11820,7 +11820,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25744"
 			(at 30.48 138.43 0)
 			(effects
 				(font
@@ -11935,7 +11935,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Button_Switch_SMD:SW_Push_1P1T_XKB_TS-1187A"
+		(property "Footprint" "Button_Switch_SMD:SW_SPST_PTS645"
 			(at 33.02 63.5 0)
 			(effects
 				(font
@@ -11944,7 +11944,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_XKB-Connection-TS-1187A-B-A-B_C318884.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205051716_XKB-Connection-TS-1102SD-A-D-R_C3010224.pdf"
 			(at 33.02 63.5 0)
 			(effects
 				(font
@@ -11962,7 +11962,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C318884"
+		(property "LCSC" "C3010224"
 			(at 33.02 68.58 0)
 			(effects
 				(font
@@ -11995,7 +11995,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7e228ae0-fab3-4164-8160-4f85f328af35")
-		(property "Reference" "C215"
+		(property "Reference" "C213"
 			(at 253.492 72.898 0)
 			(effects
 				(font
@@ -12013,7 +12013,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 252.73 74.93 0)
 			(effects
 				(font
@@ -12022,7 +12022,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0402CG120J500NT_C1547.pdf"
 			(at 252.73 74.93 0)
 			(effects
 				(font
@@ -12040,7 +12040,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C1547"
 			(at 252.73 74.93 0)
 			(effects
 				(font
@@ -12058,7 +12058,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "C215")
+					(reference "C213")
 					(unit 1)
 				)
 			)
@@ -12152,7 +12152,7 @@
 		(on_board yes)
 		(dnp yes)
 		(uuid "8d0ba184-4901-4c36-8430-94225fd4927a")
-		(property "Reference" "J202"
+		(property "Reference" "J203"
 			(at 260.35 123.19 0)
 			(effects
 				(font
@@ -12170,7 +12170,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.27mm:PinHeader_2x07_P1.27mm_Vertical_SMD"
+		(property "Footprint" ""
 			(at 255.27 139.7 0)
 			(effects
 				(font
@@ -12242,7 +12242,7 @@
 		(instances
 			(project ""
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "J202")
+					(reference "J203")
 					(unit 1)
 				)
 			)
@@ -12257,7 +12257,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8de5743f-b886-42f1-b80d-c9c5dad84287")
-		(property "Reference" "R15"
+		(property "Reference" "R203"
 			(at 45.974 105.41 0)
 			(effects
 				(font
@@ -12265,7 +12265,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "10k"
 			(at 45.466 109.982 0)
 			(effects
 				(font
@@ -12273,7 +12273,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 43.18 107.95 0)
 			(effects
 				(font
@@ -12282,7 +12282,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
 			(at 43.18 107.95 0)
 			(effects
 				(font
@@ -12300,7 +12300,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25744"
 			(at 43.18 107.95 0)
 			(effects
 				(font
@@ -12318,7 +12318,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "R15")
+					(reference "R203")
 					(unit 1)
 				)
 			)
@@ -12477,7 +12477,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9bb9d037-dde2-45c4-aa51-9b439023c8bf")
-		(property "Reference" "C211"
+		(property "Reference" "C212"
 			(at 231.902 72.898 0)
 			(effects
 				(font
@@ -12495,7 +12495,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 231.14 74.93 0)
 			(effects
 				(font
@@ -12504,7 +12504,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_FH--Guangdong-Fenghua-Advanced-Tech-0402CG120J500NT_C1547.pdf"
 			(at 231.14 74.93 0)
 			(effects
 				(font
@@ -12522,7 +12522,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C1547"
 			(at 231.14 74.93 0)
 			(effects
 				(font
@@ -12540,72 +12540,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "C211")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 85.09 148.59 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "ac0ff231-e548-4112-bdd8-df65c6311cee")
-		(property "Reference" "#PWR0208"
-			(at 85.09 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "V_USB"
-			(at 85.09 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 85.09 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 85.09 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 85.09 148.59 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "4f2cec9b-f67f-400b-8920-317faac7bbe3")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR0208")
+					(reference "C212")
 					(unit 1)
 				)
 			)
@@ -12698,7 +12633,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ad9323ca-010c-4e87-95c2-73322d4396e5")
-		(property "Reference" "R210"
+		(property "Reference" "R209"
 			(at 257.302 64.77 0)
 			(effects
 				(font
@@ -12706,7 +12641,7 @@
 				)
 			)
 		)
-		(property "Value" "47R"
+		(property "Value" "47"
 			(at 256.032 67.056 0)
 			(effects
 				(font
@@ -12714,7 +12649,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 252.73 66.04 0)
 			(effects
 				(font
@@ -12723,7 +12658,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF470JT5E_C23182.pdf"
 			(at 252.73 66.04 0)
 			(effects
 				(font
@@ -12741,7 +12676,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C23182"
 			(at 252.73 66.04 0)
 			(effects
 				(font
@@ -12759,7 +12694,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "R210")
+					(reference "R209")
 					(unit 1)
 				)
 			)
@@ -12774,7 +12709,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b0b7087c-e23b-4ad0-9085-44c0834b6534")
-		(property "Reference" "TP10"
+		(property "Reference" "TP201"
 			(at 36.322 101.6 0)
 			(effects
 				(font
@@ -12792,7 +12727,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 43.18 106.68 0)
 			(effects
 				(font
@@ -12825,7 +12760,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "TP10")
+					(reference "TP201")
 					(unit 1)
 				)
 			)
@@ -12918,7 +12853,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b38a8e87-c61e-4b79-b837-f2c3ee32e6ce")
-		(property "Reference" "#PWR0217"
+		(property "Reference" "#PWR0220"
 			(at 267.97 99.06 0)
 			(effects
 				(font
@@ -12968,7 +12903,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR0217")
+					(reference "#PWR0220")
 					(unit 1)
 				)
 			)
@@ -12983,7 +12918,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b67be562-964a-4cfe-8a86-d489afb95827")
-		(property "Reference" "#PWR0211"
+		(property "Reference" "#PWR0213"
 			(at 140.97 24.13 0)
 			(effects
 				(font
@@ -13033,7 +12968,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR0211")
+					(reference "#PWR0213")
 					(unit 1)
 				)
 			)
@@ -13049,7 +12984,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c3000dfb-3ff4-4a8c-8575-5537079fa020")
-		(property "Reference" "Q2"
+		(property "Reference" "Q202"
 			(at 55.118 107.95 90)
 			(effects
 				(font
@@ -13116,7 +13051,72 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "Q2")
+					(reference "Q202")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5V")
+		(at 85.09 148.59 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "cbb678cf-e581-40cb-ac0d-7b2531ded93c")
+		(property "Reference" "#PWR0210"
+			(at 85.09 152.4 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5V"
+			(at 85.09 144.78 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 85.09 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 85.09 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(at 85.09 148.59 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "c2c5eec2-f80e-4871-bf21-e657a07d1454")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
+					(reference "#PWR0210")
 					(unit 1)
 				)
 			)
@@ -13147,7 +13147,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm"
 			(at 242.57 69.85 0)
 			(effects
 				(font
@@ -13156,7 +13156,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2403291506_YXC-Crystal-Oscillators-XL7EL89COI-111YLC-32M_C2965584.pdf"
 			(at 242.57 69.85 0)
 			(effects
 				(font
@@ -13174,7 +13174,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C2965584"
 			(at 242.57 69.85 0)
 			(effects
 				(font
@@ -13213,7 +13213,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dcb3f7b0-a4a3-46c9-b136-f98c069751a5")
-		(property "Reference" "#PWR05"
+		(property "Reference" "#PWR0205"
 			(at 43.18 105.41 0)
 			(effects
 				(font
@@ -13263,7 +13263,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR05")
+					(reference "#PWR0205")
 					(unit 1)
 				)
 			)
@@ -13278,8 +13278,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e07502f2-f55d-4daa-bb4b-38060aaaa871")
-		(property "Reference" "R203"
-			(at 55.372 71.374 0)
+		(property "Reference" "R204"
+			(at 55.118 71.12 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -13287,14 +13287,14 @@
 			)
 		)
 		(property "Value" "10k"
-			(at 55.372 75.438 0)
+			(at 54.356 75.692 0)
 			(effects
 				(font
 					(size 1.27 1.27)
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 52.07 73.66 0)
 			(effects
 				(font
@@ -13303,7 +13303,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
 			(at 52.07 73.66 0)
 			(effects
 				(font
@@ -13321,7 +13321,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25744"
 			(at 52.07 73.66 0)
 			(effects
 				(font
@@ -13339,7 +13339,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "R203")
+					(reference "R204")
 					(unit 1)
 				)
 			)
@@ -13497,7 +13497,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ef283307-fa0f-45ca-9f69-f0156551cb8a")
-		(property "Reference" "D202"
+		(property "Reference" "D201"
 			(at 79.375 147.32 0)
 			(effects
 				(font
@@ -13505,7 +13505,7 @@
 				)
 			)
 		)
-		(property "Value" "D_Small"
+		(property "Value" "Schottky Diode"
 			(at 84.455 151.13 0)
 			(effects
 				(font
@@ -13514,7 +13514,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Diode_SMD:D_SOD-323"
 			(at 79.375 149.86 90)
 			(effects
 				(font
@@ -13523,7 +13523,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2204281430_Guangdong-Hottech-1N5819WS_C191023.pdf"
 			(at 79.375 149.86 90)
 			(effects
 				(font
@@ -13559,6 +13559,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C191023"
+			(at 79.375 149.86 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "1"
 			(uuid "be2993c4-dc61-4040-b43a-7c3408048596")
 		)
@@ -13568,7 +13577,7 @@
 		(instances
 			(project ""
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "D202")
+					(reference "D201")
 					(unit 1)
 				)
 			)
@@ -13583,7 +13592,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f08c7a07-bfd9-4a80-b1b6-c1c16b86c023")
-		(property "Reference" "#PWR0212"
+		(property "Reference" "#PWR0214"
 			(at 148.59 181.61 0)
 			(effects
 				(font
@@ -13634,7 +13643,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR0212")
+					(reference "#PWR0214")
 					(unit 1)
 				)
 			)
@@ -13649,7 +13658,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f18d187e-5757-42b5-a861-59ca777f01d0")
-		(property "Reference" "R206"
+		(property "Reference" "R208"
 			(at 77.724 132.08 0)
 			(effects
 				(font
@@ -13657,7 +13666,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "10k"
 			(at 77.216 136.652 0)
 			(effects
 				(font
@@ -13665,7 +13674,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 74.93 134.62 0)
 			(effects
 				(font
@@ -13674,7 +13683,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
 			(at 74.93 134.62 0)
 			(effects
 				(font
@@ -13692,7 +13701,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25744"
 			(at 74.93 134.62 0)
 			(effects
 				(font
@@ -13710,7 +13719,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "R206")
+					(reference "R208")
 					(unit 1)
 				)
 			)
@@ -13803,7 +13812,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f6bb1212-47ff-46ac-b48f-b2378b5c2594")
-		(property "Reference" "#PWR0215"
+		(property "Reference" "#PWR0216"
 			(at 214.63 118.11 0)
 			(effects
 				(font
@@ -13854,7 +13863,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR0215")
+					(reference "#PWR0216")
 					(unit 1)
 				)
 			)
@@ -13877,7 +13886,7 @@
 				)
 			)
 		)
-		(property "Value" "10K"
+		(property "Value" "10k"
 			(at 39.116 140.462 0)
 			(effects
 				(font
@@ -13885,7 +13894,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 36.83 138.43 0)
 			(effects
 				(font
@@ -13894,7 +13903,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
 			(at 36.83 138.43 0)
 			(effects
 				(font
@@ -13912,7 +13921,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25744"
 			(at 36.83 138.43 0)
 			(effects
 				(font
@@ -13945,7 +13954,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "fd7df686-690d-46a7-afab-be69c878b6bf")
-		(property "Reference" "#PWR03"
+		(property "Reference" "#PWR0202"
 			(at 30.48 135.89 0)
 			(effects
 				(font
@@ -13995,7 +14004,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
-					(reference "#PWR03")
+					(reference "#PWR0202")
 					(unit 1)
 				)
 			)

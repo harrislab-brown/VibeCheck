@@ -4246,8 +4246,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "005cc095-a297-4ab9-b6b2-d20027924dea")
 		(property "Reference" "TP303"
 			(at 187.452 99.06 0)
@@ -4267,7 +4267,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 195.58 104.14 0)
 			(effects
 				(font
@@ -4342,7 +4342,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
 			(at 234.95 69.85 0)
 			(effects
 				(font
@@ -4553,8 +4553,8 @@
 		(unit 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board yes)
-		(dnp no)
+		(on_board no)
+		(dnp yes)
 		(uuid "188fdb0e-cbc6-44e3-a807-600ff1fd1a8b")
 		(property "Reference" "TP301"
 			(at 150.622 50.8 0)
@@ -4574,7 +4574,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 158.75 55.88 0)
 			(effects
 				(font
@@ -4718,7 +4718,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 127 72.39 0)
 			(effects
 				(font
@@ -4862,7 +4862,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 251.46 57.15 0)
 			(effects
 				(font
@@ -4993,7 +4993,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 120.65 72.39 0)
 			(effects
 				(font
@@ -5189,7 +5189,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 186.69 71.12 0)
 			(effects
 				(font
@@ -5198,7 +5198,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010116_UNI-ROYAL-Uniroyal-Elec-0603WAF4701T5E_C23162.pdf"
 			(at 186.69 71.12 0)
 			(effects
 				(font
@@ -5216,7 +5216,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C23162"
 			(at 186.69 71.12 0)
 			(effects
 				(font
@@ -5342,7 +5342,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
 			(at 227.33 69.85 0)
 			(effects
 				(font
@@ -5411,7 +5411,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 195.58 55.88 0)
 			(effects
 				(font
@@ -5616,7 +5616,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 54.61 110.49 0)
 			(effects
 				(font
@@ -5625,7 +5625,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010045_UNI-ROYAL-Uniroyal-Elec-0603WAF1003T5E_C25803.pdf"
 			(at 54.61 110.49 0)
 			(effects
 				(font
@@ -5643,7 +5643,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25803"
 			(at 54.61 110.49 0)
 			(effects
 				(font
@@ -6038,7 +6038,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
 			(at 247.65 111.76 0)
 			(effects
 				(font
@@ -6047,7 +6047,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL05B104KB54PNC_C307331.pdf"
 			(at 247.65 111.76 0)
 			(effects
 				(font
@@ -6065,7 +6065,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C307331"
 			(at 247.65 111.76 0)
 			(effects
 				(font
@@ -6125,7 +6125,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
 			(at 250.19 69.85 0)
 			(effects
 				(font
@@ -6483,7 +6483,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
 			(at 242.57 69.85 0)
 			(effects
 				(font
@@ -6619,7 +6619,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 240.03 101.6 0)
 			(effects
 				(font
@@ -6748,7 +6748,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 97.79 143.51 0)
 			(effects
 				(font
@@ -6757,7 +6757,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.pdf"
 			(at 97.79 143.51 0)
 			(effects
 				(font
@@ -6775,7 +6775,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C21190"
 			(at 97.79 143.51 0)
 			(effects
 				(font
@@ -6889,7 +6889,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 92.71 73.66 0)
 			(effects
 				(font
@@ -6898,7 +6898,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010045_UNI-ROYAL-Uniroyal-Elec-0402WGF5101TCE_C25905.pdf"
 			(at 92.71 73.66 0)
 			(effects
 				(font
@@ -6916,7 +6916,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25905"
 			(at 92.71 73.66 0)
 			(effects
 				(font
@@ -7295,7 +7295,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
+		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
 			(at 187.96 115.57 0)
 			(effects
 				(font
@@ -7313,7 +7313,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C45783"
+		(property "LCSC" "C15850"
 			(at 187.96 115.57 0)
 			(effects
 				(font
@@ -7362,7 +7362,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
 			(at 226.06 105.41 0)
 			(effects
 				(font
@@ -7371,7 +7371,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2310301641_Sunlord-SDCL1608C39NJTDF_C74308.pdf"
 			(at 226.06 105.41 0)
 			(effects
 				(font
@@ -7389,7 +7389,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C74308"
 			(at 226.06 105.41 0)
 			(effects
 				(font
@@ -7438,7 +7438,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 92.71 71.12 0)
 			(effects
 				(font
@@ -7447,7 +7447,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010045_UNI-ROYAL-Uniroyal-Elec-0402WGF5101TCE_C25905.pdf"
 			(at 92.71 71.12 0)
 			(effects
 				(font
@@ -7465,7 +7465,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25905"
 			(at 92.71 71.12 0)
 			(effects
 				(font

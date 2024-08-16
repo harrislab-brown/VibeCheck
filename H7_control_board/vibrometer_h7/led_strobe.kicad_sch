@@ -2951,9 +2951,9 @@
 		)
 		(uuid "ffef641f-097d-4905-8dca-82f444940ba9")
 	)
-	(text "check if thi value is enough to discharge gate capacitance "
+	(text "check if this value is enough to discharge gate capacitance "
 		(exclude_from_sim no)
-		(at 53.594 133.096 0)
+		(at 19.304 118.364 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -3038,7 +3038,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "05a6dfa0-0d81-40c6-b4a4-2286b05bbd97")
-		(property "Reference" "Q1001"
+		(property "Reference" "Q1002"
 			(at 145.796 110.49 0)
 			(effects
 				(font
@@ -3065,7 +3065,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+		(property "Datasheet" ""
 			(at 142.24 127 0)
 			(effects
 				(font
@@ -3122,7 +3122,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "Q1001")
+					(reference "Q1002")
 					(unit 1)
 				)
 			)
@@ -3156,7 +3156,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 135.89 111.76 0)
 			(effects
 				(font
@@ -3204,7 +3204,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "1995e138-ec67-4485-ac6c-c8fe6747b508")
-		(property "Reference" "Q1"
+		(property "Reference" "Q1001"
 			(at 95.758 111.252 0)
 			(effects
 				(font
@@ -3231,7 +3231,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+		(property "Datasheet" ""
 			(at 91.44 127 0)
 			(effects
 				(font
@@ -3288,7 +3288,7 @@
 		(instances
 			(project ""
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "Q1")
+					(reference "Q1001")
 					(unit 1)
 				)
 			)
@@ -3321,7 +3321,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 91.44 93.98 0)
 			(effects
 				(font
@@ -3330,7 +3330,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 91.44 93.98 0)
 			(effects
 				(font
@@ -3340,6 +3340,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 91.44 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 91.44 93.98 0)
 			(effects
 				(font
@@ -3373,7 +3382,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "21a98433-5552-4d13-bb01-1b33c9f3bb96")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR01003"
 			(at 91.44 110.49 0)
 			(effects
 				(font
@@ -3424,7 +3433,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "#PWR01")
+					(reference "#PWR01003")
 					(unit 1)
 				)
 			)
@@ -3457,7 +3466,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 157.48 87.63 0)
 			(effects
 				(font
@@ -3466,7 +3475,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 157.48 87.63 0)
 			(effects
 				(font
@@ -3476,6 +3485,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 157.48 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 157.48 87.63 0)
 			(effects
 				(font
@@ -3508,7 +3526,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "22eae7a2-921d-45c4-b8fc-f0e8acd11f3c")
-		(property "Reference" "R1015"
+		(property "Reference" "R1016"
 			(at 236.982 75.184 0)
 			(effects
 				(font
@@ -3524,7 +3542,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 233.68 77.47 0)
 			(effects
 				(font
@@ -3569,7 +3587,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1015")
+					(reference "R1016")
 					(unit 1)
 				)
 			)
@@ -3584,7 +3602,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "236cdf90-516d-40c0-8cc3-bf42629a32fd")
-		(property "Reference" "R1003"
+		(property "Reference" "R1001"
 			(at 68.834 113.284 90)
 			(effects
 				(font
@@ -3592,7 +3610,7 @@
 				)
 			)
 		)
-		(property "Value" "22R"
+		(property "Value" "22"
 			(at 76.708 113.284 90)
 			(effects
 				(font
@@ -3600,7 +3618,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 73.66 114.3 0)
 			(effects
 				(font
@@ -3609,7 +3627,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2205311900_UNI-ROYAL-Uniroyal-Elec-0402WGF220JTCE_C25092.pdf"
 			(at 73.66 114.3 0)
 			(effects
 				(font
@@ -3627,7 +3645,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25092"
 			(at 73.66 114.3 0)
 			(effects
 				(font
@@ -3645,7 +3663,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1003")
+					(reference "R1001")
 					(unit 1)
 				)
 			)
@@ -3660,7 +3678,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "238ac52f-15cc-4f04-9894-14f05046036f")
-		(property "Reference" "R1005"
+		(property "Reference" "R1004"
 			(at 109.982 75.184 0)
 			(effects
 				(font
@@ -3676,7 +3694,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 106.68 77.47 0)
 			(effects
 				(font
@@ -3721,7 +3739,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1005")
+					(reference "R1004")
 					(unit 1)
 				)
 			)
@@ -3737,7 +3755,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "2466eb38-41f3-4270-844d-175c7f6f52dd")
-		(property "Reference" "#PWR01003"
+		(property "Reference" "#PWR01004"
 			(at 93.98 132.08 0)
 			(effects
 				(font
@@ -3788,7 +3806,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "#PWR01003")
+					(reference "#PWR01004")
 					(unit 1)
 				)
 			)
@@ -3821,7 +3839,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 208.28 87.63 0)
 			(effects
 				(font
@@ -3830,7 +3848,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 208.28 87.63 0)
 			(effects
 				(font
@@ -3840,6 +3858,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 208.28 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 208.28 87.63 0)
 			(effects
 				(font
@@ -3890,7 +3917,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 220.98 87.63 0)
 			(effects
 				(font
@@ -3899,7 +3926,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 220.98 87.63 0)
 			(effects
 				(font
@@ -3909,6 +3936,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 220.98 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 220.98 87.63 0)
 			(effects
 				(font
@@ -3941,7 +3977,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "39627748-67bb-4c58-8522-666f36d40716")
-		(property "Reference" "R1013"
+		(property "Reference" "R1014"
 			(at 211.582 75.184 0)
 			(effects
 				(font
@@ -3957,7 +3993,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 208.28 77.47 0)
 			(effects
 				(font
@@ -4002,7 +4038,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1013")
+					(reference "R1014")
 					(unit 1)
 				)
 			)
@@ -4033,7 +4069,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 182.88 77.47 0)
 			(effects
 				(font
@@ -4093,7 +4129,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "3cb20ad5-bcdf-4619-97ed-ab7481311a94")
-		(property "Reference" "R1006"
+		(property "Reference" "R1005"
 			(at 122.682 75.184 0)
 			(effects
 				(font
@@ -4109,7 +4145,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 119.38 77.47 0)
 			(effects
 				(font
@@ -4154,7 +4190,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1006")
+					(reference "R1005")
 					(unit 1)
 				)
 			)
@@ -4187,7 +4223,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 154.94 93.98 0)
 			(effects
 				(font
@@ -4196,7 +4232,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 154.94 93.98 0)
 			(effects
 				(font
@@ -4206,6 +4242,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 154.94 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 154.94 93.98 0)
 			(effects
 				(font
@@ -4256,7 +4301,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 142.24 93.98 0)
 			(effects
 				(font
@@ -4265,7 +4310,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 142.24 93.98 0)
 			(effects
 				(font
@@ -4275,6 +4320,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 142.24 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 142.24 93.98 0)
 			(effects
 				(font
@@ -4308,7 +4362,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "45b77a3a-b4d8-4416-8a43-61354c434160")
-		(property "Reference" "#PWR01004"
+		(property "Reference" "#PWR01005"
 			(at 144.78 132.08 0)
 			(effects
 				(font
@@ -4359,7 +4413,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "#PWR01004")
+					(reference "#PWR01005")
 					(unit 1)
 				)
 			)
@@ -4390,7 +4444,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 144.78 77.47 0)
 			(effects
 				(font
@@ -4468,7 +4522,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 104.14 93.98 0)
 			(effects
 				(font
@@ -4477,7 +4531,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 104.14 93.98 0)
 			(effects
 				(font
@@ -4487,6 +4541,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 104.14 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 104.14 93.98 0)
 			(effects
 				(font
@@ -4537,7 +4600,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 233.68 87.63 0)
 			(effects
 				(font
@@ -4546,7 +4609,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 233.68 87.63 0)
 			(effects
 				(font
@@ -4556,6 +4619,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 233.68 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 233.68 87.63 0)
 			(effects
 				(font
@@ -4606,7 +4678,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 195.58 87.63 0)
 			(effects
 				(font
@@ -4615,7 +4687,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 195.58 87.63 0)
 			(effects
 				(font
@@ -4625,6 +4697,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 195.58 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 195.58 87.63 0)
 			(effects
 				(font
@@ -4675,7 +4756,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 205.74 93.98 0)
 			(effects
 				(font
@@ -4684,7 +4765,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 205.74 93.98 0)
 			(effects
 				(font
@@ -4694,6 +4775,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 205.74 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 205.74 93.98 0)
 			(effects
 				(font
@@ -4793,7 +4883,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "8408f76f-1ca0-4074-a2e4-42ca8aa6c373")
-		(property "Reference" "R1007"
+		(property "Reference" "R1006"
 			(at 135.382 75.184 0)
 			(effects
 				(font
@@ -4809,7 +4899,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 132.08 77.47 0)
 			(effects
 				(font
@@ -4854,7 +4944,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1007")
+					(reference "R1006")
 					(unit 1)
 				)
 			)
@@ -4887,7 +4977,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 218.44 93.98 0)
 			(effects
 				(font
@@ -4896,7 +4986,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 218.44 93.98 0)
 			(effects
 				(font
@@ -4906,6 +4996,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 218.44 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 218.44 93.98 0)
 			(effects
 				(font
@@ -4956,7 +5055,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 119.38 87.63 0)
 			(effects
 				(font
@@ -4965,7 +5064,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 119.38 87.63 0)
 			(effects
 				(font
@@ -4975,6 +5074,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 119.38 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 119.38 87.63 0)
 			(effects
 				(font
@@ -5025,7 +5133,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 180.34 93.98 0)
 			(effects
 				(font
@@ -5034,7 +5142,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 180.34 93.98 0)
 			(effects
 				(font
@@ -5044,6 +5152,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 180.34 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 180.34 93.98 0)
 			(effects
 				(font
@@ -5094,7 +5211,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 129.54 93.98 0)
 			(effects
 				(font
@@ -5103,7 +5220,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 129.54 93.98 0)
 			(effects
 				(font
@@ -5113,6 +5230,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 129.54 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 129.54 93.98 0)
 			(effects
 				(font
@@ -5145,7 +5271,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "95c161e1-594f-4f39-9148-8f396ae4a936")
-		(property "Reference" "R1004"
+		(property "Reference" "R1003"
 			(at 97.282 75.184 0)
 			(effects
 				(font
@@ -5161,7 +5287,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 93.98 77.47 0)
 			(effects
 				(font
@@ -5206,7 +5332,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1004")
+					(reference "R1003")
 					(unit 1)
 				)
 			)
@@ -5239,7 +5365,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 116.84 93.98 0)
 			(effects
 				(font
@@ -5248,7 +5374,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 116.84 93.98 0)
 			(effects
 				(font
@@ -5258,6 +5384,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 116.84 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 116.84 93.98 0)
 			(effects
 				(font
@@ -5290,7 +5425,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "a0323ede-6d3f-48c6-9691-a39bbc3832cc")
-		(property "Reference" "R1014"
+		(property "Reference" "R1015"
 			(at 224.282 75.184 0)
 			(effects
 				(font
@@ -5306,7 +5441,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 220.98 77.47 0)
 			(effects
 				(font
@@ -5351,7 +5486,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1014")
+					(reference "R1015")
 					(unit 1)
 				)
 			)
@@ -5382,7 +5517,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 170.18 77.47 0)
 			(effects
 				(font
@@ -5442,7 +5577,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b056302e-c306-4bc0-93f3-e26e05c98171")
-		(property "Reference" "R1"
+		(property "Reference" "R1002"
 			(at 85.852 115.824 0)
 			(effects
 				(font
@@ -5458,7 +5593,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 82.55 118.11 0)
 			(effects
 				(font
@@ -5467,7 +5602,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
 			(at 82.55 118.11 0)
 			(effects
 				(font
@@ -5485,7 +5620,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25744"
 			(at 82.55 118.11 0)
 			(effects
 				(font
@@ -5503,7 +5638,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1")
+					(reference "R1002")
 					(unit 1)
 				)
 			)
@@ -5537,7 +5672,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 85.09 111.76 0)
 			(effects
 				(font
@@ -5603,7 +5738,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 182.88 87.63 0)
 			(effects
 				(font
@@ -5612,7 +5747,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 182.88 87.63 0)
 			(effects
 				(font
@@ -5622,6 +5757,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 182.88 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 182.88 87.63 0)
 			(effects
 				(font
@@ -5672,7 +5816,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 106.68 87.63 0)
 			(effects
 				(font
@@ -5681,7 +5825,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 106.68 87.63 0)
 			(effects
 				(font
@@ -5691,6 +5835,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 106.68 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 106.68 87.63 0)
 			(effects
 				(font
@@ -5723,7 +5876,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b8460b9a-c4c1-4d14-a7a6-e611c1f154d1")
-		(property "Reference" "R1012"
+		(property "Reference" "R1013"
 			(at 198.882 75.184 0)
 			(effects
 				(font
@@ -5739,7 +5892,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 195.58 77.47 0)
 			(effects
 				(font
@@ -5784,7 +5937,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1012")
+					(reference "R1013")
 					(unit 1)
 				)
 			)
@@ -5817,7 +5970,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 231.14 93.98 0)
 			(effects
 				(font
@@ -5826,7 +5979,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 231.14 93.98 0)
 			(effects
 				(font
@@ -5836,6 +5989,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 231.14 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 231.14 93.98 0)
 			(effects
 				(font
@@ -5868,7 +6030,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "c6f03435-2e29-468b-babb-1e13d2a8bfc5")
-		(property "Reference" "R1002"
+		(property "Reference" "R1012"
 			(at 187.452 115.824 0)
 			(effects
 				(font
@@ -5884,7 +6046,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 184.15 118.11 0)
 			(effects
 				(font
@@ -5893,7 +6055,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
 			(at 184.15 118.11 0)
 			(effects
 				(font
@@ -5911,7 +6073,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25744"
 			(at 184.15 118.11 0)
 			(effects
 				(font
@@ -5929,7 +6091,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1002")
+					(reference "R1012")
 					(unit 1)
 				)
 			)
@@ -5962,7 +6124,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 170.18 87.63 0)
 			(effects
 				(font
@@ -5971,7 +6133,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 170.18 87.63 0)
 			(effects
 				(font
@@ -5981,6 +6143,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 170.18 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 170.18 87.63 0)
 			(effects
 				(font
@@ -6031,7 +6202,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 144.78 87.63 0)
 			(effects
 				(font
@@ -6040,7 +6211,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 144.78 87.63 0)
 			(effects
 				(font
@@ -6050,6 +6221,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 144.78 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 144.78 87.63 0)
 			(effects
 				(font
@@ -6083,7 +6263,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "dac4c7e2-8f90-4f5a-b1ea-6db0b9daee21")
-		(property "Reference" "#PWR01005"
+		(property "Reference" "#PWR01006"
 			(at 195.58 132.08 0)
 			(effects
 				(font
@@ -6134,7 +6314,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "#PWR01005")
+					(reference "#PWR01006")
 					(unit 1)
 				)
 			)
@@ -6167,7 +6347,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 167.64 93.98 0)
 			(effects
 				(font
@@ -6176,7 +6356,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 167.64 93.98 0)
 			(effects
 				(font
@@ -6186,6 +6366,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 167.64 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 167.64 93.98 0)
 			(effects
 				(font
@@ -6236,7 +6425,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 93.98 87.63 0)
 			(effects
 				(font
@@ -6245,7 +6434,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 93.98 87.63 0)
 			(effects
 				(font
@@ -6255,6 +6444,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 93.98 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 93.98 87.63 0)
 			(effects
 				(font
@@ -6305,7 +6503,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:CP_Elec_6.3x7.7"
 			(at 76.2 87.63 0)
 			(effects
 				(font
@@ -6314,7 +6512,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2206161801_ROQANG-RVT1V151M0607_C3032176.pdf"
 			(at 76.2 87.63 0)
 			(effects
 				(font
@@ -6324,6 +6522,15 @@
 			)
 		)
 		(property "Description" "Polarized capacitor, small US symbol"
+			(at 76.2 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C3032176"
 			(at 76.2 87.63 0)
 			(effects
 				(font
@@ -6372,7 +6579,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0805_2012Metric"
 			(at 157.48 77.47 0)
 			(effects
 				(font
@@ -6433,7 +6640,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "f2845206-d9ce-4989-9245-88e5c746bc3a")
-		(property "Reference" "Q1002"
+		(property "Reference" "Q1003"
 			(at 199.39 113.0299 0)
 			(effects
 				(font
@@ -6460,7 +6667,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://ngspice.sourceforge.io/docs/ngspice-html-manual/manual.xhtml#cha_MOSFETs"
+		(property "Datasheet" ""
 			(at 193.04 127 0)
 			(effects
 				(font
@@ -6517,7 +6724,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "Q1002")
+					(reference "Q1003")
 					(unit 1)
 				)
 			)
@@ -6551,7 +6758,7 @@
 				(hide yes)
 			)
 		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.5mm"
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
 			(at 186.69 111.76 0)
 			(effects
 				(font
@@ -6617,7 +6824,7 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "footprints:LED-SMD_L4.0-W1.50_HL-A-4014H421W-S1-HR3-DM-HL"
 			(at 132.08 87.63 0)
 			(effects
 				(font
@@ -6626,7 +6833,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2005201836_HONGLITRONIC-Hongli-Zhihui--HONGLITRONIC-HL-A-4014H421W-S1-HR3-DM-HL-5700K-6500K_C540978.pdf"
 			(at 132.08 87.63 0)
 			(effects
 				(font
@@ -6636,6 +6843,15 @@
 			)
 		)
 		(property "Description" "Light emitting diode"
+			(at 132.08 87.63 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C540978 "
 			(at 132.08 87.63 0)
 			(effects
 				(font
@@ -6733,7 +6949,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "f91b5fc5-81c4-4571-b3e8-2db61b69ef8a")
-		(property "Reference" "R1001"
+		(property "Reference" "R1007"
 			(at 136.652 115.824 0)
 			(effects
 				(font
@@ -6749,7 +6965,7 @@
 				)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 133.35 118.11 0)
 			(effects
 				(font
@@ -6758,7 +6974,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010100_UNI-ROYAL-Uniroyal-Elec-0402WGF1002TCE_C25744.pdf"
 			(at 133.35 118.11 0)
 			(effects
 				(font
@@ -6776,7 +6992,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C25744"
 			(at 133.35 118.11 0)
 			(effects
 				(font
@@ -6794,7 +7010,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
-					(reference "R1001")
+					(reference "R1007")
 					(unit 1)
 				)
 			)
@@ -6827,7 +7043,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 193.04 93.98 0)
 			(effects
 				(font
@@ -6836,7 +7052,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A106KAYNNNE_C15850.pdf"
 			(at 193.04 93.98 0)
 			(effects
 				(font
@@ -6846,6 +7062,15 @@
 			)
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
+			(at 193.04 93.98 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C15850"
 			(at 193.04 93.98 0)
 			(effects
 				(font
