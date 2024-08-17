@@ -708,7 +708,7 @@
 				)
 			)
 		)
-		(symbol "power:+5V"
+		(symbol "power:+5VA"
 			(power)
 			(pin_numbers hide)
 			(pin_names
@@ -725,7 +725,7 @@
 					(hide yes)
 				)
 			)
-			(property "Value" "+5V"
+			(property "Value" "+5VA"
 				(at 0 3.556 0)
 				(effects
 					(font
@@ -751,7 +751,7 @@
 					(hide yes)
 				)
 			)
-			(property "Description" "Power symbol creates a global label with name \"+5V\""
+			(property "Description" "Power symbol creates a global label with name \"+5VA\""
 				(at 0 0 0)
 				(effects
 					(font
@@ -769,7 +769,7 @@
 					(hide yes)
 				)
 			)
-			(symbol "+5V_0_1"
+			(symbol "+5VA_0_1"
 				(polyline
 					(pts
 						(xy -0.762 1.27) (xy 0 2.54)
@@ -807,7 +807,7 @@
 					)
 				)
 			)
-			(symbol "+5V_1_1"
+			(symbol "+5VA_1_1"
 				(pin power_in line
 					(at 0 0 90)
 					(length 0)
@@ -2767,10 +2767,327 @@
 		)
 		(uuid "fe5c3ad2-0e84-4ebf-95bd-00efdb1c1efe")
 	)
+	(label "AMP2_IN"
+		(at 67.31 132.08 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "02978505-1066-4765-8345-dacb72178015")
+		(property "Netclass" "analog"
+			(at 67.31 133.35 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "AMP2_FB"
+		(at 77.47 142.24 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "0c798e56-30e6-423c-98e5-5bb37a19ea11")
+		(property "Netclass" "analog"
+			(at 77.47 143.51 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(label "AUDIO_L"
+		(at 240.03 110.49 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "12ef32f7-d239-449d-9e63-4b8a1b92fde1")
+		(property "Netclass" "analog"
+			(at 240.03 111.76 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "AMP1_FILT"
+		(at 59.69 69.85 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1456892c-ad8a-4ea5-8512-3752b16db316")
+		(property "Netclass" "analog"
+			(at 59.69 71.12 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "LN_BYPASS"
+		(at 203.2 120.65 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "1dc1ae97-d3a4-4e18-97f2-27be49d50b71")
+	)
+	(label "LN_IN2"
+		(at 175.26 111.76 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "28406042-89bf-43a7-bc57-2cfb64d7ba70")
+		(property "Netclass" "analog"
+			(at 175.26 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "LN_OUT2"
+		(at 207.01 111.76 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "34361352-d305-43fe-a8cd-bc1fe1407787")
+		(property "Netclass" "analog"
+			(at 207.01 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "AMP1_IN"
+		(at 67.31 81.28 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "347c003a-c154-4809-b1b7-32b7e3b4ad7c")
+		(property "Netclass" "analog"
+			(at 67.31 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "LN_IN1"
+		(at 175.26 106.68 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "4b2b1e4e-6658-4a98-8023-5d39cd76d798")
+		(property "Netclass" "analog"
+			(at 175.26 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "AMP2_OUT"
+		(at 119.38 111.76 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "67cfa333-c57b-4b12-bc98-53f22c51be29")
+		(property "Netclass" "analog"
+			(at 119.38 113.03 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "AMP2_FILT"
+		(at 60.96 119.38 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "6bf33070-bc6a-420b-a6de-56ac3d552e79")
+		(property "Netclass" "analog"
+			(at 60.96 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "AMP1_FB"
+		(at 76.2 91.44 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7fa91433-36a0-4455-803b-908e6bbf55af")
+		(property "Netclass" "analog"
+			(at 76.2 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "AMP1_OUT"
+		(at 119.38 106.68 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ba9b5f3b-a8f1-4202-940f-af0f4c2f3ddc")
+		(property "Netclass" "analog"
+			(at 119.38 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "LN_OUT1"
+		(at 207.01 106.68 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "c874afd9-f30f-475d-8849-4dd06a6b17b9")
+		(property "Netclass" "analog"
+			(at 207.01 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(label "AUDIO_R"
+		(at 240.03 107.95 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "ff528d1a-7cc9-45c6-ab7c-38a75a446d5d")
+		(property "Netclass" "analog"
+			(at 240.03 109.22 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
 	(hierarchical_label "DAC_OUTA"
 		(shape input)
 		(at 38.1 81.28 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2778,11 +3095,21 @@
 			(justify right)
 		)
 		(uuid "0d841fa6-7012-4743-9eee-ef996c3b82af")
+		(property "Netclass" "analog"
+			(at 35.814 82.804 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "DAC_OUTB"
 		(shape input)
 		(at 38.1 132.08 180)
-		(fields_autoplaced yes)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2790,6 +3117,17 @@
 			(justify right)
 		)
 		(uuid "59ee5ac5-47cf-4717-be3d-fa4f88db5ca5")
+		(property "Netclass" "analog"
+			(at 36.576 133.604 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "MUTE_SIGNAL"
 		(shape input)
@@ -3326,71 +3664,6 @@
 		)
 	)
 	(symbol
-		(lib_id "power:+5V")
-		(at 193.04 88.9 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "410696ff-eb79-4374-87de-25388e5fb17f")
-		(property "Reference" "#PWR0906"
-			(at 193.04 92.71 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 193.04 85.09 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 193.04 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 193.04 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 193.04 88.9 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "be658cdc-0813-49bd-9736-b7736f5ff9af")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
-					(reference "#PWR0906")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 228.6 96.52 90)
 		(unit 1)
@@ -3699,7 +3972,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "5ffdaca2-29fd-422a-bf52-8f88a054ebf5")
-		(property "Reference" "R908"
+		(property "Reference" "R910"
 			(at 177.165 80.01 90)
 			(effects
 				(font
@@ -3760,7 +4033,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
-					(reference "R908")
+					(reference "R910")
 					(unit 1)
 				)
 			)
@@ -3851,7 +4124,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "67ed2708-3357-4c5b-bc00-418f1e289d56")
-		(property "Reference" "R909"
+		(property "Reference" "R911"
 			(at 177.165 137.16 90)
 			(effects
 				(font
@@ -3912,7 +4185,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
-					(reference "R909")
+					(reference "R911")
 					(unit 1)
 				)
 			)
@@ -4348,6 +4621,71 @@
 		)
 	)
 	(symbol
+		(lib_id "power:+5VA")
+		(at 193.04 88.9 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "9dcb22eb-5cc0-424b-9c2c-eed7cce321cc")
+		(property "Reference" "#PWR0901"
+			(at 193.04 92.71 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5VA"
+			(at 192.786 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 193.04 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 193.04 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5VA\""
+			(at 193.04 88.9 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "36b3b938-7c9a-4a6f-bb63-88045b1ecd41")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
+					(reference "#PWR0901")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Device:C_Small")
 		(at 228.6 100.33 90)
 		(unit 1)
@@ -4643,7 +4981,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "b0cee0f3-39e9-4b1f-b20a-7869ac1a70d9")
-		(property "Reference" "R_b901"
+		(property "Reference" "R905"
 			(at 78.105 144.78 0)
 			(effects
 				(font
@@ -4695,7 +5033,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
-					(reference "R_b901")
+					(reference "R905")
 					(unit 1)
 				)
 			)
@@ -4763,6 +5101,71 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
 					(reference "R902")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+5VA")
+		(at 45.72 27.94 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "bca2ea92-d8d9-492a-b927-668f2bd68fda")
+		(property "Reference" "#PWR0909"
+			(at 45.72 31.75 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Value" "+5VA"
+			(at 45.466 24.13 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 45.72 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 45.72 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+5VA\""
+			(at 45.72 27.94 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "6ec111fe-2e96-4db3-a259-a4d0a454c699")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
+					(reference "#PWR0909")
 					(unit 1)
 				)
 			)
@@ -4845,8 +5248,8 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "caac300c-646a-46ce-a123-82e2920a3450")
-		(property "Reference" "R_a901"
-			(at 88.265 140.97 90)
+		(property "Reference" "R907"
+			(at 88.138 140.716 90)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4897,7 +5300,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
-					(reference "R_a901")
+					(reference "R907")
 					(unit 1)
 				)
 			)
@@ -5235,7 +5638,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "dcedb8f6-26cf-4529-bc41-19ae895e401e")
-		(property "Reference" "R907"
+		(property "Reference" "R909"
 			(at 158.115 110.49 90)
 			(effects
 				(font
@@ -5296,7 +5699,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
-					(reference "R907")
+					(reference "R909")
 					(unit 1)
 				)
 			)
@@ -5387,7 +5790,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e6fca8a0-32b8-485b-8204-17a4941977ad")
-		(property "Reference" "R905"
+		(property "Reference" "R906"
 			(at 88.265 90.17 90)
 			(effects
 				(font
@@ -5439,7 +5842,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
-					(reference "R905")
+					(reference "R906")
 					(unit 1)
 				)
 			)
@@ -5530,7 +5933,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ef3afa3f-19aa-4bad-b6ce-8490b38c5cd2")
-		(property "Reference" "R906"
+		(property "Reference" "R908"
 			(at 158.115 105.41 90)
 			(effects
 				(font
@@ -5591,7 +5994,7 @@
 		(instances
 			(project ""
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
-					(reference "R906")
+					(reference "R908")
 					(unit 1)
 				)
 			)
@@ -5670,71 +6073,6 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
 					(reference "C902")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+5V")
-		(at 45.72 27.94 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "fd672cb0-e225-4b07-8f65-f77955590e0d")
-		(property "Reference" "#PWR0901"
-			(at 45.72 31.75 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Value" "+5V"
-			(at 45.72 24.13 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 45.72 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" ""
-			(at 45.72 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+5V\""
-			(at 45.72 27.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3eaf16f1-1b45-43be-913c-dff2f7041e73")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/baa2f8d8-a947-4685-9d57-97bd2d075f25"
-					(reference "#PWR0901")
 					(unit 1)
 				)
 			)

@@ -4193,6 +4193,17 @@
 			(justify left bottom)
 		)
 		(uuid "7c82d02c-a4b1-4362-ae79-47ca2c330fb7")
+		(property "Netclass" "usb"
+			(at 86.36 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(label "CC2"
 		(at 78.74 73.66 0)
@@ -4215,6 +4226,17 @@
 			(justify left bottom)
 		)
 		(uuid "acbc0020-147c-4344-a108-c21a6598f7bc")
+		(property "Netclass" "usb"
+			(at 86.36 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "USB_DP"
 		(shape input)
@@ -4227,6 +4249,17 @@
 			(justify left)
 		)
 		(uuid "1027fad4-dfaf-4f3e-b098-9f3aa894d899")
+		(property "Netclass" "usb"
+			(at 124.46 85.09 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
 	)
 	(hierarchical_label "USB_DM"
 		(shape input)
@@ -4239,6 +4272,130 @@
 			(justify left)
 		)
 		(uuid "79ef78c6-da58-4dd4-920d-ce73a1c8386b")
+		(property "Netclass" "usb"
+			(at 124.46 82.55 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 240.03 105.41 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "263009fd-b3c5-4732-b8c9-863660b7e807")
+		(property "Netclass" "analog"
+			(at 240.7285 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 231.14 60.96 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "3b0e83a9-421c-4c24-b5d0-4fe645e418f6")
+		(property "Netclass" "analog"
+			(at 231.8385 58.42 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 200.66 59.69 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7288d1d2-69f8-4868-bbfb-9f672789c8a3")
+		(property "Netclass" "5V"
+			(at 197.612 57.15 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 80.01 66.04 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "7d875fe5-c9d5-40e2-abc9-9a25612268e4")
+		(property "Netclass" "5V"
+			(at 76.962 63.5 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 194.31 110.49 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "b3bf0818-f71c-4cca-ad07-bf113e729c67")
+		(property "Netclass" "3V3"
+			(at 195.0085 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
 	)
 	(symbol
 		(lib_id "Connector:TestPoint")
