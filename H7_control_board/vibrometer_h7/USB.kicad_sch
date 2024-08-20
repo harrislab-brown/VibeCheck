@@ -2975,12 +2975,6 @@
 		(color 0 0 0 0)
 		(uuid "ed150f4b-363e-4189-b4f2-ad0dc8c842c7")
 	)
-	(junction
-		(at 153.67 59.69)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "fedd377a-817f-4d9d-9d7e-b35333e34a4d")
-	)
 	(no_connect
 		(at 77.47 93.98)
 		(uuid "93bc0a2b-2bb2-45c0-8df7-b71c90c78fe8")
@@ -3108,16 +3102,6 @@
 			(type default)
 		)
 		(uuid "0da3b078-efc3-4120-a048-9516ee8f85b5")
-	)
-	(wire
-		(pts
-			(xy 157.48 59.69) (xy 162.56 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "0dcf6066-a07f-4c84-bcd4-21209c29a5bd")
 	)
 	(wire
 		(pts
@@ -3341,6 +3325,16 @@
 	)
 	(wire
 		(pts
+			(xy 157.48 59.69) (xy 162.56 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "4028bc96-f7ed-42a3-bf72-2ca08b672d87")
+	)
+	(wire
+		(pts
 			(xy 161.29 118.11) (xy 161.29 120.65)
 		)
 		(stroke
@@ -3421,6 +3415,16 @@
 	)
 	(wire
 		(pts
+			(xy 184.15 59.69) (xy 190.5 59.69)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5d88ec12-e684-4739-b98d-66042d879176")
+	)
+	(wire
+		(pts
 			(xy 190.5 59.69) (xy 195.58 59.69)
 		)
 		(stroke
@@ -3478,16 +3482,6 @@
 			(type default)
 		)
 		(uuid "703c974e-683d-476c-a365-291d5139bd0e")
-	)
-	(wire
-		(pts
-			(xy 184.15 59.69) (xy 190.5 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "7150ed95-5b69-4ccc-b8f5-a0b2f1363b8c")
 	)
 	(wire
 		(pts
@@ -3671,7 +3665,7 @@
 	)
 	(wire
 		(pts
-			(xy 146.05 59.69) (xy 153.67 59.69)
+			(xy 146.05 59.69) (xy 157.48 59.69)
 		)
 		(stroke
 			(width 0)
@@ -3931,16 +3925,6 @@
 	)
 	(wire
 		(pts
-			(xy 153.67 59.69) (xy 157.48 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "d99180d2-5e7d-4a9f-8f78-67b63f79bb03")
-	)
-	(wire
-		(pts
 			(xy 195.58 59.69) (xy 201.93 59.69)
 		)
 		(stroke
@@ -4018,16 +4002,6 @@
 			(type default)
 		)
 		(uuid "eb8f971d-4222-44d7-998d-f72f9cfb7255")
-	)
-	(wire
-		(pts
-			(xy 153.67 55.88) (xy 153.67 59.69)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ebefee80-c898-4a0c-ad8e-4b6b4182f021")
 	)
 	(wire
 		(pts
@@ -4241,6 +4215,16 @@
 			)
 		)
 		(uuid "19fe3d86-8e6c-4127-85fe-1d6f490ba25a")
+	)
+	(text "CHECK STM32 SPEC FOR 3.3VA FILTER"
+		(exclude_from_sim no)
+		(at 231.902 125.476 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2b53a752-90be-4bf6-b77a-49d8a01cfc7d")
 	)
 	(text "5V ANALOG SUPPLY"
 		(exclude_from_sim no)
@@ -4876,72 +4860,6 @@
 			(project ""
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4babb748-278e-4430-a66a-20cd9b0b193f"
 					(reference "U302")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 153.67 55.88 0)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board no)
-		(dnp yes)
-		(uuid "188fdb0e-cbc6-44e3-a807-600ff1fd1a8b")
-		(property "Reference" "TP301"
-			(at 150.622 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TP_V_USB"
-			(at 153.67 54.483 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 158.75 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 158.75 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 153.67 55.88 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "d0df3bb9-2388-435c-b082-6d660d3d61b6")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4babb748-278e-4430-a66a-20cd9b0b193f"
-					(reference "TP301")
 					(unit 1)
 				)
 			)

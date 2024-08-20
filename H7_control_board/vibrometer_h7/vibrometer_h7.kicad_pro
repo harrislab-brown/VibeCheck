@@ -669,6 +669,8 @@
       "/MCU/LED_STROBE_2": "digital_IO",
       "/MCU/LED_STROBE_3": "digital_IO",
       "/MCU/MUTE_BUTTON": "digital_IO",
+      "/MCU/MUTE_INDICATOR": "digital_IO",
+      "/MCU/RECORD_INDICATOR": "digital_IO",
       "/MCU/SCL_QT": "digital_IO",
       "/MCU/STA_QT": "digital_IO",
       "/MCU/SWD_CLK": "debug",

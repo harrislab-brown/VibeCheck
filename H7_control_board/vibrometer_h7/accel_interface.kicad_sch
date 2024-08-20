@@ -3205,16 +3205,15 @@
 		)
 		(uuid "ff18953b-8b3f-4780-98a9-41cedc3cd75a")
 	)
-	(text "CHECK CABLES! SEE IF SHOULD BE REVERSED OR NOT"
+	(text "SEE IF I REALLY NEED 22 OHM ON SCLK"
 		(exclude_from_sim no)
-		(at 69.088 30.988 0)
+		(at 164.084 59.182 90)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
 		)
-		(uuid "937c3aeb-4a58-4443-a101-12630b0c9d4a")
+		(uuid "863cbe30-448e-4aeb-9b10-0e91eb66454f")
 	)
 	(label "ACCEL.MOSI1"
 		(at 104.14 163.83 270)
