@@ -262,24 +262,26 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "J"
-				(at 0 8.89 0)
+			(property "Reference" "J901"
+				(at -3.175 5.715 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify right)
 				)
 			)
-			(property "Value" "AudioJack3"
-				(at 0 6.35 0)
+			(property "Value" "PH-313D"
+				(at 2.54 -6.985 0)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify right)
 				)
 			)
-			(property "Footprint" ""
-				(at 0 0 0)
+			(property "Footprint" "footprints:AUDIO-SMD_PJ-313D-2"
+				(at 0 12.192 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -287,8 +289,8 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
-				(at 0 0 0)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2006181822_SHOU-HAN-PJ-313D_C668608.pdf"
+				(at 0 10.16 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -297,7 +299,16 @@
 				)
 			)
 			(property "Description" "Audio Jack, 3 Poles (Stereo / TRS)"
-				(at 0 0 0)
+				(at 0 7.874 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C668608"
+				(at 0 5.842 0)
 				(effects
 					(font
 						(size 1.27 1.27)
@@ -385,16 +396,16 @@
 			)
 			(symbol "AudioJack3_1_1"
 				(pin passive line
-					(at 5.08 0 180)
+					(at 5.08 2.54 180)
 					(length 2.54)
-					(name "~"
+					(name "S"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "R"
+					(number "1"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -403,16 +414,16 @@
 					)
 				)
 				(pin passive line
-					(at 5.08 2.54 180)
+					(at 5.08 0 180)
 					(length 2.54)
-					(name "~"
+					(name "R"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "S"
+					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -423,14 +434,14 @@
 				(pin passive line
 					(at 5.08 -2.54 180)
 					(length 2.54)
-					(name "~"
+					(name "T"
 						(effects
 							(font
 								(size 1.27 1.27)
 							)
 						)
 					)
-					(number "T"
+					(number "3"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1178,12 +1189,6 @@
 		)
 	)
 	(junction
-		(at 193.04 128.905)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "082e49e6-7817-498b-a322-86505194ad6c")
-	)
-	(junction
 		(at 219.71 115.57)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1220,16 +1225,16 @@
 		(uuid "2ca84cab-82af-4d6d-b6e1-0b443a8940c3")
 	)
 	(junction
+		(at 172.72 106.68)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "2e267206-3836-477b-b991-35725912a9bf")
+	)
+	(junction
 		(at 193.04 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "398a79f3-68ce-463b-b184-7c65eb323c70")
-	)
-	(junction
-		(at 172.085 111.76)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "5d90f889-123b-49f6-a808-afe62c06a359")
 	)
 	(junction
 		(at 177.8 95.25)
@@ -1242,12 +1247,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "63bd0b5f-fb8e-4173-9381-4f4c0ebaefa4")
-	)
-	(junction
-		(at 172.085 106.68)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "663101e7-cb03-4bbb-a70c-16997aa3a7ab")
 	)
 	(junction
 		(at 66.04 152.4)
@@ -1328,6 +1327,12 @@
 		(uuid "ae41f1a6-aaef-43af-ad05-c29845fec490")
 	)
 	(junction
+		(at 172.72 111.76)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "b4722262-42b3-4615-9e70-a0d2e286f911")
+	)
+	(junction
 		(at 95.25 134.62)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1338,6 +1343,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "c7156bc9-502f-4314-af18-5cce443a550a")
+	)
+	(junction
+		(at 193.04 129.54)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "ceedd32a-712a-4822-bc88-242138cac1c3")
 	)
 	(junction
 		(at 54.61 132.08)
@@ -1549,7 +1560,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.085 81.28) (xy 179.07 81.28)
+			(xy 172.72 81.28) (xy 179.07 81.28)
 		)
 		(stroke
 			(width 0)
@@ -1599,7 +1610,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 111.76) (xy 172.085 111.76)
+			(xy 165.1 111.76) (xy 172.72 111.76)
 		)
 		(stroke
 			(width 0)
@@ -1689,7 +1700,7 @@
 	)
 	(wire
 		(pts
-			(xy 165.1 106.68) (xy 172.085 106.68)
+			(xy 165.1 106.68) (xy 172.72 106.68)
 		)
 		(stroke
 			(width 0)
@@ -1839,13 +1850,23 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 128.905) (xy 203.2 128.905)
+			(xy 193.04 129.54) (xy 203.2 129.54)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "62f5920c-bcf3-46f8-bb0f-529b76a69fe6")
+	)
+	(wire
+		(pts
+			(xy 172.72 111.76) (xy 182.88 111.76)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "639b4600-d414-4e49-8379-80f229cc7e6c")
 	)
 	(wire
 		(pts
@@ -1869,7 +1890,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 128.905) (xy 193.04 124.46)
+			(xy 193.04 124.46) (xy 193.04 129.54)
 		)
 		(stroke
 			(width 0)
@@ -1999,7 +2020,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.085 81.28) (xy 172.085 106.68)
+			(xy 172.72 81.28) (xy 172.72 106.68)
 		)
 		(stroke
 			(width 0)
@@ -2046,16 +2067,6 @@
 			(type default)
 		)
 		(uuid "9d19a364-c5e3-4a10-87a5-b8985ab7a516")
-	)
-	(wire
-		(pts
-			(xy 172.085 106.68) (xy 182.88 106.68)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "a2812054-a8bb-4193-8b1c-393611927ccf")
 	)
 	(wire
 		(pts
@@ -2199,6 +2210,16 @@
 	)
 	(wire
 		(pts
+			(xy 172.72 106.68) (xy 182.88 106.68)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "bd5927ad-078d-40e3-821d-71513d2dbbc3")
+	)
+	(wire
+		(pts
 			(xy 265.43 100.33) (xy 265.43 115.57)
 		)
 		(stroke
@@ -2239,7 +2260,7 @@
 	)
 	(wire
 		(pts
-			(xy 203.2 128.27) (xy 203.2 128.905)
+			(xy 203.2 128.27) (xy 203.2 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2259,7 +2280,7 @@
 	)
 	(wire
 		(pts
-			(xy 179.07 138.43) (xy 172.085 138.43)
+			(xy 179.07 138.43) (xy 172.72 138.43)
 		)
 		(stroke
 			(width 0)
@@ -2349,7 +2370,7 @@
 	)
 	(wire
 		(pts
-			(xy 193.04 132.08) (xy 193.04 128.905)
+			(xy 193.04 132.08) (xy 193.04 129.54)
 		)
 		(stroke
 			(width 0)
@@ -2399,7 +2420,7 @@
 	)
 	(wire
 		(pts
-			(xy 172.085 138.43) (xy 172.085 111.76)
+			(xy 172.72 138.43) (xy 172.72 111.76)
 		)
 		(stroke
 			(width 0)
@@ -2416,16 +2437,6 @@
 			(type default)
 		)
 		(uuid "e907b569-87a2-4510-b204-57d603717cf8")
-	)
-	(wire
-		(pts
-			(xy 172.085 111.76) (xy 182.88 111.76)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "e9347fe0-bf44-4f9d-8b40-706cad77fff4")
 	)
 	(wire
 		(pts
@@ -3758,7 +3769,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "PJ-3270"
+		(property "Value" "PH-313D"
 			(at 252.73 114.935 0)
 			(effects
 				(font
@@ -3767,8 +3778,8 @@
 				(justify right)
 			)
 		)
-		(property "Footprint" "footprints:AUDIO-TH_PJ-3270"
-			(at 255.27 107.95 0)
+		(property "Footprint" "footprints:AUDIO-SMD_PJ-313D-2"
+			(at 255.27 95.758 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3776,8 +3787,8 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2110151630_XKB-Connection-PJ-3270_C381134.pdf"
-			(at 255.27 107.95 0)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2006181822_SHOU-HAN-PJ-313D_C668608.pdf"
+			(at 255.27 97.79 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3786,7 +3797,7 @@
 			)
 		)
 		(property "Description" "Audio Jack, 3 Poles (Stereo / TRS)"
-			(at 255.27 107.95 0)
+			(at 255.27 100.076 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3794,8 +3805,8 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C381134"
-			(at 255.27 107.95 0)
+		(property "LCSC" "C668608"
+			(at 255.27 102.108 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3803,13 +3814,13 @@
 				(hide yes)
 			)
 		)
-		(pin "T"
+		(pin "2"
 			(uuid "cd52a435-6669-4f89-bb14-2e3d5c79b7cd")
 		)
-		(pin "R"
+		(pin "1"
 			(uuid "ca6573e2-918b-4286-af42-d8e3dc2b68c3")
 		)
-		(pin "S"
+		(pin "3"
 			(uuid "4c2961e3-19bc-4c5d-be19-eab9a3f41e96")
 		)
 		(instances

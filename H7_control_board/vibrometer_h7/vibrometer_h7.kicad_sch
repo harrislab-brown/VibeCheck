@@ -37,17 +37,7 @@
 	)
 	(wire
 		(pts
-			(xy 95.25 53.34) (xy 114.3 53.34)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "34d461ad-0c6d-4de7-b119-a151c919cc0a")
-	)
-	(wire
-		(pts
-			(xy 109.22 79.375) (xy 109.22 116.84)
+			(xy 109.22 78.74) (xy 109.22 116.84)
 		)
 		(stroke
 			(width 0)
@@ -57,7 +47,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 76.835) (xy 106.68 76.835)
+			(xy 114.3 76.2) (xy 106.68 76.2)
 		)
 		(stroke
 			(width 0)
@@ -187,7 +177,7 @@
 	)
 	(wire
 		(pts
-			(xy 106.68 76.835) (xy 106.68 119.38)
+			(xy 106.68 76.2) (xy 106.68 119.38)
 		)
 		(stroke
 			(width 0)
@@ -237,7 +227,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 79.375) (xy 109.22 79.375)
+			(xy 114.3 78.74) (xy 109.22 78.74)
 		)
 		(stroke
 			(width 0)
@@ -247,7 +237,7 @@
 	)
 	(wire
 		(pts
-			(xy 114.3 81.915) (xy 111.76 81.915)
+			(xy 114.3 81.28) (xy 111.76 81.28)
 		)
 		(stroke
 			(width 0)
@@ -287,23 +277,13 @@
 	)
 	(wire
 		(pts
-			(xy 111.76 81.915) (xy 111.76 114.3)
+			(xy 111.76 81.28) (xy 111.76 114.3)
 		)
 		(stroke
 			(width 0)
 			(type default)
 		)
 		(uuid "f5dd926e-00c0-4eb6-94b1-1040ea18f191")
-	)
-	(wire
-		(pts
-			(xy 95.25 50.8) (xy 114.3 50.8)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "fe58965c-882f-44fa-8baa-7b2e6d6975df")
 	)
 	(sheet
 		(at 114.3 38.1)
@@ -346,26 +326,6 @@
 			)
 			(uuid "1cbebb4a-5a54-4539-9a31-717fd8fe1824")
 		)
-		(pin "3V3" input
-			(at 114.3 50.8 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "654044ae-6434-4f6d-b3a8-5b0394a8d296")
-		)
-		(pin "V_USB" input
-			(at 114.3 53.34 180)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-			(uuid "b0bb576d-9398-4945-ad6b-c85407e343ff")
-		)
 		(pin "USB_DM" input
 			(at 114.3 58.42 180)
 			(effects
@@ -397,7 +357,7 @@
 			(uuid "84c14736-d616-40f5-a7c0-5fd53543bbef")
 		)
 		(pin "DAC_OUTA" input
-			(at 114.3 76.835 180)
+			(at 114.3 76.2 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -407,7 +367,7 @@
 			(uuid "f5ba185b-ec9f-4728-81fa-7c7b40718b16")
 		)
 		(pin "DAC_OUTB" input
-			(at 114.3 79.375 180)
+			(at 114.3 78.74 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -437,7 +397,7 @@
 			(uuid "8c6a5f0c-6c78-48a1-ab7b-b8eeebfc9dc9")
 		)
 		(pin "MUTE_SIGNAL" input
-			(at 114.3 81.915 180)
+			(at 114.3 81.28 180)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -569,26 +529,6 @@
 				)
 				(justify left top)
 			)
-		)
-		(pin "3V3" input
-			(at 95.25 50.8 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "b3d61835-2bff-4a0c-adc1-e50743e75d5d")
-		)
-		(pin "V_USB" input
-			(at 95.25 53.34 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify right)
-			)
-			(uuid "26023cc0-aeda-4447-a629-798010104d87")
 		)
 		(pin "USB_DM" input
 			(at 95.25 58.42 0)

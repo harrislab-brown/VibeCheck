@@ -948,23 +948,23 @@
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
-			(property "Reference" "L"
-				(at -1.27 0 90)
+			(property "Reference" "L301"
+				(at 2.54 0.254 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Value" "L"
-				(at 1.905 0 90)
+			(property "Value" "39n"
+				(at -1.778 0 90)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
 				)
 			)
-			(property "Footprint" ""
+			(property "Footprint" "Inductor_SMD:L_0603_1608Metric"
 				(at 0 0 0)
 				(effects
 					(font
@@ -973,7 +973,7 @@
 					(hide yes)
 				)
 			)
-			(property "Datasheet" "~"
+			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2310301641_Sunlord-SDCL1608C39NJTDF_C74308.pdf"
 				(at 0 0 0)
 				(effects
 					(font
@@ -983,6 +983,15 @@
 				)
 			)
 			(property "Description" "Inductor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C74308"
 				(at 0 0 0)
 				(effects
 					(font
@@ -1060,7 +1069,7 @@
 				)
 			)
 			(symbol "L_1_1"
-				(pin passive line
+				(pin power_in line
 					(at 0 3.81 270)
 					(length 1.27)
 					(name "1"
@@ -1078,7 +1087,7 @@
 						)
 					)
 				)
-				(pin passive line
+				(pin power_out line
 					(at 0 -3.81 90)
 					(length 1.27)
 					(name "2"
@@ -1384,6 +1393,172 @@
 					(at 0 -2.54 90)
 					(length 1.016)
 					(name "~"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+			)
+		)
+		(symbol "L_1"
+			(pin_numbers hide)
+			(pin_names
+				(offset 1.016) hide)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "L302"
+				(at 2.032 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "2u2"
+				(at -1.778 0 90)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "Inductor_SMD:L_1008_2520Metric"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1810311811_Murata-Electronics-LQM2HPN2R2MG0L_C86092.pdf"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" "Inductor"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "LCSC" "C86092 "
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_keywords" "inductor choke coil reactor magnetic"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "ki_fp_filters" "Choke_* *Coil* Inductor_* L_*"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(symbol "L_1_0_1"
+				(arc
+					(start 0 -2.54)
+					(mid 0.6323 -1.905)
+					(end 0 -1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 -1.27)
+					(mid 0.6323 -0.635)
+					(end 0 0)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 0)
+					(mid 0.6323 0.635)
+					(end 0 1.27)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(arc
+					(start 0 1.27)
+					(mid 0.6323 1.905)
+					(end 0 2.54)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+			)
+			(symbol "L_1_1_1"
+				(pin power_in line
+					(at 0 3.81 270)
+					(length 1.27)
+					(name "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.27 1.27)
+							)
+						)
+					)
+				)
+				(pin power_out line
+					(at 0 -3.81 90)
+					(length 1.27)
+					(name "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -3066,16 +3241,6 @@
 	)
 	(wire
 		(pts
-			(xy 238.76 105.41) (xy 247.65 105.41)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "2d1e2cd5-5465-4c24-98ac-01c40b76c790")
-	)
-	(wire
-		(pts
 			(xy 234.95 105.41) (xy 238.76 105.41)
 		)
 		(stroke
@@ -3263,6 +3428,16 @@
 			(type default)
 		)
 		(uuid "5e312003-0008-4da4-8a6d-f06585c05898")
+	)
+	(wire
+		(pts
+			(xy 238.76 105.41) (xy 247.65 105.41)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "659b4a46-d895-491c-b064-ebb786feafae")
 	)
 	(wire
 		(pts
@@ -4287,7 +4462,7 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
-		(at 240.03 105.41 0)
+		(at 229.87 60.96 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4295,9 +4470,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "263009fd-b3c5-4732-b8c9-863660b7e807")
+		(uuid "6d065827-ef26-423e-b3e0-4107bbd8406e")
 		(property "Netclass" "analog"
-			(at 240.7285 102.87 0)
+			(at 230.5685 58.42 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4310,7 +4485,7 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
-		(at 231.14 60.96 0)
+		(at 156.21 59.69 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4318,31 +4493,9 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "3b0e83a9-421c-4c24-b5d0-4fe645e418f6")
-		(property "Netclass" "analog"
-			(at 231.8385 58.42 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 200.66 59.69 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7288d1d2-69f8-4868-bbfb-9f672789c8a3")
+		(uuid "b1c3eb4e-fada-4d0b-a00a-6504dff52c5e")
 		(property "Netclass" "5V"
-			(at 197.612 57.15 0)
+			(at 156.9085 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4355,29 +4508,7 @@
 	(netclass_flag ""
 		(length 2.54)
 		(shape round)
-		(at 80.01 66.04 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left bottom)
-		)
-		(uuid "7d875fe5-c9d5-40e2-abc9-9a25612268e4")
-		(property "Netclass" "5V"
-			(at 76.962 63.5 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-					(italic yes)
-				)
-				(justify left)
-			)
-		)
-	)
-	(netclass_flag ""
-		(length 2.54)
-		(shape round)
-		(at 194.31 110.49 0)
+		(at 195.58 110.49 0)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -4385,9 +4516,55 @@
 			)
 			(justify left bottom)
 		)
-		(uuid "b3bf0818-f71c-4cca-ad07-bf113e729c67")
+		(uuid "cf363084-7a72-4231-a43c-044c44c45f71")
 		(property "Netclass" "3V3"
-			(at 195.0085 107.95 0)
+			(at 196.2785 107.95 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 237.49 105.41 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "d7fa6dc1-83c0-418a-94f4-7f8fadbccdd9")
+		(property "Netclass" "analog"
+			(at 238.1885 102.87 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+					(italic yes)
+				)
+				(justify left)
+			)
+		)
+	)
+	(netclass_flag ""
+		(length 2.54)
+		(shape round)
+		(at 193.04 59.69 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left bottom)
+		)
+		(uuid "eecafb44-7f2f-4fc3-8890-23ae28f9a7c0")
+		(property "Netclass" "5V"
+			(at 193.7385 57.15 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -5673,6 +5850,7 @@
 		)
 	)
 	(symbol
+		(lib_name "L_1")
 		(lib_id "Device:L")
 		(at 222.25 60.96 90)
 		(unit 1)
