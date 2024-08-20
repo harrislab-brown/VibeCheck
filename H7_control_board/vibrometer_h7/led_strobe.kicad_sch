@@ -2013,6 +2013,16 @@
 	)
 	(wire
 		(pts
+			(xy 91.44 135.89) (xy 96.52 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "51d4f89a-c3d9-4d4d-a28e-e45ed2d95a42")
+	)
+	(wire
+		(pts
 			(xy 111.76 168.91) (xy 123.19 168.91)
 		)
 		(stroke
@@ -2303,6 +2313,16 @@
 	)
 	(wire
 		(pts
+			(xy 80.01 110.49) (xy 83.82 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "77b3b46c-964e-4853-ac9d-f80ab83a24f7")
+	)
+	(wire
+		(pts
 			(xy 99.06 144.78) (xy 110.49 144.78)
 		)
 		(stroke
@@ -2423,7 +2443,7 @@
 	)
 	(wire
 		(pts
-			(xy 67.31 110.49) (xy 83.82 110.49)
+			(xy 67.31 110.49) (xy 74.93 110.49)
 		)
 		(stroke
 			(width 0)
@@ -2493,7 +2513,7 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 135.89) (xy 96.52 135.89)
+			(xy 80.01 135.89) (xy 86.36 135.89)
 		)
 		(stroke
 			(width 0)
@@ -2510,6 +2530,16 @@
 			(type default)
 		)
 		(uuid "97048c6b-b410-42fa-8c17-5159e62ba705")
+	)
+	(wire
+		(pts
+			(xy 104.14 160.02) (xy 109.22 160.02)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "977ea5e7-e2ed-4691-bb6d-faa4e53142c9")
 	)
 	(wire
 		(pts
@@ -2793,7 +2823,7 @@
 	)
 	(wire
 		(pts
-			(xy 105.41 160.02) (xy 109.22 160.02)
+			(xy 91.44 160.02) (xy 99.06 160.02)
 		)
 		(stroke
 			(width 0)
@@ -2963,16 +2993,6 @@
 		)
 		(uuid "7e53c66d-6a7a-480c-acec-51599cd757a9")
 	)
-	(text "IC to drive LEDs:\n\nDarlington transistors:\nC258198\nC549743\nC155225\n\nFETs:\nC469327\nC7527989\nC383245\nC459538"
-		(exclude_from_sim no)
-		(at 146.812 144.018 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-		)
-		(uuid "95742892-6d2d-4a2e-ae2b-c124848aa2c2")
-	)
 	(label "FET3_D"
 		(at 123.19 96.52 0)
 		(fields_autoplaced yes)
@@ -3008,7 +3028,7 @@
 	)
 	(hierarchical_label "LED_STROBE_2"
 		(shape input)
-		(at 92.71 135.89 180)
+		(at 80.01 135.89 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3018,7 +3038,7 @@
 		)
 		(uuid "3e84b04a-8856-46bf-a140-3c331cc61404")
 		(property "Netclass" "digital_IO"
-			(at 92.71 137.16 0)
+			(at 80.01 137.16 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3031,7 +3051,7 @@
 	)
 	(hierarchical_label "LED_STROBE_3"
 		(shape input)
-		(at 105.41 160.02 180)
+		(at 91.44 160.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -3041,7 +3061,7 @@
 		)
 		(uuid "a28e9b63-d8f7-4721-8cce-3cbe4a6c232c")
 		(property "Netclass" "digital_IO"
-			(at 105.41 161.29 0)
+			(at 91.44 161.29 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -3102,7 +3122,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 113.03 133.35 0)
 			(effects
 				(font
@@ -3111,7 +3131,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1811141751_onsemi-NTR4170NT1G_C236116.pdf"
 			(at 107.95 148.59 0)
 			(effects
 				(font
@@ -3156,6 +3176,15 @@
 				(hide yes)
 			)
 		)
+		(property "LCSC" "C236116"
+			(at 107.95 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
 		(pin "3"
 			(uuid "b76be6ee-93b7-4454-9a6e-33ede06d914f")
 		)
@@ -3169,6 +3198,82 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
 					(reference "Q1002")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 88.9 135.89 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "0e20f0c4-846c-4880-ad54-c8c073341d42")
+		(property "Reference" "R1017"
+			(at 84.074 134.874 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330"
+			(at 92.202 134.874 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 88.9 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2205311900_UNI-ROYAL-Uniroyal-Elec-0402WGF3300TCE_C25104.pdf"
+			(at 88.9 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 88.9 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25104"
+			(at 88.9 135.89 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "50753f01-92d4-4ac8-aaf5-cfe5c9a35e67")
+		)
+		(pin "2"
+			(uuid "2e12559e-7a48-45ad-88a9-f08861fa16b5")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1017")
 					(unit 1)
 				)
 			)
@@ -3268,7 +3373,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 100.33 107.95 0)
 			(effects
 				(font
@@ -3277,7 +3382,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1811141751_onsemi-NTR4170NT1G_C236116.pdf"
 			(at 95.25 123.19 0)
 			(effects
 				(font
@@ -3315,6 +3420,15 @@
 		)
 		(property "Sim.Pins" "1=D 2=G 3=S"
 			(at 95.25 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C236116"
+			(at 95.25 110.49 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4161,6 +4275,82 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
 					(reference "R1005")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
+		(at 77.47 110.49 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "3d98c5f6-3325-46e2-9e17-cdcd890e1d4f")
+		(property "Reference" "R1001"
+			(at 72.644 109.474 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330"
+			(at 80.772 109.474 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 77.47 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2205311900_UNI-ROYAL-Uniroyal-Elec-0402WGF3300TCE_C25104.pdf"
+			(at 77.47 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 77.47 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25104"
+			(at 77.47 110.49 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "97c9faf9-24f7-4379-b636-2aad20fa6465")
+		)
+		(pin "2"
+			(uuid "ace1be8d-6bb4-42d6-915a-bd6454f9c44b")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1001")
 					(unit 1)
 				)
 			)
@@ -5563,7 +5753,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 86.36 114.3 0)
 			(effects
 				(font
@@ -6016,7 +6206,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 111.76 163.83 0)
 			(effects
 				(font
@@ -6526,6 +6716,82 @@
 	)
 	(symbol
 		(lib_id "Device:R_Small_US")
+		(at 101.6 160.02 270)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "e9aa76a7-afcc-4722-8539-9bb5b67ede43")
+		(property "Reference" "R1018"
+			(at 96.774 159.004 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "330"
+			(at 104.902 159.004 90)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
+			(at 101.6 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2205311900_UNI-ROYAL-Uniroyal-Elec-0402WGF3300TCE_C25104.pdf"
+			(at 101.6 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "Resistor, small US symbol"
+			(at 101.6 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C25104"
+			(at 101.6 160.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "5d09e274-e813-4833-9273-e5a7b9b29434")
+		)
+		(pin "2"
+			(uuid "1ea32d2e-363e-4396-841a-d9c2e0520304")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/4fe48606-f27d-4ac1-8d68-53a5c8e78c55"
+					(reference "R1018")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Device:R_Small_US")
 		(at 161.29 63.5 180)
 		(unit 1)
 		(exclude_from_sim no)
@@ -6628,7 +6894,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" ""
+		(property "Footprint" "Package_TO_SOT_SMD:SOT-23"
 			(at 125.73 157.48 0)
 			(effects
 				(font
@@ -6637,7 +6903,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_1811141751_onsemi-NTR4170NT1G_C236116.pdf"
 			(at 120.65 172.72 0)
 			(effects
 				(font
@@ -6675,6 +6941,15 @@
 		)
 		(property "Sim.Pins" "1=D 2=G 3=S"
 			(at 120.65 175.26 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "LCSC" "C236116"
+			(at 120.65 160.02 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -6935,7 +7210,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 99.06 139.7 0)
 			(effects
 				(font

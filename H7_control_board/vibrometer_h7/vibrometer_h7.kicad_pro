@@ -767,7 +767,7 @@
           "show": false
         },
         {
-          "group_by": true,
+          "group_by": false,
           "label": "LCSC",
           "name": "LCSC",
           "show": true
@@ -797,7 +797,7 @@
           "show": false
         }
       ],
-      "filter_string": "",
+      "filter_string": "330",
       "group_symbols": true,
       "name": "",
       "sort_asc": true,
