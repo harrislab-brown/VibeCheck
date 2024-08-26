@@ -5470,10 +5470,6 @@
 		(uuid "42e185ca-e52b-4052-b8aa-d3d3e6478bc5")
 	)
 	(no_connect
-		(at 173.99 36.83)
-		(uuid "4b9a50a7-0146-4d9a-8944-8848fc1c2562")
-	)
-	(no_connect
 		(at 173.99 34.29)
 		(uuid "4d76e761-b984-4687-b0da-f0d386ece884")
 	)
@@ -5512,10 +5508,6 @@
 	(no_connect
 		(at 173.99 100.33)
 		(uuid "99334059-450a-4187-8bda-a9382f47c641")
-	)
-	(no_connect
-		(at 173.99 97.79)
-		(uuid "9bb6a0f3-02da-495f-831f-8bd9ab085f72")
 	)
 	(no_connect
 		(at 123.19 92.71)
@@ -6192,6 +6184,16 @@
 			(type default)
 		)
 		(uuid "394d1048-aff0-40ee-8173-d5caa90000dd")
+	)
+	(wire
+		(pts
+			(xy 173.99 97.79) (xy 193.04 97.79)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3986a7e1-3a84-447d-a4b6-3178aa634674")
 	)
 	(wire
 		(pts
@@ -7885,6 +7887,16 @@
 	)
 	(wire
 		(pts
+			(xy 173.99 36.83) (xy 193.04 36.83)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "eaf981f1-14b3-4a40-a095-507ae11cbdbb")
+	)
+	(wire
+		(pts
 			(xy 151.13 172.72) (xy 148.59 172.72)
 		)
 		(stroke
@@ -8144,6 +8156,38 @@
 		)
 		(uuid "033438b5-1d13-48f2-93a0-86c69b7910c2")
 	)
+	(text "CHANGE TO 2X6 1.27MM PITCH SMD HEADER"
+		(exclude_from_sim no)
+		(at 211.836 105.41 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "1464ab0d-0518-4d1e-82da-4c4c433a9f98")
+	)
+	(text "TODO:"
+		(exclude_from_sim no)
+		(at 218.694 97.79 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+		(uuid "2f88844b-441a-4ae0-804d-5eef66fd2d04")
+	)
+	(text "PICK COLORS FOR MUTE / RECORD LEDS, CHANGE LCSC PARTS TO MATCH"
+		(exclude_from_sim no)
+		(at 211.836 103.378 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "3b33ef26-826b-45ce-9a1d-90ab8850f217")
+	)
 	(text "PLACED CLOSE TO VCAP PINS"
 		(exclude_from_sim no)
 		(at 69.088 185.928 0)
@@ -8176,6 +8220,17 @@
 		)
 		(uuid "585d7724-2b91-4738-96f4-d01dd2933d48")
 	)
+	(text "LOOK FOR ALL IN ONE LEVEL SHIFTER IC FOR THESE"
+		(exclude_from_sim no)
+		(at 211.836 109.474 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "5d2807f3-e908-4dce-82da-86e64fefb88b")
+	)
 	(text "LOW ESR: <100 mOHM"
 		(exclude_from_sim no)
 		(at 65.786 183.896 0)
@@ -8207,6 +8262,28 @@
 		)
 		(uuid "722d5d49-f650-4eaf-b4f9-5eefed50fdb3")
 	)
+	(text "SEE IF DEBOUNCING IS NECESSARY? DO IT WITH INTERNAL PULL-UP AND SOFTWARE DEBOUNCE"
+		(exclude_from_sim no)
+		(at 211.836 115.824 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "75ad5a49-9f1b-4c6d-8908-c85483375193")
+	)
+	(text "CHECK DATASHESET FOR IF BOOT SHOULD BE DEBOUNCED"
+		(exclude_from_sim no)
+		(at 211.836 107.442 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "7868f2f2-c48f-4ec6-8a4f-ee13a5e63a77")
+	)
 	(text "https://learn.adafruit.com/introducing-adafruit-stemma-qt/technical-specs"
 		(exclude_from_sim no)
 		(at 50.8 158.75 0)
@@ -8227,6 +8304,39 @@
 			(justify left)
 		)
 		(uuid "978ab535-924d-4a19-bbed-22105f4726a2")
+	)
+	(text "ADD MUTE AND RECORD INDICATOR LED PINS TO CUBE IDE"
+		(exclude_from_sim no)
+		(at 212.09 101.346 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "9e88a60e-64e4-4641-bac5-4f92a244db96")
+	)
+	(text "SPEC COMPONENTS FOR LED SWITCHING FETS AND LED RESISTORS"
+		(exclude_from_sim no)
+		(at 211.836 113.792 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "ae27fb4e-cf57-4276-91b1-c99a9ba07364")
+	)
+	(text "SPEC VALUES FOR AUDIO FILTER"
+		(exclude_from_sim no)
+		(at 211.836 111.76 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "b8cd13d3-c645-4816-a7b4-304504b5f37d")
 	)
 	(text "HIGH SPEED CRYSTAL"
 		(exclude_from_sim no)
@@ -9240,6 +9350,30 @@
 		)
 		(uuid "faea07ef-3b9e-4878-b59a-572396922b09")
 	)
+	(hierarchical_label "RECORD_INDICATOR"
+		(shape input)
+		(at 193.04 97.79 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "29dd0da3-7596-4afa-9d00-c67c5b9b88c0")
+	)
+	(hierarchical_label "MUTE_INDICATOR"
+		(shape input)
+		(at 193.04 36.83 0)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "2ee23ddd-887a-42c5-a432-800decec11aa")
+	)
 	(hierarchical_label "USB_DP"
 		(shape input)
 		(at 193.04 64.77 0)
@@ -9858,7 +9992,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 68.58 134.62 0)
 			(effects
 				(font
@@ -10255,7 +10389,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 64.77 107.95 0)
 			(effects
 				(font
@@ -11568,7 +11702,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 30.48 138.43 0)
 			(effects
 				(font
@@ -11942,7 +12076,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 43.18 107.95 0)
 			(effects
 				(font
@@ -13028,7 +13162,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 52.07 73.66 0)
 			(effects
 				(font
@@ -13343,7 +13477,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 74.93 134.62 0)
 			(effects
 				(font
@@ -13629,7 +13763,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 36.83 138.43 0)
 			(effects
 				(font

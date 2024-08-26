@@ -5,108 +5,6 @@
 	(uuid "92feea5b-8930-46f3-90a0-2cf9545c2776")
 	(paper "A4")
 	(lib_symbols
-		(symbol "Connector:TestPoint"
-			(pin_numbers hide)
-			(pin_names
-				(offset 0.762) hide)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(property "Reference" "TP"
-				(at 0 6.858 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "TestPoint"
-				(at 0 5.08 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Datasheet" "~"
-				(at 5.08 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "Description" "test point"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_keywords" "test point tp"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(property "ki_fp_filters" "Pin* Test*"
-				(at 0 0 0)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(hide yes)
-				)
-			)
-			(symbol "TestPoint_0_1"
-				(circle
-					(center 0 3.302)
-					(radius 0.762)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "TestPoint_1_1"
-				(pin passive line
-					(at 0 0 90)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-		)
 		(symbol "Connector_Generic:Conn_02x06_Odd_Even"
 			(pin_names
 				(offset 1.016) hide)
@@ -1377,6 +1275,46 @@
 		(color 0 0 0 0)
 		(uuid "f8b240fe-8054-4b4c-8feb-bb1c3c79dbfe")
 	)
+	(no_connect
+		(at 107.95 154.94)
+		(uuid "0e69f43f-8696-4fb2-add5-4f4c81178b7e")
+	)
+	(no_connect
+		(at 107.95 147.32)
+		(uuid "1e6a6e97-e8ef-4834-9095-76f9f983f27b")
+	)
+	(no_connect
+		(at 95.25 149.86)
+		(uuid "5c8d72d6-d2d8-423b-9395-9a26f8fbe27a")
+	)
+	(no_connect
+		(at 107.95 152.4)
+		(uuid "63e093d9-5345-4b48-9115-9ea640820307")
+	)
+	(no_connect
+		(at 95.25 152.4)
+		(uuid "79cc6b8f-9b1c-4e47-8e8f-8f8c7a0f453c")
+	)
+	(no_connect
+		(at 107.95 144.78)
+		(uuid "7b8d6c3a-4209-4bba-9199-ee1d5dd9e8bd")
+	)
+	(no_connect
+		(at 95.25 144.78)
+		(uuid "e03b6da8-511b-45e7-ac32-20f662dc0adb")
+	)
+	(no_connect
+		(at 107.95 149.86)
+		(uuid "e2a5a1bf-24ec-4907-bf0e-3a798d0a7a88")
+	)
+	(no_connect
+		(at 95.25 154.94)
+		(uuid "f5b30766-45f4-4bda-b794-f8618240e74a")
+	)
+	(no_connect
+		(at 95.25 147.32)
+		(uuid "fb948dd2-2673-4099-b40f-c31a36d2c6cb")
+	)
 	(wire
 		(pts
 			(xy 196.85 109.22) (xy 196.85 111.76)
@@ -1416,16 +1354,6 @@
 			(type default)
 		)
 		(uuid "230197cb-d4f6-4e8f-baf0-7d5403a75e71")
-	)
-	(wire
-		(pts
-			(xy 110.49 149.86) (xy 107.95 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "28425ff8-8d8f-4f97-8cb4-84b83402668f")
 	)
 	(wire
 		(pts
@@ -1486,16 +1414,6 @@
 			(type default)
 		)
 		(uuid "4171a83b-dda3-4683-933d-e200cd81d475")
-	)
-	(wire
-		(pts
-			(xy 92.71 154.94) (xy 95.25 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "436d2f83-e340-49ce-8cea-18830f0f65b2")
 	)
 	(wire
 		(pts
@@ -1649,46 +1567,6 @@
 	)
 	(wire
 		(pts
-			(xy 92.71 147.32) (xy 95.25 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "886f5d8b-6903-4830-9b7d-313e841e27da")
-	)
-	(wire
-		(pts
-			(xy 110.49 154.94) (xy 107.95 154.94)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "8f407fad-0efc-4961-9327-21d001593244")
-	)
-	(wire
-		(pts
-			(xy 92.71 152.4) (xy 95.25 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "956bd69d-3e50-4f54-b80c-685f0805ce59")
-	)
-	(wire
-		(pts
-			(xy 92.71 149.86) (xy 95.25 149.86)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "95f5cc36-7793-4f04-b8f2-7ef793eaf459")
-	)
-	(wire
-		(pts
 			(xy 166.37 76.2) (xy 171.45 76.2)
 		)
 		(stroke
@@ -1696,16 +1574,6 @@
 			(type default)
 		)
 		(uuid "9e4c7203-504f-4c47-ab1d-123cd4994373")
-	)
-	(wire
-		(pts
-			(xy 92.71 144.78) (xy 95.25 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ae305953-0b7f-4037-b024-d22f6fc1bd38")
 	)
 	(wire
 		(pts
@@ -1796,36 +1664,6 @@
 			(type default)
 		)
 		(uuid "e961f5cb-23bb-49d0-a98e-2ff792bc9355")
-	)
-	(wire
-		(pts
-			(xy 110.49 144.78) (xy 107.95 144.78)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea1b6991-7a02-4c7e-8ff0-a8e271b81411")
-	)
-	(wire
-		(pts
-			(xy 110.49 147.32) (xy 107.95 147.32)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "ea555443-19e5-43dc-9b11-2b686fca8097")
-	)
-	(wire
-		(pts
-			(xy 110.49 152.4) (xy 107.95 152.4)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "eb788776-b3b1-46fa-bb30-22ea687c6124")
 	)
 	(wire
 		(pts
@@ -2204,275 +2042,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 110.49 154.94 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "16130e03-e23a-4c5d-817d-517e5bf66279")
-		(property "Reference" "TP510"
-			(at 115.316 154.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 112.5221 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 110.49 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 110.49 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 110.49 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "40773e71-678d-4a50-9a5b-2b232483c236")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "TP510")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 110.49 152.4 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "161cbd90-1d15-4000-a319-ee3090b86c16")
-		(property "Reference" "TP509"
-			(at 115.316 152.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 112.5221 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 110.49 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 110.49 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 110.49 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "15b13686-71a6-4704-98bd-f0b11df106e8")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "TP509")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 110.49 147.32 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "1b289d29-3521-44f7-9610-5b53f442fc2b")
-		(property "Reference" "TP507"
-			(at 115.316 147.32 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 112.5221 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 110.49 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 110.49 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 110.49 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "3416e453-13e5-4523-a8d5-c95acaea5686")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "TP507")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 92.71 154.94 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "262896da-0518-42b4-bfb6-7f95bf88e0f8")
-		(property "Reference" "TP505"
-			(at 87.884 154.94 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 90.6779 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 92.71 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 92.71 160.02 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 92.71 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "febd31c9-725f-445b-9179-0bdeb1df50a4")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "TP505")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small_US")
 		(at 173.99 76.2 90)
 		(unit 1)
@@ -2497,7 +2066,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 173.99 76.2 0)
 			(effects
 				(font
@@ -2506,7 +2075,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.pdf"
+		(property "Datasheet" ""
 			(at 173.99 76.2 0)
 			(effects
 				(font
@@ -2524,7 +2093,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C21190"
+		(property "LCSC" ""
 			(at 173.99 76.2 0)
 			(effects
 				(font
@@ -2543,140 +2112,6 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
 					(reference "R6")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 110.49 144.78 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2e45c722-bfd6-4715-bf5c-4b2c0f4dfbaf")
-		(property "Reference" "TP506"
-			(at 115.316 144.78 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 112.5221 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 110.49 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 110.49 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 110.49 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "424d615e-67c5-4b26-b157-f4fda4c197f0")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "TP506")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 110.49 149.86 270)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "2ec411b9-a7ab-4991-8972-b4764e0df70e")
-		(property "Reference" "TP508"
-			(at 115.316 149.86 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 112.5221 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 110.49 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 110.49 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 110.49 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "f71e7a08-9744-4b34-b5e3-0ba4055c8647")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "TP508")
 					(unit 1)
 				)
 			)
@@ -3202,210 +2637,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 92.71 147.32 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "aed981f4-e33d-4709-9811-f990f3a8c45d")
-		(property "Reference" "TP502"
-			(at 87.884 147.32 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 90.6779 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 92.71 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 92.71 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 92.71 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "7f3ac004-76f4-4922-8df5-186f069038b8")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "TP502")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 92.71 144.78 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "baae6274-baf7-4a57-9827-a4791d1898bb")
-		(property "Reference" "TP501"
-			(at 87.884 144.78 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 90.6779 147.32 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 92.71 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 92.71 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 92.71 144.78 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "cbfe58cf-b7f7-4430-b807-053d35e47b9d")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "TP501")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 92.71 152.4 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "bd2cb3c4-d10a-4105-ab5e-0a092fdbe6fa")
-		(property "Reference" "TP504"
-			(at 87.884 152.4 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 90.6779 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 92.71 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 92.71 157.48 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 92.71 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "649c3181-d62c-4409-acc8-7368a9e77cc2")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "TP504")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:C_Small")
 		(at 88.9 113.03 0)
 		(mirror y)
@@ -3556,74 +2787,6 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
 					(reference "R501")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector:TestPoint")
-		(at 92.71 149.86 90)
-		(mirror x)
-		(unit 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(dnp no)
-		(uuid "d56c22dd-a333-48ee-b3ec-37ae18b80e21")
-		(property "Reference" "TP503"
-			(at 87.884 149.86 90)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "TestPoint"
-			(at 90.6779 152.4 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-				(hide yes)
-			)
-		)
-		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
-			(at 92.71 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Datasheet" "~"
-			(at 92.71 154.94 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(property "Description" "test point"
-			(at 92.71 149.86 0)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(hide yes)
-			)
-		)
-		(pin "1"
-			(uuid "590bfd29-56cd-41fb-ab41-d9728b95c0f0")
-		)
-		(instances
-			(project "vibrometer_h7"
-				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "TP503")
 					(unit 1)
 				)
 			)
@@ -4174,7 +3337,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 173.99 109.22 0)
 			(effects
 				(font
@@ -4183,7 +3346,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.pdf"
+		(property "Datasheet" ""
 			(at 173.99 109.22 0)
 			(effects
 				(font
@@ -4201,7 +3364,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C21190"
+		(property "LCSC" ""
 			(at 173.99 109.22 0)
 			(effects
 				(font

@@ -8504,7 +8504,7 @@
 		)
 	)
 	(label "VCP_TX"
-		(at 271.78 30.48 180)
+		(at 271.78 43.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8514,7 +8514,7 @@
 		)
 		(uuid "133cc95c-ac92-448d-895d-81471ddf71af")
 		(property "Netclass" "debug"
-			(at 271.78 31.75 0)
+			(at 271.78 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8757,7 +8757,7 @@
 		)
 	)
 	(label "ADC2_INN"
-		(at 271.78 40.64 180)
+		(at 271.78 33.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9065,7 +9065,7 @@
 		)
 	)
 	(label "ADC1_INP"
-		(at 271.78 38.1 180)
+		(at 271.78 35.56 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9076,7 +9076,7 @@
 		(uuid "b227d157-3cd8-4fde-9fea-f7707029b2d7")
 	)
 	(label "VCP_RX"
-		(at 271.78 33.02 180)
+		(at 271.78 40.64 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9086,7 +9086,7 @@
 		)
 		(uuid "b97a4087-cd67-4d2b-a948-7be558780d3e")
 		(property "Netclass" "debug"
-			(at 271.78 34.29 0)
+			(at 271.78 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9252,7 +9252,7 @@
 		(uuid "d19be5c1-1915-4ac8-a656-fae412536d3d")
 	)
 	(label "ADC1_INN"
-		(at 271.78 35.56 180)
+		(at 271.78 38.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9307,7 +9307,7 @@
 		(uuid "e33e5b3c-cd24-4b68-a0df-ce687ed6fc6c")
 	)
 	(label "ADC2_INP"
-		(at 271.78 43.18 180)
+		(at 271.78 30.48 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10134,7 +10134,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_2x06_P1.00mm_Vertical_SMD"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical"
 			(at 250.19 35.56 0)
 			(effects
 				(font
