@@ -3415,7 +3415,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 240.792 65.278 0)
 			(effects
 				(font
@@ -3432,7 +3432,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 237.49 63.5 0)
 			(effects
 				(font
@@ -3450,7 +3450,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 237.49 63.5 0)
 			(effects
 				(font
@@ -3491,7 +3491,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 113.792 65.278 0)
 			(effects
 				(font
@@ -3508,7 +3508,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 110.49 63.5 0)
 			(effects
 				(font
@@ -3526,7 +3526,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 110.49 63.5 0)
 			(effects
 				(font
@@ -3790,7 +3790,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 215.392 65.278 0)
 			(effects
 				(font
@@ -3807,7 +3807,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 212.09 63.5 0)
 			(effects
 				(font
@@ -3825,7 +3825,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 212.09 63.5 0)
 			(effects
 				(font
@@ -3866,7 +3866,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 189.992 65.278 0)
 			(effects
 				(font
@@ -3883,7 +3883,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 186.69 63.5 0)
 			(effects
 				(font
@@ -3901,7 +3901,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 186.69 63.5 0)
 			(effects
 				(font
@@ -3942,7 +3942,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 126.492 65.278 0)
 			(effects
 				(font
@@ -3959,7 +3959,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 123.19 63.5 0)
 			(effects
 				(font
@@ -3977,7 +3977,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 123.19 63.5 0)
 			(effects
 				(font
@@ -4317,7 +4317,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 151.892 65.278 0)
 			(effects
 				(font
@@ -4334,7 +4334,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 148.59 63.5 0)
 			(effects
 				(font
@@ -4352,7 +4352,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 148.59 63.5 0)
 			(effects
 				(font
@@ -4947,7 +4947,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 139.192 65.278 0)
 			(effects
 				(font
@@ -4964,7 +4964,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 135.89 63.5 0)
 			(effects
 				(font
@@ -4982,7 +4982,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 135.89 63.5 0)
 			(effects
 				(font
@@ -5577,7 +5577,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 101.092 65.278 0)
 			(effects
 				(font
@@ -5594,7 +5594,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 97.79 63.5 0)
 			(effects
 				(font
@@ -5612,7 +5612,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 97.79 63.5 0)
 			(effects
 				(font
@@ -5865,7 +5865,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 228.092 65.278 0)
 			(effects
 				(font
@@ -5882,7 +5882,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 224.79 63.5 0)
 			(effects
 				(font
@@ -5900,7 +5900,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 224.79 63.5 0)
 			(effects
 				(font
@@ -6008,7 +6008,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 177.292 65.278 0)
 			(effects
 				(font
@@ -6025,7 +6025,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 173.99 63.5 0)
 			(effects
 				(font
@@ -6043,7 +6043,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 173.99 63.5 0)
 			(effects
 				(font
@@ -6383,7 +6383,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 202.692 65.278 0)
 			(effects
 				(font
@@ -6400,7 +6400,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 199.39 63.5 0)
 			(effects
 				(font
@@ -6418,7 +6418,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 199.39 63.5 0)
 			(effects
 				(font
@@ -7146,7 +7146,7 @@
 				)
 			)
 		)
-		(property "Value" "??"
+		(property "Value" "30"
 			(at 164.592 65.278 0)
 			(effects
 				(font
@@ -7163,7 +7163,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "~"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2404151502_YAGEO-AC0805FR-7W30RL_C5552472.pdf"
 			(at 161.29 63.5 0)
 			(effects
 				(font
@@ -7181,7 +7181,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C5552472 "
 			(at 161.29 63.5 0)
 			(effects
 				(font

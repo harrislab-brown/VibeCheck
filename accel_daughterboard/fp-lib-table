@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "VibeCheck_Daughterboard")(type "KiCad")(uri "${KIPRJMOD}/VibeCheck_Daughterboard.pretty")(options "")(descr ""))
+)

@@ -8159,7 +8159,7 @@
 	)
 	(text "- CHECK CRYSTAL FOOTPRINT"
 		(exclude_from_sim no)
-		(at 211.836 102.87 0)
+		(at 209.804 103.632 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8189,9 +8189,9 @@
 		)
 		(uuid "2f88844b-441a-4ae0-804d-5eef66fd2d04")
 	)
-	(text "AMPLIFIER SAYS SOIC-8, USING SSOP-8 FOOTPRINT? CHECK THIS!"
+	(text "- AMPLIFIER SAYS SOIC-8, USING SSOP-8 FOOTPRINT? CHECK THIS!"
 		(exclude_from_sim no)
-		(at 212.09 109.474 0)
+		(at 210.058 110.236 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8202,7 +8202,7 @@
 	)
 	(text "- PICK COLORS FOR MUTE / RECORD LEDS, CHANGE LCSC PARTS TO MATCH"
 		(exclude_from_sim no)
-		(at 211.836 100.076 0)
+		(at 209.804 100.838 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8234,7 +8234,7 @@
 	)
 	(text "SPEC RESISTOR VAL FOR STROBE LED CURRENT LIM"
 		(exclude_from_sim no)
-		(at 212.09 113.792 0)
+		(at 210.058 114.554 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8275,9 +8275,9 @@
 		)
 		(uuid "69ebe190-0477-4a5d-b645-2568af499060")
 	)
-	(text "EDIT FOOTPRINT FOR LED SWITCHING FETS"
+	(text "- EDIT FOOTPRINT FOR LED SWITCHING FETS"
 		(exclude_from_sim no)
-		(at 211.836 105.41 0)
+		(at 209.804 106.172 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8317,9 +8317,9 @@
 		)
 		(uuid "978ab535-924d-4a19-bbed-22105f4726a2")
 	)
-	(text "CHECK PUSH SWITCH FOOTPRINT SIZE / CONNECTION "
+	(text "- CHECK PUSH SWITCH FOOTPRINT SIZE / CONNECTION "
 		(exclude_from_sim no)
-		(at 211.836 107.442 0)
+		(at 209.804 108.204 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8330,7 +8330,7 @@
 	)
 	(text "SPEC VALUES FOR AUDIO FILTER"
 		(exclude_from_sim no)
-		(at 212.09 111.506 0)
+		(at 210.058 112.268 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -10117,7 +10117,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "0bc73b0d-b397-40de-bd8a-60c187d7d2d7")
 		(property "Reference" "J202"
 			(at 251.968 27.94 0)
@@ -11986,7 +11986,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205051716_XKB-Connection-TS-1102SD-A-D-R_C3010224.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_C-K-PTS645SK50SMTR92LFS_C221872.pdf"
 			(at 33.02 63.5 0)
 			(effects
 				(font
@@ -12004,7 +12004,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C3010224"
+		(property "LCSC" "C221872"
 			(at 33.02 68.58 0)
 			(effects
 				(font
@@ -12585,7 +12585,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 252.73 66.04 0)
 			(effects
 				(font
@@ -12612,7 +12612,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C23182"
+		(property "LCSC" ""
 			(at 252.73 66.04 0)
 			(effects
 				(font
@@ -13148,7 +13148,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm"
+		(property "Footprint" "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm"
 			(at 242.57 69.85 0)
 			(effects
 				(font
@@ -13157,7 +13157,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2403291506_YXC-Crystal-Oscillators-XL7EL89COI-111YLC-32M_C2965584.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2403291504_YXC-Crystal-Oscillators-X322524MOB4SI_C70590.pdf"
 			(at 242.57 69.85 0)
 			(effects
 				(font
@@ -13175,7 +13175,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2965584"
+		(property "LCSC" "C70590"
 			(at 242.57 69.85 0)
 			(effects
 				(font

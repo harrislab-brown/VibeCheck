@@ -3037,7 +3037,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205051716_XKB-Connection-TS-1102SD-A-D-R_C3010224.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_C-K-PTS645SK50SMTR92LFS_C221872.pdf"
 			(at 124.46 102.87 0)
 			(effects
 				(font
@@ -3055,7 +3055,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C3010224"
+		(property "LCSC" "C221872"
 			(at 124.46 107.95 0)
 			(effects
 				(font
@@ -3248,7 +3248,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205051716_XKB-Connection-TS-1102SD-A-D-R_C3010224.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_C-K-PTS645SK50SMTR92LFS_C221872.pdf"
 			(at 123.19 69.85 0)
 			(effects
 				(font
@@ -3266,7 +3266,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C3010224"
+		(property "LCSC" "C221872"
 			(at 123.19 74.93 0)
 			(effects
 				(font
