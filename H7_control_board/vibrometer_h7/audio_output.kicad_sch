@@ -2068,6 +2068,12 @@
 		(uuid "398a79f3-68ce-463b-b184-7c65eb323c70")
 	)
 	(junction
+		(at 45.72 43.18)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "3b3931f4-85c7-4d4d-b29f-43fe40139d01")
+	)
+	(junction
 		(at 177.8 95.25)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -2466,6 +2472,16 @@
 			(type default)
 		)
 		(uuid "300a0b56-004e-46aa-9044-49fb89f35a9c")
+	)
+	(wire
+		(pts
+			(xy 45.72 43.18) (xy 45.72 44.45)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "313cd41c-e6fb-4ccd-a2c6-f9b52275f919")
 	)
 	(wire
 		(pts
@@ -2939,6 +2955,16 @@
 	)
 	(wire
 		(pts
+			(xy 48.26 39.37) (xy 48.26 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "90221acb-e1ec-45ea-826a-8cd9743cc70c")
+	)
+	(wire
+		(pts
 			(xy 172.72 81.28) (xy 172.72 106.68)
 		)
 		(stroke
@@ -3199,6 +3225,16 @@
 	)
 	(wire
 		(pts
+			(xy 48.26 43.18) (xy 45.72 43.18)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "c4e6891d-8bf3-4851-94e4-61395b1a307c")
+	)
+	(wire
+		(pts
 			(xy 203.2 128.27) (xy 203.2 129.54)
 		)
 		(stroke
@@ -3249,7 +3285,7 @@
 	)
 	(wire
 		(pts
-			(xy 45.72 41.91) (xy 45.72 44.45)
+			(xy 45.72 41.91) (xy 45.72 43.18)
 		)
 		(stroke
 			(width 0)
@@ -4248,7 +4284,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 39.37 27.94 0)
 			(effects
 				(font
@@ -4409,7 +4445,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
 			(at 228.6 104.14 0)
 			(effects
 				(font
@@ -4427,7 +4463,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 228.6 104.14 0)
 			(effects
 				(font
@@ -4650,7 +4686,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
 			(at 228.6 96.52 0)
 			(effects
 				(font
@@ -4668,7 +4704,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 228.6 96.52 0)
 			(effects
 				(font
@@ -5455,7 +5491,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
 			(at 228.6 115.57 0)
 			(effects
 				(font
@@ -5473,7 +5509,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 228.6 115.57 0)
 			(effects
 				(font
@@ -5603,7 +5639,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
 			(at 228.6 119.38 0)
 			(effects
 				(font
@@ -5621,7 +5657,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 228.6 119.38 0)
 			(effects
 				(font
@@ -5744,7 +5780,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
 			(at 228.6 100.33 0)
 			(effects
 				(font
@@ -5762,7 +5798,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 228.6 100.33 0)
 			(effects
 				(font
@@ -6832,7 +6868,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 186.69 95.25 0)
 			(effects
 				(font
@@ -6984,7 +7020,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
 			(at 228.6 123.19 0)
 			(effects
 				(font
@@ -7002,7 +7038,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 228.6 123.19 0)
 			(effects
 				(font
@@ -7208,7 +7244,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Package_SO:HVSSOP-8-1EP_3x3mm_P0.65mm_EP1.57x1.89mm"
+		(property "Footprint" "Package_SO:SOIC-8-1EP_3.9x4.9mm_P1.27mm_EP2.29x3mm"
 			(at 193.04 83.058 0)
 			(effects
 				(font

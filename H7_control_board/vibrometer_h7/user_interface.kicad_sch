@@ -1798,17 +1798,6 @@
 		)
 		(uuid "292e379b-fbbf-42c2-a76f-114bf259fd2d")
 	)
-	(text "add thru-hole perpindicular header for debugging. \nShould interface well with saleae"
-		(exclude_from_sim no)
-		(at 63.754 178.943 0)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left)
-		)
-		(uuid "335f5999-1067-4a09-96f6-a7b6e71369bc")
-	)
 	(text "MUTE BUTTON"
 		(exclude_from_sim no)
 		(at 64.516 98.806 0)
@@ -1830,17 +1819,6 @@
 			(justify left)
 		)
 		(uuid "7c656048-01a0-43ba-9af0-eebb85f72873")
-	)
-	(text "put 1.5mm circle test pad inline to signals that we may want to jumper out\nstops needing long traces for test pads but we can\nsolder jumpers to a common connector"
-		(exclude_from_sim no)
-		(at 63.754 184.15 0)
-		(effects
-			(font
-				(size 1 1)
-			)
-			(justify left)
-		)
-		(uuid "e9260785-fd2f-4351-9f17-fc4c5b425c73")
 	)
 	(label "BIG_RED_SW"
 		(at 104.14 74.93 0)
@@ -1984,7 +1962,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "08e37659-40c6-4466-989e-79ac88c36ee0")
-		(property "Reference" "#PWR04"
+		(property "Reference" "#PWR0503"
 			(at 196.85 95.25 0)
 			(effects
 				(font
@@ -2035,7 +2013,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "#PWR04")
+					(reference "#PWR0503")
 					(unit 1)
 				)
 			)
@@ -2050,7 +2028,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "2d5f15d6-8af9-41d4-9621-37003d000ec5")
-		(property "Reference" "R6"
+		(property "Reference" "R502"
 			(at 169.672 75.184 90)
 			(effects
 				(font
@@ -2075,7 +2053,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010216_UNI-ROYAL-Uniroyal-Elec-0402WGF1001TCE_C11702.pdf"
 			(at 173.99 76.2 0)
 			(effects
 				(font
@@ -2093,7 +2071,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C11702"
 			(at 173.99 76.2 0)
 			(effects
 				(font
@@ -2111,7 +2089,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "R6")
+					(reference "R502")
 					(unit 1)
 				)
 			)
@@ -2127,7 +2105,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "320a0727-a75e-454b-85e7-380e0482aedd")
-		(property "Reference" "#PWR0503"
+		(property "Reference" "#PWR0501"
 			(at 130.81 76.2 0)
 			(effects
 				(font
@@ -2177,7 +2155,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "#PWR0503")
+					(reference "#PWR0501")
 					(unit 1)
 				)
 			)
@@ -2193,7 +2171,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "7f03a1e7-ac00-4aff-b4e1-796eb907f1b3")
-		(property "Reference" "#PWR0502"
+		(property "Reference" "#PWR0507"
 			(at 101.6 172.72 0)
 			(effects
 				(font
@@ -2244,7 +2222,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "#PWR0502")
+					(reference "#PWR0507")
 					(unit 1)
 				)
 			)
@@ -2357,7 +2335,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "89354441-98c5-41b1-82d9-53fbe42c3e41")
-		(property "Reference" "D1"
+		(property "Reference" "D501"
 			(at 197.612 79.502 90)
 			(effects
 				(font
@@ -2366,7 +2344,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
+		(property "Value" "LED_RED"
 			(at 198.882 83.058 90)
 			(effects
 				(font
@@ -2402,7 +2380,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C965805"
+		(property "LCSC" "C965799"
 			(at 196.85 82.55 0)
 			(effects
 				(font
@@ -2420,7 +2398,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "D1")
+					(reference "D501")
 					(unit 1)
 				)
 			)
@@ -2436,7 +2414,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9d2898e7-7bf6-46a4-92f9-21666fa58608")
-		(property "Reference" "#PWR0501"
+		(property "Reference" "#PWR0502"
 			(at 87.63 93.98 0)
 			(effects
 				(font
@@ -2487,7 +2465,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "#PWR0501")
+					(reference "#PWR0502")
 					(unit 1)
 				)
 			)
@@ -2503,7 +2481,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "9e5991de-5adc-4d3d-aef8-f7c7c5f766d9")
-		(property "Reference" "R504"
+		(property "Reference" "R506"
 			(at 97.282 110.49 0)
 			(effects
 				(font
@@ -2564,7 +2542,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "R504")
+					(reference "R506")
 					(unit 1)
 				)
 			)
@@ -2580,7 +2558,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "ab7a5505-5ad1-4c5f-a304-8ad81c779eee")
-		(property "Reference" "#PWR02"
+		(property "Reference" "#PWR0504"
 			(at 132.08 109.22 0)
 			(effects
 				(font
@@ -2630,7 +2608,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "#PWR02")
+					(reference "#PWR0504")
 					(unit 1)
 				)
 			)
@@ -2664,7 +2642,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 88.9 113.03 0)
 			(effects
 				(font
@@ -2801,7 +2779,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "d87011a4-a60f-4dc8-98e5-ef6d0f173bfa")
-		(property "Reference" "D2"
+		(property "Reference" "D502"
 			(at 197.612 112.522 90)
 			(effects
 				(font
@@ -2810,7 +2788,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
+		(property "Value" "LED_RED"
 			(at 198.882 116.078 90)
 			(effects
 				(font
@@ -2846,7 +2824,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C965805"
+		(property "LCSC" "C965799"
 			(at 196.85 115.57 0)
 			(effects
 				(font
@@ -2864,7 +2842,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "D2")
+					(reference "D502")
 					(unit 1)
 				)
 			)
@@ -2880,7 +2858,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "da72d3e4-7d56-4853-a295-1bff8f20c81a")
-		(property "Reference" "R502"
+		(property "Reference" "R503"
 			(at 96.012 77.47 0)
 			(effects
 				(font
@@ -2941,7 +2919,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "R502")
+					(reference "R503")
 					(unit 1)
 				)
 			)
@@ -2957,7 +2935,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e27d251e-4e8f-40c9-abf6-3329b5a770bb")
-		(property "Reference" "R503"
+		(property "Reference" "R504"
 			(at 91.694 106.934 90)
 			(effects
 				(font
@@ -3018,7 +2996,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "R503")
+					(reference "R504")
 					(unit 1)
 				)
 			)
@@ -3111,7 +3089,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "e79e027d-0d97-49b1-a934-c2fffd0b5631")
-		(property "Reference" "#PWR01"
+		(property "Reference" "#PWR0505"
 			(at 88.9 127 0)
 			(effects
 				(font
@@ -3162,7 +3140,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "#PWR01")
+					(reference "#PWR0505")
 					(unit 1)
 				)
 			)
@@ -3178,7 +3156,7 @@
 		(dnp no)
 		(fields_autoplaced yes)
 		(uuid "eb8a4649-e670-4962-ac40-26b7047c6749")
-		(property "Reference" "#PWR06"
+		(property "Reference" "#PWR0506"
 			(at 196.85 128.27 0)
 			(effects
 				(font
@@ -3229,7 +3207,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "#PWR06")
+					(reference "#PWR0506")
 					(unit 1)
 				)
 			)
@@ -3321,7 +3299,7 @@
 		(on_board yes)
 		(dnp no)
 		(uuid "eed114b9-b1ef-4e73-87c7-a712f57ef421")
-		(property "Reference" "R7"
+		(property "Reference" "R505"
 			(at 169.672 108.204 90)
 			(effects
 				(font
@@ -3346,7 +3324,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" ""
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010216_UNI-ROYAL-Uniroyal-Elec-0402WGF1001TCE_C11702.pdf"
 			(at 173.99 109.22 0)
 			(effects
 				(font
@@ -3364,7 +3342,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" ""
+		(property "LCSC" "C11702"
 			(at 173.99 109.22 0)
 			(effects
 				(font
@@ -3382,7 +3360,7 @@
 		(instances
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/1264eea6-2da0-4b8c-9a4c-9121bcc9c76c"
-					(reference "R7")
+					(reference "R505")
 					(unit 1)
 				)
 			)
@@ -3416,7 +3394,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 87.63 80.01 0)
 			(effects
 				(font

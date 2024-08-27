@@ -2219,7 +2219,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 206.7052 73.66 0)
 			(effects
 				(font
@@ -2408,7 +2408,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 195.2752 73.66 0)
 			(effects
 				(font
@@ -3160,7 +3160,7 @@
 				(hide yes)
 			)
 		)
-		(property "Value" "LED"
+		(property "Value" "LED_GRN"
 			(at 223.52 72.7074 90)
 			(effects
 				(font

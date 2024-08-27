@@ -4660,7 +4660,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
 			(at 234.95 69.85 0)
 			(effects
 				(font
@@ -4678,7 +4678,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 234.95 69.85 0)
 			(effects
 				(font
@@ -4892,7 +4892,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 48.26 110.49 0)
 			(effects
 				(font
@@ -5594,7 +5594,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
 			(at 227.33 69.85 0)
 			(effects
 				(font
@@ -5612,7 +5612,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 227.33 69.85 0)
 			(effects
 				(font
@@ -5947,7 +5947,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 238.76 111.76 0)
 			(effects
 				(font
@@ -5956,7 +5956,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21B105KBFNNNE_C28323.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL10A105KB8NNNC_C15849.pdf"
 			(at 238.76 111.76 0)
 			(effects
 				(font
@@ -5974,7 +5974,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C28323"
+		(property "LCSC" "C15849"
 			(at 238.76 111.76 0)
 			(effects
 				(font
@@ -6291,7 +6291,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 247.65 111.76 0)
 			(effects
 				(font
@@ -6378,7 +6378,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
 			(at 250.19 69.85 0)
 			(effects
 				(font
@@ -6396,7 +6396,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 250.19 69.85 0)
 			(effects
 				(font
@@ -6736,7 +6736,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
 			(at 242.57 69.85 0)
 			(effects
 				(font
@@ -6754,7 +6754,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 242.57 69.85 0)
 			(effects
 				(font
@@ -7001,7 +7001,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 97.79 143.51 0)
 			(effects
 				(font
@@ -7010,7 +7010,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010130_UNI-ROYAL-Uniroyal-Elec-0603WAF1001T5E_C21190.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2206010216_UNI-ROYAL-Uniroyal-Elec-0402WGF1001TCE_C11702.pdf"
 			(at 97.79 143.51 0)
 			(effects
 				(font
@@ -7028,7 +7028,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C21190"
+		(property "LCSC" "C11702"
 			(at 97.79 143.51 0)
 			(effects
 				(font
@@ -7548,7 +7548,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "CL21A106KAYNNNE_C15850.pdf"
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2304140030_Samsung-Electro-Mechanics-CL21A226MAQNNNE_C45783.pdf"
 			(at 187.96 115.57 0)
 			(effects
 				(font
@@ -7566,7 +7566,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C15850"
+		(property "LCSC" "C45783"
 			(at 187.96 115.57 0)
 			(effects
 				(font
@@ -7892,7 +7892,7 @@
 				(justify right)
 			)
 		)
-		(property "Value" "LED"
+		(property "Value" "LED_GRN"
 			(at 122.682 150.368 90)
 			(effects
 				(font

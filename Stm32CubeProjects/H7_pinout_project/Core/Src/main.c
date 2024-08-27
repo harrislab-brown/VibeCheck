@@ -56,7 +56,6 @@ TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
 
-UART_HandleTypeDef huart4;
 UART_HandleTypeDef huart7;
 UART_HandleTypeDef huart1;
 
@@ -81,7 +80,6 @@ static void MX_TIM1_Init(void);
 static void MX_TIM2_Init(void);
 static void MX_ADC1_Init(void);
 static void MX_ADC2_Init(void);
-static void MX_UART4_Init(void);
 static void MX_UART7_Init(void);
 /* USER CODE BEGIN PFP */
 
@@ -139,7 +137,6 @@ int main(void)
   MX_TIM2_Init();
   MX_ADC1_Init();
   MX_ADC2_Init();
-  MX_UART4_Init();
   MX_UART7_Init();
   /* USER CODE BEGIN 2 */
 
@@ -187,7 +184,7 @@ void SystemClock_Config(void)
   RCC_OscInitStruct.PLL.PLLM = 2;
   RCC_OscInitStruct.PLL.PLLN = 16;
   RCC_OscInitStruct.PLL.PLLP = 2;
-  RCC_OscInitStruct.PLL.PLLQ = 4;
+  RCC_OscInitStruct.PLL.PLLQ = 3;
   RCC_OscInitStruct.PLL.PLLR = 2;
   RCC_OscInitStruct.PLL.PLLRGE = RCC_PLL1VCIRANGE_3;
   RCC_OscInitStruct.PLL.PLLVCOSEL = RCC_PLL1VCOWIDE;
@@ -227,9 +224,9 @@ void PeriphCommonClock_Config(void)
   /** Initializes the peripherals clock
   */
   PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_ADC;
-  PeriphClkInitStruct.PLL2.PLL2M = 32;
-  PeriphClkInitStruct.PLL2.PLL2N = 129;
-  PeriphClkInitStruct.PLL2.PLL2P = 2;
+  PeriphClkInitStruct.PLL2.PLL2M = 2;
+  PeriphClkInitStruct.PLL2.PLL2N = 16;
+  PeriphClkInitStruct.PLL2.PLL2P = 5;
   PeriphClkInitStruct.PLL2.PLL2Q = 2;
   PeriphClkInitStruct.PLL2.PLL2R = 2;
   PeriphClkInitStruct.PLL2.PLL2RGE = RCC_PLL2VCIRANGE_3;
@@ -832,54 +829,6 @@ static void MX_TIM4_Init(void)
 }
 
 /**
-  * @brief UART4 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_UART4_Init(void)
-{
-
-  /* USER CODE BEGIN UART4_Init 0 */
-
-  /* USER CODE END UART4_Init 0 */
-
-  /* USER CODE BEGIN UART4_Init 1 */
-
-  /* USER CODE END UART4_Init 1 */
-  huart4.Instance = UART4;
-  huart4.Init.BaudRate = 115200;
-  huart4.Init.WordLength = UART_WORDLENGTH_8B;
-  huart4.Init.StopBits = UART_STOPBITS_1;
-  huart4.Init.Parity = UART_PARITY_NONE;
-  huart4.Init.Mode = UART_MODE_TX_RX;
-  huart4.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart4.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart4.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart4.Init.ClockPrescaler = UART_PRESCALER_DIV1;
-  huart4.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart4) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_SetTxFifoThreshold(&huart4, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_SetRxFifoThreshold(&huart4, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_DisableFifoMode(&huart4) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN UART4_Init 2 */
-
-  /* USER CODE END UART4_Init 2 */
-
-}
-
-/**
   * @brief UART7 Initialization Function
   * @param None
   * @retval None
@@ -998,10 +947,13 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(SPI4_CS_GPIO_Port, SPI4_CS_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(MUTE_SIGNAL_GPIO_Port, MUTE_SIGNAL_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIO_TIMING2_GPIO_Port, GPIO_TIMING2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(ACCEL_NCS1_GPIO_Port, ACCEL_NCS1_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOA, GPIO_TIMING1_Pin|MUTE_INDICATOR_Pin|MUTE_SIGNAL_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOB, ACCEL_NCS1_Pin|RECORD_INDICATOR_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(SPI3_CS_GPIO_Port, SPI3_CS_Pin, GPIO_PIN_RESET);
@@ -1025,25 +977,32 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOC, &GPIO_InitStruct);
 
+  /*Configure GPIO pin : GPIO_TIMING2_Pin */
+  GPIO_InitStruct.Pin = GPIO_TIMING2_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIO_TIMING2_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pins : GPIO_TIMING1_Pin MUTE_INDICATOR_Pin MUTE_SIGNAL_Pin */
+  GPIO_InitStruct.Pin = GPIO_TIMING1_Pin|MUTE_INDICATOR_Pin|MUTE_SIGNAL_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
+  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
   /*Configure GPIO pins : MUTE_BUTTON_Pin BIG_RED_BUTTON_Pin */
   GPIO_InitStruct.Pin = MUTE_BUTTON_Pin|BIG_RED_BUTTON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : MUTE_SIGNAL_Pin */
-  GPIO_InitStruct.Pin = MUTE_SIGNAL_Pin;
+  /*Configure GPIO pins : ACCEL_NCS1_Pin RECORD_INDICATOR_Pin */
+  GPIO_InitStruct.Pin = ACCEL_NCS1_Pin|RECORD_INDICATOR_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(MUTE_SIGNAL_GPIO_Port, &GPIO_InitStruct);
-
-  /*Configure GPIO pin : ACCEL_NCS1_Pin */
-  GPIO_InitStruct.Pin = ACCEL_NCS1_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
-  HAL_GPIO_Init(ACCEL_NCS1_GPIO_Port, &GPIO_InitStruct);
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /*Configure GPIO pins : ACCEL_INTA1_Pin ACCEL_INTB1_Pin SPI3_INT1_Pin SPI3_INT2_Pin */
   GPIO_InitStruct.Pin = ACCEL_INTA1_Pin|ACCEL_INTB1_Pin|SPI3_INT1_Pin|SPI3_INT2_Pin;
