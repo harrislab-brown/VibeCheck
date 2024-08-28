@@ -1458,10 +1458,6 @@
 		(uuid "3b152c7b-afd2-4eb8-8adb-34f084819351")
 	)
 	(no_connect
-		(at 175.26 115.57)
-		(uuid "41ffdc40-4801-4cfa-a5a6-b0473bb63f65")
-	)
-	(no_connect
 		(at 119.38 91.44)
 		(uuid "ef62bff8-c36a-4a95-9a67-4d2ffc7f917d")
 	)

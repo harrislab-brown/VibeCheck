@@ -2010,7 +2010,7 @@
 	)
 	(text "SPI_MOSI"
 		(exclude_from_sim no)
-		(at 127.508 86.106 0)
+		(at 127.254 83.312 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -2021,7 +2021,7 @@
 	)
 	(text "SPI_MISO"
 		(exclude_from_sim no)
-		(at 127.508 83.566 0)
+		(at 127.508 86.106 0)
 		(effects
 			(font
 				(size 1.27 1.27)
