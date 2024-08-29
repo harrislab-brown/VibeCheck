@@ -5430,10 +5430,6 @@
 		(uuid "0ff30154-c3f5-4a16-9c25-9b7c16ba1341")
 	)
 	(no_connect
-		(at 173.99 125.73)
-		(uuid "1476abd2-0ef5-4aa6-bdaa-1b95fe7e45d3")
-	)
-	(no_connect
 		(at 123.19 113.03)
 		(uuid "2b136984-9da7-49e1-befe-1e05a20367ac")
 	)
@@ -5468,10 +5464,6 @@
 	(no_connect
 		(at 123.19 87.63)
 		(uuid "42e185ca-e52b-4052-b8aa-d3d3e6478bc5")
-	)
-	(no_connect
-		(at 173.99 34.29)
-		(uuid "4d76e761-b984-4687-b0da-f0d386ece884")
 	)
 	(no_connect
 		(at 123.19 133.35)
@@ -6614,6 +6606,16 @@
 			(type default)
 		)
 		(uuid "5a950d36-7c70-4b47-92b8-33c5fd49f773")
+	)
+	(wire
+		(pts
+			(xy 193.04 125.73) (xy 173.99 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "5ba094af-8c6f-4849-9648-0da34ba2cba6")
 	)
 	(wire
 		(pts
@@ -7975,6 +7977,16 @@
 		)
 		(uuid "f4d70810-8031-4760-9531-dbfc3d0e1ce6")
 	)
+	(wire
+		(pts
+			(xy 193.04 34.29) (xy 173.99 34.29)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f64cd8b0-d9f6-4c8c-92c1-7846364b3169")
+	)
 	(bus
 		(pts
 			(xy 97.79 123.19) (xy 97.79 125.73)
@@ -8145,6 +8157,17 @@
 		)
 		(uuid "bc3f34a9-fc12-4ecc-a19d-f8be430e1300")
 	)
+	(text "- CHECK CRYSTAL FOOTPRINT"
+		(exclude_from_sim no)
+		(at 209.804 103.632 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "0083e05e-4fa0-4ee9-938e-b63a1ed46fc5")
+	)
 	(text "STEMMA QT CONNECTOR"
 		(exclude_from_sim no)
 		(at 21.59 125.476 0)
@@ -8156,17 +8179,6 @@
 		)
 		(uuid "033438b5-1d13-48f2-93a0-86c69b7910c2")
 	)
-	(text "CHANGE TO 2X6 1.27MM PITCH SMD HEADER"
-		(exclude_from_sim no)
-		(at 211.836 105.41 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "1464ab0d-0518-4d1e-82da-4c4c433a9f98")
-	)
 	(text "TODO:"
 		(exclude_from_sim no)
 		(at 218.694 97.79 0)
@@ -8177,9 +8189,20 @@
 		)
 		(uuid "2f88844b-441a-4ae0-804d-5eef66fd2d04")
 	)
-	(text "PICK COLORS FOR MUTE / RECORD LEDS, CHANGE LCSC PARTS TO MATCH"
+	(text "- AMPLIFIER SAYS SOIC-8, USING SSOP-8 FOOTPRINT? CHECK THIS!"
 		(exclude_from_sim no)
-		(at 211.836 103.378 0)
+		(at 210.058 110.236 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "35b2ee2f-a329-4ed5-bdf1-496ccea19327")
+	)
+	(text "- PICK COLORS FOR MUTE / RECORD LEDS, CHANGE LCSC PARTS TO MATCH"
+		(exclude_from_sim no)
+		(at 209.804 100.838 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8209,6 +8232,17 @@
 		)
 		(uuid "4d9dc4ad-f7f2-408e-9c4a-40fb618b00ad")
 	)
+	(text "SPEC RESISTOR VAL FOR STROBE LED CURRENT LIM"
+		(exclude_from_sim no)
+		(at 210.058 114.554 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "53144f81-9b64-4386-86cd-65158f01d221")
+	)
 	(text "LOW ESR <1 OHM placed close to MCU pin"
 		(exclude_from_sim no)
 		(at 32.766 29.972 0)
@@ -8219,17 +8253,6 @@
 			(justify left)
 		)
 		(uuid "585d7724-2b91-4738-96f4-d01dd2933d48")
-	)
-	(text "LOOK FOR ALL IN ONE LEVEL SHIFTER IC FOR THESE"
-		(exclude_from_sim no)
-		(at 211.836 109.474 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "5d2807f3-e908-4dce-82da-86e64fefb88b")
 	)
 	(text "LOW ESR: <100 mOHM"
 		(exclude_from_sim no)
@@ -8252,6 +8275,17 @@
 		)
 		(uuid "69ebe190-0477-4a5d-b645-2568af499060")
 	)
+	(text "- EDIT FOOTPRINT FOR LED SWITCHING FETS"
+		(exclude_from_sim no)
+		(at 209.804 106.172 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6d73d5a9-cf87-47c4-9828-56728aafea96")
+	)
 	(text "GPIO HEADER"
 		(exclude_from_sim no)
 		(at 219.71 22.733 0)
@@ -8261,28 +8295,6 @@
 			)
 		)
 		(uuid "722d5d49-f650-4eaf-b4f9-5eefed50fdb3")
-	)
-	(text "SEE IF DEBOUNCING IS NECESSARY? DO IT WITH INTERNAL PULL-UP AND SOFTWARE DEBOUNCE"
-		(exclude_from_sim no)
-		(at 211.836 115.824 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "75ad5a49-9f1b-4c6d-8908-c85483375193")
-	)
-	(text "CHECK DATASHESET FOR IF BOOT SHOULD BE DEBOUNCED"
-		(exclude_from_sim no)
-		(at 211.836 107.442 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "7868f2f2-c48f-4ec6-8a4f-ee13a5e63a77")
 	)
 	(text "https://learn.adafruit.com/introducing-adafruit-stemma-qt/technical-specs"
 		(exclude_from_sim no)
@@ -8305,31 +8317,20 @@
 		)
 		(uuid "978ab535-924d-4a19-bbed-22105f4726a2")
 	)
-	(text "ADD MUTE AND RECORD INDICATOR LED PINS TO CUBE IDE"
+	(text "- CHECK PUSH SWITCH FOOTPRINT SIZE / CONNECTION "
 		(exclude_from_sim no)
-		(at 212.09 101.346 0)
+		(at 209.804 108.204 0)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
 			(justify left)
 		)
-		(uuid "9e88a60e-64e4-4641-bac5-4f92a244db96")
-	)
-	(text "SPEC COMPONENTS FOR LED SWITCHING FETS AND LED RESISTORS"
-		(exclude_from_sim no)
-		(at 211.836 113.792 0)
-		(effects
-			(font
-				(size 1.27 1.27)
-			)
-			(justify left)
-		)
-		(uuid "ae27fb4e-cf57-4276-91b1-c99a9ba07364")
+		(uuid "b7e96a9a-c685-458a-864e-692f459915bc")
 	)
 	(text "SPEC VALUES FOR AUDIO FILTER"
 		(exclude_from_sim no)
-		(at 211.836 111.76 0)
+		(at 210.058 112.268 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -8504,7 +8505,7 @@
 		)
 	)
 	(label "VCP_TX"
-		(at 271.78 30.48 180)
+		(at 271.78 43.18 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -8514,7 +8515,7 @@
 		)
 		(uuid "133cc95c-ac92-448d-895d-81471ddf71af")
 		(property "Netclass" "debug"
-			(at 271.78 31.75 0)
+			(at 271.78 44.45 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -8757,7 +8758,7 @@
 		)
 	)
 	(label "ADC2_INN"
-		(at 271.78 40.64 180)
+		(at 271.78 33.02 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9065,7 +9066,7 @@
 		)
 	)
 	(label "ADC1_INP"
-		(at 271.78 38.1 180)
+		(at 271.78 35.56 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9076,7 +9077,7 @@
 		(uuid "b227d157-3cd8-4fde-9fea-f7707029b2d7")
 	)
 	(label "VCP_RX"
-		(at 271.78 33.02 180)
+		(at 271.78 40.64 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9086,7 +9087,7 @@
 		)
 		(uuid "b97a4087-cd67-4d2b-a948-7be558780d3e")
 		(property "Netclass" "debug"
-			(at 271.78 34.29 0)
+			(at 271.78 41.91 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -9252,7 +9253,7 @@
 		(uuid "d19be5c1-1915-4ac8-a656-fae412536d3d")
 	)
 	(label "ADC1_INN"
-		(at 271.78 35.56 180)
+		(at 271.78 38.1 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -9307,7 +9308,7 @@
 		(uuid "e33e5b3c-cd24-4b68-a0df-ce687ed6fc6c")
 	)
 	(label "ADC2_INP"
-		(at 271.78 43.18 180)
+		(at 271.78 30.48 180)
 		(fields_autoplaced yes)
 		(effects
 			(font
@@ -10116,7 +10117,7 @@
 		(exclude_from_sim no)
 		(in_bom yes)
 		(on_board yes)
-		(dnp no)
+		(dnp yes)
 		(uuid "0bc73b0d-b397-40de-bd8a-60c187d7d2d7")
 		(property "Reference" "J202"
 			(at 251.968 27.94 0)
@@ -10134,7 +10135,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Connector_PinHeader_1.00mm:PinHeader_2x06_P1.00mm_Vertical_SMD"
+		(property "Footprint" "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical"
 			(at 250.19 35.56 0)
 			(effects
 				(font
@@ -10435,6 +10436,72 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
 					(reference "R206")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 193.04 34.29 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "259fbb4c-70f5-4612-894e-0a86b5913df9")
+		(property "Reference" "TP203"
+			(at 189.992 29.21 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GPIO_timing1"
+			(at 180.34 33.02 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 198.12 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 198.12 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 193.04 34.29 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "bb0ad241-dec9-4eaa-a56b-27ed034f5bd5")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
+					(reference "TP203")
 					(unit 1)
 				)
 			)
@@ -10985,7 +11052,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 220.98 137.16 0)
 			(effects
 				(font
@@ -11129,7 +11196,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 78.74 36.83 0)
 			(effects
 				(font
@@ -11207,7 +11274,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 48.26 36.83 0)
 			(effects
 				(font
@@ -11460,6 +11527,72 @@
 			(project "vibrometer_h7"
 				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
 					(reference "#PWR0208")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Connector:TestPoint")
+		(at 193.04 125.73 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(uuid "5e2b6512-9d00-401b-ba8c-f85dedfd0d31")
+		(property "Reference" "TP204"
+			(at 189.992 120.65 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "GPIO_timing2"
+			(at 180.086 124.46 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "TestPoint:TestPoint_Pad_D1.0mm"
+			(at 198.12 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" "~"
+			(at 198.12 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" "test point"
+			(at 193.04 125.73 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(pin "1"
+			(uuid "8704a4c7-907e-49c1-9a75-9cf4b7ba92c9")
+		)
+		(instances
+			(project "vibrometer_h7"
+				(path "/18de6987-156a-4b34-871e-cbbe1d261986/12588020-3bb6-4766-98bd-8aed38e60ec0"
+					(reference "TP204")
 					(unit 1)
 				)
 			)
@@ -11853,7 +11986,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2205051716_XKB-Connection-TS-1102SD-A-D-R_C3010224.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2304140030_C-K-PTS645SK50SMTR92LFS_C221872.pdf"
 			(at 33.02 63.5 0)
 			(effects
 				(font
@@ -11871,7 +12004,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C3010224"
+		(property "LCSC" "C221872"
 			(at 33.02 68.58 0)
 			(effects
 				(font
@@ -12000,7 +12133,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 71.12 36.83 0)
 			(effects
 				(font
@@ -12220,7 +12353,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 63.5 36.83 0)
 			(effects
 				(font
@@ -12452,7 +12585,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
+		(property "Footprint" "Resistor_SMD:R_0402_1005Metric"
 			(at 252.73 66.04 0)
 			(effects
 				(font
@@ -12479,7 +12612,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C23182"
+		(property "LCSC" ""
 			(at 252.73 66.04 0)
 			(effects
 				(font
@@ -12596,7 +12729,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 55.88 36.83 0)
 			(effects
 				(font
@@ -13015,7 +13148,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Crystal:Crystal_SMD_2016-4Pin_2.0x1.6mm"
+		(property "Footprint" "Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm"
 			(at 242.57 69.85 0)
 			(effects
 				(font
@@ -13024,7 +13157,7 @@
 				(hide yes)
 			)
 		)
-		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2403291506_YXC-Crystal-Oscillators-XL7EL89COI-111YLC-32M_C2965584.pdf"
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2403291504_YXC-Crystal-Oscillators-X322524MOB4SI_C70590.pdf"
 			(at 242.57 69.85 0)
 			(effects
 				(font
@@ -13042,7 +13175,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C2965584"
+		(property "LCSC" "C70590"
 			(at 242.57 69.85 0)
 			(effects
 				(font
@@ -13240,7 +13373,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 40.64 36.83 0)
 			(effects
 				(font
@@ -13555,7 +13688,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric_Pad0.74x0.62mm_HandSolder"
+		(property "Footprint" "Capacitor_SMD:C_0402_1005Metric"
 			(at 68.58 73.66 0)
 			(effects
 				(font
