@@ -1,6 +1,6 @@
 # STM32CubeIDE
-.metadata/
-.settings/
+*.metadata/
+*.settings/
 *.ld
 
 # For PCBs designed using KiCad: https://www.kicad.org/
