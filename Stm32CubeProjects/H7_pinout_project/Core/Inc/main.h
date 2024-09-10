@@ -93,8 +93,8 @@ void Error_Handler(void);
 #define LED_STROBE_2_GPIO_Port GPIOC
 #define LED_STROBE_3_Pin GPIO_PIN_8
 #define LED_STROBE_3_GPIO_Port GPIOC
-#define DAC1_EXTERN_TRG_Pin GPIO_PIN_9
-#define DAC1_EXTERN_TRG_GPIO_Port GPIOC
+#define DAC_EXT_Pin GPIO_PIN_9
+#define DAC_EXT_GPIO_Port GPIOC
 #define BIG_RED_BUTTON_Pin GPIO_PIN_15
 #define BIG_RED_BUTTON_GPIO_Port GPIOA
 #define SPI3_CS_Pin GPIO_PIN_0
