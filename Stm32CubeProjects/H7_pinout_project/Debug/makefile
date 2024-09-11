@@ -60,8 +60,8 @@ all: main-build
 main-build: H7_pinout_project.elf secondary-outputs
 
 # Tool invocations
-H7_pinout_project.elf H7_pinout_project.map: $(OBJS) $(USER_OBJS) C:\Users\Eli\Documents\GitHub\VibeCheck\Stm32CubeProjects\H7_pinout_project\STM32H723VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "H7_pinout_project.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\Eli\Documents\GitHub\VibeCheck\Stm32CubeProjects\H7_pinout_project\STM32H723VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="H7_pinout_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+H7_pinout_project.elf H7_pinout_project.map: $(OBJS) $(USER_OBJS) C:\Users\eli\Documents\GitHub\vibrations_class_sensor_board\vibrometer\Stm32CubeProjects\H7_pinout_project\STM32H723VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "H7_pinout_project.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\eli\Documents\GitHub\vibrations_class_sensor_board\vibrometer\Stm32CubeProjects\H7_pinout_project\STM32H723VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="H7_pinout_project.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

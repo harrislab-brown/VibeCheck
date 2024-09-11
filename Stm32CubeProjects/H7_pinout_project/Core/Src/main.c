@@ -21,7 +21,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "driver_RGB_LED.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -41,15 +41,11 @@
 #define STROBE_BLINK_FREQ_HZ 61
 #define STROBE_BLINK_DUTYCYCLE 0.00
 
-#define RGB_TIMER_PRESCALER 1
+#define RGB_TIMER_PRESCALER 3
 #define RGB_TIMER_COUNTS_PER_SEC TIM_BASE_FREQ_HZ / RGB_TIMER_PRESCALER
-#define RGB_TIMER_COUNTS_PER_PERIOD 288
-#define RGB_TIMER_1_HIGH_COUNTS 72
-#define RGB_TIMER_1_LOW_COUNTS 216
-#define RGB_TIMER_0_HIGH_COUNTS 144
-#define RGB_TIMER_0_LOW_COUNTS 144
-#define RGB_TIMER_PERIOD 288
-#define RGB_TIMER_RESET_COUNTS 1200 /* minimum value, 5 periods low is enough */
+#define RGB_TIMER_FREQ_HZ 800000
+#define RGB_TIMER_COUNTS_PER_PERIOD RGB_TIMER_COUNTS_PER_SEC / RGB_TIMER_FREQ_HZ
+
 
 #define DAC_TIMER_PRESCALER 1
 #define DAC_TIMER_COUNTS_PER_SEC TIM_BASE_FREQ_HZ / DAC_TIMER_PRESCALER
@@ -70,6 +66,7 @@ ADC_HandleTypeDef hadc2;
 
 DAC_HandleTypeDef hdac1;
 DMA_HandleTypeDef hdma_dac1_ch1;
+DMA_HandleTypeDef hdma_dac1_ch2;
 
 I2C_HandleTypeDef hi2c2;
 
@@ -81,6 +78,7 @@ TIM_HandleTypeDef htim1;
 TIM_HandleTypeDef htim2;
 TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim4;
+DMA_HandleTypeDef hdma_tim4_ch1;
 
 UART_HandleTypeDef huart7;
 UART_HandleTypeDef huart1;
@@ -120,6 +118,12 @@ void Generate_Sine(uint32_t* buf, uint32_t len, uint16_t amplitude)
 	for (uint32_t i = 0; i < len; i++)
 	{
 		*buf++ = 2048 + amplitude * sin((float)i * 2.0f * 3.1415026535897932384626433f / (float)len);  /* offset to mid voltage */
+	}
+}
+
+void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim){
+	if(htim == &htim4){
+		RGB_Callback();
 	}
 }
 
@@ -189,8 +193,9 @@ int main(void)
 
   /* RGB LEDs timer setup */
   TIM4->PSC = RGB_TIMER_PRESCALER - 1;
-  TIM4->CCR1 = RGB_TIMER_1_HIGH_COUNTS;
-  TIM4->ARR = RGB_TIMER_PERIOD;
+  TIM4->ARR = RGB_TIMER_COUNTS_PER_PERIOD - 1;
+
+  RGB_Init(&htim4);
 
   /* DAC setup */
   uint32_t sine_wave[DAC_FREQ_HZ / SINE_FREQ_HZ];
@@ -208,13 +213,47 @@ int main(void)
   HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, sine_wave, DAC_FREQ_HZ / SINE_FREQ_HZ, DAC_ALIGN_12B_R);
   HAL_TIM_Base_Start(&htim1);
 
-  /* start RGB LEDs */
-  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
-  HAL_TIM_Base_Start(&htim4);
+  HAL_Delay(1000);
+
+  RGB_SetColor(0,106,0,0);
+  RGB_SetColor(1,107,0,0);
+  RGB_SetColor(2,108,0,0);
 
 
-  while (1)
-  {
+  RGB_SetColor(3,102,0,0);
+  RGB_SetColor(4,101,0,0);
+  RGB_SetColor(5,100,0,0);
+
+  RGB_SetColor(6,103,0,0);
+  RGB_SetColor(7,104,0,0);
+  RGB_SetColor(8,105,0,0);
+
+  RGB_Update();
+  uint8_t g = 0b01000000;
+  uint8_t r = 0b00100000;
+  uint8_t b = 0b00010000;
+  while (1){
+	  RGB_SetColor(0,r,g,b);
+	  RGB_SetColor(1,r,g,b);
+	  RGB_SetColor(2,r,g,b);
+	  RGB_SetColor(3,r,g,b);
+	  RGB_SetColor(4,r,g,b);
+	  RGB_SetColor(5,r,g,b);
+	  RGB_SetColor(6,r,g,b);
+	  RGB_SetColor(7,r,g,b);
+	  RGB_SetColor(8,r,g,b);
+
+	  RGB_Update();
+	  /*
+	  RGB_SetColor(0, 0, 0, 0);
+
+	  for(int b = 0; b < 255; b++){
+		  for(int i = 1; i<10; i++){
+			  RGB_SetColor(i, b, 0, 0);
+		  }
+		  RGB_Update();
+		  HAL_Delay(500);
+	  }*/
 
 
     /* USER CODE END WHILE */
@@ -471,6 +510,14 @@ static void MX_DAC1_Init(void)
   sConfig.DAC_ConnectOnChipPeripheral = DAC_CHIPCONNECT_DISABLE;
   sConfig.DAC_UserTrimming = DAC_TRIMMING_FACTORY;
   if (HAL_DAC_ConfigChannel(&hdac1, &sConfig, DAC_CHANNEL_1) != HAL_OK)
+  {
+    Error_Handler();
+  }
+
+  /** DAC channel OUT2 config
+  */
+  sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
+  if (HAL_DAC_ConfigChannel(&hdac1, &sConfig, DAC_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
   }
@@ -851,9 +898,9 @@ static void MX_TIM4_Init(void)
 
   /* USER CODE END TIM4_Init 1 */
   htim4.Instance = TIM4;
-  htim4.Init.Prescaler = 0;
+  htim4.Init.Prescaler = 3-1;
   htim4.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim4.Init.Period = 65535;
+  htim4.Init.Period = 100-1;
   htim4.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
   htim4.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
   if (HAL_TIM_Base_Init(&htim4) != HAL_OK)
@@ -999,6 +1046,12 @@ static void MX_DMA_Init(void)
   /* DMA1_Stream0_IRQn interrupt configuration */
   HAL_NVIC_SetPriority(DMA1_Stream0_IRQn, 0, 0);
   HAL_NVIC_EnableIRQ(DMA1_Stream0_IRQn);
+  /* DMA1_Stream1_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream1_IRQn);
+  /* DMA1_Stream2_IRQn interrupt configuration */
+  HAL_NVIC_SetPriority(DMA1_Stream2_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(DMA1_Stream2_IRQn);
 
 }
 
