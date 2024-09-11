@@ -39,8 +39,17 @@
 #define STROBE_TIMER_PRESCALER 10000
 #define STROBE_TIMER_COUNTS_PER_SEC TIM_BASE_FREQ_HZ / STROBE_TIMER_PRESCALER
 #define STROBE_BLINK_FREQ_HZ 61
-#define STROBE_BLINK_DUTYCYCLE 0.05
+#define STROBE_BLINK_DUTYCYCLE 0.00
 
+#define RGB_TIMER_PRESCALER 1
+#define RGB_TIMER_COUNTS_PER_SEC TIM_BASE_FREQ_HZ / RGB_TIMER_PRESCALER
+#define RGB_TIMER_COUNTS_PER_PERIOD 288
+#define RGB_TIMER_1_HIGH_COUNTS 72
+#define RGB_TIMER_1_LOW_COUNTS 216
+#define RGB_TIMER_0_HIGH_COUNTS 144
+#define RGB_TIMER_0_LOW_COUNTS 144
+#define RGB_TIMER_PERIOD 288
+#define RGB_TIMER_RESET_COUNTS 1200 /* minimum value, 5 periods low is enough */
 
 #define DAC_TIMER_PRESCALER 1
 #define DAC_TIMER_COUNTS_PER_SEC TIM_BASE_FREQ_HZ / DAC_TIMER_PRESCALER
@@ -178,13 +187,17 @@ int main(void)
   TIM3->CCR2 = (float)TIM3->ARR * STROBE_BLINK_DUTYCYCLE;
   TIM3->CCR3 = (float)TIM3->ARR * STROBE_BLINK_DUTYCYCLE;
 
+  /* RGB LEDs timer setup */
+  TIM4->PSC = RGB_TIMER_PRESCALER - 1;
+  TIM4->CCR1 = RGB_TIMER_1_HIGH_COUNTS;
+  TIM4->ARR = RGB_TIMER_PERIOD;
+
   /* DAC setup */
   uint32_t sine_wave[DAC_FREQ_HZ / SINE_FREQ_HZ];
   Generate_Sine(sine_wave, DAC_FREQ_HZ / SINE_FREQ_HZ, 1024);	  /* populate sine wave */
 
   TIM1->PSC = DAC_TIMER_PRESCALER - 1;
   TIM1->ARR = DAC_TIMER_COUNTS_PER_SEC / DAC_FREQ_HZ - 1;
-
 
   /* start strobe timers */
   HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
@@ -194,6 +207,11 @@ int main(void)
   /* start the speaker output */
   HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, sine_wave, DAC_FREQ_HZ / SINE_FREQ_HZ, DAC_ALIGN_12B_R);
   HAL_TIM_Base_Start(&htim1);
+
+  /* start RGB LEDs */
+  HAL_TIM_PWM_Start(&htim4, TIM_CHANNEL_1);
+  HAL_TIM_Base_Start(&htim4);
+
 
   while (1)
   {
