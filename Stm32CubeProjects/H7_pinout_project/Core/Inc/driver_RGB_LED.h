@@ -9,6 +9,7 @@
 #include "stm32h7xx_hal.h"
 //#include "stm32h7xx_hal_conf.h"
 #include "main.h"
+#include "bitswap.h"
 
 /*
  * DEFINES

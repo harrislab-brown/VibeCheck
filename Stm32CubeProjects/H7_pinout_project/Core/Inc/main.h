@@ -109,7 +109,7 @@ void Error_Handler(void);
 #define RECORD_INDICATOR_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
-
+#define PI 3.1415026535897932384626433f
 /* USER CODE END Private defines */
 
 #ifdef __cplusplus

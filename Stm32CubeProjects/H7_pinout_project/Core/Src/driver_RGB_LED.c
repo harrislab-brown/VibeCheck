@@ -22,9 +22,9 @@ void RGB_Init(TIM_HandleTypeDef* htim){
 
 void RGB_SetColor(uint8_t index, uint8_t r, uint8_t g, uint8_t b){
 
-	RGB_LED_DATA[index].color.r = r;
-	RGB_LED_DATA[index].color.g = g;
-	RGB_LED_DATA[index].color.b = b;
+	RGB_LED_DATA[index].color.r = BITSWAP[r];
+	RGB_LED_DATA[index].color.g = BITSWAP[g];
+	RGB_LED_DATA[index].color.b = BITSWAP[b];
 
 }
 

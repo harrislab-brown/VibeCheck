@@ -38,8 +38,8 @@
 
 #define STROBE_TIMER_PRESCALER 10000
 #define STROBE_TIMER_COUNTS_PER_SEC TIM_BASE_FREQ_HZ / STROBE_TIMER_PRESCALER
-#define STROBE_BLINK_FREQ_HZ 61
-#define STROBE_BLINK_DUTYCYCLE 0.00
+#define STROBE_BLINK_FREQ_HZ 62
+#define STROBE_BLINK_DUTYCYCLE 0.05
 
 #define RGB_TIMER_PRESCALER 3
 #define RGB_TIMER_COUNTS_PER_SEC TIM_BASE_FREQ_HZ / RGB_TIMER_PRESCALER
@@ -117,7 +117,7 @@ void Generate_Sine(uint32_t* buf, uint32_t len, uint16_t amplitude)
 {
 	for (uint32_t i = 0; i < len; i++)
 	{
-		*buf++ = 2048 + amplitude * sin((float)i * 2.0f * 3.1415026535897932384626433f / (float)len);  /* offset to mid voltage */
+		*buf++ = 2048 + amplitude * sin((float)i * 2.0f * PI / (float)len);  /* offset to mid voltage */
 	}
 }
 
@@ -195,11 +195,11 @@ int main(void)
   TIM4->PSC = RGB_TIMER_PRESCALER - 1;
   TIM4->ARR = RGB_TIMER_COUNTS_PER_PERIOD - 1;
 
-  RGB_Init(&htim4);
+  //RGB_Init(&htim4);
 
   /* DAC setup */
   uint32_t sine_wave[DAC_FREQ_HZ / SINE_FREQ_HZ];
-  Generate_Sine(sine_wave, DAC_FREQ_HZ / SINE_FREQ_HZ, 1024);	  /* populate sine wave */
+  Generate_Sine(sine_wave, DAC_FREQ_HZ / SINE_FREQ_HZ, 330);	  /* populate sine wave */
 
   TIM1->PSC = DAC_TIMER_PRESCALER - 1;
   TIM1->ARR = DAC_TIMER_COUNTS_PER_SEC / DAC_FREQ_HZ - 1;
@@ -211,6 +211,8 @@ int main(void)
 
   /* start the speaker output */
   HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, sine_wave, DAC_FREQ_HZ / SINE_FREQ_HZ, DAC_ALIGN_12B_R);
+  HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_2, sine_wave, DAC_FREQ_HZ / SINE_FREQ_HZ, DAC_ALIGN_12B_R);
+
   HAL_TIM_Base_Start(&htim1);
 
   HAL_Delay(1000);
@@ -229,10 +231,22 @@ int main(void)
   RGB_SetColor(8,105,0,0);
 
   RGB_Update();
-  uint8_t g = 0b01000000;
-  uint8_t r = 0b00100000;
-  uint8_t b = 0b00010000;
+  float t = 0;
+
   while (1){
+	  /*
+	  uint8_t A = 10;
+	  float p_r = 0;
+	  float p_g = 2 * PI / 3;
+	  float p_b = -2 * PI / 3;
+	  uint8_t r = (uint8_t) (A + A * sin(2*PI * t + p_r));
+	  uint8_t g = (uint8_t) (A + A * sin(2*PI * t + p_g));
+	  uint8_t b = (uint8_t) (A + A * sin(2*PI * t + p_b));
+	  t+= 0.01;
+	*/
+	  uint8_t r = 25;
+	  uint8_t g = 25;
+	  uint8_t b = 25;
 	  RGB_SetColor(0,r,g,b);
 	  RGB_SetColor(1,r,g,b);
 	  RGB_SetColor(2,r,g,b);
@@ -244,6 +258,8 @@ int main(void)
 	  RGB_SetColor(8,r,g,b);
 
 	  RGB_Update();
+
+	  HAL_Delay(10);
 	  /*
 	  RGB_SetColor(0, 0, 0, 0);
 
