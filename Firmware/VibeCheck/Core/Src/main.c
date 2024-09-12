@@ -22,6 +22,8 @@
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 
+#include "vibecheck.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,22 +33,6 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
-
-#define TIM_BASE_FREQ_HZ 240000000  /* all of our timers happen to be on the same clock frequency */
-
-
-#define STROBE_TIMER_PRESCALER 10000
-#define STROBE_TIMER_COUNTS_PER_SEC TIM_BASE_FREQ_HZ / STROBE_TIMER_PRESCALER
-#define STROBE_BLINK_FREQ_HZ 61
-#define STROBE_BLINK_DUTYCYCLE 0.05
-
-
-#define DAC_TIMER_PRESCALER 1
-#define DAC_TIMER_COUNTS_PER_SEC TIM_BASE_FREQ_HZ / DAC_TIMER_PRESCALER
-#define DAC_FREQ_HZ 48000
-#define SINE_FREQ_HZ 60
-
 
 /* USER CODE END PD */
 
@@ -77,7 +63,7 @@ UART_HandleTypeDef huart7;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-
+VibeCheck vc;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -105,14 +91,6 @@ static void MX_UART7_Init(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-
-void Generate_Sine(uint32_t* buf, uint32_t len, uint16_t amplitude)
-{
-	for (uint32_t i = 0; i < len; i++)
-	{
-		*buf++ = 2048 + amplitude * sin((float)i * 2.0f * 3.1415026535897932384626433f / (float)len);  /* offset to mid voltage */
-	}
-}
 
 /* USER CODE END 0 */
 
@@ -171,33 +149,12 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  /* strobe timer setup */
-  TIM3->PSC = STROBE_TIMER_PRESCALER - 1;
-  TIM3->ARR = STROBE_TIMER_COUNTS_PER_SEC / STROBE_BLINK_FREQ_HZ - 1;
-  TIM3->CCR1 = (float)TIM3->ARR * STROBE_BLINK_DUTYCYCLE;
-  TIM3->CCR2 = (float)TIM3->ARR * STROBE_BLINK_DUTYCYCLE;
-  TIM3->CCR3 = (float)TIM3->ARR * STROBE_BLINK_DUTYCYCLE;
-
-  /* DAC setup */
-  uint32_t sine_wave[DAC_FREQ_HZ / SINE_FREQ_HZ];
-  Generate_Sine(sine_wave, DAC_FREQ_HZ / SINE_FREQ_HZ, 1024);	  /* populate sine wave */
-
-  TIM1->PSC = DAC_TIMER_PRESCALER - 1;
-  TIM1->ARR = DAC_TIMER_COUNTS_PER_SEC / DAC_FREQ_HZ - 1;
-
-
-  /* start strobe timers */
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
-  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
-
-  /* start the speaker output */
-  HAL_DAC_Start_DMA(&hdac1, DAC_CHANNEL_1, sine_wave, DAC_FREQ_HZ / SINE_FREQ_HZ, DAC_ALIGN_12B_R);
-  HAL_TIM_Base_Start(&htim1);
+  VibeCheck_Init(&vc);
 
   while (1)
   {
 
+	  VibeCheck_Loop(&vc);
 
     /* USER CODE END WHILE */
 

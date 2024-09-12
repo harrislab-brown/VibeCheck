@@ -60,8 +60,8 @@ all: main-build
 main-build: VibeCheck.elf secondary-outputs
 
 # Tool invocations
-VibeCheck.elf VibeCheck.map: $(OBJS) $(USER_OBJS) /Users/harrislab/Documents/GitHub/VibeCheck/Firmware/VibeCheck/STM32H723VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "VibeCheck.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"/Users/harrislab/Documents/GitHub/VibeCheck/Firmware/VibeCheck/STM32H723VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="VibeCheck.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+VibeCheck.elf VibeCheck.map: $(OBJS) $(USER_OBJS) C:\Users\jantolik\Documents\VibeCheck\Firmware\VibeCheck\STM32H723VGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "VibeCheck.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m7 -T"C:\Users\jantolik\Documents\VibeCheck\Firmware\VibeCheck\STM32H723VGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="VibeCheck.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
