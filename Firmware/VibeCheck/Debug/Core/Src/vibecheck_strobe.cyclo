@@ -1,0 +1,10 @@
+../Core/Src/vibecheck_strobe.c:12:6:VibeCheckStrobe_Init	1
+../Core/Src/vibecheck_strobe.c:27:6:VibeCheckStrobe_Start	1
+../Core/Src/vibecheck_strobe.c:34:6:VibeCheckStrobe_Stop	1
+../Core/Src/vibecheck_strobe.c:41:6:VibeCheckStrobe_SetFrequency	1
+../Core/Src/vibecheck_strobe.c:48:7:VibeCheckStrobe_GetFrequency	1
+../Core/Src/vibecheck_strobe.c:53:6:VibeCheckStrobe_SetPhase	4
+../Core/Src/vibecheck_strobe.c:73:7:VibeCheckStrobe_GetPhase	1
+../Core/Src/vibecheck_strobe.c:78:6:VibeCheckStrobe_SetExposure	1
+../Core/Src/vibecheck_strobe.c:88:7:VibeCheckStrobe_GetExposure	1
+../Core/Src/vibecheck_strobe.c:95:6:VibeCheckStrobe_PeriodElapsedUpdate	3

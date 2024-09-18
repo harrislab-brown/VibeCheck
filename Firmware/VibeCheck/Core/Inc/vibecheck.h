@@ -9,6 +9,7 @@
 #define INC_VIBECHECK_H_
 
 #include "vibecheck_USB.h"
+#include "vibecheck_strobe.h"
 
 /* main application code */
 
@@ -19,11 +20,11 @@
 typedef struct
 {
 	VibeCheckUSB usb;
-	uint32_t time;
+	VibeCheckStrobe strobe;
 } VibeCheck;
 
 
-void VibeCheck_Init(VibeCheck* vc);
+void VibeCheck_Init(VibeCheck* vc, TIM_HandleTypeDef* htim_strobe);
 void VibeCheck_Loop(VibeCheck* vc);
 
 

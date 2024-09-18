@@ -151,7 +151,7 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
 
-  VibeCheck_Init(&vc);
+  VibeCheck_Init(&vc, &htim3);
 
   while (1)
   {
