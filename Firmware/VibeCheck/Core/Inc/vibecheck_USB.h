@@ -35,6 +35,11 @@ typedef struct
 
 typedef struct
 {
+	uint32_t (*execute)(void* );
+} VibeCheckUSBCommand;
+
+typedef struct
+{
 	/* to receive messages and commands from the USB middleware */
 	uint8_t* rx_buf;
 	uint8_t* rx_ready;

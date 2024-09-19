@@ -26,6 +26,7 @@ void VibeCheckStrobe_Init(VibeCheckStrobe* strobe, TIM_HandleTypeDef* htim)
 
 void VibeCheckStrobe_Start(VibeCheckStrobe* strobe)
 {
+	/* TODO: start the timers with interrupts when period completes */
 	HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_2);
 	HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_3);

@@ -93,6 +93,11 @@ static void MX_UART7_Init(void);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	VibeCheckStrobe_PeriodElapsedUpdate(&vc.strobe);
+}
+
 /* USER CODE END 0 */
 
 /**
