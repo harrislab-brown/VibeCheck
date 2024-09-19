@@ -9,6 +9,7 @@
 #define INC_VIBECHECK_USB_H_
 
 #include "usbd_cdc_if.h"
+#include "vibecheck_shell.h"
 
 /*
  * - sends data to the host PC (COBS encoding)
@@ -19,7 +20,7 @@
 #define VC_USB_DATA_BUF_LEN 100
 #define VC_USB_DATA_STR_LEN 2048
 #define VC_USB_DATA_PER_PACKET 2
-#define VC_USB_DATA_HEADER "DATA "
+#define VC_USB_DATA_HEADER "data "
 
 /*
  * VibeCheckUSB class has a small circular buffer to which we can add data quickly (i.e. in the accelerometer interrupt)
@@ -33,13 +34,12 @@ typedef struct
 	float x, y, z;
 } VibeCheckUSBData;
 
-typedef struct
-{
-	uint32_t (*execute)(void* );
-} VibeCheckUSBCommand;
 
 typedef struct
 {
+	/* shell for interacting with the board */
+	VibeCheckShell* shell;
+
 	/* to receive messages and commands from the USB middleware */
 	uint8_t* rx_buf;
 	uint8_t* rx_ready;
@@ -55,7 +55,7 @@ typedef struct
 
 } VibeCheckUSB;
 
-void VibeCheckUSB_Init(VibeCheckUSB* usb);
+void VibeCheckUSB_Init(VibeCheckUSB* usb, VibeCheckShell* shell);
 void VibeCheckUSB_Update(VibeCheckUSB* usb);  /* single function to call in main loop to update the USB class */
 
 uint32_t VibeCheckUSB_ProcessCommand(VibeCheckUSB* usb);
@@ -64,7 +64,7 @@ void VibeCheckUSB_AddData(VibeCheckUSB* usb, uint8_t id, uint32_t time, float x,
 void VibeCheckUSB_ProcessData(VibeCheckUSB* usb);
 
 uint32_t VibeCheckUSB_Send(uint8_t* data, uint32_t len);  /* for sending brief messages, such as response to a getter command from host */
-void VibeCheckUSB_SendBlocking(uint8_t* data, uint32_t len);
+void VibeCheckUSB_Send_BlockUntilStarted(uint8_t* data, uint32_t len);
 void VibeCheckUSB_TrySendData(VibeCheckUSB* usb);
 
 #endif /* INC_VIBECHECK_USB_H_ */

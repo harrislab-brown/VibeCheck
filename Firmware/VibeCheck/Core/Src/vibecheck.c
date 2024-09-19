@@ -10,7 +10,18 @@
 
 void VibeCheck_Init(VibeCheck* vc, TIM_HandleTypeDef* htim_strobe)
 {
-	VibeCheckUSB_Init(&vc->usb);
+	VibeCheckShell_Init(&vc->shell);
+
+	VibeCheckShell_CMD strobe_cmd = {
+			.name = "strobe",
+			.execute = VibeCheckStrobeCMD_Execute,
+			.obj = &vc->strobe
+	};
+
+	VibeCheckShell_RegisterCommand(&vc->shell, strobe_cmd);
+
+
+	VibeCheckUSB_Init(&vc->usb, &vc->shell);
 	VibeCheckStrobe_Init(&vc->strobe, htim_strobe);
 }
 

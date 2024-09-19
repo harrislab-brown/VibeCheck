@@ -26,21 +26,26 @@ void VibeCheckStrobe_Init(VibeCheckStrobe* strobe, TIM_HandleTypeDef* htim)
 
 void VibeCheckStrobe_Start(VibeCheckStrobe* strobe)
 {
-	/* TODO: start the timers with interrupts when period completes */
-	HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_3);
+	/* start the timers with interrupts when period completes */
+	HAL_TIM_PWM_Start_IT(strobe->htim, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start_IT(strobe->htim, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start_IT(strobe->htim, TIM_CHANNEL_3);
 }
 
 void VibeCheckStrobe_Stop(VibeCheckStrobe* strobe)
 {
-	HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_2);
-	HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_3);
+	HAL_TIM_PWM_Stop_IT(strobe->htim, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Stop_IT(strobe->htim, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Stop_IT(strobe->htim, TIM_CHANNEL_3);
 }
 
 void VibeCheckStrobe_SetFrequency(VibeCheckStrobe* strobe, float freq_hz)
 {
+	if (freq_hz < VC_STROBE_MIN_FREQ_HZ)
+		freq_hz = VC_STROBE_MIN_FREQ_HZ;
+	if (freq_hz > VC_STROBE_MAX_FREQ_HZ)
+		freq_hz = VC_STROBE_MAX_FREQ_HZ;
+
 	strobe->arr_steady = VC_STROBE_TIM_COUNTS_PER_SECOND / freq_hz - 1;
 	strobe->freq_hz = VC_STROBE_TIM_COUNTS_PER_SECOND / ((float)strobe->arr_steady + 1.0f);
 	strobe->htim->Instance->ARR = strobe->arr_steady;
@@ -59,6 +64,11 @@ void VibeCheckStrobe_SetPhase(VibeCheckStrobe* strobe, float phase_deg)
 	 * The most reliable way would probably by with DMA into the ARR register, but this seems more complicated
 	 * Instead let's try with an interrupt at the end of each period, and some struct variables to keep track of the phase update sequence
 	 */
+
+	if (phase_deg < VC_STROBE_MIN_PHASE_DEG)
+		phase_deg = VC_STROBE_MIN_PHASE_DEG;
+	if (phase_deg > VC_STROBE_MAX_PHASE_DEG)
+		phase_deg = VC_STROBE_MAX_PHASE_DEG;
 
 
 	/* TODO: need to test if this works */
@@ -82,6 +92,8 @@ void VibeCheckStrobe_SetExposure(VibeCheckStrobe* strobe, float exposure_ms)
 {
 
 	uint32_t ccr_val = exposure_ms * 0.001f * VC_STROBE_TIM_COUNTS_PER_SECOND;
+	if (ccr_val > strobe->htim->Instance->ARR)
+		ccr_val = strobe->htim->Instance->ARR;
 	strobe->exposure_ms = (float)ccr_val / (float)VC_STROBE_TIM_COUNTS_PER_SECOND * 1000.0f;
 	strobe->htim->Instance->CCR1 = ccr_val;
 	strobe->htim->Instance->CCR2 = ccr_val;

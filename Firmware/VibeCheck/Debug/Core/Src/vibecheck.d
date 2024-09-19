@@ -1,5 +1,6 @@
 Core/Src/vibecheck.o: ../Core/Src/vibecheck.c ../Core/Inc/vibecheck.h \
- ../Core/Inc/vibecheck_USB.h ../USB_DEVICE/App/usbd_cdc_if.h \
+ ../Core/Inc/vibecheck_shell.h ../Core/Inc/vibecheck_USB.h \
+ ../USB_DEVICE/App/usbd_cdc_if.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
@@ -49,8 +50,9 @@ Core/Src/vibecheck.o: ../Core/Src/vibecheck.c ../Core/Inc/vibecheck.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
- ../Core/Inc/vibecheck_strobe.h
+ ../Core/Inc/vibecheck_strobe.h ../Core/Inc/vibecheck_strobe_cmd.h
 ../Core/Inc/vibecheck.h:
+../Core/Inc/vibecheck_shell.h:
 ../Core/Inc/vibecheck_USB.h:
 ../USB_DEVICE/App/usbd_cdc_if.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:
@@ -104,3 +106,4 @@ Core/Src/vibecheck.o: ../Core/Src/vibecheck.c ../Core/Inc/vibecheck.h \
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
 ../Core/Inc/vibecheck_strobe.h:
+../Core/Inc/vibecheck_strobe_cmd.h:

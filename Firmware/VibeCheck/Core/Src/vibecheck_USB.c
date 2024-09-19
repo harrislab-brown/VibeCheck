@@ -11,8 +11,10 @@
 uint8_t usb_rx_buf[64];  /* see USB_DEVICE -> App -> usbd_cdc_if.c for implementation */
 uint8_t usb_rx_ready = 0;  /* flag when USB data has been received */
 
-void VibeCheckUSB_Init(VibeCheckUSB* usb)
+void VibeCheckUSB_Init(VibeCheckUSB* usb, VibeCheckShell* shell)
 {
+	usb->shell = shell;
+
 	usb->rx_buf = usb_rx_buf;
 	usb->rx_ready = &usb_rx_ready;
 
@@ -39,13 +41,17 @@ uint32_t VibeCheckUSB_ProcessCommand(VibeCheckUSB* usb)
 	/* return true if we have successfully processed a command */
 	if (*usb->rx_ready)
 	{
-		/* TODO: process the command */
-
-		/* echo for testing */
-		VibeCheckUSB_SendBlocking(usb->rx_buf, 64);
-
 		*usb->rx_ready = 0;
-		return 1;
+
+		/* have the shell process the command */
+		char* output;
+		uint32_t output_len;
+		if (VibeCheckShell_ProcessInput(usb->shell, (char*)usb->rx_buf, &output, &output_len))
+		{
+			if (output_len)
+				VibeCheckUSB_Send_BlockUntilStarted((uint8_t*)output, output_len);
+			return 1;
+		}
 	}
 
 	return 0;
@@ -100,13 +106,13 @@ void VibeCheckUSB_ProcessData(VibeCheckUSB* usb)
 		if (usb->data_str_ind < VC_USB_DATA_STR_LEN / 2)
 		{
 			/* send the first half buffer and prepare to fill the second half */
-			VibeCheckUSB_SendBlocking((uint8_t*)&usb->data_str[0], usb->data_str_ind);  /* !!! blocking until the transmission starts successfully !!! */
+			VibeCheckUSB_Send_BlockUntilStarted((uint8_t*)&usb->data_str[0], usb->data_str_ind);  /* !!! blocking until the transmission starts successfully !!! */
 			usb->data_str_ind = VC_USB_DATA_STR_LEN / 2;
 		}
 		else
 		{
 			/* send the second half buffer and prepare to fill the first half */
-			VibeCheckUSB_SendBlocking((uint8_t*)&usb->data_str[VC_USB_DATA_STR_LEN / 2], usb->data_str_ind - VC_USB_DATA_STR_LEN / 2);  /* !!! blocking until the transmission starts successfully !!! */
+			VibeCheckUSB_Send_BlockUntilStarted((uint8_t*)&usb->data_str[VC_USB_DATA_STR_LEN / 2], usb->data_str_ind - VC_USB_DATA_STR_LEN / 2);  /* !!! blocking until the transmission starts successfully !!! */
 			usb->data_str_ind = 0;
 		}
 
@@ -125,7 +131,7 @@ uint32_t VibeCheckUSB_Send(uint8_t* data, uint32_t len)
 }
 
 /* TODO: lifetime issue with the data pointer */
-void VibeCheckUSB_SendBlocking(uint8_t* data, uint32_t len)
+void VibeCheckUSB_Send_BlockUntilStarted(uint8_t* data, uint32_t len)
 {
 	/* returns true if transmission started successfully */
 	while(CDC_Transmit_HS(data, len) != USBD_OK);

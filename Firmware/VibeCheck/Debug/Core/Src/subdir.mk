@@ -15,7 +15,9 @@ C_SRCS += \
 ../Core/Src/system_stm32h7xx.c \
 ../Core/Src/vibecheck.c \
 ../Core/Src/vibecheck_USB.c \
-../Core/Src/vibecheck_strobe.c 
+../Core/Src/vibecheck_shell.c \
+../Core/Src/vibecheck_strobe.c \
+../Core/Src/vibecheck_strobe_cmd.c 
 
 OBJS += \
 ./Core/Src/IIS3DWB.o \
@@ -28,7 +30,9 @@ OBJS += \
 ./Core/Src/system_stm32h7xx.o \
 ./Core/Src/vibecheck.o \
 ./Core/Src/vibecheck_USB.o \
-./Core/Src/vibecheck_strobe.o 
+./Core/Src/vibecheck_shell.o \
+./Core/Src/vibecheck_strobe.o \
+./Core/Src/vibecheck_strobe_cmd.o 
 
 C_DEPS += \
 ./Core/Src/IIS3DWB.d \
@@ -41,7 +45,9 @@ C_DEPS += \
 ./Core/Src/system_stm32h7xx.d \
 ./Core/Src/vibecheck.d \
 ./Core/Src/vibecheck_USB.d \
-./Core/Src/vibecheck_strobe.d 
+./Core/Src/vibecheck_shell.d \
+./Core/Src/vibecheck_strobe.d \
+./Core/Src/vibecheck_strobe_cmd.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
@@ -51,7 +57,7 @@ Core/Src/%.o Core/Src/%.su Core/Src/%.cyclo: ../Core/Src/%.c Core/Src/subdir.mk
 clean: clean-Core-2f-Src
 
 clean-Core-2f-Src:
-	-$(RM) ./Core/Src/IIS3DWB.cyclo ./Core/Src/IIS3DWB.d ./Core/Src/IIS3DWB.o ./Core/Src/IIS3DWB.su ./Core/Src/fast_spi.cyclo ./Core/Src/fast_spi.d ./Core/Src/fast_spi.o ./Core/Src/fast_spi.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32h7xx_hal_msp.cyclo ./Core/Src/stm32h7xx_hal_msp.d ./Core/Src/stm32h7xx_hal_msp.o ./Core/Src/stm32h7xx_hal_msp.su ./Core/Src/stm32h7xx_it.cyclo ./Core/Src/stm32h7xx_it.d ./Core/Src/stm32h7xx_it.o ./Core/Src/stm32h7xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32h7xx.cyclo ./Core/Src/system_stm32h7xx.d ./Core/Src/system_stm32h7xx.o ./Core/Src/system_stm32h7xx.su ./Core/Src/vibecheck.cyclo ./Core/Src/vibecheck.d ./Core/Src/vibecheck.o ./Core/Src/vibecheck.su ./Core/Src/vibecheck_USB.cyclo ./Core/Src/vibecheck_USB.d ./Core/Src/vibecheck_USB.o ./Core/Src/vibecheck_USB.su ./Core/Src/vibecheck_strobe.cyclo ./Core/Src/vibecheck_strobe.d ./Core/Src/vibecheck_strobe.o ./Core/Src/vibecheck_strobe.su
+	-$(RM) ./Core/Src/IIS3DWB.cyclo ./Core/Src/IIS3DWB.d ./Core/Src/IIS3DWB.o ./Core/Src/IIS3DWB.su ./Core/Src/fast_spi.cyclo ./Core/Src/fast_spi.d ./Core/Src/fast_spi.o ./Core/Src/fast_spi.su ./Core/Src/main.cyclo ./Core/Src/main.d ./Core/Src/main.o ./Core/Src/main.su ./Core/Src/stm32h7xx_hal_msp.cyclo ./Core/Src/stm32h7xx_hal_msp.d ./Core/Src/stm32h7xx_hal_msp.o ./Core/Src/stm32h7xx_hal_msp.su ./Core/Src/stm32h7xx_it.cyclo ./Core/Src/stm32h7xx_it.d ./Core/Src/stm32h7xx_it.o ./Core/Src/stm32h7xx_it.su ./Core/Src/syscalls.cyclo ./Core/Src/syscalls.d ./Core/Src/syscalls.o ./Core/Src/syscalls.su ./Core/Src/sysmem.cyclo ./Core/Src/sysmem.d ./Core/Src/sysmem.o ./Core/Src/sysmem.su ./Core/Src/system_stm32h7xx.cyclo ./Core/Src/system_stm32h7xx.d ./Core/Src/system_stm32h7xx.o ./Core/Src/system_stm32h7xx.su ./Core/Src/vibecheck.cyclo ./Core/Src/vibecheck.d ./Core/Src/vibecheck.o ./Core/Src/vibecheck.su ./Core/Src/vibecheck_USB.cyclo ./Core/Src/vibecheck_USB.d ./Core/Src/vibecheck_USB.o ./Core/Src/vibecheck_USB.su ./Core/Src/vibecheck_shell.cyclo ./Core/Src/vibecheck_shell.d ./Core/Src/vibecheck_shell.o ./Core/Src/vibecheck_shell.su ./Core/Src/vibecheck_strobe.cyclo ./Core/Src/vibecheck_strobe.d ./Core/Src/vibecheck_strobe.o ./Core/Src/vibecheck_strobe.su ./Core/Src/vibecheck_strobe_cmd.cyclo ./Core/Src/vibecheck_strobe_cmd.d ./Core/Src/vibecheck_strobe_cmd.o ./Core/Src/vibecheck_strobe_cmd.su
 
 .PHONY: clean-Core-2f-Src
 
