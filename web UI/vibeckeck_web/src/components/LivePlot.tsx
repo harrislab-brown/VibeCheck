@@ -41,7 +41,7 @@ const createDataset = (index: number): Dataset => ({
 });
 
 const LivePlot: React.FC<LivePlotProps> = ({ controls }) => {
-  const [data, setData] = useState<ChartData<'line'>>({
+  const [data, setData] = useState<ChartData<'line', DataPoint[]>>({
     datasets: Array.from({ length: NUM_OF_DATASTREAMS }, (_, i) => createDataset(i)),
   });
 
@@ -53,16 +53,17 @@ const LivePlot: React.FC<LivePlotProps> = ({ controls }) => {
       const currentTime = (Date.now() - startTimeRef.current) / 1000; // time in seconds
 
       setData(prevData => {
-        const newDatasets = prevData.datasets.map((dataset) => {
+        const newDatasets = prevData.datasets.map(dataset => {
+          const typedDataset = dataset as Dataset;
           const newDataPoint: DataPoint = { 
             x: currentTime, 
             y: Math.random() * (controls.maxBound - controls.minBound) + controls.minBound 
           };
-          const updatedData = [...dataset.data, newDataPoint]
+          const updatedData = [...typedDataset.data, newDataPoint]
             .slice(-MAX_DATAPOINTS); // Keep only the last MAX_DATAPOINTS
 
           return {
-            ...dataset,
+            ...typedDataset,
             data: updatedData,
           };
         });
@@ -92,8 +93,8 @@ const LivePlot: React.FC<LivePlotProps> = ({ controls }) => {
           display: true,
           text: 'Time (s)'
         },
-        min: data.datasets[0]?.data[0]?.x || 0,
-        max: (data.datasets[0]?.data[data.datasets[0]?.data.length - 1]?.x || 0) + 5,
+        min: (data.datasets[0] as Dataset)?.data[0]?.x ?? 0,
+        max: ((data.datasets[0] as Dataset)?.data.slice(-1)[0]?.x ?? 0) + 5,
         ticks: {
           stepSize: 5
         }

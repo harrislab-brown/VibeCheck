@@ -25,16 +25,16 @@
 .setting input {
     padding: 8px;
     border-radius: 4px;
-    border: 1px solid #ccc;
+    border: 1px solid #676767;
 }
 
 .setting button {
-    background-color: #4CAF50;
+    background-color: #000000;
     color: white;
     border: none;
     cursor: pointer;
 }
 
 .setting button:hover {
-    background-color: #45a049;
+    background-color: #000000;
 }

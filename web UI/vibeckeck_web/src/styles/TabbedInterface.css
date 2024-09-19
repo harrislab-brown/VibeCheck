@@ -14,18 +14,18 @@
   .tab-header {
     padding: 10px 20px;
     border: none;
-    background-color: #f0f0f0;
+    background-color: #000000;
     cursor: pointer;
     transition: background-color 0.3s;
   }
   
   .tab-header:hover {
-    background-color: #e0e0e0;
+    background-color: #464646;
   }
   
   .tab-header.active {
-    background-color: #fff;
-    border-bottom: 2px solid #007bff;
+    background-color: #323232;
+    border-bottom: 2px solid #6d6d6d;
   }
   
   .tab-content {
@@ -51,7 +51,7 @@
   
   .tab-pane button {
     padding: 5px 10px;
-    background-color: #007bff;
+    background-color: #000000;
     color: white;
     border: none;
     border-radius: 4px;
@@ -60,5 +60,5 @@
   }
   
   .tab-pane button:hover {
-    background-color: #0056b3;
+    background-color: #3e3e3e;
   }

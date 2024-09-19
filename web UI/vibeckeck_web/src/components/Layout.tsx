@@ -23,7 +23,9 @@ const Layout: React.FC = () => {
 
     return (
         <div className="grid-container">
-            <a href="https://example.com" className="grid-item item1">VibeCheck</a>
+            <div className="grid-item item1">
+                VibeCheck Logo
+            </div>
             <div className="grid-item item2">
                 <SerialPortConnect />
             </div>
