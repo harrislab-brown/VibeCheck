@@ -33,16 +33,16 @@ uint32_t VibeCheckShell_ProcessInput(VibeCheckShell* shell, char* input, char** 
 	uint32_t ret = 0;
 
 	char* cmd_name;
-	VibeCheckShell_GetNextString(shell, &cmd_name);
+	if (VibeCheckShell_GetNextString(shell, &cmd_name))
 
-	for (uint32_t i = 0; i < shell->cmd_count; i++)
-	{
-		if (!strcmp(shell->commands[i].name, cmd_name))
+		for (uint32_t i = 0; i < shell->cmd_count; i++)
 		{
-			ret = shell->commands[i].execute(shell->commands[i].obj, shell);
-			break;
+			if (!strcmp(shell->commands[i].name, cmd_name))
+			{
+				ret = shell->commands[i].execute(shell->commands[i].obj, shell);
+				break;
+			}
 		}
-	}
 
 	*output = shell->output;
 	*output_len = shell->output_pos;
@@ -59,18 +59,19 @@ uint32_t VibeCheckShell_GetNextString(VibeCheckShell* shell, char** next)
 
 	char separator[] = " ,";
 	char* token = shell->token;
-	while (shell->input[shell->input_pos] && shell->input_pos < VC_SHELL_STR_LEN)
+	while (shell->input_pos < VC_SHELL_BUF_LEN)
 	{
-		if (strchr(separator, shell->input[shell->input_pos]) == NULL)
+		if (strchr(separator, shell->input[shell->input_pos]) == NULL && shell->input[shell->input_pos])
 		{
 			/* this is a character */
 			*(token++) = shell->input[shell->input_pos];
 		}
 		else
 		{
-			/* this is a separator */
-			if (token != shell->token) /* we have something in the token and have found a separator */
+			/* this is a separator or end of string */
+			if (token != shell->token) /* we have something in the token so return it */
 			{
+				*token = '\0';
 				*next = shell->token;
 				return 1;
 			}
@@ -132,7 +133,7 @@ void VibeCheckShell_PutFloat(VibeCheckShell* shell, float val)
 
 void VibeCheckShell_Ack(VibeCheckShell* shell)
 {
-	VibeCheckShell_PutString(shell, "ack");
+	VibeCheckShell_PutString(shell, "ack\n");
 }
 
 

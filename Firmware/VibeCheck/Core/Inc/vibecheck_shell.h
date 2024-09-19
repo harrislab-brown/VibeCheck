@@ -17,26 +17,26 @@
  * control the VibeCheck through a text-based shell
  */
 
-#define VC_SHELL_STR_LEN 512
-#define VC_SHELL_CMD_NAME_LEN 64
-#define VC_SHELL_MAX_NUM_CMDS 128
+#define VC_SHELL_BUF_LEN 512
+#define VC_SHELL_TOKEN_LEN 64
+#define VC_SHELL_MAX_NUM_CMDS 64
 
 struct VibeCheckShell_s;
 
 typedef struct
 {
-	char name[VC_SHELL_CMD_NAME_LEN];
+	char name[VC_SHELL_TOKEN_LEN];
 	uint32_t (*execute)(void*, struct VibeCheckShell_s*);  /* return true if we parse and execute successfully */
 	void* obj;  /* object that the command acts on */
 } VibeCheckShell_CMD;
 
 struct VibeCheckShell_s
 {
-	char input[VC_SHELL_STR_LEN];
-	char output[VC_SHELL_STR_LEN];
+	char input[VC_SHELL_BUF_LEN];
+	char output[VC_SHELL_BUF_LEN];
 	uint32_t input_pos, output_pos;
 
-	char token[VC_SHELL_STR_LEN];
+	char token[VC_SHELL_TOKEN_LEN];
 
 	VibeCheckShell_CMD commands[VC_SHELL_MAX_NUM_CMDS];
 	uint32_t cmd_count;
