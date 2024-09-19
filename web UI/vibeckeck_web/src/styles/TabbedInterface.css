@@ -1,0 +1,64 @@
+/* ./styles/TabbedInterface.css */
+
+.tabbed-interface {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  
+  .tab-headers {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .tab-header {
+    padding: 10px 20px;
+    border: none;
+    background-color: #f0f0f0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tab-header:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .tab-header.active {
+    background-color: #fff;
+    border-bottom: 2px solid #007bff;
+  }
+  
+  .tab-content {
+    flex-grow: 1;
+    padding: 20px;
+  }
+  
+  .tab-pane {
+    display: none;
+  }
+  
+  .tab-pane.active {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .tab-pane input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .tab-pane button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .tab-pane button:hover {
+    background-color: #0056b3;
+  }
