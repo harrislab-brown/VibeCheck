@@ -1,7 +1,0 @@
-../Core/Src/vibecheck_USB.c:14:6:VibeCheckUSB_Init	1
-../Core/Src/vibecheck_USB.c:28:6:VibeCheckUSB_Update	1
-../Core/Src/vibecheck_USB.c:39:10:VibeCheckUSB_ProcessCommand	4
-../Core/Src/vibecheck_USB.c:60:6:VibeCheckUSB_AddData	2
-../Core/Src/vibecheck_USB.c:79:6:VibeCheckUSB_ProcessData	6
-../Core/Src/vibecheck_USB.c:127:10:VibeCheckUSB_Send	1
-../Core/Src/vibecheck_USB.c:134:6:VibeCheckUSB_Send_BlockUntilStarted	2

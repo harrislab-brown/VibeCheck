@@ -22,7 +22,7 @@
 #include "usbd_cdc_if.h"
 
 /* USER CODE BEGIN INCLUDE */
-
+#include "vibecheck.h"
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,8 +31,7 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-extern uint8_t usb_rx_buf[64];
-extern uint8_t usb_rx_ready;
+extern VibeCheck vc;
 /* USER CODE END PV */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -268,11 +267,7 @@ static int8_t CDC_Receive_HS(uint8_t* Buf, uint32_t *Len)
 	USBD_CDC_SetRxBuffer(&hUsbDeviceHS, &Buf[0]);
 	USBD_CDC_ReceivePacket(&hUsbDeviceHS);
 
-	memset(usb_rx_buf, '\0', 64);  /* clear the serial data rx buffer */
-	uint8_t len = (uint8_t) *Len;
-	memcpy(usb_rx_buf, Buf, len);  /* copy the incoming data to the buffer */
-	memset(Buf, '\0', len);   /* clear Buf also */
-	usb_rx_ready = 1;  /* set the serial data rx ready flag */
+	VibeCheckShell_PutInput(&vc.shell, (char*)Buf, *Len);
 
 	return (USBD_OK);
   /* USER CODE END 11 */

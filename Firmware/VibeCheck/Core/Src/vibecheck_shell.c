@@ -10,82 +10,216 @@
 
 void VibeCheckShell_Init(VibeCheckShell* shell)
 {
-	shell->input_pos = 0;
-	shell->output_pos = 0;
-	shell->cmd_count = 0;
+	shell->input_head = 0;
+	shell->input_tail = 0;
+	shell->input_count = 0;
+	shell->input_delimiter_count = 0;
+
+	shell->output_head = 0;
+	shell->output_tail = 0;
+	shell->output_count = 0;
+
+	shell->ih_count = 0;
+	shell->oh_count = 0;
 }
 
-void VibeCheckShell_RegisterCommand(VibeCheckShell* shell, VibeCheckShell_CMD cmd)
+VibeCheckShell_Status VibeCheckShell_Update(VibeCheckShell* shell)
 {
-	if (shell->cmd_count < VC_SHELL_MAX_NUM_CMDS)
+
+	VibeCheckShell_Status status = {
+			.ihandl_status = VC_SHELL_NO_INPUT,
+			.ohandl_status = VC_SHELL_NO_OUTPUT,
+			.ibuf_status = VC_SHELL_INPUT_BUFFER_OK,
+			.obuf_status = VC_SHELL_OUTPUT_BUFFER_OK
+	};
+
+	/* check if character buffer overflow */
+	if (shell->input_count >= VC_SHELL_IO_BUF_LEN)
+		status.ibuf_status = VC_SHELL_INPUT_BUFFER_OVERFLOW;
+
+
+	/* handle the inputs */
+	if (shell->input_delimiter_count)
+		status.ihandl_status = VC_SHELL_INPUT_PROCESSED;
+
+	while (shell->input_delimiter_count)
 	{
-		shell->commands[shell->cmd_count++] = cmd;
+		/* look for a handler */
+		char ih_name[VC_SHELL_MAX_TOKEN_LEN];
+		if (VibeCheckShell_GetNextString(shell, ih_name, VC_SHELL_MAX_TOKEN_LEN))
+		{
+			for (uint32_t i = 0; i < shell->ih_count; i++)
+			{
+				if (!strcmp(shell->input_handlers[i].name, ih_name))
+				{
+					/* found a handler for this input */
+					if (!shell->input_handlers[i].execute(shell->input_handlers[i].obj, shell))
+						status.ihandl_status = VC_SHELL_INPUT_ERROR_EXECUTING;
+					break;
+				}
+
+				if (i == shell->ih_count - 1)
+					status.ihandl_status = VC_SHELL_INPUT_ERROR_NO_HANDLER;
+			}
+		}
+		else
+		{
+			/* couldn't get a string from the input for handler name */
+			status.ihandl_status = VC_SHELL_INPUT_ERROR_NO_HANDLER;
+		}
+
+		/* clean up the remainder of the previous message */
+		while (1)
+		{
+			char x = shell->input[shell->input_tail];
+
+			shell->input_count--;
+			shell->input_tail++;
+			if (shell->input_tail == VC_SHELL_IO_BUF_LEN)
+				shell->input_tail = 0;
+
+			if(strchr(VC_SHELL_DELIMITER, x) != NULL)
+				break;  /* found the delimiter */
+		}
+
+
+		shell->input_delimiter_count--;
+	}
+
+
+	/* handle the outputs */
+	for (uint32_t i = 0; i < shell->oh_count; i++)
+	{
+		if (shell->output_handlers[i].execute(shell->output_handlers[i].obj, shell))
+		{
+			status.ohandl_status = VC_SHELL_OUTPUT_PROCESSED;
+		}
+	}
+
+	/* check if character buffer overflow */
+	if (shell->output_count >= VC_SHELL_IO_BUF_LEN)
+		status.obuf_status = VC_SHELL_OUTPUT_BUFFER_OVERFLOW;
+
+
+	return status;
+}
+
+void VibeCheckShell_RegisterInputHandler(VibeCheckShell* shell, VibeCheckShell_InputHandler handler)
+{
+	if (shell->ih_count < VC_SHELL_MAX_NUM_HANDLERS)
+		shell->input_handlers[shell->ih_count++] = handler;
+}
+
+void VibeCheckShell_RegisterOutputHandler(VibeCheckShell* shell, VibeCheckShell_OutputHandler handler)
+{
+	if (shell->oh_count < VC_SHELL_MAX_NUM_HANDLERS)
+		shell->output_handlers[shell->oh_count++] = handler;
+}
+
+void VibeCheckShell_PutInput(VibeCheckShell* shell, char* input, uint32_t input_max_len)
+{
+	/* add to the input buffer */
+	for (uint32_t i = 0; i < input_max_len; i++)
+	{
+		if (*input)
+		{
+			shell->input[shell->input_head++] = *input;
+			if (shell->input_head == VC_SHELL_IO_BUF_LEN)
+					shell->input_head = 0;
+			shell->input_count++;
+
+			if (strchr(VC_SHELL_DELIMITER, *input) != NULL)
+				shell->input_delimiter_count++;
+
+			input++;
+		}
+		else
+			break;
 	}
 }
 
-uint32_t VibeCheckShell_ProcessInput(VibeCheckShell* shell, char* input, char** output, uint32_t* output_len)  /* returns the output string as a result of running the command */
+
+uint32_t VibeCheckShell_GetOutput(VibeCheckShell* shell, char** output, uint32_t* len)
 {
+	/* returns true if there is stuff in the output buffer we haven't yet sent */
+	if (shell->output_head == shell->output_tail)
+		return 0;
 
-	strcpy(shell->input, input);  /* TODO: revisit safety of copying strings once it works */
-	shell->input_pos = 0;
-	shell->output_pos = 0;
+	if (shell->output_head > shell->output_tail)
+	{
+		/* the output doesn't wrap so send it 'normally' */
+		*output = &shell->output[shell->output_tail];
+		*len = shell->output_head - shell->output_tail;
+		shell->output_count -= shell->output_head - shell->output_tail;
+		shell->output_tail = shell->output_head;
+		return 1;
+	}
+	else
+	{
+		/* the output wraps: only return up to the end of the buffer region so our output is contiguous in memory */
+		*output = &shell->output[shell->output_tail];
+		*len = VC_SHELL_IO_BUF_LEN - shell->output_tail;
+		shell->output_count -= VC_SHELL_IO_BUF_LEN - shell->output_tail;
+		shell->output_tail = 0;
+		return 1;
+	}
 
-	uint32_t ret = 0;
-
-	char* cmd_name;
-	if (VibeCheckShell_GetNextString(shell, &cmd_name))
-
-		for (uint32_t i = 0; i < shell->cmd_count; i++)
-		{
-			if (!strcmp(shell->commands[i].name, cmd_name))
-			{
-				ret = shell->commands[i].execute(shell->commands[i].obj, shell);
-				break;
-			}
-		}
-
-	*output = shell->output;
-	*output_len = shell->output_pos;
-	return ret;
 }
 
 
 /* these return true if they successfully get the next token */
-uint32_t VibeCheckShell_GetNextString(VibeCheckShell* shell, char** next)
+uint32_t VibeCheckShell_GetNextString(VibeCheckShell* shell, char* next, uint32_t max_len)
 {
-	/* delimiters could be spaces or commas */
-	/* turn to all lower case letters */
-	/* the next token will be stored in the shell struct, return a pointer to the token char array */
 
-	char separator[] = " ,";
-	char* token = shell->token;
-	while (shell->input_pos < VC_SHELL_BUF_LEN)
+	for (uint32_t i = 0; i < max_len; )
 	{
-		if (strchr(separator, shell->input[shell->input_pos]) == NULL && shell->input[shell->input_pos])
+
+		char x = shell->input[shell->input_tail];
+
+		if (strchr(VC_SHELL_DELIMITER, x) != NULL)
 		{
-			/* this is a character */
-			*(token++) = shell->input[shell->input_pos];
+			/* this is a delimiter */
+			if (i)  /* we have something in the token so return it */
+			{
+				*next = '\0';
+				return 1;
+			}
+			else
+				return 0;  /* don't go any further than the delimiter */
 		}
 		else
 		{
-			/* this is a separator or end of string */
-			if (token != shell->token) /* we have something in the token so return it */
+			shell->input_count--;
+			shell->input_tail++;
+			if (shell->input_tail == VC_SHELL_IO_BUF_LEN)
+				shell->input_tail = 0;
+
+			if (strchr(VC_SHELL_INPUT_SEPARATORS, x) != NULL)
 			{
-				*token = '\0';
-				*next = shell->token;
-				return 1;
+				/* this is a separator */
+				if (i) /* if we have something in the token return it, otherwise just continue in order to skip leading separators */
+				{
+					*next = '\0';
+					return 1;
+				}
+			}
+			else
+			{
+				/* this is a character */
+				*(next++) = tolower(x);  /* turn to all lower case letters */
+				i++;
 			}
 		}
-		shell->input_pos++;
 	}
 
 	return 0;
 }
 
+
 uint32_t VibeCheckShell_GetNextInt(VibeCheckShell* shell, int32_t* next)
 {
-	char* str;
-	if (VibeCheckShell_GetNextString(shell, &str))
+	char str[VC_SHELL_MAX_TOKEN_LEN];
+	if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
 	{
 		char valid[] = "-0123456789";
 		for (uint32_t i = 0; i < strlen(str); i++)
@@ -98,10 +232,11 @@ uint32_t VibeCheckShell_GetNextInt(VibeCheckShell* shell, int32_t* next)
 	return 0;
 }
 
+
 uint32_t VibeCheckShell_GetNextFloat(VibeCheckShell* shell, float* next)
 {
-	char* str;
-	if (VibeCheckShell_GetNextString(shell, &str))
+	char str[VC_SHELL_MAX_TOKEN_LEN];
+	if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
 	{
 		char valid[] = ".-0123456789";
 		for (uint32_t i = 0; i < strlen(str); i++)
@@ -115,25 +250,41 @@ uint32_t VibeCheckShell_GetNextFloat(VibeCheckShell* shell, float* next)
 }
 
 
+
 /* add things to the output */
-void VibeCheckShell_PutString(VibeCheckShell* shell, char* str)
+void VibeCheckShell_PutOutputString(VibeCheckShell* shell, char* str)
 {
-	shell->output_pos += sprintf(shell->output + shell->output_pos, "%s ", str);
+	while (*str)
+	{
+		shell->output[shell->output_head++] = *(str++);
+		shell->output_count++;
+		if (shell->output_head == VC_SHELL_IO_BUF_LEN)
+			shell->output_head = 0;
+	}
 }
 
-void VibeCheckShell_PutInt(VibeCheckShell* shell, uint32_t val)
+void VibeCheckShell_PutOutputInt(VibeCheckShell* shell, uint32_t val)
 {
-	shell->output_pos += sprintf(shell->output + shell->output_pos, "%ld ", val);
+	char str[VC_SHELL_MAX_TOKEN_LEN];
+	sprintf(str, "%ld", val);
+	VibeCheckShell_PutOutputString(shell, str);
 }
 
-void VibeCheckShell_PutFloat(VibeCheckShell* shell, float val)
+void VibeCheckShell_PutOutputFloat(VibeCheckShell* shell, float val)
 {
-	shell->output_pos += sprintf(shell->output + shell->output_pos, "%f ", val);
+	char str[VC_SHELL_MAX_TOKEN_LEN];
+	sprintf(str, "%f", val);
+	VibeCheckShell_PutOutputString(shell, str);
 }
 
-void VibeCheckShell_Ack(VibeCheckShell* shell)
+void VibeCheckShell_PutOutputSeparator(VibeCheckShell* shell)
 {
-	VibeCheckShell_PutString(shell, "ack\n");
+	VibeCheckShell_PutOutputString(shell, VC_SHELL_OUTPUT_SEPARATOR);
+}
+
+void VibeCheckShell_PutOutputDelimiter(VibeCheckShell* shell)
+{
+	VibeCheckShell_PutOutputString(shell, VC_SHELL_DELIMITER);
 }
 
 

@@ -1,5 +1,5 @@
-Core/Src/vibecheck_strobe_cmd.o: ../Core/Src/vibecheck_strobe_cmd.c \
- ../Core/Inc/vibecheck_strobe_cmd.h ../Core/Inc/vibecheck_strobe.h \
+Core/Src/vibecheck_accel_handler.o: ../Core/Src/vibecheck_accel_handler.c \
+ ../Core/Inc/vibecheck_accel_handler.h ../Core/Inc/vibecheck_accel.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../Core/Inc/stm32h7xx_hal_conf.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
@@ -43,8 +43,8 @@ Core/Src/vibecheck_strobe_cmd.o: ../Core/Src/vibecheck_strobe_cmd.c \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
  ../Core/Inc/vibecheck_shell.h
-../Core/Inc/vibecheck_strobe_cmd.h:
-../Core/Inc/vibecheck_strobe.h:
+../Core/Inc/vibecheck_accel_handler.h:
+../Core/Inc/vibecheck_accel.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h:

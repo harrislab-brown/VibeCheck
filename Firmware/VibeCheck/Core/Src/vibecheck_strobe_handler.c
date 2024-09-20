@@ -5,7 +5,7 @@
  *      Author: johnt
  */
 
-#include "vibecheck_strobe_cmd.h"
+#include "vibecheck_strobe_handler.h"
 
 /*
 
@@ -33,26 +33,27 @@ uint32_t VibeCheckStrobeCMD_Execute(void* obj, VibeCheckShell* shell)
 {
 	VibeCheckStrobe* strobe = (VibeCheckStrobe*)obj;
 
-	char* str;
-	if (VibeCheckShell_GetNextString(shell, &str))
+	char str[VC_SHELL_MAX_TOKEN_LEN];
+	if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
 	{
 		if (!strcmp(str, "start"))
 		{
 			VibeCheckStrobe_Start(strobe);
-			VibeCheckShell_Ack(shell);
+			VibeCheckShell_PutOutputString(shell, "ack");
+			VibeCheckShell_PutOutputDelimiter(shell);
 			return 1;
 		}
 		else if (!strcmp(str, "stop"))
 		{
 			VibeCheckStrobe_Stop(strobe);
-			VibeCheckShell_Ack(shell);
+			VibeCheckShell_PutOutputString(shell, "ack");
+			VibeCheckShell_PutOutputDelimiter(shell);
 			return 1;
 		}
 		else if (!strcmp(str, "set"))
 		{
 			if (VibeCheckStrobeCMD_Set(strobe, shell))
 			{
-				VibeCheckShell_Ack(shell);
 				return 1;
 			}
 		}
@@ -60,7 +61,6 @@ uint32_t VibeCheckStrobeCMD_Execute(void* obj, VibeCheckShell* shell)
 		{
 			if (VibeCheckStrobeCMD_Get(strobe, shell))
 			{
-				VibeCheckShell_Ack(shell);
 				return 1;
 			}
 		}
@@ -71,8 +71,8 @@ uint32_t VibeCheckStrobeCMD_Execute(void* obj, VibeCheckShell* shell)
 
 uint32_t VibeCheckStrobeCMD_Set(VibeCheckStrobe* strobe, VibeCheckShell* shell)
 {
-	char* str;
-	if (VibeCheckShell_GetNextString(shell, &str))
+	char str[VC_SHELL_MAX_TOKEN_LEN];
+	if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
 	{
 		if (!strcmp(str, "frequency"))
 		{
@@ -80,6 +80,8 @@ uint32_t VibeCheckStrobeCMD_Set(VibeCheckStrobe* strobe, VibeCheckShell* shell)
 			if (VibeCheckShell_GetNextFloat(shell, &val))
 			{
 				VibeCheckStrobe_SetFrequency(strobe, val);
+				VibeCheckShell_PutOutputString(shell, "ack");
+				VibeCheckShell_PutOutputDelimiter(shell);
 				return 1;
 			}
 		}
@@ -89,6 +91,8 @@ uint32_t VibeCheckStrobeCMD_Set(VibeCheckStrobe* strobe, VibeCheckShell* shell)
 			if (VibeCheckShell_GetNextFloat(shell, &val))
 			{
 				VibeCheckStrobe_SetPhase(strobe, val);
+				VibeCheckShell_PutOutputString(shell, "ack");
+				VibeCheckShell_PutOutputDelimiter(shell);
 				return 1;
 			}
 		}
@@ -98,6 +102,8 @@ uint32_t VibeCheckStrobeCMD_Set(VibeCheckStrobe* strobe, VibeCheckShell* shell)
 			if (VibeCheckShell_GetNextFloat(shell, &val))
 			{
 				VibeCheckStrobe_SetExposure(strobe, val);
+				VibeCheckShell_PutOutputString(shell, "ack");
+				VibeCheckShell_PutOutputDelimiter(shell);
 				return 1;
 			}
 		}
@@ -108,22 +114,31 @@ uint32_t VibeCheckStrobeCMD_Set(VibeCheckStrobe* strobe, VibeCheckShell* shell)
 
 uint32_t VibeCheckStrobeCMD_Get(VibeCheckStrobe* strobe, VibeCheckShell* shell)
 {
-	char* str;
-	if (VibeCheckShell_GetNextString(shell, &str))
+	char str[VC_SHELL_MAX_TOKEN_LEN];
+	if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
 	{
 		if (!strcmp(str, "frequency"))
 		{
-			VibeCheckShell_PutFloat(shell, VibeCheckStrobe_GetFrequency(strobe));
+			VibeCheckShell_PutOutputString(shell, "ack");
+			VibeCheckShell_PutOutputSeparator(shell);
+			VibeCheckShell_PutOutputFloat(shell, VibeCheckStrobe_GetFrequency(strobe));
+			VibeCheckShell_PutOutputDelimiter(shell);
 			return 1;
 		}
 		else if (!strcmp(str, "phase"))
 		{
-			VibeCheckShell_PutFloat(shell, VibeCheckStrobe_GetPhase(strobe));
+			VibeCheckShell_PutOutputString(shell, "ack");
+			VibeCheckShell_PutOutputSeparator(shell);
+			VibeCheckShell_PutOutputFloat(shell, VibeCheckStrobe_GetPhase(strobe));
+			VibeCheckShell_PutOutputDelimiter(shell);
 			return 1;
 		}
 		else if (!strcmp(str, "exposure"))
 		{
-			VibeCheckShell_PutFloat(shell, VibeCheckStrobe_GetExposure(strobe));
+			VibeCheckShell_PutOutputString(shell, "ack");
+			VibeCheckShell_PutOutputSeparator(shell);
+			VibeCheckShell_PutOutputFloat(shell, VibeCheckStrobe_GetExposure(strobe));
+			VibeCheckShell_PutOutputDelimiter(shell);
 			return 1;
 		}
 	}

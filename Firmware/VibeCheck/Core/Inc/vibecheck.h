@@ -9,9 +9,11 @@
 #define INC_VIBECHECK_H_
 
 #include "vibecheck_shell.h"
-#include "vibecheck_USB.h"
 #include "vibecheck_strobe.h"
-#include "vibecheck_strobe_cmd.h"
+#include "vibecheck_strobe_handler.h"
+#include "vibecheck_accel.h"
+#include "vibecheck_accel_handler.h"
+#include "usbd_cdc_if.h"
 
 /* main application code */
 
@@ -22,8 +24,8 @@
 typedef struct
 {
 	VibeCheckShell shell;
-	VibeCheckUSB usb;
 	VibeCheckStrobe strobe;
+	VibeCheckAccel accel;
 } VibeCheck;
 
 
