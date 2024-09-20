@@ -5,68 +5,62 @@
     box-sizing: border-box;
     grid-template-columns: 1fr 3fr 2fr;
     grid-template-rows: 100px 1fr 100px 60px;
-    gap: 10px;
-    padding: 10px;
+    /* gap: 10px; */
+    /* padding: 10px; */
     margin: 0;
+    border: 4px, solid, white;
   }
   
   .grid-item {
     background-color: #000000;
     border: 2px solid #ccc;
-    padding: 20px;
-    font-size: 24px;
+    padding: 12px;
+    font-size: 12px;
     text-align: center;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 5px
+    border-radius: 0px
   }
   
-  .item1 {
+  .logo {
     grid-column: 1;  /* Changed to occupy only the first column */
     grid-row: 1;
-    background-color: #000000;
   }
+  .vibecheck-logo {
+    width: auto; /* Makes the logo responsive to the grid item's width */
+    height: 100%; /* Maintains the aspect ratio */
+    max-width: 200px; /* Or any other max-width you prefer */
+}
   
-  .item2 {
+  .session_settings {
     grid-column: 2;
     grid-row: 1;
-    background-color: #000000;
   }
   
-  .item3 {
+  .tabbed_interface {
     grid-column: 3;
-    grid-row: 1;
-    background-color: #000000;
+    grid-row:  1 / span 2;
   }
-  
-  
-  .item4 {
+
+  .live_plot {
     grid-column: 1 / span 2;
     grid-row: 2;
     background-color: #3b3f44;
   }
   
-  .item5 {
-    grid-column: 3;
-    grid-row:  2;
-    background-color: #000000;
-  }
   
-  .item6 {
+  .plot_controls {
     grid-column: 1 / span 2;
     grid-row: 3;
-    background-color: #000000;
   }
   
-  .item7 {
+  .hardware_controls {
     grid-column: 3;
     grid-row: 3 / span 2;
-    background-color: #000000;
   }
   
-  .item8 {
+  .status_display {
     grid-column: 1 / span 2;
     grid-row: 4;
-    background-color: #000000;
   }

@@ -9,6 +9,7 @@ import PlotControls, { PlotControlsState } from '../components/PlotControls';
 import TabbedInterface from './TabbedInterface';
 import StatusDisplay from './StatusDIsplay';
 import HardwareControl from './HardwareControl';
+import VibeCheckLogo from '../assets/VibeCheck_Logo.png';
 
 const Layout: React.FC = () => {
     const [plotControls, setPlotControls] = useState<PlotControlsState>({
@@ -23,28 +24,27 @@ const Layout: React.FC = () => {
 
     return (
         <div className="grid-container">
-            <div className="grid-item item1">
-                VibeCheck Logo
+            <div className="grid-item logo">
+                <img src={VibeCheckLogo} alt="VibeCheck Logo" className="vibecheck-logo" />
             </div>
-            <div className="grid-item item2">
-                <SerialPortConnect />
+            <div className="grid-item session_settings">
+                <SerialPortConnect/>
+                <DataSettings/>
+
             </div>
-            <div className="grid-item item3">
-                <DataSettings />
-            </div>
-            <div className="grid-item item4">
-                <LivePlot controls={plotControls} />
-            </div>
-            <div className="grid-item item5">
+            <div className="grid-item tabbed_interface">
                 <TabbedInterface/>
             </div>
-            <div className="grid-item item6">
+            <div className="grid-item live_plot">
+                <LivePlot controls={plotControls} />
+            </div>
+            <div className="grid-item plot_controls">
                 <PlotControls onUpdateControls={handleUpdateControls} />
             </div>
-            <div className="grid-item item7">
+            <div className="grid-item hardware_controls">
                 <HardwareControl/>
             </div>
-            <div className="grid-item item8">
+            <div className="grid-item status_display">
                 <StatusDisplay/>
             </div>
         </div>

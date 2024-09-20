@@ -1,23 +1,20 @@
 /* ./styles/DataSettings.css */
 
 .data-settings {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    /* flex-direction: row; */
     padding: 15px;
 }
 
-.data-settings h3 {
-    margin-bottom: 15px;
-}
-
 .setting {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15px;
+    display: block;
+    /* flex-direction: column; */
+    margin: 10px;
 }
 
 .setting label {
-    margin-bottom: 5px;
+    margin: 5px;
 }
 
 .setting button,
@@ -25,13 +22,13 @@
 .setting input {
     padding: 8px;
     border-radius: 4px;
-    border: 1px solid #676767;
+    border: 1px solid #ffffff;
 }
 
 .setting button {
-    background-color: #000000;
+    background-color: #7b4bd3;
     color: white;
-    border: none;
+    border: 1px solid;
     cursor: pointer;
 }
 

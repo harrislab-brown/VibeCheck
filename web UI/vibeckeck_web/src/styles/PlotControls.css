@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px;
+    padding: 10px;
     background-color: #000000;
     border-radius: 5px;
   }
@@ -15,7 +15,7 @@
   }
   
   .control-group label {
-    margin-right: 10px;
+    margin: 10px;
     white-space: nowrap;
   }
   
