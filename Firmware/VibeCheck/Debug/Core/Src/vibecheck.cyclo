@@ -1,2 +1,2 @@
 ../Core/Src/vibecheck.c:11:6:VibeCheck_Init	1
-../Core/Src/vibecheck.c:41:6:VibeCheck_Loop	2
+../Core/Src/vibecheck.c:45:6:VibeCheck_Loop	2

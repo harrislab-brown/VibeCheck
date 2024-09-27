@@ -8,7 +8,10 @@
 
 #include "vibecheck.h"
 
-void VibeCheck_Init(VibeCheck* vc, TIM_HandleTypeDef* htim_strobe)
+void VibeCheck_Init(VibeCheck* vc,
+		TIM_HandleTypeDef* htim_strobe,
+		TIM_HandleTypeDef* htim_wavegen,
+		DAC_HandleTypeDef* hdac_wavegen)
 {
 	VibeCheckShell_Init(&vc->shell);  /* the shell is linked to the USB middle-ware in usbd_cdc_if.c */
 
@@ -35,11 +38,13 @@ void VibeCheck_Init(VibeCheck* vc, TIM_HandleTypeDef* htim_strobe)
 	VibeCheckShell_RegisterOutputHandler(&vc->shell, accel_sender);
 
 	VibeCheckStrobe_Init(&vc->strobe, htim_strobe);
+	VibeCheckWaveGen_Init(&vc->wavegen, hdac_wavegen, htim_wavegen);
 	VibeCheckAccel_Init(&vc->accel);
 }
 
 void VibeCheck_Loop(VibeCheck* vc)
 {
+	VibeCheckWaveGen_Update(&vc->wavegen);
 	VibeCheckAccel_Update(&vc->accel);
 
 	VibeCheckShell_Status shell_status = VibeCheckShell_Update(&vc->shell);
