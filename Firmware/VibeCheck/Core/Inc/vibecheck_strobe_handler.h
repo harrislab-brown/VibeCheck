@@ -12,8 +12,6 @@
 #include "vibecheck_shell.h"
 
 uint32_t VibeCheckStrobeCMD_Execute(void* obj, VibeCheckShell* shell);
-uint32_t VibeCheckStrobeCMD_Set(VibeCheckStrobe* strobe, VibeCheckShell* shell);
-uint32_t VibeCheckStrobeCMD_Get(VibeCheckStrobe* strobe, VibeCheckShell* shell);
 
 
 #endif /* INC_VIBECHECK_STROBE_HANDLER_H_ */

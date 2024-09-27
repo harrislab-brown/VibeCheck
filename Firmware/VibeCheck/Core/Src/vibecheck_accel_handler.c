@@ -47,8 +47,6 @@ uint32_t VibeCheckAccelSender_Execute(void* obj, VibeCheckShell* shell)
 	VibeCheckAccel_Data* data;
 	if (VibeCheckAccel_GetDataReady(accel, &data))
 	{
-		VibeCheckAccel_ResetDataReady(accel);
-
 		VibeCheckShell_PutOutputString(shell, "data");
 		VibeCheckShell_PutOutputSeparator(shell);
 		VibeCheckShell_PutOutputInt(shell, VC_ACCEL_DATA_PER_PACKET);

@@ -101,12 +101,12 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 
 void HAL_DAC_ConvHalfCpltCallbackCh1(DAC_HandleTypeDef* hdac)
 {
-	VibeCheckWaveGen_DMACallback(&vc.wavegen);
+	VibeCheckWaveGen_DMAHalfCpltCallback(&vc.wavegen);
 }
 
 void HAL_DAC_ConvCpltCallbackCh1(DAC_HandleTypeDef* hdac)
 {
-	VibeCheckWaveGen_DMACallback(&vc.wavegen);
+	VibeCheckWaveGen_DMACpltCallback(&vc.wavegen);
 }
 
 /* USER CODE END 0 */
@@ -425,7 +425,7 @@ static void MX_DAC1_Init(void)
   */
   sConfig.DAC_SampleAndHold = DAC_SAMPLEANDHOLD_DISABLE;
   sConfig.DAC_Trigger = DAC_TRIGGER_T1_TRGO;
-  sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_ENABLE;
+  sConfig.DAC_OutputBuffer = DAC_OUTPUTBUFFER_DISABLE;
   sConfig.DAC_ConnectOnChipPeripheral = DAC_CHIPCONNECT_DISABLE;
   sConfig.DAC_UserTrimming = DAC_TRIMMING_FACTORY;
   if (HAL_DAC_ConfigChannel(&hdac1, &sConfig, DAC_CHANNEL_1) != HAL_OK)
@@ -435,7 +435,6 @@ static void MX_DAC1_Init(void)
 
   /** DAC channel OUT2 config
   */
-  sConfig.DAC_Trigger = DAC_TRIGGER_NONE;
   if (HAL_DAC_ConfigChannel(&hdac1, &sConfig, DAC_CHANNEL_2) != HAL_OK)
   {
     Error_Handler();
@@ -997,7 +996,10 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIO_TIMING2_GPIO_Port, GPIO_TIMING2_Pin, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOA, GPIO_TIMING1_Pin|MUTE_INDICATOR_Pin|MUTE_SIGNAL_Pin, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIO_TIMING1_GPIO_Port, GPIO_TIMING1_Pin, GPIO_PIN_RESET);
+
+  /*Configure GPIO pin Output Level */
+  HAL_GPIO_WritePin(GPIOA, MUTE_INDICATOR_Pin|MUTE_SIGNAL_Pin, GPIO_PIN_SET);
 
   /*Configure GPIO pin Output Level */
   HAL_GPIO_WritePin(GPIOB, ACCEL_NCS1_Pin|RECORD_INDICATOR_Pin, GPIO_PIN_RESET);

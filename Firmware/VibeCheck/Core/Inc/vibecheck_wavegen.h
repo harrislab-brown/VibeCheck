@@ -34,14 +34,15 @@
  */
 
 #define VC_WAVE_TIM_BASE_HZ 240000000
-#define VC_WAVE_TIM_PSC 2400
+#define VC_WAVE_TIM_PSC 24
+#define VC_WAVE_TIM_MAX_COUNTS 65535
 #define VC_WAVE_TIM_COUNTS_PER_SECOND (VC_WAVE_TIM_BASE_HZ / VC_WAVE_TIM_PSC)
+#define VC_WAVE_BUF_LEN 1024  /* number of elements in the wave, double buffered */
 
-#define VC_WAVE_MIN_FREQ_HZ 2.0f
-#define VC_WAVE_MAX_FREQ_HZ 1000.0f
+#define VC_WAVE_MIN_FREQ_HZ (VC_WAVE_TIM_COUNTS_PER_SECOND / VC_WAVE_BUF_LEN / VC_WAVE_TIM_MAX_COUNTS)
+#define VC_WAVE_MAX_FREQ_HZ (VC_WAVE_TIM_COUNTS_PER_SECOND / VC_WAVE_BUF_LEN / 2)
 
 #define VC_WAVE_DAC_FULL_SCALE 4095.0f  /* max value of the 12 bit DAC */
-#define VC_WAVE_BUF_LEN 1024  /* number of elements in the wave, double buffered */
 
 #define VC_WAVE_BUTTON_DEBOUNCE_MS 250
 
@@ -60,16 +61,19 @@ typedef struct
 	DAC_HandleTypeDef* hdac;
 
 	uint32_t wave[2 * VC_WAVE_BUF_LEN];
-	volatile uint32_t wave_buf_index;  /* for keeping track of which half of the double buffer */
-	volatile uint32_t wave_compute_pending;
-	volatile uint32_t wave_compute_ready;
+	volatile uint32_t wave_ping_compute_pending;
+	volatile uint32_t wave_pong_compute_pending;
+	volatile uint32_t wave_ping_compute_ready;
+	volatile uint32_t wave_pong_compute_ready;
 
 	VibeCheckWaveGen_Waveform waveform;
 
 	float freq_hz;
 	float amplitude;  /* amplitude of the wave, between 0 and 1 */
 
+	uint32_t is_running;
 	uint32_t is_muted;
+	uint32_t mute_button_flag;
 	uint32_t time_prev_button_press;
 
 } VibeCheckWaveGen;
@@ -89,7 +93,10 @@ float VibeCheckWaveGen_GetAmplitude(VibeCheckWaveGen* wavegen);
 void VibeCheckWaveGen_SetWaveform(VibeCheckWaveGen* wavegen, VibeCheckWaveGen_Waveform waveform);
 VibeCheckWaveGen_Waveform VibeCheckWaveGen_GetWaveform(VibeCheckWaveGen* wavegen);
 
+uint32_t VibeCheckWaveGen_WasMuteButtonPressed(VibeCheckWaveGen* wavegen, uint32_t* is_muted);
+
 /* keeps track of which end of the double buffer to compute when updating the wave */
-void VibeCheckWaveGen_DMACallback(VibeCheckWaveGen* wavegen);
+void VibeCheckWaveGen_DMAHalfCpltCallback(VibeCheckWaveGen* wavegen);
+void VibeCheckWaveGen_DMACpltCallback(VibeCheckWaveGen* wavegen);
 
 #endif /* INC_VIBECHECK_WAVEGEN_H_ */

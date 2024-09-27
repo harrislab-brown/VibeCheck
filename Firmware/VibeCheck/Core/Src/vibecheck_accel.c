@@ -71,6 +71,7 @@ uint32_t VibeCheckAccel_GetDataReady(VibeCheckAccel* accel, VibeCheckAccel_Data*
 {
 	if (accel->data_ready)
 	{
+		accel->data_ready = 0;
 		if (accel->data_ind < VC_ACCEL_DATA_PER_PACKET)
 		{
 			/* ready to send the second half */
@@ -84,9 +85,4 @@ uint32_t VibeCheckAccel_GetDataReady(VibeCheckAccel* accel, VibeCheckAccel_Data*
 		return 1;
 	}
 	return 0;
-}
-
-void VibeCheckAccel_ResetDataReady(VibeCheckAccel* accel)
-{
-	accel->data_ready = 0;
 }

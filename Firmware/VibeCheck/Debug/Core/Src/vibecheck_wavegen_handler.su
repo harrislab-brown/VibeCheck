@@ -1,0 +1,4 @@
+../Core/Src/vibecheck_wavegen_handler.c:37:17:VibeCheckWaveGenCMD_Set	88	static
+../Core/Src/vibecheck_wavegen_handler.c:103:17:VibeCheckWaveGenCMD_Get	80	static
+../Core/Src/vibecheck_wavegen_handler.c:152:10:VibeCheckWaveGenCMD_Execute	88	static
+../Core/Src/vibecheck_wavegen_handler.c:193:10:VibeCheckWaveGenSender_Execute	24	static

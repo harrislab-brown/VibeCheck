@@ -4,4 +4,3 @@
 ../Core/Src/vibecheck_accel.c:60:6:VibeCheckAccel_StartFakeData	16	static
 ../Core/Src/vibecheck_accel.c:65:6:VibeCheckAccel_StopFakeData	16	static
 ../Core/Src/vibecheck_accel.c:70:10:VibeCheckAccel_GetDataReady	16	static
-../Core/Src/vibecheck_accel.c:89:6:VibeCheckAccel_ResetDataReady	16	static

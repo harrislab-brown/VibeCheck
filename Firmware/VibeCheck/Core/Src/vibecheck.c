@@ -21,7 +21,11 @@ void VibeCheck_Init(VibeCheck* vc,
 			.obj = &vc->strobe
 	};
 
-	VibeCheckShell_RegisterInputHandler(&vc->shell, strobe_cmd);
+	VibeCheckShell_InputHandler wavegen_cmd = {
+			.name = "wavegen",
+			.execute = VibeCheckWaveGenCMD_Execute,
+			.obj = &vc->wavegen
+	};
 
 	VibeCheckShell_InputHandler accel_cmd = {
 			.name = "accel",
@@ -29,12 +33,21 @@ void VibeCheck_Init(VibeCheck* vc,
 			.obj = &vc->accel
 	};
 
+	VibeCheckShell_RegisterInputHandler(&vc->shell, strobe_cmd);
+	VibeCheckShell_RegisterInputHandler(&vc->shell, wavegen_cmd);
+	VibeCheckShell_RegisterInputHandler(&vc->shell, accel_cmd);
+
+	VibeCheckShell_OutputHandler wavegen_sender = {
+			.execute = VibeCheckWaveGenSender_Execute,
+			.obj = &vc->wavegen
+	};
+
 	VibeCheckShell_OutputHandler accel_sender = {
 			.execute = VibeCheckAccelSender_Execute,
 			.obj = &vc->accel
 	};
 
-	VibeCheckShell_RegisterInputHandler(&vc->shell, accel_cmd);
+	VibeCheckShell_RegisterOutputHandler(&vc->shell, wavegen_sender);
 	VibeCheckShell_RegisterOutputHandler(&vc->shell, accel_sender);
 
 	VibeCheckStrobe_Init(&vc->strobe, htim_strobe);

@@ -45,25 +45,38 @@ static void ComputeTriangleWave(uint32_t* buf, uint32_t len, float amplitude)
 			*buf++ = 0.5f * VC_WAVE_DAC_FULL_SCALE * (1 - 4 * amplitude + 4 * i * amplitude / (float)len);
 }
 
-
-
-
-static void VibeCheckWaveGen_RecomputeWave(VibeCheckWaveGen* wavegen)
+static void ComputeNullWave(uint32_t* buf, uint32_t len)
 {
-	switch (wavegen->waveform)
+	for (uint32_t i = 0; i < len; i++)
+		*buf++ = 0.5f * VC_WAVE_DAC_FULL_SCALE;
+}
+
+
+
+
+static void VibeCheckWaveGen_RecomputeWave(VibeCheckWaveGen* wavegen, uint32_t* buf)
+{
+	if (wavegen->is_running)
 	{
-	case VC_WAVE_SINE:
-		ComputeSineWave(&wavegen->wave[wavegen->wave_buf_index * VC_WAVE_BUF_LEN], VC_WAVE_BUF_LEN, wavegen->amplitude);
-		break;
-	case VC_WAVE_SQUARE:
-		ComputeSquareWave(&wavegen->wave[wavegen->wave_buf_index * VC_WAVE_BUF_LEN], VC_WAVE_BUF_LEN, wavegen->amplitude);
-		break;
-	case VC_WAVE_SAW:
-		ComputeSawWave(&wavegen->wave[wavegen->wave_buf_index * VC_WAVE_BUF_LEN], VC_WAVE_BUF_LEN, wavegen->amplitude);
-		break;
-	case VC_WAVE_TRIANGLE:
-		ComputeTriangleWave(&wavegen->wave[wavegen->wave_buf_index * VC_WAVE_BUF_LEN], VC_WAVE_BUF_LEN, wavegen->amplitude);
-		break;
+		switch (wavegen->waveform)
+		{
+		case VC_WAVE_SINE:
+			ComputeSineWave(buf, VC_WAVE_BUF_LEN, wavegen->amplitude);
+			break;
+		case VC_WAVE_SQUARE:
+			ComputeSquareWave(buf, VC_WAVE_BUF_LEN, wavegen->amplitude);
+			break;
+		case VC_WAVE_SAW:
+			ComputeSawWave(buf, VC_WAVE_BUF_LEN, wavegen->amplitude);
+			break;
+		case VC_WAVE_TRIANGLE:
+			ComputeTriangleWave(buf, VC_WAVE_BUF_LEN, wavegen->amplitude);
+			break;
+		}
+	}
+	else
+	{
+		ComputeNullWave(buf, VC_WAVE_BUF_LEN);
 	}
 }
 
@@ -72,27 +85,36 @@ void VibeCheckWaveGen_Init(VibeCheckWaveGen* wavegen, DAC_HandleTypeDef *hdac, T
 {
 	wavegen->hdac = hdac;
 	wavegen->htim = htim;
-	wavegen->freq_hz = VC_WAVE_MIN_FREQ_HZ;
-	wavegen->amplitude = 0.1f;
+	wavegen->freq_hz = 440.0f;
+	wavegen->amplitude = 0.001f;
 	wavegen->waveform = VC_WAVE_SINE;
-	wavegen->wave_compute_pending = 0;
-	wavegen->wave_compute_ready = 0;
 
+	wavegen->is_running = 0;
 	wavegen->is_muted = 0;
+	wavegen->mute_button_flag = 0;
 	wavegen->time_prev_button_press = 0;
 
-	HAL_GPIO_WritePin(MUTE_SIGNAL_GPIO_Port, MUTE_SIGNAL_Pin, GPIO_PIN_RESET);  /* un-mute the output */
-	HAL_GPIO_WritePin(MUTE_INDICATOR_GPIO_Port, MUTE_INDICATOR_Pin, GPIO_PIN_RESET);  /* turn off the mute LED */
+	wavegen->wave_ping_compute_pending = 0;
+	wavegen->wave_pong_compute_pending = 0;
+	wavegen->wave_ping_compute_ready = 0;
+	wavegen->wave_pong_compute_ready = 0;
 
 	/* set up timer registers */
 	wavegen->htim->Instance->PSC = VC_WAVE_TIM_PSC - 1;
 	VibeCheckWaveGen_SetFrequency(wavegen, wavegen->freq_hz);
 
-	/* compute the wave */
-	wavegen->wave_buf_index = 0;
-	VibeCheckWaveGen_RecomputeWave(wavegen);
-	wavegen->wave_buf_index = 1;
-	VibeCheckWaveGen_RecomputeWave(wavegen);
+	/* compute the initial wave (set the DAC to the midpoint to avoid noise) */
+	VibeCheckWaveGen_RecomputeWave(wavegen, &wavegen->wave[0]);
+	VibeCheckWaveGen_RecomputeWave(wavegen, &wavegen->wave[VC_WAVE_BUF_LEN]);
+
+	/* start the DAC */
+	HAL_DAC_Start_DMA(wavegen->hdac, DAC_CHANNEL_1, wavegen->wave, VC_WAVE_BUF_LEN, DAC_ALIGN_12B_R);
+	HAL_DAC_Start_DMA(wavegen->hdac, DAC_CHANNEL_2, wavegen->wave, VC_WAVE_BUF_LEN, DAC_ALIGN_12B_R);
+	HAL_TIM_Base_Start(wavegen->htim);
+
+	/* un-mute the output and turn off the mute LED*/
+	HAL_GPIO_WritePin(MUTE_SIGNAL_GPIO_Port, MUTE_SIGNAL_Pin, GPIO_PIN_RESET);
+	HAL_GPIO_WritePin(MUTE_INDICATOR_GPIO_Port, MUTE_INDICATOR_Pin, GPIO_PIN_RESET);
 }
 
 void VibeCheckWaveGen_Update(VibeCheckWaveGen* wavegen)
@@ -103,8 +125,11 @@ void VibeCheckWaveGen_Update(VibeCheckWaveGen* wavegen)
 	uint32_t time = HAL_GetTick();
 	if (time - wavegen->time_prev_button_press > VC_WAVE_BUTTON_DEBOUNCE_MS && HAL_GPIO_ReadPin(MUTE_BUTTON_GPIO_Port, MUTE_BUTTON_Pin))
 	{
-		/* TODO: need to alert the shell when we press the mute button */
 
+		/*
+		 * the line driver seems to have some kind of slow start built in so no
+		 * need to worry about pops when muting via the hardware pin
+		 */
 		if (wavegen->is_muted)
 		{
 			wavegen->is_muted = 0;
@@ -118,19 +143,22 @@ void VibeCheckWaveGen_Update(VibeCheckWaveGen* wavegen)
 			HAL_GPIO_WritePin(MUTE_INDICATOR_GPIO_Port, MUTE_INDICATOR_Pin, GPIO_PIN_SET);  /* turn on the LED */
 		}
 
+		wavegen->mute_button_flag = 1;  /* can alert the shell via this flag when we press the mute button */
 		wavegen->time_prev_button_press = time;
 	}
 
 	/*
-	 * to make a smooth transition between waves when a parameter is changed, first compute the safe half of the double buffer
-	 * immediately. Set a pending flag that the other half also needs to be updated when its safe. The pending flag will be turned
-	 * into a ready flag when the DMA callback fires. When we see the ready flag in the update function, compute the other half of the
-	 * double buffer with the new wave.
+	 * to make a smooth transition between waves when a parameter is changed, change the two halves of the double buffer separately
 	 */
-	if (wavegen->wave_compute_ready)
+	if (wavegen->wave_ping_compute_ready)
 	{
-		VibeCheckWaveGen_RecomputeWave(wavegen);
-		wavegen->wave_compute_ready = 0;
+		VibeCheckWaveGen_RecomputeWave(wavegen, &wavegen->wave[0]);
+		wavegen->wave_ping_compute_ready = 0;
+	}
+	if (wavegen->wave_pong_compute_ready)
+	{
+		VibeCheckWaveGen_RecomputeWave(wavegen, &wavegen->wave[VC_WAVE_BUF_LEN]);
+		wavegen->wave_pong_compute_ready = 0;
 	}
 
 
@@ -138,25 +166,23 @@ void VibeCheckWaveGen_Update(VibeCheckWaveGen* wavegen)
 
 void VibeCheckWaveGen_Start(VibeCheckWaveGen* wavegen)
 {
-	wavegen->wave_buf_index = 0;
-	VibeCheckWaveGen_RecomputeWave(wavegen);
-	wavegen->wave_buf_index = 1;
-	VibeCheckWaveGen_RecomputeWave(wavegen);
-
-	wavegen->wave_compute_pending = 0;
-	wavegen->wave_compute_ready = 0;
-
-	HAL_DAC_Start_DMA(wavegen->hdac, DAC_CHANNEL_1, wavegen->wave, VC_WAVE_BUF_LEN, DAC_ALIGN_12B_R);
-	HAL_DAC_Start_DMA(wavegen->hdac, DAC_CHANNEL_2, wavegen->wave, VC_WAVE_BUF_LEN, DAC_ALIGN_12B_R);
-	HAL_TIM_Base_Start(wavegen->htim);
+	if (!wavegen->is_running)
+	{
+		wavegen->is_running = 1;
+		wavegen->wave_ping_compute_pending = 1;
+		wavegen->wave_pong_compute_pending = 1;
+	}
 
 }
 
 void VibeCheckWaveGen_Stop(VibeCheckWaveGen* wavegen)
 {
-	HAL_TIM_Base_Stop(wavegen->htim);
-	HAL_DAC_Stop_DMA(wavegen->hdac, DAC_CHANNEL_1);
-	HAL_DAC_Stop_DMA(wavegen->hdac, DAC_CHANNEL_2);
+	if (wavegen->is_running)
+	{
+		wavegen->is_running = 0;
+		wavegen->wave_ping_compute_pending = 1;
+		wavegen->wave_pong_compute_pending = 1;
+	}
 }
 
 void VibeCheckWaveGen_SetFrequency(VibeCheckWaveGen* wavegen, float freq_hz)
@@ -178,9 +204,14 @@ float VibeCheckWaveGen_GetFrequency(VibeCheckWaveGen* wavegen)
 
 void VibeCheckWaveGen_SetAmplitude(VibeCheckWaveGen* wavegen, float amplitude)
 {
+	if (amplitude < 0.0f)
+		amplitude = 0.0f;
+	if (amplitude > 1.0f)
+		amplitude = 1.0f;
+
 	wavegen->amplitude = amplitude;
-	wavegen->wave_compute_pending = 1;
-	VibeCheckWaveGen_RecomputeWave(wavegen);
+	wavegen->wave_ping_compute_pending = 1;
+	wavegen->wave_pong_compute_pending = 1;
 }
 
 float VibeCheckWaveGen_GetAmplitude(VibeCheckWaveGen* wavegen)
@@ -191,8 +222,8 @@ float VibeCheckWaveGen_GetAmplitude(VibeCheckWaveGen* wavegen)
 void VibeCheckWaveGen_SetWaveform(VibeCheckWaveGen* wavegen, VibeCheckWaveGen_Waveform waveform)
 {
 	wavegen->waveform = waveform;
-	wavegen->wave_compute_pending = 1;
-	VibeCheckWaveGen_RecomputeWave(wavegen);
+	wavegen->wave_ping_compute_pending = 1;
+	wavegen->wave_pong_compute_pending = 1;
 }
 
 VibeCheckWaveGen_Waveform VibeCheckWaveGen_GetWaveform(VibeCheckWaveGen* wavegen)
@@ -200,14 +231,34 @@ VibeCheckWaveGen_Waveform VibeCheckWaveGen_GetWaveform(VibeCheckWaveGen* wavegen
 	return wavegen->waveform;
 }
 
-/* keeps track of which end of the double buffer to compute when updating the wave */
-void VibeCheckWaveGen_DMACallback(VibeCheckWaveGen* wavegen)
+uint32_t VibeCheckWaveGen_WasMuteButtonPressed(VibeCheckWaveGen* wavegen, uint32_t* is_muted)
 {
-	wavegen->wave_buf_index = !wavegen->wave_buf_index;
-
-	if (wavegen->wave_compute_pending)
+	if (wavegen->mute_button_flag)
 	{
-		wavegen->wave_compute_pending = 0;
-		wavegen->wave_compute_ready = 1;
+		wavegen->mute_button_flag = 0;
+		*is_muted = wavegen->is_muted;
+		return 1;
+	}
+
+	return 0;
+}
+
+
+/* keeps track of which end of the double buffer to compute when updating the wave */
+void VibeCheckWaveGen_DMAHalfCpltCallback(VibeCheckWaveGen* wavegen)
+{
+	if (wavegen->wave_ping_compute_pending)
+	{
+		wavegen->wave_ping_compute_pending = 0;
+		wavegen->wave_ping_compute_ready = 1;
+	}
+}
+
+void VibeCheckWaveGen_DMACpltCallback(VibeCheckWaveGen* wavegen)
+{
+	if (wavegen->wave_pong_compute_pending)
+	{
+		wavegen->wave_pong_compute_pending = 0;
+		wavegen->wave_pong_compute_ready = 1;
 	}
 }

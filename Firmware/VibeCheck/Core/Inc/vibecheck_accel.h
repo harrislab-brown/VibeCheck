@@ -44,10 +44,6 @@ void VibeCheckAccel_StartFakeData(VibeCheckAccel* accel);
 void VibeCheckAccel_StopFakeData(VibeCheckAccel* accel);
 
 uint32_t VibeCheckAccel_GetDataReady(VibeCheckAccel* accel, VibeCheckAccel_Data** data);
-void VibeCheckAccel_ResetDataReady(VibeCheckAccel* accel);
-
-
-
 
 
 #endif /* INC_VIBECHECK_ACCEL_H_ */

@@ -12,6 +12,7 @@
 #include "vibecheck_strobe.h"
 #include "vibecheck_strobe_handler.h"
 #include "vibecheck_wavegen.h"
+#include "vibecheck_wavegen_handler.h"
 #include "vibecheck_accel.h"
 #include "vibecheck_accel_handler.h"
 #include "usbd_cdc_if.h"
