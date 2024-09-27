@@ -43,7 +43,7 @@ Core/Src/vibecheck_wavegen_handler.o: \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
- ../Core/Inc/vibecheck_shell.h
+ ../Core/Inc/sequencer.h ../Core/Inc/vibecheck_shell.h
 ../Core/Inc/vibecheck_wavegen_handler.h:
 ../Core/Inc/vibecheck_wavegen.h:
 ../Core/Inc/main.h:
@@ -89,4 +89,5 @@ Core/Src/vibecheck_wavegen_handler.o: \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h:
+../Core/Inc/sequencer.h:
 ../Core/Inc/vibecheck_shell.h:

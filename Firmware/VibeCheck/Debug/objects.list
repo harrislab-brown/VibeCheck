@@ -1,6 +1,7 @@
 "./Core/Src/IIS3DWB.o"
 "./Core/Src/fast_spi.o"
 "./Core/Src/main.o"
+"./Core/Src/sequencer.o"
 "./Core/Src/stm32h7xx_hal_msp.o"
 "./Core/Src/stm32h7xx_it.o"
 "./Core/Src/syscalls.o"

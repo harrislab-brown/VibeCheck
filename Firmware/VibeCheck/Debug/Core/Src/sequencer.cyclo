@@ -1,0 +1,5 @@
+../Core/Src/sequencer.c:10:6:Sequencer_Init	1
+../Core/Src/sequencer.c:21:6:Sequencer_SetSequence	1
+../Core/Src/sequencer.c:28:10:Sequencer_Update	6
+../Core/Src/sequencer.c:57:6:Sequencer_Start	1
+../Core/Src/sequencer.c:64:6:Sequencer_Stop	1

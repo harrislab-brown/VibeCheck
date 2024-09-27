@@ -18,6 +18,10 @@ Set of commands to implement:
 
 >>wavegen stop
 
+>>wavegen demo start
+
+>>wavegen demo stop
+
 >>wavegen set frequency 100.0
 
 >>wavegen get frequency
@@ -182,6 +186,26 @@ uint32_t VibeCheckWaveGenCMD_Execute(void* obj, VibeCheckShell* shell)
 			if (VibeCheckWaveGenCMD_Get(wavegen, shell))
 			{
 				return 1;
+			}
+		}
+		else if (!strcmp(str, "demo"))
+		{
+			if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
+			{
+				if (!strcmp(str, "start"))
+				{
+					VibeCheckWaveGen_StartDemo(wavegen);
+					VibeCheckShell_PutOutputString(shell, "ack");
+					VibeCheckShell_PutOutputDelimiter(shell);
+					return 1;
+				}
+				else if (!strcmp(str, "stop"))
+				{
+					VibeCheckWaveGen_StopDemo(wavegen);
+					VibeCheckShell_PutOutputString(shell, "ack");
+					VibeCheckShell_PutOutputDelimiter(shell);
+					return 1;
+				}
 			}
 		}
 	}

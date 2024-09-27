@@ -10,6 +10,7 @@
 
 #include <stdint.h>
 #include "main.h"
+#include "sequencer.h"
 
 /* generates the waveform using the DAC to excite the structure */
 
@@ -76,6 +77,9 @@ typedef struct
 	uint32_t mute_button_flag;
 	uint32_t time_prev_button_press;
 
+
+	Sequencer sequencer;  /* in case we want to do frequency sweeps or something */
+
 } VibeCheckWaveGen;
 
 void VibeCheckWaveGen_Init(VibeCheckWaveGen* wavegen, DAC_HandleTypeDef *hdac, TIM_HandleTypeDef* htim);
@@ -98,5 +102,9 @@ uint32_t VibeCheckWaveGen_WasMuteButtonPressed(VibeCheckWaveGen* wavegen, uint32
 /* keeps track of which end of the double buffer to compute when updating the wave */
 void VibeCheckWaveGen_DMAHalfCpltCallback(VibeCheckWaveGen* wavegen);
 void VibeCheckWaveGen_DMACpltCallback(VibeCheckWaveGen* wavegen);
+
+/* just for fun */
+void VibeCheckWaveGen_StartDemo(VibeCheckWaveGen* wavegen);
+void VibeCheckWaveGen_StopDemo(VibeCheckWaveGen* wavegen);
 
 #endif /* INC_VIBECHECK_WAVEGEN_H_ */
