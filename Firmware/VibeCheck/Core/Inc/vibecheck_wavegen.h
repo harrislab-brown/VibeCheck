@@ -35,10 +35,10 @@
  */
 
 #define VC_WAVE_TIM_BASE_HZ 240000000
-#define VC_WAVE_TIM_PSC 24
+#define VC_WAVE_TIM_PSC 12
 #define VC_WAVE_TIM_MAX_COUNTS 65535
 #define VC_WAVE_TIM_COUNTS_PER_SECOND (VC_WAVE_TIM_BASE_HZ / VC_WAVE_TIM_PSC)
-#define VC_WAVE_BUF_LEN 1024  /* number of elements in the wave, double buffered */
+#define VC_WAVE_BUF_LEN 512  /* number of elements in the wave, double buffered */
 
 #define VC_WAVE_MIN_FREQ_HZ (VC_WAVE_TIM_COUNTS_PER_SECOND / VC_WAVE_BUF_LEN / VC_WAVE_TIM_MAX_COUNTS)
 #define VC_WAVE_MAX_FREQ_HZ (VC_WAVE_TIM_COUNTS_PER_SECOND / VC_WAVE_BUF_LEN / 2)
@@ -78,6 +78,7 @@ typedef struct
 	uint32_t time_prev_button_press;
 
 
+	uint32_t demo_num;
 	Sequencer sequencer;  /* in case we want to do frequency sweeps or something */
 
 } VibeCheckWaveGen;

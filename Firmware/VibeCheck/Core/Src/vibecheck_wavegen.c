@@ -8,9 +8,11 @@
 #include "vibecheck_wavegen.h"
 
 
-static const uint32_t demo_times[] = {400, 200, 200, 200,    200,    200,    400,    200, 200, 200, 200,    200,   400,      400, 200, 200,  200,   200,    200,    200,    200,   200,    200,    200,       400,  400};
-static const float demo_freqs[] =    {110, 55,  110, 164.81, 155.56, 146.83, 130.81, 110, 55,  110, 146.83, 73.42, 146.83,    98, 49,  98,  146.83, 138.59, 130.81, 123.47, 61.47, 123.47, 61.74, 123.47,  130.81, 146.83};
+static const uint32_t demo_times0[] = {400, 200, 200, 200,    200,    200,    400,    200, 200, 200, 200,    200,   400,      400, 200, 200,  200,   200,    200,    200,    200,   200,    200,    200,       400,  400};
+static const float demo_freqs0[] =    {110, 55,  110, 164.81, 155.56, 146.83, 130.81, 110, 55,  110, 146.83, 73.42, 146.83,    98, 49,  98,  146.83, 138.59, 130.81, 123.47, 61.47, 123.47, 61.74, 123.47,  130.81, 146.83};
 
+static const uint32_t demo_times1[] = {150,    150, 150,    150, 300,    150,    150,    300,    300,    300,    300,           300,   150,    150, 300,    150,       150, 300,    300,    150,   150,    300,        150,   150,    300,    300,    300,    300,        300,    150,   300,    150,   150,    150,    300,    150,    300,    150,    75,     75,   75,   75,  150,    150,    600};
+static const float demo_freqs1[] =    {58.27,  185, 233.08, 185, 277.18, 233.08, 277.18, 369.99, 349.23, 277.18, 233.08,        0,     233.08, 185, 277.18, 233.08, 277.18, 369.99, 349.23, 51.91, 277.18, 233.08,     77.78, 311.13, 277.18, 233.08, 207.65, 0,          369.99, 415.3, 369.99, 415.3, 369.99,   0,    369.99, 466.16, 369.99, 466.16, 369.99, 0,  369.99, 0,   369.99,   0,   46.25};
 
 static void ComputeSineWave(uint32_t* buf, uint32_t len, float amplitude)
 {
@@ -101,6 +103,8 @@ void VibeCheckWaveGen_Init(VibeCheckWaveGen* wavegen, DAC_HandleTypeDef *hdac, T
 	wavegen->wave_ping_compute_ready = 0;
 	wavegen->wave_pong_compute_ready = 0;
 
+	wavegen->demo_num = 0;
+
 	/* set up timer registers */
 	wavegen->htim->Instance->PSC = VC_WAVE_TIM_PSC - 1;
 	VibeCheckWaveGen_SetFrequency(wavegen, wavegen->freq_hz);
@@ -169,7 +173,7 @@ void VibeCheckWaveGen_Update(VibeCheckWaveGen* wavegen)
 	uint32_t seq_index;
 	if (Sequencer_Update(&wavegen->sequencer, time, &seq_index))
 	{
-		VibeCheckWaveGen_SetFrequency(wavegen, demo_freqs[seq_index]);
+		VibeCheckWaveGen_SetFrequency(wavegen, wavegen->demo_num ? demo_freqs1[seq_index] : demo_freqs0[seq_index]);
 	}
 
 }
@@ -278,7 +282,11 @@ void VibeCheckWaveGen_DMACpltCallback(VibeCheckWaveGen* wavegen)
 void VibeCheckWaveGen_StartDemo(VibeCheckWaveGen* wavegen)
 {
 	Sequencer_Init(&wavegen->sequencer);
-	Sequencer_SetSequence(&wavegen->sequencer, demo_times, sizeof(demo_times) / sizeof(demo_times[0]), 1);
+	if (wavegen->demo_num)
+		Sequencer_SetSequence(&wavegen->sequencer, demo_times0, sizeof(demo_times0) / sizeof(demo_times0[0]), 1);
+	else
+		Sequencer_SetSequence(&wavegen->sequencer, demo_times1, sizeof(demo_times1) / sizeof(demo_times1[0]), 1);
+	wavegen->demo_num = !wavegen->demo_num;
 	Sequencer_Start(&wavegen->sequencer, HAL_GetTick());
 	VibeCheckWaveGen_Start(wavegen);
 }
