@@ -10,6 +10,8 @@
 "./Core/Src/vibecheck.o"
 "./Core/Src/vibecheck_accel.o"
 "./Core/Src/vibecheck_accel_handler.o"
+"./Core/Src/vibecheck_rgb.o"
+"./Core/Src/vibecheck_rgb_handler.o"
 "./Core/Src/vibecheck_shell.o"
 "./Core/Src/vibecheck_strobe.o"
 "./Core/Src/vibecheck_strobe_handler.o"

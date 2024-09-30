@@ -1,4 +1,5 @@
-Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
+Core/Src/vibecheck_rgb_handler.o: ../Core/Src/vibecheck_rgb_handler.c \
+ ../Core/Inc/vibecheck_rgb_handler.h ../Core/Inc/vibecheck_rgb.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h \
  ../Core/Inc/stm32h7xx_hal_conf.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h \
@@ -41,22 +42,9 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
- ../USB_DEVICE/App/usb_device.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
- ../USB_DEVICE/Target/usbd_conf.h ../Core/Inc/vibecheck.h \
- ../Core/Inc/vibecheck_shell.h ../Core/Inc/vibecheck_strobe.h \
- ../Core/Inc/vibecheck_strobe_handler.h ../Core/Inc/vibecheck_wavegen.h \
- ../Core/Inc/main.h ../Core/Inc/sequencer.h \
- ../Core/Inc/vibecheck_wavegen_handler.h ../Core/Inc/vibecheck_rgb.h \
- ../Core/Inc/vibecheck_rgb_handler.h ../Core/Inc/vibecheck_accel.h \
- ../Core/Inc/vibecheck_accel_handler.h ../USB_DEVICE/App/usbd_cdc_if.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
-../Core/Inc/main.h:
+ ../Core/Inc/vibecheck_shell.h
+../Core/Inc/vibecheck_rgb_handler.h:
+../Core/Inc/vibecheck_rgb.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
 ../Core/Inc/stm32h7xx_hal_conf.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_rcc.h:
@@ -99,25 +87,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h:
-../USB_DEVICE/App/usb_device.h:
-../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
-../USB_DEVICE/Target/usbd_conf.h:
-../Core/Inc/vibecheck.h:
 ../Core/Inc/vibecheck_shell.h:
-../Core/Inc/vibecheck_strobe.h:
-../Core/Inc/vibecheck_strobe_handler.h:
-../Core/Inc/vibecheck_wavegen.h:
-../Core/Inc/main.h:
-../Core/Inc/sequencer.h:
-../Core/Inc/vibecheck_wavegen_handler.h:
-../Core/Inc/vibecheck_rgb.h:
-../Core/Inc/vibecheck_rgb_handler.h:
-../Core/Inc/vibecheck_accel.h:
-../Core/Inc/vibecheck_accel_handler.h:
-../USB_DEVICE/App/usbd_cdc_if.h:
-../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:
-../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
-../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
-../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
-../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
-../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:

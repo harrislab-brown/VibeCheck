@@ -11,7 +11,8 @@
 void VibeCheck_Init(VibeCheck* vc,
 		TIM_HandleTypeDef* htim_strobe,
 		TIM_HandleTypeDef* htim_wavegen,
-		DAC_HandleTypeDef* hdac_wavegen)
+		DAC_HandleTypeDef* hdac_wavegen,
+		TIM_HandleTypeDef* htim_rgb)
 {
 	VibeCheckShell_Init(&vc->shell);  /* the shell is linked to the USB middle-ware in usbd_cdc_if.c */
 
@@ -27,6 +28,12 @@ void VibeCheck_Init(VibeCheck* vc,
 			.obj = &vc->wavegen
 	};
 
+	VibeCheckShell_InputHandler rgb_cmd = {
+			.name = "rgb",
+			.execute = VibeCheckRGBCMD_Execute,
+			.obj = &vc->rgb
+	};
+
 	VibeCheckShell_InputHandler accel_cmd = {
 			.name = "accel",
 			.execute = VibeCheckAccelCMD_Execute,
@@ -35,6 +42,7 @@ void VibeCheck_Init(VibeCheck* vc,
 
 	VibeCheckShell_RegisterInputHandler(&vc->shell, strobe_cmd);
 	VibeCheckShell_RegisterInputHandler(&vc->shell, wavegen_cmd);
+	VibeCheckShell_RegisterInputHandler(&vc->shell, rgb_cmd);
 	VibeCheckShell_RegisterInputHandler(&vc->shell, accel_cmd);
 
 	VibeCheckShell_OutputHandler wavegen_sender = {
@@ -52,6 +60,7 @@ void VibeCheck_Init(VibeCheck* vc,
 
 	VibeCheckStrobe_Init(&vc->strobe, htim_strobe);
 	VibeCheckWaveGen_Init(&vc->wavegen, hdac_wavegen, htim_wavegen);
+	VibeCheckRGB_Init(&vc->rgb, htim_rgb);
 	VibeCheckAccel_Init(&vc->accel);
 }
 

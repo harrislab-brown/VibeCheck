@@ -53,6 +53,7 @@ USB_DEVICE/App/usbd_cdc_if.o: ../USB_DEVICE/App/usbd_cdc_if.c \
  ../Core/Inc/vibecheck_strobe.h ../Core/Inc/vibecheck_strobe_handler.h \
  ../Core/Inc/vibecheck_wavegen.h ../Core/Inc/main.h \
  ../Core/Inc/sequencer.h ../Core/Inc/vibecheck_wavegen_handler.h \
+ ../Core/Inc/vibecheck_rgb.h ../Core/Inc/vibecheck_rgb_handler.h \
  ../Core/Inc/vibecheck_accel.h ../Core/Inc/vibecheck_accel_handler.h \
  ../USB_DEVICE/App/usbd_cdc_if.h
 ../USB_DEVICE/App/usbd_cdc_if.h:
@@ -114,6 +115,8 @@ USB_DEVICE/App/usbd_cdc_if.o: ../USB_DEVICE/App/usbd_cdc_if.c \
 ../Core/Inc/main.h:
 ../Core/Inc/sequencer.h:
 ../Core/Inc/vibecheck_wavegen_handler.h:
+../Core/Inc/vibecheck_rgb.h:
+../Core/Inc/vibecheck_rgb_handler.h:
 ../Core/Inc/vibecheck_accel.h:
 ../Core/Inc/vibecheck_accel_handler.h:
 ../USB_DEVICE/App/usbd_cdc_if.h:
