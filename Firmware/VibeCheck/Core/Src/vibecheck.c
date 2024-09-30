@@ -7,6 +7,7 @@
 
 
 #include "vibecheck.h"
+#include "vibecheck_rgb_sequences.h"
 
 void VibeCheck_Init(VibeCheck* vc,
 		TIM_HandleTypeDef* htim_strobe,
@@ -61,12 +62,15 @@ void VibeCheck_Init(VibeCheck* vc,
 	VibeCheckStrobe_Init(&vc->strobe, htim_strobe);
 	VibeCheckWaveGen_Init(&vc->wavegen, hdac_wavegen, htim_wavegen);
 	VibeCheckRGB_Init(&vc->rgb, htim_rgb);
+	VibeCheckRGB_SetBaseSequence(&vc->rgb, base_sequence_times, base_sequence_colors, base_sequence_len);
+	VibeCheckRGB_SetTopSequence(&vc->rgb, top_sequence_times, top_sequence_colors, top_sequence_len);
 	VibeCheckAccel_Init(&vc->accel);
 }
 
 void VibeCheck_Loop(VibeCheck* vc)
 {
 	VibeCheckWaveGen_Update(&vc->wavegen);
+	VibeCheckRGB_Update(&vc->rgb);
 	VibeCheckAccel_Update(&vc->accel);
 
 	VibeCheckShell_Status shell_status = VibeCheckShell_Update(&vc->shell);

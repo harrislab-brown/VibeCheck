@@ -65,3 +65,8 @@ void Sequencer_Stop(Sequencer* sequencer)
 {
 	sequencer->is_running = 0;
 }
+
+uint32_t Sequencer_IsRunning(Sequencer* sequencer)
+{
+	return sequencer->is_running;
+}

@@ -9,6 +9,7 @@
 #define INC_VIBECHECK_RGB_H_
 
 #include "stm32h7xx_hal.h"
+#include "sequencer.h"
 
 /* controls/sequences the RGB LEDs near the accelerometer connectors */
 
@@ -59,13 +60,36 @@ typedef struct
 	VibeCheckRGB_Color colors[VC_RGB_NUM_LEDS];  /* array of LED colors */
 	uint16_t bit_stream[VC_RGB_BUF_LEN];  /* the stream of pulse widths to send to the LED array */
 
+
+	/* TODO: revisit the sequence behavior and priority once we have a clear idea of how the whole system should work */
+	Sequencer base_sequence;  /* this sequence loops in the background */
+	const VibeCheckRGB_Color* base_sequence_colors;
+	Sequencer top_sequence;  /* this sequence runs once but takes precedence */
+	const VibeCheckRGB_Color* top_sequence_colors;
+
 } VibeCheckRGB;
 
 void VibeCheckRGB_Init(VibeCheckRGB* rgb, TIM_HandleTypeDef* htim);
+void VibeCheckRGB_Update(VibeCheckRGB* rgb);  /* call repeatedly in the main loop */
 
+/* functions for running the LEDs in different sequences */
+
+/*
+ * The time array is how long to hold each step in milliseconds. The color array has to be 9 times longer than the
+ * time array since we set each LED's color at each step in the sequence.
+ */
+void VibeCheckRGB_SetBaseSequence(VibeCheckRGB* rgb, const uint32_t* time, const VibeCheckRGB_Color* color, uint32_t len);
+void VibeCheckRGB_StartBaseSequence(VibeCheckRGB* rgb);
+void VibeCheckRGB_StopBaseSequence(VibeCheckRGB* rgb);
+
+void VibeCheckRGB_SetTopSequence(VibeCheckRGB* rgb, const uint32_t* time, const VibeCheckRGB_Color* color, uint32_t len);
+void VibeCheckRGB_StartTopSequence(VibeCheckRGB* rgb);
+void VibeCheckRGB_StopTopSequence(VibeCheckRGB* rgb);
+
+/* low level functions to handle individual LED colors */
 void VibeCheckRGB_SetColor(VibeCheckRGB* rgb, uint32_t index, uint8_t r, uint8_t g, uint8_t b);  /* set the color of an individual LED */
 VibeCheckRGB_Color VibeCheckRGB_GetColor(VibeCheckRGB* rgb, uint32_t index);
-
+void VibeCheckRGB_SetAllOff(VibeCheckRGB* rgb);
 void VibeCheckRGB_SendColors(VibeCheckRGB* rgb);  /* send the colors to the LEDs */
 
 #endif /* INC_VIBECHECK_RGB_H_ */

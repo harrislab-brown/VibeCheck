@@ -28,5 +28,6 @@ void Sequencer_SetSequence(Sequencer* sequencer, const uint32_t* sequence_time_a
 uint32_t Sequencer_Update(Sequencer* sequencer, uint32_t time, uint32_t* index);
 void Sequencer_Start(Sequencer* sequencer, uint32_t time);
 void Sequencer_Stop(Sequencer* sequencer);
+uint32_t Sequencer_IsRunning(Sequencer* sequencer);
 
 #endif /* INC_SEQUENCER_H_ */

@@ -12,6 +12,10 @@
 
 Set of commands to implement:
 
+>>rgb start		(starts the base and top sequences)
+
+>>rgb stop      (stops any sequences the LEDs are running)
+
 >>rgb set [index] [r] [g] [b]
 
 >>rgb get [index]
@@ -58,6 +62,24 @@ uint32_t VibeCheckRGBCMD_Execute(void* obj, VibeCheckShell* shell)
 				VibeCheckShell_PutOutputDelimiter(shell);
 				return 1;
 			}
+		}
+		else if (!strcmp(str, "start"))  /* TODO: revisit this once we have a clearer idea of how the LED sequence should behave */
+		{
+			VibeCheckRGB_StartBaseSequence(rgb);
+			VibeCheckRGB_StartTopSequence(rgb);
+			VibeCheckShell_PutOutputString(shell, "ack");
+			VibeCheckShell_PutOutputDelimiter(shell);
+			return 1;
+		}
+		else if (!strcmp(str, "stop"))
+		{
+			VibeCheckRGB_StopBaseSequence(rgb);
+			VibeCheckRGB_StopTopSequence(rgb);
+			VibeCheckRGB_SetAllOff(rgb);
+			VibeCheckRGB_SendColors(rgb);
+			VibeCheckShell_PutOutputString(shell, "ack");
+			VibeCheckShell_PutOutputDelimiter(shell);
+			return 1;
 		}
 	}
 

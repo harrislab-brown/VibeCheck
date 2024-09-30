@@ -42,7 +42,7 @@ Core/Src/vibecheck_rgb_handler.o: ../Core/Src/vibecheck_rgb_handler.c \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
- ../Core/Inc/vibecheck_shell.h
+ ../Core/Inc/sequencer.h ../Core/Inc/vibecheck_shell.h
 ../Core/Inc/vibecheck_rgb_handler.h:
 ../Core/Inc/vibecheck_rgb.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
@@ -87,4 +87,5 @@ Core/Src/vibecheck_rgb_handler.o: ../Core/Src/vibecheck_rgb_handler.c \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h:
+../Core/Inc/sequencer.h:
 ../Core/Inc/vibecheck_shell.h:
