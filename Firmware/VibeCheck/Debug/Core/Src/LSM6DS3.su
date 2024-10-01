@@ -1,0 +1,11 @@
+../Core/Src/LSM6DS3.c:12:10:LSM6DS3_Init	24	static
+../Core/Src/LSM6DS3.c:45:6:LSM6DS3_Configure	16	static
+../Core/Src/LSM6DS3.c:78:10:LSM6DS3_TestCommunication	24	static
+../Core/Src/LSM6DS3.c:88:6:LSM6DS3_Enable	16	static
+../Core/Src/LSM6DS3.c:94:6:LSM6DS3_Disable	16	static
+../Core/Src/LSM6DS3.c:101:6:LSM6DS3_ReadAcceleration	64	static
+../Core/Src/LSM6DS3.c:124:6:LSM6DS3_ReadGyro	24	static
+../Core/Src/LSM6DS3.c:131:19:LSM6DS3_ReadRegister	40	static
+../Core/Src/LSM6DS3.c:146:19:LSM6DS3_WriteRegister	24	static
+../Core/Src/LSM6DS3.c:158:10:LSM6DS3_GetInt1State	16	static
+../Core/Src/LSM6DS3.c:164:10:LSM6DS3_GetInt2State	16	static

@@ -1,4 +1,4 @@
-"./Core/Src/IIS3DWB.o"
+"./Core/Src/LSM6DS3.o"
 "./Core/Src/fast_spi.o"
 "./Core/Src/main.o"
 "./Core/Src/sequencer.o"
