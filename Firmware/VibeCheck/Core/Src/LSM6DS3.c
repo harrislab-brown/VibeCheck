@@ -9,7 +9,7 @@
 #include "fast_spi.h"
 
 
-uint32_t LSM6DS3_Init(LSM6DS3* sensor, LSM6DS3_Config* config, SPI_HandleTypeDef* spi,  /* set the configuration parameters that need to be set once */
+void LSM6DS3_Init(LSM6DS3* sensor, LSM6DS3_Config* config, SPI_HandleTypeDef* spi,  /* set the configuration parameters that need to be set once */
 		GPIO_TypeDef* cs_port, uint16_t cs_pin,
 		GPIO_TypeDef* int1_port, uint16_t int1_pin,
 		GPIO_TypeDef* int2_port, uint16_t int2_pin)
@@ -22,13 +22,21 @@ uint32_t LSM6DS3_Init(LSM6DS3* sensor, LSM6DS3_Config* config, SPI_HandleTypeDef
 	sensor->int1_pin = int1_pin;
 	sensor->int2_port = int2_port;
 	sensor->int2_pin = int2_pin;
+}
 
-	/* verify that we can communicate with the sensor */
-	if (!LSM6DS3_TestCommunication(sensor))
-		return 0;
 
-	/* power down the device and set register values that will not change with the configuration */
-	LSM6DS3_Disable(sensor);
+uint32_t LSM6DS3_TestCommunication(LSM6DS3* sensor)  /* check that the sensor is connected by querying its device ID */
+{
+	uint8_t reg_data;
+	HAL_StatusTypeDef status = LSM6DS3_ReadRegister(sensor, LSM6DS3_REG_WHO_AM_I, &reg_data);
+	if (status == HAL_OK && reg_data == LSM6DS3_DEVICE_ID)
+		return 1;
+	return 0;
+}
+
+
+void LSM6DS3_Enable(LSM6DS3* sensor)  /* configure the sensor and start gathering data */
+{
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_INT1_CTRL, 0x01);  /* INT1 set when accel data ready (p. 59) */
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_INT2_CTRL, 0x02);  /* INT2 set when gyro data ready (p. 60) */
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL4_C, 0b00000100);  /* disable the I2C interface, also disables the gyro LPF1 (p. 64)  TODO: handle the gyro LPF */
@@ -36,14 +44,6 @@ uint32_t LSM6DS3_Init(LSM6DS3* sensor, LSM6DS3_Config* config, SPI_HandleTypeDef
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL7_G, 0b00000000);  /* handles gyro HPF (p. 67)  TODO: implement this in the configuration */
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL8_XL, 0b00000000);  /* acceleration filters (p. 67)  TODO: implement this in the configuration */
 
-	/* set the register values that depend on the configuration */
-	LSM6DS3_Configure(sensor);
-	return 1;
-}
-
-
-void LSM6DS3_Configure(LSM6DS3* sensor)  /* set register values based on the configuration object */
-{
 	/* TODO: write the user offsets */
 
 	/* enable the sensor with the configured range (p. 32) */
@@ -72,22 +72,6 @@ void LSM6DS3_Configure(LSM6DS3* sensor)  /* set register values based on the con
 //	err_num += (status != HAL_OK);
 //
 //	return err_num;
-}
-
-
-uint32_t LSM6DS3_TestCommunication(LSM6DS3* sensor)  /* check that the sensor is connected by querying its device ID */
-{
-	uint8_t reg_data;
-	HAL_StatusTypeDef status = LSM6DS3_ReadRegister(sensor, LSM6DS3_REG_WHO_AM_I, &reg_data);
-	if (status == HAL_OK && reg_data == LSM6DS3_DEVICE_ID)
-		return 1;
-	return 0;
-}
-
-
-void LSM6DS3_Enable(LSM6DS3* sensor)  /* start gathering data */
-{
-
 }
 
 
@@ -124,6 +108,22 @@ void LSM6DS3_ReadAcceleration(LSM6DS3* sensor, float* x, float* y, float * z)
 void LSM6DS3_ReadGyro(LSM6DS3* sensor, float* x, float* y, float * z)
 {
 	/* get the rotation rate in degrees per second */
+
+	/* read multiple bytes corresponding to the raw gyroscope data */
+	uint8_t tx_buf[7] = {(LSM6DS3_REG_OUTX_L_G | 0x80), 0x00, 0x00, 0x00, 0x00, 0x00, 0x00};
+	uint8_t rx_buf[7];
+
+	/* use our fast SPI implementation instead of the HAL call */
+	SPI_TxRx_Fast(tx_buf, rx_buf, 7, sensor->spi->Instance, sensor->cs_port, sensor->cs_pin);
+
+	/* convert the raw readings to physical units */
+	int16_t raw_data_x = ((int16_t)(rx_buf[1])) | (((int16_t)(rx_buf[2])) << 8);
+	int16_t raw_data_y = ((int16_t)(rx_buf[3])) | (((int16_t)(rx_buf[4])) << 8);
+	int16_t raw_data_z = ((int16_t)(rx_buf[5])) | (((int16_t)(rx_buf[6])) << 8);
+
+	*x = sensor->config->dps_range * (float)raw_data_x / (float)(1 << (LSM6DS3_RESOLUTION - 1));
+	*y = sensor->config->dps_range * (float)raw_data_y / (float)(1 << (LSM6DS3_RESOLUTION - 1));
+	*z = sensor->config->dps_range * (float)raw_data_z / (float)(1 << (LSM6DS3_RESOLUTION - 1));
 }
 
 

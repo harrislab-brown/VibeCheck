@@ -100,13 +100,12 @@ typedef struct
 
 } LSM6DS3;
 
-uint32_t LSM6DS3_Init(LSM6DS3* sensor, LSM6DS3_Config* config, SPI_HandleTypeDef* spi,
+void LSM6DS3_Init(LSM6DS3* sensor, LSM6DS3_Config* config, SPI_HandleTypeDef* spi,
 		GPIO_TypeDef* cs_port, uint16_t cs_pin,
 		GPIO_TypeDef* int1_port, uint16_t int1_pin,
 		GPIO_TypeDef* int2_port, uint16_t int2_pin);
 
 uint32_t LSM6DS3_TestCommunication(LSM6DS3* sensor);
-void LSM6DS3_Configure(LSM6DS3* sensor);
 
 void LSM6DS3_Enable(LSM6DS3* sensor);
 void LSM6DS3_Disable(LSM6DS3* sensor);

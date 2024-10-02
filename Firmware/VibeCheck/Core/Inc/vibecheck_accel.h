@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include <math.h>
 #include "stm32h7xx_hal.h"
+#include "LSM6DS3.h"
 
 
 /* interfaces with and manages data from the accelerometers */
