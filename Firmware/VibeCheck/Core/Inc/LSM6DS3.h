@@ -67,13 +67,16 @@
 
 typedef struct
 {
-	/* TODO: add user offsets and LPF settings */
+	/* disable the HPF, set the LPFs so everything is Nyquist frequency ODR/2, implement filters upstream if desired */
+	/* functions to put in user offset values, but calibration done through JavaScript UI */
+
+	float usr_offset_x, usr_offset_y, usr_offset_z;
 
 	uint32_t accel_odr_hz;  /* 13, 26, 52, 104, 208, 416, 833, 1660, 3330, 6660 */
 	uint32_t g_range;  /* 2, 4, 8, or 16 */
 
 	uint32_t gyro_odr_hz;  /* 13, 26, 52, 104, 208, 416, 833, 1660, 3330, 6660 */
-	uint32_t dps_range;  /* 245, 500, 1000, 2000 */
+	uint32_t dps_range;  /* 125, 245, 500, 1000, 2000 */
 
 } LSM6DS3_Config;
 

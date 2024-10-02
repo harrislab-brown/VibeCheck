@@ -22,7 +22,7 @@ __attribute__((optimize("-Ofast"))) inline void SPI_TxRx_Fast(uint8_t* tx, uint8
 	/* If using both the HAL SPI functions and our own, we need the next 2 lines to put SPI in a known state */
 	/* If only using our function, I think these could be omitted */
 	spi->CR2 &= ~SPI_CR2_TSIZE;  /* set TSIZE 0 for endless transfer (we disable SPI after a known number of bytes rather than looking for EOT) */
-	spi->CFG2 &= ~SPI_CFG2_COMM;  /* this puts the SPI in full-duplex mode (for some reason the HAL takes it out of this mode sometimes, even when it is configured in Cube as full duplex) */
+	spi->CFG2 &= ~SPI_CFG2_COMM;  /* this puts the SPI in full-duplex mode (for some reason the HAL takes it out of this mode sometimes, even when it is configured in Cube as full-duplex) */
 
 
 	spi->CR1 |= SPI_CR1_SPE;  /* enable SPI */
