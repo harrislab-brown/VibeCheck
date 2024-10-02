@@ -1,10 +1,11 @@
-// ./components/LivePlot.tsx
+// src/components/LivePlot.tsx
 
-import React, { useEffect, useRef, useState } from 'react';
-import { Chart as ChartJS, ChartOptions, ChartData, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from 'chart.js';
+import React, { useEffect, useState } from 'react';
+import { Chart as ChartJS, ChartOptions, ChartData, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ScatterDataPoint, BubbleDataPoint } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 import '../styles/LivePlot.css';
 import { PlotControlsState } from './PlotControls';
+import { useSerial } from '../contexts/SerialContext';
 
 ChartJS.register(LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -16,9 +17,11 @@ interface DataPoint {
   y: number;
 }
 
+type ChartDataPoint = ScatterDataPoint | BubbleDataPoint | DataPoint;
+
 interface Dataset {
   label: string;
-  data: DataPoint[];
+  data: ChartDataPoint[];
   borderColor: string;
   tension: number;
 }
@@ -41,26 +44,24 @@ const createDataset = (index: number): Dataset => ({
 });
 
 const LivePlot: React.FC<LivePlotProps> = ({ controls }) => {
-  const [data, setData] = useState<ChartData<'line', DataPoint[]>>({
+  const { receivedData } = useSerial();
+  const [data, setData] = useState<ChartData<'line', ChartDataPoint[], unknown>>({
     datasets: Array.from({ length: NUM_OF_DATASTREAMS }, (_, i) => createDataset(i)),
   });
 
-  const intervalRef = useRef<number | null>(null);
-  const startTimeRef = useRef<number>(Date.now());
-
   useEffect(() => {
-    intervalRef.current = window.setInterval(() => {
-      const currentTime = (Date.now() - startTimeRef.current) / 1000; // time in seconds
-
+    // Parse receivedData and update the chart data
+    const parsedData = parseReceivedData(receivedData);
+    if (parsedData.length > 0) {
       setData(prevData => {
-        const newDatasets = prevData.datasets.map(dataset => {
+        const newDatasets = prevData.datasets.map((dataset, index) => {
           const typedDataset = dataset as Dataset;
           const newDataPoint: DataPoint = { 
-            x: currentTime, 
-            y: Math.random() * (controls.maxBound - controls.minBound) + controls.minBound 
+            x: parsedData[index].timestamp,
+            y: parsedData[index].value
           };
           const updatedData = [...typedDataset.data, newDataPoint]
-            .slice(-MAX_DATAPOINTS); // Keep only the last MAX_DATAPOINTS
+            .slice(-MAX_DATAPOINTS) as ChartDataPoint[];
 
           return {
             ...typedDataset,
@@ -70,14 +71,8 @@ const LivePlot: React.FC<LivePlotProps> = ({ controls }) => {
 
         return { datasets: newDatasets };
       });
-    }, 100); // Update every 100ms for smoother animation
-
-    return () => {
-      if (intervalRef.current) {
-        clearInterval(intervalRef.current);
-      }
-    };
-  }, [controls]);
+    }
+  }, [receivedData]);
 
   const options: ChartOptions<'line'> = {
     responsive: true,
@@ -93,8 +88,8 @@ const LivePlot: React.FC<LivePlotProps> = ({ controls }) => {
           display: true,
           text: 'Time (s)'
         },
-        min: (data.datasets[0] as Dataset)?.data[0]?.x ?? 0,
-        max: ((data.datasets[0] as Dataset)?.data.slice(-1)[0]?.x ?? 0) + 5,
+        min: getXValue(data.datasets[0]?.data[0]),
+        max: getXValue(data.datasets[0]?.data[data.datasets[0]?.data.length - 1]) + 5,
         ticks: {
           stepSize: 5
         }
@@ -122,5 +117,19 @@ const LivePlot: React.FC<LivePlotProps> = ({ controls }) => {
     </div>
   );
 };
+
+// Helper function to safely get the x value from a data point
+function getXValue(point: ChartDataPoint | undefined): number {
+  if (!point) return 0;
+  if (typeof point === 'object' && 'x' in point) return point.x as number;
+  return 0;
+}
+
+// You'll need to implement this function based on your data format
+function parseReceivedData(data: string): { timestamp: number, value: number }[] {
+  // Parse the received data string and return an array of data points
+  // This implementation will depend on your specific data format
+  return [];
+}
 
 export default LivePlot;

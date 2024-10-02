@@ -1,30 +1,18 @@
+// src/components/SerialPortConnect.tsx
+
 import React, { useState } from 'react';
+import { useSerial } from '../contexts/SerialContext';
 import '../styles/SerialPortConnect.css';
 
 const SerialPortConnect: React.FC = () => {
-    const [port, setPort] = useState<SerialPort | null>(null);
+    const { isConnected, connect, disconnect } = useSerial();
     const [baudRate, setBaudRate] = useState(115200);
 
     const toggleSerialConnection = async () => {
-        if (port) {
-            // Disconnect
-            try {
-                await port.close();
-                setPort(null);
-                console.log('Disconnected from serial port');
-            } catch (error) {
-                console.error('Error disconnecting from serial port:', error);
-            }
+        if (isConnected) {
+            await disconnect();
         } else {
-            // Connect
-            try {
-                const selectedPort = await navigator.serial.requestPort();
-                await selectedPort.open({ baudRate: baudRate });
-                setPort(selectedPort);
-                console.log('Connected to serial port');
-            } catch (error) {
-                console.error('Error connecting to serial port:', error);
-            }
+            await connect(baudRate);
         }
     };
 
@@ -35,7 +23,7 @@ const SerialPortConnect: React.FC = () => {
     return (
         <div className="serial-port-connect">
             <button onClick={toggleSerialConnection}>
-                {port ? 'Disconnect' : 'Connect to Serial Port'}
+                {isConnected ? 'Disconnect' : 'Connect to Serial Port'}
             </button>
             <div className="baud-rate-container">
                 <label htmlFor="baudRate">Baud Rate:</label>
@@ -43,7 +31,7 @@ const SerialPortConnect: React.FC = () => {
                     id="baudRate" 
                     value={baudRate} 
                     onChange={handleBaudRateChange}
-                    disabled={port !== null}
+                    disabled={isConnected}
                 >
                     <option value="9600">9600</option>
                     <option value="19200">19200</option>
