@@ -1,14 +1,15 @@
 // src/contexts/SerialContext.tsx
 
-import React, { createContext, useState, useContext, useCallback, ReactNode } from 'react';
+import React, { createContext, useState, useContext, useCallback, ReactNode, useRef, useEffect } from 'react';
 import { SerialService } from '../services/SerialService';
+import { parseSerialData, DataPoint } from '../utils/dataParser';
 
 interface SerialContextType {
   isConnected: boolean;
   connect: (baudRate: number) => Promise<void>;
   disconnect: () => Promise<void>;
   sendData: (data: string) => Promise<void>;
-  receivedData: string;
+  parsedData: DataPoint[];
 }
 
 const SerialContext = createContext<SerialContextType | undefined>(undefined);
@@ -17,21 +18,41 @@ interface SerialProviderProps {
   children: ReactNode;
 }
 
+const UPDATE_INTERVAL = 100; // Update every 100ms
+
 export const SerialProvider: React.FC<SerialProviderProps> = ({ children }) => {
   const [isConnected, setIsConnected] = useState(false);
-  const [receivedData, setReceivedData] = useState('');
-  const serialService = new SerialService();
+  const [parsedData, setParsedData] = useState<DataPoint[]>([]);
+  const serialService = useRef(new SerialService());
+  const dataBuffer = useRef<DataPoint[]>([]);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      if (dataBuffer.current.length > 0) {
+        setParsedData(prevData => [...prevData, ...dataBuffer.current]);
+        dataBuffer.current = [];
+      }
+    }, UPDATE_INTERVAL);
+
+    return () => clearInterval(intervalId);
+  }, []);
 
   const connect = useCallback(async (baudRate: number) => {
-    await serialService.connect(baudRate);
+    await serialService.current.connect(baudRate);
     setIsConnected(true);
-    serialService.readData((data) => {
-      setReceivedData(prev => prev + data);
-    });
+    serialService.current.readData(
+      (data) => {
+        const newDataPoints = parseSerialData(data);
+        dataBuffer.current.push(...newDataPoints);
+      },
+      (data) => {
+        console.log('Received serial data:', data);
+      }
+    );
   }, []);
 
   const disconnect = useCallback(async () => {
-    await serialService.disconnect();
+    await serialService.current.disconnect();
     setIsConnected(false);
   }, []);
 
@@ -44,7 +65,7 @@ export const SerialProvider: React.FC<SerialProviderProps> = ({ children }) => {
     connect,
     disconnect,
     sendData,
-    receivedData,
+    parsedData,
   };
 
   return <SerialContext.Provider value={value}>{children}</SerialContext.Provider>;

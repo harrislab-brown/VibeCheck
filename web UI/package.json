@@ -1,6 +1,8 @@
 {
   "dependencies": {
+    "@types/react-vis": "^1.11.15",
     "chart.js": "^4.4.4",
-    "react-chartjs-2": "^5.2.0"
+    "react-chartjs-2": "^5.2.0",
+    "react-vis": "^1.12.1"
   }
 }

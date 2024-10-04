@@ -1,135 +1,95 @@
 // src/components/LivePlot.tsx
 
-import React, { useEffect, useState } from 'react';
-import { Chart as ChartJS, ChartOptions, ChartData, LinearScale, PointElement, LineElement, Title, Tooltip, Legend, ScatterDataPoint, BubbleDataPoint } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import React, { useEffect, useState, useCallback } from 'react';
+import { XYPlot, LineSeries, XAxis, YAxis, HorizontalGridLines, VerticalGridLines, DiscreteColorLegend } from 'react-vis';
 import '../styles/LivePlot.css';
-import { PlotControlsState } from './PlotControls';
 import { useSerial } from '../contexts/SerialContext';
+import { DataPoint } from '../utils/dataParser';
 
-ChartJS.register(LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+// Make sure to import the react-vis CSS
+import 'react-vis/dist/style.css';
 
-const NUM_OF_DATASTREAMS = 9;
-const MAX_DATAPOINTS = 100;
+const TIME_WINDOW = 2000; // 2 seconds in milliseconds
+const MAX_DATA_POINTS = 100; // Maximum number of data points to display per channel
 
-interface DataPoint {
-  x: number;
-  y: number;
-}
-
-type ChartDataPoint = ScatterDataPoint | BubbleDataPoint | DataPoint;
-
-interface Dataset {
-  label: string;
-  data: ChartDataPoint[];
-  borderColor: string;
-  tension: number;
-}
-
-interface LivePlotProps {
-  controls: PlotControlsState;
-}
+interface LivePlotProps {}
 
 const colors = [
-  'rgb(75, 192, 192)', 'rgb(255, 99, 132)', 'rgb(54, 162, 235)',
-  'rgb(255, 206, 86)', 'rgb(153, 102, 255)', 'rgb(255, 159, 64)',
-  'rgb(0, 128, 0)', 'rgb(128, 0, 128)', 'rgb(128, 128, 0)'
+  '#19CDD7', '#DDB27C', '#88572C', '#FF991F', '#F15C17', '#223F9A', '#DA70BF', '#125C77', '#4DC19C', '#776E57'
 ];
 
-const createDataset = (index: number): Dataset => ({
-  label: `Data Stream ${index + 1}`,
-  data: [],
-  borderColor: colors[index],
-  tension: 0.1
-});
+const LivePlot: React.FC<LivePlotProps> = () => {
+  const { parsedData } = useSerial();
+  const [plotData, setPlotData] = useState<{ [key: string]: { x: number; y: number }[] }>({});
+  const [yDomain, setYDomain] = useState<[number, number]>([-1, 1]);
 
-const LivePlot: React.FC<LivePlotProps> = ({ controls }) => {
-  const { receivedData } = useSerial();
-  const [data, setData] = useState<ChartData<'line', ChartDataPoint[], unknown>>({
-    datasets: Array.from({ length: NUM_OF_DATASTREAMS }, (_, i) => createDataset(i)),
-  });
+  const processData = useCallback((data: DataPoint[]) => {
+    const currentTime = data[data.length - 1]?.timestamp || 0;
+    const startTime = Math.max(currentTime - TIME_WINDOW, data[0]?.timestamp || 0);
+    
+    const newPlotData: { [key: string]: { x: number; y: number }[] } = {};
+    let minY = Infinity;
+    let maxY = -Infinity;
+
+    data.forEach((dp) => {
+      if (dp.timestamp >= startTime) {
+        const key = `Channel ${dp.channel}`;
+        if (!newPlotData[key]) {
+          newPlotData[key] = [];
+        }
+        const x = (dp.timestamp - startTime) / 1000;
+        const y = dp.x; // Using x acceleration, change to dp.y or dp.z if needed
+        newPlotData[key].push({ x, y });
+        minY = Math.min(minY, y);
+        maxY = Math.max(maxY, y);
+
+        // Keep only the last MAX_DATA_POINTS for each channel
+        if (newPlotData[key].length > MAX_DATA_POINTS) {
+          newPlotData[key] = newPlotData[key].slice(-MAX_DATA_POINTS);
+        }
+      }
+    });
+
+    // Add a 10% buffer to y-axis
+    const yBuffer = (maxY - minY) * 0.1;
+    setYDomain([minY - yBuffer, maxY + yBuffer]);
+
+    return newPlotData;
+  }, []);
 
   useEffect(() => {
-    // Parse receivedData and update the chart data
-    const parsedData = parseReceivedData(receivedData);
-    if (parsedData.length > 0) {
-      setData(prevData => {
-        const newDatasets = prevData.datasets.map((dataset, index) => {
-          const typedDataset = dataset as Dataset;
-          const newDataPoint: DataPoint = { 
-            x: parsedData[index].timestamp,
-            y: parsedData[index].value
-          };
-          const updatedData = [...typedDataset.data, newDataPoint]
-            .slice(-MAX_DATAPOINTS) as ChartDataPoint[];
+    setPlotData(processData(parsedData));
+  }, [parsedData, processData]);
 
-          return {
-            ...typedDataset,
-            data: updatedData,
-          };
-        });
-
-        return { datasets: newDatasets };
-      });
-    }
-  }, [receivedData]);
-
-  const options: ChartOptions<'line'> = {
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: {
-      duration: 0
-    },
-    scales: {
-      x: {
-        type: 'linear',
-        display: true,
-        title: {
-          display: true,
-          text: 'Time (s)'
-        },
-        min: getXValue(data.datasets[0]?.data[0]),
-        max: getXValue(data.datasets[0]?.data[data.datasets[0]?.data.length - 1]) + 5,
-        ticks: {
-          stepSize: 5
-        }
-      },
-      y: {
-        beginAtZero: true,
-        min: controls.minBound,
-        max: controls.maxBound
-      }
-    },
-    plugins: {
-      legend: {
-        position: 'top' as const,
-      },
-      title: {
-        display: true,
-        text: 'Live Data Plot',
-      },
-    },
-  };
+  const legendItems = Object.keys(plotData).map((key, index) => ({
+    title: key,
+    color: colors[index % colors.length]
+  }));
 
   return (
     <div className="plot-container">
-      <Line options={options} data={data} />
+      <XYPlot
+        width={600}
+        height={300}
+        xDomain={[0, 2]}
+        yDomain={yDomain}
+        margin={{left: 60, right: 10, top: 10, bottom: 40}}
+      >
+        <HorizontalGridLines />
+        <VerticalGridLines />
+        <XAxis title="Time (s)" />
+        <YAxis title="Acceleration" />
+        {Object.entries(plotData).map(([key, data], index) => (
+          <LineSeries
+            key={key}
+            data={data}
+            color={colors[index % colors.length]}
+          />
+        ))}
+      </XYPlot>
+      <DiscreteColorLegend items={legendItems} orientation="horizontal" />
     </div>
   );
 };
-
-// Helper function to safely get the x value from a data point
-function getXValue(point: ChartDataPoint | undefined): number {
-  if (!point) return 0;
-  if (typeof point === 'object' && 'x' in point) return point.x as number;
-  return 0;
-}
-
-// You'll need to implement this function based on your data format
-function parseReceivedData(data: string): { timestamp: number, value: number }[] {
-  // Parse the received data string and return an array of data points
-  // This implementation will depend on your specific data format
-  return [];
-}
 
 export default LivePlot;
