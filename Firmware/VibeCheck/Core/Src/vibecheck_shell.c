@@ -221,12 +221,7 @@ uint32_t VibeCheckShell_GetNextInt(VibeCheckShell* shell, int32_t* next)
 	char str[VC_SHELL_MAX_TOKEN_LEN];
 	if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
 	{
-		char valid[] = "-0123456789";
-		for (uint32_t i = 0; i < strlen(str); i++)
-			if (strchr(valid, str[i]) == NULL)
-				return 0;  /* next token contains non-numeric characters */
-		*next = atoi(str);
-		return 1;
+		return VibeCheckShell_TurnToInt(str, next);
 	}
 
 	return 0;
@@ -238,15 +233,31 @@ uint32_t VibeCheckShell_GetNextFloat(VibeCheckShell* shell, float* next)
 	char str[VC_SHELL_MAX_TOKEN_LEN];
 	if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
 	{
-		char valid[] = ".-0123456789";
-		for (uint32_t i = 0; i < strlen(str); i++)
-			if (strchr(valid, str[i]) == NULL)
-				return 0;  /* next token contains non-numeric characters */
-		*next = atof(str);
-		return 1;
+		return VibeCheckShell_TurnToFloat(str, next);
 	}
 
 	return 0;
+}
+
+/* if the type of the next token is not known, get it as a string and then try to convert it to numeric using these functions */
+uint32_t VibeCheckShell_TurnToInt(char* str, int32_t* next)
+{
+	char valid[] = "-0123456789";
+	for (uint32_t i = 0; i < strlen(str); i++)
+		if (strchr(valid, str[i]) == NULL)
+			return 0;  /* next token contains non-numeric characters */
+	*next = atoi(str);
+	return 1;
+}
+
+uint32_t VibeCheckShell_TurnToFloat(char* str, float* next)
+{
+	char valid[] = ".-0123456789";
+	for (uint32_t i = 0; i < strlen(str); i++)
+		if (strchr(valid, str[i]) == NULL)
+			return 0;  /* next token contains non-numeric characters */
+	*next = atof(str);
+	return 1;
 }
 
 

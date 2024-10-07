@@ -1,3 +1,5 @@
-../Core/Src/vibecheck_sensor_handler.c:10:10:VibeCheckSensorCMD_Execute	6
-../Core/Src/vibecheck_sensor_handler.c:43:10:VibeCheckSensorSender_Data_Execute	3
-../Core/Src/vibecheck_sensor_handler.c:82:10:VibeCheckSensorSender_Status_Execute	3
+../Core/Src/vibecheck_sensor_handler.c:51:17:VibeCheckSensorCMD_Set	18
+../Core/Src/vibecheck_sensor_handler.c:132:17:VibeCheckSensorCMD_Get	11
+../Core/Src/vibecheck_sensor_handler.c:202:10:VibeCheckSensorCMD_Execute	20
+../Core/Src/vibecheck_sensor_handler.c:296:10:VibeCheckSensorSender_Data_Execute	3
+../Core/Src/vibecheck_sensor_handler.c:335:10:VibeCheckSensorSender_Status_Execute	3

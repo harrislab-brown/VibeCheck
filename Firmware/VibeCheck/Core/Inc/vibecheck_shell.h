@@ -139,6 +139,9 @@ uint32_t VibeCheckShell_GetNextString(VibeCheckShell* shell, char* next, uint32_
 uint32_t VibeCheckShell_GetNextInt(VibeCheckShell* shell, int32_t* next);
 uint32_t VibeCheckShell_GetNextFloat(VibeCheckShell* shell, float* next);
 
+uint32_t VibeCheckShell_TurnToInt(char* str, int32_t* next);  /* if the type of the next token is not known, get it as a string and then try to convert it to numeric using these functions */
+uint32_t VibeCheckShell_TurnToFloat(char* str, float* next);
+
 void VibeCheckShell_PutOutputString(VibeCheckShell* shell, char* str);  /* add things to the output */
 void VibeCheckShell_PutOutputInt(VibeCheckShell* shell, uint32_t val);
 void VibeCheckShell_PutOutputFloat(VibeCheckShell* shell, float val);
