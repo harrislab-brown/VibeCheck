@@ -40,6 +40,7 @@ void VibeCheck_Init(VibeCheck* vc,
 		TIM_HandleTypeDef* htim_wavegen,
 		DAC_HandleTypeDef* hdac_wavegen,
 		TIM_HandleTypeDef* htim_rgb,
+		volatile uint32_t* time_micros,
 		SPI_HandleTypeDef* hspi_accel0,
 		SPI_HandleTypeDef* hspi_accel1,
 		SPI_HandleTypeDef* hspi_accel2);

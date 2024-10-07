@@ -225,7 +225,7 @@ uint32_t VibeCheckWaveGenSender_Execute(void* obj, VibeCheckShell* shell)
 	{
 		VibeCheckShell_PutOutputString(shell, "msg");
 		VibeCheckShell_PutOutputSeparator(shell);
-		VibeCheckShell_PutOutputString(shell, "wavegen");  /* TODO: this name should really be kept in a single place */
+		VibeCheckShell_PutOutputString(shell, "wavegen");
 		VibeCheckShell_PutOutputSeparator(shell);
 
 		if (is_muted)

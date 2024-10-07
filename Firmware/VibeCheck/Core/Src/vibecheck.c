@@ -14,6 +14,7 @@ void VibeCheck_Init(VibeCheck* vc,
 		TIM_HandleTypeDef* htim_wavegen,
 		DAC_HandleTypeDef* hdac_wavegen,
 		TIM_HandleTypeDef* htim_rgb,
+		volatile uint32_t* time_micros,
 		SPI_HandleTypeDef* hspi_accel0,
 		SPI_HandleTypeDef* hspi_accel1,
 		SPI_HandleTypeDef* hspi_accel2)
@@ -76,7 +77,7 @@ void VibeCheck_Init(VibeCheck* vc,
 	VibeCheckRGB_Init(&vc->rgb, htim_rgb);
 	VibeCheckRGB_SetBaseSequence(&vc->rgb, base_sequence_times, base_sequence_colors, base_sequence_len);
 	VibeCheckRGB_SetTopSequence(&vc->rgb, top_sequence_times, top_sequence_colors, top_sequence_len);
-	VibeCheckSensor_Init(&vc->sensor, hspi_accel0, hspi_accel1, hspi_accel2);
+	VibeCheckSensor_Init(&vc->sensor, time_micros, hspi_accel0, hspi_accel1, hspi_accel2);
 }
 
 void VibeCheck_Loop(VibeCheck* vc)

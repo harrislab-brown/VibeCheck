@@ -63,13 +63,15 @@ typedef struct
 	uint32_t data_ind;
 	uint32_t data_ready;
 
-
 	uint32_t time_prev_update;
 	uint32_t generate_fake_data;  /* for testing */
 
+	volatile uint32_t* time_micros;  /* pointer to CNT register of free-running microsecond timer */
+	uint32_t start_time;
+
 } VibeCheckSensor;
 
-void VibeCheckSensor_Init(VibeCheckSensor* sensor, SPI_HandleTypeDef* hspi0, SPI_HandleTypeDef* hspi1, SPI_HandleTypeDef* hspi2);
+void VibeCheckSensor_Init(VibeCheckSensor* sensor, volatile uint32_t* time_micros, SPI_HandleTypeDef* hspi0, SPI_HandleTypeDef* hspi1, SPI_HandleTypeDef* hspi2);
 void VibeCheckSensor_Update(VibeCheckSensor* sensor);
 
 /* interface functions */
@@ -93,6 +95,8 @@ void VibeCheckSensor_GetOffsets(VibeCheckSensor* sensor, uint32_t channel, float
 
 void VibeCheckSensor_StartFakeData(VibeCheckSensor* sensor);  /* for testing the host UI */
 void VibeCheckSensor_StopFakeData(VibeCheckSensor* sensor);
+
+void VibeCheckSensor_ResetTime(VibeCheckSensor* sensor);
 
 uint32_t VibeCheckSensor_ConnectionChanged(VibeCheckSensor* sensor, uint32_t* channel, uint32_t* is_connected);
 

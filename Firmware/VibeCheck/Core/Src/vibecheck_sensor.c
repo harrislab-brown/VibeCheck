@@ -8,12 +8,14 @@
 #include "vibecheck_sensor.h"
 
 
-void VibeCheckSensor_Init(VibeCheckSensor* sensor, SPI_HandleTypeDef* hspi0, SPI_HandleTypeDef* hspi1, SPI_HandleTypeDef* hspi2)
+void VibeCheckSensor_Init(VibeCheckSensor* sensor, volatile uint32_t* time_micros, SPI_HandleTypeDef* hspi0, SPI_HandleTypeDef* hspi1, SPI_HandleTypeDef* hspi2)
 {
 	sensor->data_ind = 0;
 	sensor->data_ready = 0;
 	sensor->time_prev_update = 0;
 	sensor->generate_fake_data = 0;
+
+	sensor->time_micros = time_micros;
 
 	/* set all the configurations to defaults */
 	for (uint32_t i = 0; i < VC_SENSOR_NUM_SENSORS; i++)
@@ -66,6 +68,7 @@ void VibeCheckSensor_Update(VibeCheckSensor* sensor)
 				{
 					sensor->status[i].is_connected = 1;
 					sensor->status[i].connection_change_flag = 1;
+					sensor->status[i].received_data_flag = 1;  /* give ourselves a grace period to receive data by artificially setting the flag */
 					VibeCheckSensor_UpdateSensor(sensor, i);
 				}
 			}
@@ -191,6 +194,8 @@ void VibeCheckSensor_SetOffsets(VibeCheckSensor* sensor, uint32_t channel, float
 {
 	if (channel >= VC_SENSOR_NUM_SENSORS) channel = VC_SENSOR_NUM_SENSORS - 1;
 
+	/* TODO: test that setting the sensor user offset registers works */
+
 	if (x > VC_SENSOR_MAX_OFFSET) x = VC_SENSOR_MAX_OFFSET;  /* clamp the offsets to the max value that can fit in the register */
 	if (x < -VC_SENSOR_MAX_OFFSET) x = -VC_SENSOR_MAX_OFFSET;
 	if (y > VC_SENSOR_MAX_OFFSET) y = VC_SENSOR_MAX_OFFSET;
@@ -247,6 +252,12 @@ void VibeCheckSensor_StartFakeData(VibeCheckSensor* sensor)
 void VibeCheckSensor_StopFakeData(VibeCheckSensor* sensor)
 {
 	sensor->generate_fake_data = 0;
+}
+
+
+void VibeCheckSensor_ResetTime(VibeCheckSensor* sensor)
+{
+	sensor->start_time = *sensor->time_micros;
 }
 
 
@@ -337,7 +348,7 @@ void VibeCheckSensor_EXTICallback(VibeCheckSensor* sensor, uint16_t GPIO_Pin)
 		{
 			float x, y, z;
 			LSM6DS3_ReadAccel(&sensor->sensor_array[i], &x, &y, &z);
-			VibeCheckSensor_AddData(sensor, 2 * i, 0, x, y, z);  /* TODO: add time stamps */
+			VibeCheckSensor_AddData(sensor, 2 * i, *sensor->time_micros - sensor->start_time, x, y, z);  /* time stamps are in microseconds */
 			sensor->status[i].received_data_flag = 1;
 			break;
 		}
@@ -346,7 +357,7 @@ void VibeCheckSensor_EXTICallback(VibeCheckSensor* sensor, uint16_t GPIO_Pin)
 		{
 			float x, y, z;
 			LSM6DS3_ReadGyro(&sensor->sensor_array[i], &x, &y, &z);
-			VibeCheckSensor_AddData(sensor, 2 * i + 1, 0, x, y, z);  /* TODO: add time stamps */
+			VibeCheckSensor_AddData(sensor, 2 * i + 1, *sensor->time_micros - sensor->start_time, x, y, z);  /* time stamps are in microseconds */
 			sensor->status[i].received_data_flag = 1;
 			break;
 		}

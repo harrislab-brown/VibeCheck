@@ -73,7 +73,6 @@ void VibeCheckStrobe_SetPhase(VibeCheckStrobe* strobe, float phase_deg)
 		phase_deg = VC_STROBE_MAX_PHASE_DEG;
 
 
-	/* TODO: need to test if this works */
 	float deg_shift = phase_deg - strobe->phase_deg;  /* how many degrees we want to shift the phase */
 	int32_t arr_shift = deg_shift / 360.0f * strobe->arr_steady;  /* how much we need to alter the ARR for a single period to achieve the target phase shift */
 
