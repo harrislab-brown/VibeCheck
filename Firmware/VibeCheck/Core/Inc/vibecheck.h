@@ -8,6 +8,8 @@
 #ifndef INC_VIBECHECK_H_
 #define INC_VIBECHECK_H_
 
+#include "vibecheck_sensor.h"
+#include "vibecheck_sensor_handler.h"
 #include "vibecheck_shell.h"
 #include "vibecheck_strobe.h"
 #include "vibecheck_strobe_handler.h"
@@ -15,8 +17,6 @@
 #include "vibecheck_wavegen_handler.h"
 #include "vibecheck_rgb.h"
 #include "vibecheck_rgb_handler.h"
-#include "vibecheck_accel.h"
-#include "vibecheck_accel_handler.h"
 #include "usbd_cdc_if.h"
 
 /* main application code */
@@ -31,7 +31,7 @@ typedef struct
 	VibeCheckStrobe strobe;
 	VibeCheckWaveGen wavegen;
 	VibeCheckRGB rgb;
-	VibeCheckAccel accel;
+	VibeCheckSensor sensor;
 } VibeCheck;
 
 

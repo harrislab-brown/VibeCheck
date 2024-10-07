@@ -53,7 +53,7 @@ C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.m
 C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-lock.o)
                               C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-findfp.o) (__retarget_lock_init_recursive)
 C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-strcmp.o)
-                              ./Core/Src/vibecheck_accel_handler.o (strcmp)
+                              ./Core/Src/vibecheck_rgb_handler.o (strcmp)
 C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-memchr.o)
                               C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-nano-vfprintf_i.o) (memchr)
 C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libc_nano.a(libc_a-memcpy-stub.o)
@@ -125,7 +125,7 @@ C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.m
 C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libm.a(libm_a-s_sin.o)
                               ./Core/Src/vibecheck_wavegen.o (sin)
 C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libm.a(libm_a-sinf.o)
-                              ./Core/Src/vibecheck_accel.o (sinf)
+                              ./Core/Src/vibecheck_sensor.o (sinf)
 C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libm.a(libm_a-sincosf_data.o)
                               C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libm.a(libm_a-sinf.o) (__inv_pio4)
 C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.12.3.rel1.win32_1.0.200.202406191623/tools/bin/../lib/gcc/arm-none-eabi/12.3.1/../../../../arm-none-eabi/lib/thumb/v7e-m+dp/hard\libm.a(libm_a-math_errf.o)
@@ -381,11 +381,11 @@ Discarded input sections
  .text          0x00000000        0x0 ./Core/Src/main.o
  .data          0x00000000        0x0 ./Core/Src/main.o
  .bss           0x00000000        0x0 ./Core/Src/main.o
- .rodata.VC_ACCEL_ALLOWED_ODR
+ .rodata.VC_SENSOR_ALLOWED_ODR
                 0x00000000       0x28 ./Core/Src/main.o
- .rodata.VC_ACCEL_ALLOWED_G_RANGE
+ .rodata.VC_SENSOR_ALLOWED_G_RANGE
                 0x00000000       0x10 ./Core/Src/main.o
- .rodata.VC_ACCEL_ALLOWED_DPS_RANGE
+ .rodata.VC_SENSOR_ALLOWED_DPS_RANGE
                 0x00000000       0x14 ./Core/Src/main.o
  .debug_macro   0x00000000      0xacc ./Core/Src/main.o
  .debug_macro   0x00000000      0x250 ./Core/Src/main.o
@@ -459,6 +459,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x90 ./Core/Src/main.o
  .debug_macro   0x00000000      0x5e6 ./Core/Src/main.o
  .debug_macro   0x00000000      0x1ac ./Core/Src/main.o
+ .debug_macro   0x00000000      0x184 ./Core/Src/main.o
  .group         0x00000000        0xc ./Core/Src/sequencer.o
  .group         0x00000000        0xc ./Core/Src/sequencer.o
  .group         0x00000000        0xc ./Core/Src/sequencer.o
@@ -1232,11 +1233,11 @@ Discarded input sections
  .text          0x00000000        0x0 ./Core/Src/vibecheck.o
  .data          0x00000000        0x0 ./Core/Src/vibecheck.o
  .bss           0x00000000        0x0 ./Core/Src/vibecheck.o
- .rodata.VC_ACCEL_ALLOWED_ODR
+ .rodata.VC_SENSOR_ALLOWED_ODR
                 0x00000000       0x28 ./Core/Src/vibecheck.o
- .rodata.VC_ACCEL_ALLOWED_G_RANGE
+ .rodata.VC_SENSOR_ALLOWED_G_RANGE
                 0x00000000       0x10 ./Core/Src/vibecheck.o
- .rodata.VC_ACCEL_ALLOWED_DPS_RANGE
+ .rodata.VC_SENSOR_ALLOWED_DPS_RANGE
                 0x00000000       0x14 ./Core/Src/vibecheck.o
  .rodata.top_sequence_len
                 0x00000000        0x4 ./Core/Src/vibecheck.o
@@ -1263,18 +1264,7 @@ Discarded input sections
  .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck.o
  .debug_macro   0x00000000      0x177 ./Core/Src/vibecheck.o
  .debug_macro   0x00000000      0x369 ./Core/Src/vibecheck.o
- .debug_macro   0x00000000       0x35 ./Core/Src/vibecheck.o
- .debug_macro   0x00000000       0x20 ./Core/Src/vibecheck.o
- .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck.o
- .debug_macro   0x00000000       0x10 ./Core/Src/vibecheck.o
- .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck.o
- .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck.o
- .debug_macro   0x00000000      0x146 ./Core/Src/vibecheck.o
- .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck.o
- .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck.o
- .debug_macro   0x00000000       0x29 ./Core/Src/vibecheck.o
- .debug_macro   0x00000000      0x11f ./Core/Src/vibecheck.o
- .debug_macro   0x00000000       0x28 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000      0x19b ./Core/Src/vibecheck.o
  .debug_macro   0x00000000      0x250 ./Core/Src/vibecheck.o
  .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck.o
  .debug_macro   0x00000000       0x3b ./Core/Src/vibecheck.o
@@ -1287,7 +1277,6 @@ Discarded input sections
  .debug_macro   0x00000000    0x2127f ./Core/Src/vibecheck.o
  .debug_macro   0x00000000       0x6d ./Core/Src/vibecheck.o
  .debug_macro   0x00000000     0x3d64 ./Core/Src/vibecheck.o
- .debug_macro   0x00000000      0x19b ./Core/Src/vibecheck.o
  .debug_macro   0x00000000       0x5d ./Core/Src/vibecheck.o
  .debug_macro   0x00000000     0x2462 ./Core/Src/vibecheck.o
  .debug_macro   0x00000000     0x1079 ./Core/Src/vibecheck.o
@@ -1325,390 +1314,28 @@ Discarded input sections
  .debug_macro   0x00000000      0x293 ./Core/Src/vibecheck.o
  .debug_macro   0x00000000       0x90 ./Core/Src/vibecheck.o
  .debug_macro   0x00000000      0x5e6 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000      0x184 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x35 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x29 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x20 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x10 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000      0x146 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000      0x11f ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x28 ./Core/Src/vibecheck.o
+ .debug_macro   0x00000000       0x34 ./Core/Src/vibecheck.o
  .debug_macro   0x00000000       0x3a ./Core/Src/vibecheck.o
  .debug_macro   0x00000000       0x46 ./Core/Src/vibecheck.o
- .debug_macro   0x00000000      0x18a ./Core/Src/vibecheck.o
- .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck.o
  .debug_macro   0x00000000       0x65 ./Core/Src/vibecheck.o
  .debug_macro   0x00000000      0x20f ./Core/Src/vibecheck.o
  .debug_macro   0x00000000       0x95 ./Core/Src/vibecheck.o
  .debug_macro   0x00000000       0x10 ./Core/Src/vibecheck.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel.o
- .text          0x00000000        0x0 ./Core/Src/vibecheck_accel.o
- .data          0x00000000        0x0 ./Core/Src/vibecheck_accel.o
- .bss           0x00000000        0x0 ./Core/Src/vibecheck_accel.o
- .rodata.VC_ACCEL_ALLOWED_ODR
-                0x00000000       0x28 ./Core/Src/vibecheck_accel.o
- .rodata.VC_ACCEL_ALLOWED_G_RANGE
-                0x00000000       0x10 ./Core/Src/vibecheck_accel.o
- .rodata.VC_ACCEL_ALLOWED_DPS_RANGE
-                0x00000000       0x14 ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_StartAccel
-                0x00000000       0x6e ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_StopAccel
-                0x00000000       0x6e ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_StartGyro
-                0x00000000       0x6e ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_StopGyro
-                0x00000000       0x6e ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_SetAccelODR
-                0x00000000       0x48 ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_SetGyroODR
-                0x00000000       0x48 ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_SetAccelRange
-                0x00000000       0x48 ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_SetGyroRange
-                0x00000000       0x48 ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_SetOffsets
-                0x00000000      0x100 ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_GetAccelODR
-                0x00000000       0x32 ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_GetGyroODR
-                0x00000000       0x32 ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_GetAccelRange
-                0x00000000       0x32 ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_GetGyroRange
-                0x00000000       0x32 ./Core/Src/vibecheck_accel.o
- .text.VibeCheckAccel_GetOffsets
-                0x00000000       0x64 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0xacc ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x22 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x8e ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x51 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x103 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x6a ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x1df ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x61 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x29 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x43 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x34 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x189 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x43 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x34 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x10 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x58 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x8e ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x177 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x369 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x19b ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x250 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x3b ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x22 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0xfb ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000     0x1305 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x11f ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x27 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000    0x2127f ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x6d ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000     0x3d64 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x5d ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000     0x2462 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000     0x1079 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x154 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x114 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x3fc ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0xac ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x788 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x228 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x66 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x3a6 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x3f9 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x275 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000     0x1178 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x7c8 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x39f ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x184 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0xd9 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x3ca ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x45c ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x3c ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x4a ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x22c ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x67 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0xa5 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x1c4 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x22a ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x35 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x5e4 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0xc1 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0xb24 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x29f ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x693 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0xa6 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x293 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x90 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x5e6 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x1b2 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000      0x184 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x35 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x29 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck_accel.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .group         0x00000000        0xc ./Core/Src/vibecheck_accel_handler.o
- .text          0x00000000        0x0 ./Core/Src/vibecheck_accel_handler.o
- .data          0x00000000        0x0 ./Core/Src/vibecheck_accel_handler.o
- .bss           0x00000000        0x0 ./Core/Src/vibecheck_accel_handler.o
- .rodata.VC_ACCEL_ALLOWED_ODR
-                0x00000000       0x28 ./Core/Src/vibecheck_accel_handler.o
- .rodata.VC_ACCEL_ALLOWED_G_RANGE
-                0x00000000       0x10 ./Core/Src/vibecheck_accel_handler.o
- .rodata.VC_ACCEL_ALLOWED_DPS_RANGE
-                0x00000000       0x14 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0xacc ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x22 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x8e ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x51 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x103 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x6a ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x1df ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x61 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x29 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x43 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x34 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x189 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x43 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x34 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x10 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x58 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x8e ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x177 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x369 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x19b ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x250 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x3b ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x22 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0xfb ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000     0x1305 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x11f ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x27 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000    0x2127f ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x6d ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000     0x3d64 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x5d ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000     0x2462 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000     0x1079 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x154 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x114 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x3fc ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0xac ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x788 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x228 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x66 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x3a6 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x3f9 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x275 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000     0x1178 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x7c8 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x39f ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x184 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0xd9 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x3ca ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x45c ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x3c ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x4a ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x22c ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x67 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0xa5 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x1c4 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x22a ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x35 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x5e4 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0xc1 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0xb24 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x29f ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x693 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0xa6 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x293 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x90 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x5e6 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x1b2 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x184 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x35 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x29 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x20 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x10 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x146 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000      0x11f ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x00000000       0x28 ./Core/Src/vibecheck_accel_handler.o
  .group         0x00000000        0xc ./Core/Src/vibecheck_rgb.o
  .group         0x00000000        0xc ./Core/Src/vibecheck_rgb.o
  .group         0x00000000        0xc ./Core/Src/vibecheck_rgb.o
@@ -2028,6 +1655,382 @@ Discarded input sections
  .debug_macro   0x00000000       0x29 ./Core/Src/vibecheck_rgb_handler.o
  .debug_macro   0x00000000      0x11f ./Core/Src/vibecheck_rgb_handler.o
  .debug_macro   0x00000000       0x28 ./Core/Src/vibecheck_rgb_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor.o
+ .text          0x00000000        0x0 ./Core/Src/vibecheck_sensor.o
+ .data          0x00000000        0x0 ./Core/Src/vibecheck_sensor.o
+ .bss           0x00000000        0x0 ./Core/Src/vibecheck_sensor.o
+ .rodata.VC_SENSOR_ALLOWED_ODR
+                0x00000000       0x28 ./Core/Src/vibecheck_sensor.o
+ .rodata.VC_SENSOR_ALLOWED_G_RANGE
+                0x00000000       0x10 ./Core/Src/vibecheck_sensor.o
+ .rodata.VC_SENSOR_ALLOWED_DPS_RANGE
+                0x00000000       0x14 ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_StartAccel
+                0x00000000       0x6e ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_StopAccel
+                0x00000000       0x6e ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_StartGyro
+                0x00000000       0x6e ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_StopGyro
+                0x00000000       0x6e ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_SetAccelODR
+                0x00000000       0x48 ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_SetGyroODR
+                0x00000000       0x48 ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_SetAccelRange
+                0x00000000       0x48 ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_SetGyroRange
+                0x00000000       0x48 ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_SetOffsets
+                0x00000000      0x100 ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_GetAccelODR
+                0x00000000       0x32 ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_GetGyroODR
+                0x00000000       0x32 ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_GetAccelRange
+                0x00000000       0x32 ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_GetGyroRange
+                0x00000000       0x32 ./Core/Src/vibecheck_sensor.o
+ .text.VibeCheckSensor_GetOffsets
+                0x00000000       0x64 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0xacc ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x22 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x8e ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x51 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x103 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x6a ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x1df ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x61 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x29 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x43 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x34 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x189 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x43 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x34 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x10 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x58 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x8e ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x177 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x369 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x19b ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x250 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x3b ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x22 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0xfb ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000     0x1305 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x11f ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x27 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000    0x2127f ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x6d ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000     0x3d64 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x5d ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000     0x2462 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000     0x1079 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x154 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x114 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x3fc ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0xac ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x788 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x228 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x66 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x3a6 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x3f9 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x275 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000     0x1178 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x7c8 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x39f ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x184 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0xd9 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x3ca ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x45c ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x3c ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x4a ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x22c ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x67 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0xa5 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x1c4 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x22a ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x35 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x5e4 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0xc1 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0xb24 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x29f ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x693 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0xa6 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x293 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x90 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x5e6 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x1b2 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000      0x184 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x35 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x29 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck_sensor.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .group         0x00000000        0xc ./Core/Src/vibecheck_sensor_handler.o
+ .text          0x00000000        0x0 ./Core/Src/vibecheck_sensor_handler.o
+ .data          0x00000000        0x0 ./Core/Src/vibecheck_sensor_handler.o
+ .bss           0x00000000        0x0 ./Core/Src/vibecheck_sensor_handler.o
+ .rodata.VC_SENSOR_ALLOWED_ODR
+                0x00000000       0x28 ./Core/Src/vibecheck_sensor_handler.o
+ .rodata.VC_SENSOR_ALLOWED_G_RANGE
+                0x00000000       0x10 ./Core/Src/vibecheck_sensor_handler.o
+ .rodata.VC_SENSOR_ALLOWED_DPS_RANGE
+                0x00000000       0x14 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0xacc ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x22 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x8e ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x51 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x103 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x6a ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x1df ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x61 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x29 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x43 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x34 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x189 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x43 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x34 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x10 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x58 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x8e ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x177 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x369 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x19b ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x250 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x3b ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x22 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0xfb ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000     0x1305 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x11f ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x27 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000    0x2127f ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x6d ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000     0x3d64 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x5d ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000     0x2462 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000     0x1079 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x154 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x114 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x3fc ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0xac ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x788 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x228 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x66 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x3a6 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x3f9 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x275 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000     0x1178 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x7c8 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x39f ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x184 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0xd9 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x3ca ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x45c ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x3c ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x4a ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x22c ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x67 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0xa5 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x1c4 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x22a ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x35 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x5e4 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0xc1 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0xb24 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x29f ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x693 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0xa6 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x293 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x90 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x5e6 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x1b2 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x184 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x35 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x29 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x20 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x10 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x16 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x146 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000      0x11f ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x00000000       0x28 ./Core/Src/vibecheck_sensor_handler.o
  .group         0x00000000        0xc ./Core/Src/vibecheck_shell.o
  .group         0x00000000        0xc ./Core/Src/vibecheck_shell.o
  .group         0x00000000        0xc ./Core/Src/vibecheck_shell.o
@@ -2086,7 +2089,6 @@ Discarded input sections
  .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_shell.o
  .debug_macro   0x00000000      0x177 ./Core/Src/vibecheck_shell.o
  .debug_macro   0x00000000      0x369 ./Core/Src/vibecheck_shell.o
- .debug_macro   0x00000000       0x10 ./Core/Src/vibecheck_shell.o
  .debug_macro   0x00000000       0x35 ./Core/Src/vibecheck_shell.o
  .debug_macro   0x00000000       0x20 ./Core/Src/vibecheck_shell.o
  .debug_macro   0x00000000       0x1c ./Core/Src/vibecheck_shell.o
@@ -2245,7 +2247,6 @@ Discarded input sections
  .debug_macro   0x00000000      0x293 ./Core/Src/vibecheck_strobe.o
  .debug_macro   0x00000000       0x90 ./Core/Src/vibecheck_strobe.o
  .debug_macro   0x00000000      0x5e6 ./Core/Src/vibecheck_strobe.o
- .debug_macro   0x00000000       0x2e ./Core/Src/vibecheck_strobe.o
  .group         0x00000000        0xc ./Core/Src/vibecheck_strobe_handler.o
  .group         0x00000000        0xc ./Core/Src/vibecheck_strobe_handler.o
  .group         0x00000000        0xc ./Core/Src/vibecheck_strobe_handler.o
@@ -9592,11 +9593,11 @@ Discarded input sections
  .text          0x00000000        0x0 ./USB_DEVICE/App/usbd_cdc_if.o
  .data          0x00000000        0x0 ./USB_DEVICE/App/usbd_cdc_if.o
  .bss           0x00000000        0x0 ./USB_DEVICE/App/usbd_cdc_if.o
- .rodata.VC_ACCEL_ALLOWED_ODR
+ .rodata.VC_SENSOR_ALLOWED_ODR
                 0x00000000       0x28 ./USB_DEVICE/App/usbd_cdc_if.o
- .rodata.VC_ACCEL_ALLOWED_G_RANGE
+ .rodata.VC_SENSOR_ALLOWED_G_RANGE
                 0x00000000       0x10 ./USB_DEVICE/App/usbd_cdc_if.o
- .rodata.VC_ACCEL_ALLOWED_DPS_RANGE
+ .rodata.VC_SENSOR_ALLOWED_DPS_RANGE
                 0x00000000       0x14 ./USB_DEVICE/App/usbd_cdc_if.o
  .debug_macro   0x00000000      0xacc ./USB_DEVICE/App/usbd_cdc_if.o
  .debug_macro   0x00000000       0x22 ./USB_DEVICE/App/usbd_cdc_if.o
@@ -9686,13 +9687,13 @@ Discarded input sections
  .debug_macro   0x00000000      0x20f ./USB_DEVICE/App/usbd_cdc_if.o
  .debug_macro   0x00000000       0x95 ./USB_DEVICE/App/usbd_cdc_if.o
  .debug_macro   0x00000000       0x10 ./USB_DEVICE/App/usbd_cdc_if.o
+ .debug_macro   0x00000000      0x184 ./USB_DEVICE/App/usbd_cdc_if.o
+ .debug_macro   0x00000000       0x2e ./USB_DEVICE/App/usbd_cdc_if.o
  .debug_macro   0x00000000      0x11f ./USB_DEVICE/App/usbd_cdc_if.o
  .debug_macro   0x00000000       0x28 ./USB_DEVICE/App/usbd_cdc_if.o
  .debug_macro   0x00000000       0x34 ./USB_DEVICE/App/usbd_cdc_if.o
  .debug_macro   0x00000000       0x3a ./USB_DEVICE/App/usbd_cdc_if.o
  .debug_macro   0x00000000       0x46 ./USB_DEVICE/App/usbd_cdc_if.o
- .debug_macro   0x00000000      0x18a ./USB_DEVICE/App/usbd_cdc_if.o
- .debug_macro   0x00000000       0x2e ./USB_DEVICE/App/usbd_cdc_if.o
  .group         0x00000000        0xc ./USB_DEVICE/App/usbd_desc.o
  .group         0x00000000        0xc ./USB_DEVICE/App/usbd_desc.o
  .group         0x00000000        0xc ./USB_DEVICE/App/usbd_desc.o
@@ -10446,10 +10447,10 @@ LOAD ./Core/Src/sysmem.o
 LOAD ./Core/Src/system_stm32h7xx.o
 LOAD ./Core/Src/util.o
 LOAD ./Core/Src/vibecheck.o
-LOAD ./Core/Src/vibecheck_accel.o
-LOAD ./Core/Src/vibecheck_accel_handler.o
 LOAD ./Core/Src/vibecheck_rgb.o
 LOAD ./Core/Src/vibecheck_rgb_handler.o
+LOAD ./Core/Src/vibecheck_sensor.o
+LOAD ./Core/Src/vibecheck_sensor_handler.o
 LOAD ./Core/Src/vibecheck_shell.o
 LOAD ./Core/Src/vibecheck_strobe.o
 LOAD ./Core/Src/vibecheck_strobe_handler.o
@@ -10784,172 +10785,171 @@ LOAD C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.
                 0x08002e14       0xf0 ./Core/Src/system_stm32h7xx.o
                 0x08002e14                SystemInit
  .text.VibeCheck_Init
-                0x08002f04      0x3ac ./Core/Src/vibecheck.o
+                0x08002f04      0x3b0 ./Core/Src/vibecheck.o
                 0x08002f04                VibeCheck_Init
  .text.VibeCheck_Loop
-                0x080032b0       0x72 ./Core/Src/vibecheck.o
-                0x080032b0                VibeCheck_Loop
- *fill*         0x08003322        0x2 
- .text.VibeCheckAccel_Init
-                0x08003324      0x214 ./Core/Src/vibecheck_accel.o
-                0x08003324                VibeCheckAccel_Init
- .text.VibeCheckAccel_Update
-                0x08003538      0x228 ./Core/Src/vibecheck_accel.o
-                0x08003538                VibeCheckAccel_Update
- .text.VibeCheckAccel_StartFakeData
-                0x08003760       0x1c ./Core/Src/vibecheck_accel.o
-                0x08003760                VibeCheckAccel_StartFakeData
- .text.VibeCheckAccel_StopFakeData
-                0x0800377c       0x1c ./Core/Src/vibecheck_accel.o
-                0x0800377c                VibeCheckAccel_StopFakeData
- .text.VibeCheckAccel_ConnectionChanged
-                0x08003798       0x76 ./Core/Src/vibecheck_accel.o
-                0x08003798                VibeCheckAccel_ConnectionChanged
- .text.VibeCheckAccel_UpdateSensor
-                0x0800380e       0x94 ./Core/Src/vibecheck_accel.o
-                0x0800380e                VibeCheckAccel_UpdateSensor
- .text.VibeCheckAccel_AddData
-                0x080038a2       0xdc ./Core/Src/vibecheck_accel.o
-                0x080038a2                VibeCheckAccel_AddData
- .text.VibeCheckAccel_GetDataReady
-                0x0800397e       0x4e ./Core/Src/vibecheck_accel.o
-                0x0800397e                VibeCheckAccel_GetDataReady
- .text.VibeCheckAccel_EXTICallback
-                0x080039cc      0x138 ./Core/Src/vibecheck_accel.o
-                0x080039cc                VibeCheckAccel_EXTICallback
- .text.VibeCheckAccelCMD_Execute
-                0x08003b04       0xb8 ./Core/Src/vibecheck_accel_handler.o
-                0x08003b04                VibeCheckAccelCMD_Execute
- .text.VibeCheckAccelSender_Data_Execute
-                0x08003bbc       0xcc ./Core/Src/vibecheck_accel_handler.o
-                0x08003bbc                VibeCheckAccelSender_Data_Execute
- .text.VibeCheckAccelSender_Status_Execute
-                0x08003c88       0x8c ./Core/Src/vibecheck_accel_handler.o
-                0x08003c88                VibeCheckAccelSender_Status_Execute
+                0x080032b4       0x72 ./Core/Src/vibecheck.o
+                0x080032b4                VibeCheck_Loop
  .text.VibeCheckRGB_Init
-                0x08003d14       0x6c ./Core/Src/vibecheck_rgb.o
-                0x08003d14                VibeCheckRGB_Init
+                0x08003326       0x6c ./Core/Src/vibecheck_rgb.o
+                0x08003326                VibeCheckRGB_Init
  .text.VibeCheckRGB_Update
-                0x08003d80       0xfa ./Core/Src/vibecheck_rgb.o
-                0x08003d80                VibeCheckRGB_Update
+                0x08003392       0xfa ./Core/Src/vibecheck_rgb.o
+                0x08003392                VibeCheckRGB_Update
  .text.VibeCheckRGB_SetBaseSequence
-                0x08003e7a       0x2e ./Core/Src/vibecheck_rgb.o
-                0x08003e7a                VibeCheckRGB_SetBaseSequence
+                0x0800348c       0x2e ./Core/Src/vibecheck_rgb.o
+                0x0800348c                VibeCheckRGB_SetBaseSequence
  .text.VibeCheckRGB_StartBaseSequence
-                0x08003ea8       0x24 ./Core/Src/vibecheck_rgb.o
-                0x08003ea8                VibeCheckRGB_StartBaseSequence
+                0x080034ba       0x24 ./Core/Src/vibecheck_rgb.o
+                0x080034ba                VibeCheckRGB_StartBaseSequence
  .text.VibeCheckRGB_StopBaseSequence
-                0x08003ecc       0x1c ./Core/Src/vibecheck_rgb.o
-                0x08003ecc                VibeCheckRGB_StopBaseSequence
+                0x080034de       0x1c ./Core/Src/vibecheck_rgb.o
+                0x080034de                VibeCheckRGB_StopBaseSequence
  .text.VibeCheckRGB_SetTopSequence
-                0x08003ee8       0x2e ./Core/Src/vibecheck_rgb.o
-                0x08003ee8                VibeCheckRGB_SetTopSequence
+                0x080034fa       0x2e ./Core/Src/vibecheck_rgb.o
+                0x080034fa                VibeCheckRGB_SetTopSequence
  .text.VibeCheckRGB_StartTopSequence
-                0x08003f16       0x24 ./Core/Src/vibecheck_rgb.o
-                0x08003f16                VibeCheckRGB_StartTopSequence
+                0x08003528       0x24 ./Core/Src/vibecheck_rgb.o
+                0x08003528                VibeCheckRGB_StartTopSequence
  .text.VibeCheckRGB_StopTopSequence
-                0x08003f3a       0x1c ./Core/Src/vibecheck_rgb.o
-                0x08003f3a                VibeCheckRGB_StopTopSequence
+                0x0800354c       0x1c ./Core/Src/vibecheck_rgb.o
+                0x0800354c                VibeCheckRGB_StopTopSequence
  .text.VibeCheckRGB_SetColor
-                0x08003f56       0x62 ./Core/Src/vibecheck_rgb.o
-                0x08003f56                VibeCheckRGB_SetColor
+                0x08003568       0x62 ./Core/Src/vibecheck_rgb.o
+                0x08003568                VibeCheckRGB_SetColor
  .text.VibeCheckRGB_GetColor
-                0x08003fb8       0x4e ./Core/Src/vibecheck_rgb.o
-                0x08003fb8                VibeCheckRGB_GetColor
+                0x080035ca       0x4e ./Core/Src/vibecheck_rgb.o
+                0x080035ca                VibeCheckRGB_GetColor
  .text.VibeCheckRGB_SetAllOff
-                0x08004006       0x34 ./Core/Src/vibecheck_rgb.o
-                0x08004006                VibeCheckRGB_SetAllOff
+                0x08003618       0x34 ./Core/Src/vibecheck_rgb.o
+                0x08003618                VibeCheckRGB_SetAllOff
  .text.VibeCheckRGB_SendColors
-                0x0800403a      0x112 ./Core/Src/vibecheck_rgb.o
-                0x0800403a                VibeCheckRGB_SendColors
+                0x0800364c      0x112 ./Core/Src/vibecheck_rgb.o
+                0x0800364c                VibeCheckRGB_SendColors
+ *fill*         0x0800375e        0x2 
  .text.VibeCheckRGBCMD_Execute
-                0x0800414c      0x1c8 ./Core/Src/vibecheck_rgb_handler.o
-                0x0800414c                VibeCheckRGBCMD_Execute
+                0x08003760      0x1c8 ./Core/Src/vibecheck_rgb_handler.o
+                0x08003760                VibeCheckRGBCMD_Execute
+ .text.VibeCheckSensor_Init
+                0x08003928      0x214 ./Core/Src/vibecheck_sensor.o
+                0x08003928                VibeCheckSensor_Init
+ .text.VibeCheckSensor_Update
+                0x08003b3c      0x228 ./Core/Src/vibecheck_sensor.o
+                0x08003b3c                VibeCheckSensor_Update
+ .text.VibeCheckSensor_StartFakeData
+                0x08003d64       0x1c ./Core/Src/vibecheck_sensor.o
+                0x08003d64                VibeCheckSensor_StartFakeData
+ .text.VibeCheckSensor_StopFakeData
+                0x08003d80       0x1c ./Core/Src/vibecheck_sensor.o
+                0x08003d80                VibeCheckSensor_StopFakeData
+ .text.VibeCheckSensor_ConnectionChanged
+                0x08003d9c       0x76 ./Core/Src/vibecheck_sensor.o
+                0x08003d9c                VibeCheckSensor_ConnectionChanged
+ .text.VibeCheckSensor_UpdateSensor
+                0x08003e12       0x94 ./Core/Src/vibecheck_sensor.o
+                0x08003e12                VibeCheckSensor_UpdateSensor
+ .text.VibeCheckSensor_AddData
+                0x08003ea6       0xdc ./Core/Src/vibecheck_sensor.o
+                0x08003ea6                VibeCheckSensor_AddData
+ .text.VibeCheckSensor_GetDataReady
+                0x08003f82       0x4e ./Core/Src/vibecheck_sensor.o
+                0x08003f82                VibeCheckSensor_GetDataReady
+ .text.VibeCheckSensor_EXTICallback
+                0x08003fd0      0x138 ./Core/Src/vibecheck_sensor.o
+                0x08003fd0                VibeCheckSensor_EXTICallback
+ .text.VibeCheckSensorCMD_Execute
+                0x08004108       0xb8 ./Core/Src/vibecheck_sensor_handler.o
+                0x08004108                VibeCheckSensorCMD_Execute
+ .text.VibeCheckSensorSender_Data_Execute
+                0x080041c0       0xcc ./Core/Src/vibecheck_sensor_handler.o
+                0x080041c0                VibeCheckSensorSender_Data_Execute
+ .text.VibeCheckSensorSender_Status_Execute
+                0x0800428c       0x8c ./Core/Src/vibecheck_sensor_handler.o
+                0x0800428c                VibeCheckSensorSender_Status_Execute
  .text.VibeCheckShell_Init
-                0x08004314       0x74 ./Core/Src/vibecheck_shell.o
-                0x08004314                VibeCheckShell_Init
+                0x08004318       0x74 ./Core/Src/vibecheck_shell.o
+                0x08004318                VibeCheckShell_Init
  .text.VibeCheckShell_Update
-                0x08004388      0x1e8 ./Core/Src/vibecheck_shell.o
-                0x08004388                VibeCheckShell_Update
+                0x0800438c      0x1e8 ./Core/Src/vibecheck_shell.o
+                0x0800438c                VibeCheckShell_Update
  .text.VibeCheckShell_RegisterInputHandler
-                0x08004570       0x64 ./Core/Src/vibecheck_shell.o
-                0x08004570                VibeCheckShell_RegisterInputHandler
+                0x08004574       0x64 ./Core/Src/vibecheck_shell.o
+                0x08004574                VibeCheckShell_RegisterInputHandler
  .text.VibeCheckShell_RegisterOutputHandler
-                0x080045d4       0x52 ./Core/Src/vibecheck_shell.o
-                0x080045d4                VibeCheckShell_RegisterOutputHandler
- *fill*         0x08004626        0x2 
+                0x080045d8       0x52 ./Core/Src/vibecheck_shell.o
+                0x080045d8                VibeCheckShell_RegisterOutputHandler
+ *fill*         0x0800462a        0x2 
  .text.VibeCheckShell_PutInput
-                0x08004628       0x98 ./Core/Src/vibecheck_shell.o
-                0x08004628                VibeCheckShell_PutInput
+                0x0800462c       0x98 ./Core/Src/vibecheck_shell.o
+                0x0800462c                VibeCheckShell_PutInput
  .text.VibeCheckShell_GetOutput
-                0x080046c0       0xf6 ./Core/Src/vibecheck_shell.o
-                0x080046c0                VibeCheckShell_GetOutput
- *fill*         0x080047b6        0x2 
+                0x080046c4       0xf6 ./Core/Src/vibecheck_shell.o
+                0x080046c4                VibeCheckShell_GetOutput
+ *fill*         0x080047ba        0x2 
  .text.VibeCheckShell_GetNextString
-                0x080047b8       0xe0 ./Core/Src/vibecheck_shell.o
-                0x080047b8                VibeCheckShell_GetNextString
+                0x080047bc       0xe0 ./Core/Src/vibecheck_shell.o
+                0x080047bc                VibeCheckShell_GetNextString
  .text.VibeCheckShell_GetNextInt
-                0x08004898       0x8c ./Core/Src/vibecheck_shell.o
-                0x08004898                VibeCheckShell_GetNextInt
+                0x0800489c       0x8c ./Core/Src/vibecheck_shell.o
+                0x0800489c                VibeCheckShell_GetNextInt
  .text.VibeCheckShell_GetNextFloat
-                0x08004924       0x94 ./Core/Src/vibecheck_shell.o
-                0x08004924                VibeCheckShell_GetNextFloat
+                0x08004928       0x94 ./Core/Src/vibecheck_shell.o
+                0x08004928                VibeCheckShell_GetNextFloat
  .text.VibeCheckShell_PutOutputString
-                0x080049b8       0x72 ./Core/Src/vibecheck_shell.o
-                0x080049b8                VibeCheckShell_PutOutputString
- *fill*         0x08004a2a        0x2 
+                0x080049bc       0x72 ./Core/Src/vibecheck_shell.o
+                0x080049bc                VibeCheckShell_PutOutputString
+ *fill*         0x08004a2e        0x2 
  .text.VibeCheckShell_PutOutputInt
-                0x08004a2c       0x30 ./Core/Src/vibecheck_shell.o
-                0x08004a2c                VibeCheckShell_PutOutputInt
+                0x08004a30       0x30 ./Core/Src/vibecheck_shell.o
+                0x08004a30                VibeCheckShell_PutOutputInt
  .text.VibeCheckShell_PutOutputFloat
-                0x08004a5c       0x3c ./Core/Src/vibecheck_shell.o
-                0x08004a5c                VibeCheckShell_PutOutputFloat
+                0x08004a60       0x3c ./Core/Src/vibecheck_shell.o
+                0x08004a60                VibeCheckShell_PutOutputFloat
  .text.VibeCheckShell_PutOutputSeparator
-                0x08004a98       0x1c ./Core/Src/vibecheck_shell.o
-                0x08004a98                VibeCheckShell_PutOutputSeparator
+                0x08004a9c       0x1c ./Core/Src/vibecheck_shell.o
+                0x08004a9c                VibeCheckShell_PutOutputSeparator
  .text.VibeCheckShell_PutOutputDelimiter
-                0x08004ab4       0x1c ./Core/Src/vibecheck_shell.o
-                0x08004ab4                VibeCheckShell_PutOutputDelimiter
+                0x08004ab8       0x1c ./Core/Src/vibecheck_shell.o
+                0x08004ab8                VibeCheckShell_PutOutputDelimiter
  .text.VibeCheckStrobe_Init
-                0x08004ad0       0x5c ./Core/Src/vibecheck_strobe.o
-                0x08004ad0                VibeCheckStrobe_Init
+                0x08004ad4       0x5c ./Core/Src/vibecheck_strobe.o
+                0x08004ad4                VibeCheckStrobe_Init
  .text.VibeCheckStrobe_Start
-                0x08004b2c       0x3e ./Core/Src/vibecheck_strobe.o
-                0x08004b2c                VibeCheckStrobe_Start
+                0x08004b30       0x3e ./Core/Src/vibecheck_strobe.o
+                0x08004b30                VibeCheckStrobe_Start
  .text.VibeCheckStrobe_Stop
-                0x08004b6a       0x3e ./Core/Src/vibecheck_strobe.o
-                0x08004b6a                VibeCheckStrobe_Stop
+                0x08004b6e       0x3e ./Core/Src/vibecheck_strobe.o
+                0x08004b6e                VibeCheckStrobe_Stop
  .text.VibeCheckStrobe_SetFrequency
-                0x08004ba8       0xa0 ./Core/Src/vibecheck_strobe.o
-                0x08004ba8                VibeCheckStrobe_SetFrequency
+                0x08004bac       0xa0 ./Core/Src/vibecheck_strobe.o
+                0x08004bac                VibeCheckStrobe_SetFrequency
  .text.VibeCheckStrobe_GetFrequency
-                0x08004c48       0x1e ./Core/Src/vibecheck_strobe.o
-                0x08004c48                VibeCheckStrobe_GetFrequency
- *fill*         0x08004c66        0x2 
+                0x08004c4c       0x1e ./Core/Src/vibecheck_strobe.o
+                0x08004c4c                VibeCheckStrobe_GetFrequency
+ *fill*         0x08004c6a        0x2 
  .text.VibeCheckStrobe_SetPhase
-                0x08004c68       0xec ./Core/Src/vibecheck_strobe.o
-                0x08004c68                VibeCheckStrobe_SetPhase
+                0x08004c6c       0xec ./Core/Src/vibecheck_strobe.o
+                0x08004c6c                VibeCheckStrobe_SetPhase
  .text.VibeCheckStrobe_GetPhase
-                0x08004d54       0x1e ./Core/Src/vibecheck_strobe.o
-                0x08004d54                VibeCheckStrobe_GetPhase
- *fill*         0x08004d72        0x2 
+                0x08004d58       0x1e ./Core/Src/vibecheck_strobe.o
+                0x08004d58                VibeCheckStrobe_GetPhase
+ *fill*         0x08004d76        0x2 
  .text.VibeCheckStrobe_SetExposure
-                0x08004d74       0x98 ./Core/Src/vibecheck_strobe.o
-                0x08004d74                VibeCheckStrobe_SetExposure
+                0x08004d78       0x98 ./Core/Src/vibecheck_strobe.o
+                0x08004d78                VibeCheckStrobe_SetExposure
  .text.VibeCheckStrobe_GetExposure
-                0x08004e0c       0x1e ./Core/Src/vibecheck_strobe.o
-                0x08004e0c                VibeCheckStrobe_GetExposure
+                0x08004e10       0x1e ./Core/Src/vibecheck_strobe.o
+                0x08004e10                VibeCheckStrobe_GetExposure
  .text.VibeCheckStrobe_PeriodElapsedUpdate
-                0x08004e2a       0x4e ./Core/Src/vibecheck_strobe.o
-                0x08004e2a                VibeCheckStrobe_PeriodElapsedUpdate
+                0x08004e2e       0x4e ./Core/Src/vibecheck_strobe.o
+                0x08004e2e                VibeCheckStrobe_PeriodElapsedUpdate
  .text.VibeCheckStrobeCMD_Set
-                0x08004e78      0x104 ./Core/Src/vibecheck_strobe_handler.o
+                0x08004e7c      0x104 ./Core/Src/vibecheck_strobe_handler.o
  .text.VibeCheckStrobeCMD_Get
-                0x08004f7c       0xf4 ./Core/Src/vibecheck_strobe_handler.o
+                0x08004f80       0xf4 ./Core/Src/vibecheck_strobe_handler.o
  .text.VibeCheckStrobeCMD_Execute
-                0x08005070       0xdc ./Core/Src/vibecheck_strobe_handler.o
-                0x08005070                VibeCheckStrobeCMD_Execute
- *fill*         0x0800514c        0x4 
+                0x08005074       0xdc ./Core/Src/vibecheck_strobe_handler.o
+                0x08005074                VibeCheckStrobeCMD_Execute
  .text.ComputeSineWave
                 0x08005150       0xa4 ./Core/Src/vibecheck_wavegen.o
  .text.ComputeSquareWave
@@ -12283,13 +12283,13 @@ LOAD C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.
  *(.rodata)
  .rodata        0x0801c500        0xf ./Core/Src/LSM6DS3.o
  *fill*         0x0801c50f        0x1 
- .rodata        0x0801c510       0x16 ./Core/Src/vibecheck.o
- *fill*         0x0801c526        0x2 
- .rodata        0x0801c528       0x3a ./Core/Src/vibecheck_accel.o
- *fill*         0x0801c562        0x2 
- .rodata        0x0801c564       0x4d ./Core/Src/vibecheck_accel_handler.o
- *fill*         0x0801c5b1        0x3 
- .rodata        0x0801c5b4       0x19 ./Core/Src/vibecheck_rgb_handler.o
+ .rodata        0x0801c510       0x17 ./Core/Src/vibecheck.o
+ *fill*         0x0801c527        0x1 
+ .rodata        0x0801c528       0x19 ./Core/Src/vibecheck_rgb_handler.o
+ *fill*         0x0801c541        0x3 
+ .rodata        0x0801c544       0x3a ./Core/Src/vibecheck_sensor.o
+ *fill*         0x0801c57e        0x2 
+ .rodata        0x0801c580       0x4d ./Core/Src/vibecheck_sensor_handler.o
  *fill*         0x0801c5cd        0x3 
  .rodata        0x0801c5d0       0x2e ./Core/Src/vibecheck_shell.o
  *fill*         0x0801c5fe        0x2 
@@ -12634,13 +12634,13 @@ LOAD C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.
  .ARM.attributes
                 0x00000214       0x32 ./Core/Src/vibecheck.o
  .ARM.attributes
-                0x00000246       0x32 ./Core/Src/vibecheck_accel.o
+                0x00000246       0x32 ./Core/Src/vibecheck_rgb.o
  .ARM.attributes
-                0x00000278       0x32 ./Core/Src/vibecheck_accel_handler.o
+                0x00000278       0x32 ./Core/Src/vibecheck_rgb_handler.o
  .ARM.attributes
-                0x000002aa       0x32 ./Core/Src/vibecheck_rgb.o
+                0x000002aa       0x32 ./Core/Src/vibecheck_sensor.o
  .ARM.attributes
-                0x000002dc       0x32 ./Core/Src/vibecheck_rgb_handler.o
+                0x000002dc       0x32 ./Core/Src/vibecheck_sensor_handler.o
  .ARM.attributes
                 0x0000030e       0x32 ./Core/Src/vibecheck_shell.o
  .ARM.attributes
@@ -12880,10 +12880,10 @@ LOAD C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.
  .debug_info    0x00008c5d      0x168 ./Core/Src/sysmem.o
  .debug_info    0x00008dc5      0xb2e ./Core/Src/system_stm32h7xx.o
  .debug_info    0x000098f3     0x1ac0 ./Core/Src/vibecheck.o
- .debug_info    0x0000b3b3     0x1323 ./Core/Src/vibecheck_accel.o
- .debug_info    0x0000c6d6      0xece ./Core/Src/vibecheck_accel_handler.o
- .debug_info    0x0000d5a4      0xd17 ./Core/Src/vibecheck_rgb.o
- .debug_info    0x0000e2bb      0xcad ./Core/Src/vibecheck_rgb_handler.o
+ .debug_info    0x0000b3b3      0xd17 ./Core/Src/vibecheck_rgb.o
+ .debug_info    0x0000c0ca      0xcad ./Core/Src/vibecheck_rgb_handler.o
+ .debug_info    0x0000cd77     0x1323 ./Core/Src/vibecheck_sensor.o
+ .debug_info    0x0000e09a      0xece ./Core/Src/vibecheck_sensor_handler.o
  .debug_info    0x0000ef68      0x847 ./Core/Src/vibecheck_shell.o
  .debug_info    0x0000f7af      0xa32 ./Core/Src/vibecheck_strobe.o
  .debug_info    0x000101e1      0xbfb ./Core/Src/vibecheck_strobe_handler.o
@@ -12931,10 +12931,10 @@ LOAD C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.
  .debug_abbrev  0x00000e09       0xbc ./Core/Src/sysmem.o
  .debug_abbrev  0x00000ec5      0x13a ./Core/Src/system_stm32h7xx.o
  .debug_abbrev  0x00000fff      0x23b ./Core/Src/vibecheck.o
- .debug_abbrev  0x0000123a      0x2e9 ./Core/Src/vibecheck_accel.o
- .debug_abbrev  0x00001523      0x21f ./Core/Src/vibecheck_accel_handler.o
- .debug_abbrev  0x00001742      0x289 ./Core/Src/vibecheck_rgb.o
- .debug_abbrev  0x000019cb      0x21e ./Core/Src/vibecheck_rgb_handler.o
+ .debug_abbrev  0x0000123a      0x289 ./Core/Src/vibecheck_rgb.o
+ .debug_abbrev  0x000014c3      0x21e ./Core/Src/vibecheck_rgb_handler.o
+ .debug_abbrev  0x000016e1      0x2e9 ./Core/Src/vibecheck_sensor.o
+ .debug_abbrev  0x000019ca      0x21f ./Core/Src/vibecheck_sensor_handler.o
  .debug_abbrev  0x00001be9      0x27b ./Core/Src/vibecheck_shell.o
  .debug_abbrev  0x00001e64      0x1ce ./Core/Src/vibecheck_strobe.o
  .debug_abbrev  0x00002032      0x248 ./Core/Src/vibecheck_strobe_handler.o
@@ -12993,13 +12993,13 @@ LOAD C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.
  .debug_aranges
                 0x000003f0       0x28 ./Core/Src/vibecheck.o
  .debug_aranges
-                0x00000418       0xd0 ./Core/Src/vibecheck_accel.o
+                0x00000418       0x78 ./Core/Src/vibecheck_rgb.o
  .debug_aranges
-                0x000004e8       0x30 ./Core/Src/vibecheck_accel_handler.o
+                0x00000490       0x20 ./Core/Src/vibecheck_rgb_handler.o
  .debug_aranges
-                0x00000518       0x78 ./Core/Src/vibecheck_rgb.o
+                0x000004b0       0xd0 ./Core/Src/vibecheck_sensor.o
  .debug_aranges
-                0x00000590       0x20 ./Core/Src/vibecheck_rgb_handler.o
+                0x00000580       0x30 ./Core/Src/vibecheck_sensor_handler.o
  .debug_aranges
                 0x000005b0       0x88 ./Core/Src/vibecheck_shell.o
  .debug_aranges
@@ -13094,13 +13094,13 @@ LOAD C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.
  .debug_rnglists
                 0x000002e8       0x1a ./Core/Src/vibecheck.o
  .debug_rnglists
-                0x00000302       0x9d ./Core/Src/vibecheck_accel.o
+                0x00000302       0x57 ./Core/Src/vibecheck_rgb.o
  .debug_rnglists
-                0x0000039f       0x22 ./Core/Src/vibecheck_accel_handler.o
+                0x00000359       0x14 ./Core/Src/vibecheck_rgb_handler.o
  .debug_rnglists
-                0x000003c1       0x57 ./Core/Src/vibecheck_rgb.o
+                0x0000036d       0x9d ./Core/Src/vibecheck_sensor.o
  .debug_rnglists
-                0x00000418       0x14 ./Core/Src/vibecheck_rgb_handler.o
+                0x0000040a       0x22 ./Core/Src/vibecheck_sensor_handler.o
  .debug_rnglists
                 0x0000042c       0x8e ./Core/Src/vibecheck_shell.o
  .debug_rnglists
@@ -13172,7 +13172,7 @@ LOAD C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.
  .debug_rnglists
                 0x00001eca       0xc9 ./USB_DEVICE/Target/usbd_conf.o
 
-.debug_macro    0x00000000    0x3e4f9
+.debug_macro    0x00000000    0x3e375
  .debug_macro   0x00000000      0x349 ./Core/Src/LSM6DS3.o
  .debug_macro   0x00000349      0xacc ./Core/Src/LSM6DS3.o
  .debug_macro   0x00000e15      0x250 ./Core/Src/LSM6DS3.o
@@ -13248,260 +13248,259 @@ LOAD C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.
  .debug_macro   0x000329f2      0x1ac ./Core/Src/LSM6DS3.o
  .debug_macro   0x00032b9e      0x184 ./Core/Src/LSM6DS3.o
  .debug_macro   0x00032d22       0xc7 ./Core/Src/fast_spi.o
- .debug_macro   0x00032de9      0x4d5 ./Core/Src/main.o
- .debug_macro   0x000332be       0x1c ./Core/Src/main.o
- .debug_macro   0x000332da       0x35 ./Core/Src/main.o
- .debug_macro   0x0003330f       0x10 ./Core/Src/main.o
- .debug_macro   0x0003331f       0x1c ./Core/Src/main.o
- .debug_macro   0x0003333b       0x16 ./Core/Src/main.o
- .debug_macro   0x00033351      0x146 ./Core/Src/main.o
- .debug_macro   0x00033497       0x16 ./Core/Src/main.o
- .debug_macro   0x000334ad       0x16 ./Core/Src/main.o
- .debug_macro   0x000334c3       0x29 ./Core/Src/main.o
- .debug_macro   0x000334ec       0x16 ./Core/Src/main.o
- .debug_macro   0x00033502       0x20 ./Core/Src/main.o
- .debug_macro   0x00033522       0x65 ./Core/Src/main.o
- .debug_macro   0x00033587      0x20f ./Core/Src/main.o
- .debug_macro   0x00033796      0x11f ./Core/Src/main.o
- .debug_macro   0x000338b5       0x28 ./Core/Src/main.o
- .debug_macro   0x000338dd       0x34 ./Core/Src/main.o
- .debug_macro   0x00033911       0x3a ./Core/Src/main.o
- .debug_macro   0x0003394b       0x46 ./Core/Src/main.o
- .debug_macro   0x00033991      0x18a ./Core/Src/main.o
- .debug_macro   0x00033b1b       0x2e ./Core/Src/main.o
- .debug_macro   0x00033b49       0x95 ./Core/Src/main.o
- .debug_macro   0x00033bde       0x10 ./Core/Src/main.o
- .debug_macro   0x00033bee       0x76 ./Core/Src/sequencer.o
- .debug_macro   0x00033c64      0x32c ./Core/Src/stm32h7xx_hal_msp.o
- .debug_macro   0x00033f90      0x336 ./Core/Src/stm32h7xx_it.o
- .debug_macro   0x000342c6      0x274 ./Core/Src/syscalls.o
- .debug_macro   0x0003453a       0x5b ./Core/Src/syscalls.o
- .debug_macro   0x00034595       0x94 ./Core/Src/syscalls.o
- .debug_macro   0x00034629       0x57 ./Core/Src/syscalls.o
- .debug_macro   0x00034680       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x00034690       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x000346a0       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x000346b0       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x000346c0       0x1c ./Core/Src/syscalls.o
- .debug_macro   0x000346dc       0x52 ./Core/Src/syscalls.o
- .debug_macro   0x0003472e       0x22 ./Core/Src/syscalls.o
- .debug_macro   0x00034750       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x00034760       0x52 ./Core/Src/syscalls.o
- .debug_macro   0x000347b2       0xcf ./Core/Src/syscalls.o
- .debug_macro   0x00034881       0x1c ./Core/Src/syscalls.o
- .debug_macro   0x0003489d       0x3d ./Core/Src/syscalls.o
- .debug_macro   0x000348da       0x35 ./Core/Src/syscalls.o
- .debug_macro   0x0003490f      0x12c ./Core/Src/syscalls.o
- .debug_macro   0x00034a3b       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x00034a4b      0x242 ./Core/Src/syscalls.o
- .debug_macro   0x00034c8d       0x10 ./Core/Src/syscalls.o
- .debug_macro   0x00034c9d      0x18a ./Core/Src/syscalls.o
- .debug_macro   0x00034e27       0x16 ./Core/Src/syscalls.o
- .debug_macro   0x00034e3d       0xce ./Core/Src/syscalls.o
- .debug_macro   0x00034f0b       0xff ./Core/Src/sysmem.o
- .debug_macro   0x0003500a      0x23c ./Core/Src/sysmem.o
- .debug_macro   0x00035246      0x31d ./Core/Src/system_stm32h7xx.o
- .debug_macro   0x00035563      0x4d7 ./Core/Src/vibecheck.o
- .debug_macro   0x00035a3a       0x10 ./Core/Src/vibecheck.o
- .debug_macro   0x00035a4a       0x2e ./Core/Src/vibecheck.o
- .debug_macro   0x00035a78      0x1b2 ./Core/Src/vibecheck.o
- .debug_macro   0x00035c2a      0x382 ./Core/Src/vibecheck_accel.o
- .debug_macro   0x00035fac      0x408 ./Core/Src/vibecheck_accel_handler.o
- .debug_macro   0x000363b4      0x33a ./Core/Src/vibecheck_rgb.o
- .debug_macro   0x000366ee       0x40 ./Core/Src/vibecheck_rgb.o
- .debug_macro   0x0003672e      0x3f4 ./Core/Src/vibecheck_rgb_handler.o
- .debug_macro   0x00036b22      0x1b6 ./Core/Src/vibecheck_shell.o
- .debug_macro   0x00036cd8      0x32c ./Core/Src/vibecheck_strobe.o
- .debug_macro   0x00037004      0x3e6 ./Core/Src/vibecheck_strobe_handler.o
- .debug_macro   0x000373ea      0x349 ./Core/Src/vibecheck_wavegen.o
- .debug_macro   0x00037733      0x403 ./Core/Src/vibecheck_wavegen_handler.o
- .debug_macro   0x00037b36      0x347 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o
- .debug_macro   0x00037e7d      0x348 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.o
- .debug_macro   0x000381c5      0x329 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.o
- .debug_macro   0x000384ee      0x31d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.o
- .debug_macro   0x0003880b      0x325 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac.o
- .debug_macro   0x00038b30      0x323 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac_ex.o
- .debug_macro   0x00038e53      0x371 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.o
- .debug_macro   0x000391c4      0x324 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.o
- .debug_macro   0x000394e8      0x3e9 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.o
- .debug_macro   0x000398d1      0x31d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.o
- .debug_macro   0x00039bee      0x329 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd.o
- .debug_macro   0x00039f17      0x31d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd_ex.o
- .debug_macro   0x0003a234      0x356 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.o
- .debug_macro   0x0003a58a      0x341 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.o
- .debug_macro   0x0003a8cb      0x33b ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.o
- .debug_macro   0x0003ac06      0x325 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.o
- .debug_macro   0x0003af2b      0x31e ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o
- .debug_macro   0x0003b249      0x323 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o
- .debug_macro   0x0003b56c      0x348 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.o
- .debug_macro   0x0003b8b4      0x329 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.o
- .debug_macro   0x0003bbdd      0x31d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_usb.o
- .debug_macro   0x0003befa      0x423 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
- .debug_macro   0x0003c31d       0x16 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
- .debug_macro   0x0003c333       0x9e ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
- .debug_macro   0x0003c3d1      0x10b ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
- .debug_macro   0x0003c4dc       0x16 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
- .debug_macro   0x0003c4f2      0x40a ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
- .debug_macro   0x0003c8fc      0x215 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
- .debug_macro   0x0003cb11      0x414 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
- .debug_macro   0x0003cf25      0x410 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
- .debug_macro   0x0003d335      0x437 ./USB_DEVICE/App/usb_device.o
- .debug_macro   0x0003d76c       0x22 ./USB_DEVICE/App/usb_device.o
- .debug_macro   0x0003d78e       0x16 ./USB_DEVICE/App/usb_device.o
- .debug_macro   0x0003d7a4      0x4d1 ./USB_DEVICE/App/usbd_cdc_if.o
- .debug_macro   0x0003dc75      0x44d ./USB_DEVICE/App/usbd_desc.o
- .debug_macro   0x0003e0c2       0x1c ./USB_DEVICE/App/usbd_desc.o
- .debug_macro   0x0003e0de      0x41b ./USB_DEVICE/Target/usbd_conf.o
+ .debug_macro   0x00032de9      0x4db ./Core/Src/main.o
+ .debug_macro   0x000332c4       0x1c ./Core/Src/main.o
+ .debug_macro   0x000332e0       0x35 ./Core/Src/main.o
+ .debug_macro   0x00033315       0x10 ./Core/Src/main.o
+ .debug_macro   0x00033325       0x1c ./Core/Src/main.o
+ .debug_macro   0x00033341       0x16 ./Core/Src/main.o
+ .debug_macro   0x00033357      0x146 ./Core/Src/main.o
+ .debug_macro   0x0003349d       0x16 ./Core/Src/main.o
+ .debug_macro   0x000334b3       0x16 ./Core/Src/main.o
+ .debug_macro   0x000334c9       0x29 ./Core/Src/main.o
+ .debug_macro   0x000334f2       0x16 ./Core/Src/main.o
+ .debug_macro   0x00033508       0x20 ./Core/Src/main.o
+ .debug_macro   0x00033528       0x65 ./Core/Src/main.o
+ .debug_macro   0x0003358d      0x20f ./Core/Src/main.o
+ .debug_macro   0x0003379c       0x2e ./Core/Src/main.o
+ .debug_macro   0x000337ca      0x11f ./Core/Src/main.o
+ .debug_macro   0x000338e9       0x28 ./Core/Src/main.o
+ .debug_macro   0x00033911       0x34 ./Core/Src/main.o
+ .debug_macro   0x00033945       0x3a ./Core/Src/main.o
+ .debug_macro   0x0003397f       0x46 ./Core/Src/main.o
+ .debug_macro   0x000339c5       0x95 ./Core/Src/main.o
+ .debug_macro   0x00033a5a       0x10 ./Core/Src/main.o
+ .debug_macro   0x00033a6a       0x76 ./Core/Src/sequencer.o
+ .debug_macro   0x00033ae0      0x32c ./Core/Src/stm32h7xx_hal_msp.o
+ .debug_macro   0x00033e0c      0x336 ./Core/Src/stm32h7xx_it.o
+ .debug_macro   0x00034142      0x274 ./Core/Src/syscalls.o
+ .debug_macro   0x000343b6       0x5b ./Core/Src/syscalls.o
+ .debug_macro   0x00034411       0x94 ./Core/Src/syscalls.o
+ .debug_macro   0x000344a5       0x57 ./Core/Src/syscalls.o
+ .debug_macro   0x000344fc       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0003450c       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0003451c       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0003452c       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x0003453c       0x1c ./Core/Src/syscalls.o
+ .debug_macro   0x00034558       0x52 ./Core/Src/syscalls.o
+ .debug_macro   0x000345aa       0x22 ./Core/Src/syscalls.o
+ .debug_macro   0x000345cc       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x000345dc       0x52 ./Core/Src/syscalls.o
+ .debug_macro   0x0003462e       0xcf ./Core/Src/syscalls.o
+ .debug_macro   0x000346fd       0x1c ./Core/Src/syscalls.o
+ .debug_macro   0x00034719       0x3d ./Core/Src/syscalls.o
+ .debug_macro   0x00034756       0x35 ./Core/Src/syscalls.o
+ .debug_macro   0x0003478b      0x12c ./Core/Src/syscalls.o
+ .debug_macro   0x000348b7       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x000348c7      0x242 ./Core/Src/syscalls.o
+ .debug_macro   0x00034b09       0x10 ./Core/Src/syscalls.o
+ .debug_macro   0x00034b19      0x18a ./Core/Src/syscalls.o
+ .debug_macro   0x00034ca3       0x16 ./Core/Src/syscalls.o
+ .debug_macro   0x00034cb9       0xce ./Core/Src/syscalls.o
+ .debug_macro   0x00034d87       0xff ./Core/Src/sysmem.o
+ .debug_macro   0x00034e86      0x23c ./Core/Src/sysmem.o
+ .debug_macro   0x000350c2      0x31d ./Core/Src/system_stm32h7xx.o
+ .debug_macro   0x000353df      0x4d1 ./Core/Src/vibecheck.o
+ .debug_macro   0x000358b0      0x1b2 ./Core/Src/vibecheck.o
+ .debug_macro   0x00035a62      0x33a ./Core/Src/vibecheck_rgb.o
+ .debug_macro   0x00035d9c       0x40 ./Core/Src/vibecheck_rgb.o
+ .debug_macro   0x00035ddc      0x3f4 ./Core/Src/vibecheck_rgb_handler.o
+ .debug_macro   0x000361d0      0x382 ./Core/Src/vibecheck_sensor.o
+ .debug_macro   0x00036552      0x408 ./Core/Src/vibecheck_sensor_handler.o
+ .debug_macro   0x0003695a      0x1b6 ./Core/Src/vibecheck_shell.o
+ .debug_macro   0x00036b10       0x10 ./Core/Src/vibecheck_shell.o
+ .debug_macro   0x00036b20      0x32c ./Core/Src/vibecheck_strobe.o
+ .debug_macro   0x00036e4c       0x2e ./Core/Src/vibecheck_strobe.o
+ .debug_macro   0x00036e7a      0x3e6 ./Core/Src/vibecheck_strobe_handler.o
+ .debug_macro   0x00037260      0x349 ./Core/Src/vibecheck_wavegen.o
+ .debug_macro   0x000375a9      0x403 ./Core/Src/vibecheck_wavegen_handler.o
+ .debug_macro   0x000379ac      0x347 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o
+ .debug_macro   0x00037cf3      0x348 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.o
+ .debug_macro   0x0003803b      0x329 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.o
+ .debug_macro   0x00038364      0x31d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.o
+ .debug_macro   0x00038681      0x325 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac.o
+ .debug_macro   0x000389a6      0x323 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac_ex.o
+ .debug_macro   0x00038cc9      0x371 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.o
+ .debug_macro   0x0003903a      0x324 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.o
+ .debug_macro   0x0003935e      0x3e9 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.o
+ .debug_macro   0x00039747      0x31d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.o
+ .debug_macro   0x00039a64      0x329 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd.o
+ .debug_macro   0x00039d8d      0x31d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd_ex.o
+ .debug_macro   0x0003a0aa      0x356 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.o
+ .debug_macro   0x0003a400      0x341 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.o
+ .debug_macro   0x0003a741      0x33b ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.o
+ .debug_macro   0x0003aa7c      0x325 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.o
+ .debug_macro   0x0003ada1      0x31e ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o
+ .debug_macro   0x0003b0bf      0x323 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o
+ .debug_macro   0x0003b3e2      0x348 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.o
+ .debug_macro   0x0003b72a      0x329 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.o
+ .debug_macro   0x0003ba53      0x31d ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_usb.o
+ .debug_macro   0x0003bd70      0x423 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ .debug_macro   0x0003c193       0x16 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ .debug_macro   0x0003c1a9       0x9e ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ .debug_macro   0x0003c247      0x10b ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ .debug_macro   0x0003c352       0x16 ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ .debug_macro   0x0003c368      0x40a ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+ .debug_macro   0x0003c772      0x215 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+ .debug_macro   0x0003c987      0x414 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+ .debug_macro   0x0003cd9b      0x410 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+ .debug_macro   0x0003d1ab      0x437 ./USB_DEVICE/App/usb_device.o
+ .debug_macro   0x0003d5e2       0x22 ./USB_DEVICE/App/usb_device.o
+ .debug_macro   0x0003d604       0x16 ./USB_DEVICE/App/usb_device.o
+ .debug_macro   0x0003d61a      0x4d7 ./USB_DEVICE/App/usbd_cdc_if.o
+ .debug_macro   0x0003daf1      0x44d ./USB_DEVICE/App/usbd_desc.o
+ .debug_macro   0x0003df3e       0x1c ./USB_DEVICE/App/usbd_desc.o
+ .debug_macro   0x0003df5a      0x41b ./USB_DEVICE/Target/usbd_conf.o
 
-.debug_line     0x00000000    0x3e611
+.debug_line     0x00000000    0x3e61e
  .debug_line    0x00000000      0xe6c ./Core/Src/LSM6DS3.o
  .debug_line    0x00000e6c      0x595 ./Core/Src/fast_spi.o
- .debug_line    0x00001401     0x149f ./Core/Src/main.o
- .debug_line    0x000028a0      0x514 ./Core/Src/sequencer.o
- .debug_line    0x00002db4      0xeeb ./Core/Src/stm32h7xx_hal_msp.o
- .debug_line    0x00003c9f      0xc7d ./Core/Src/stm32h7xx_it.o
- .debug_line    0x0000491c      0xa61 ./Core/Src/syscalls.o
- .debug_line    0x0000537d      0x678 ./Core/Src/sysmem.o
- .debug_line    0x000059f5      0xc7a ./Core/Src/system_stm32h7xx.o
- .debug_line    0x0000666f      0xdf7 ./Core/Src/vibecheck.o
- .debug_line    0x00007466     0x106b ./Core/Src/vibecheck_accel.o
- .debug_line    0x000084d1      0xc88 ./Core/Src/vibecheck_accel_handler.o
- .debug_line    0x00009159      0xdb8 ./Core/Src/vibecheck_rgb.o
- .debug_line    0x00009f11      0xc16 ./Core/Src/vibecheck_rgb_handler.o
- .debug_line    0x0000ab27      0xad9 ./Core/Src/vibecheck_shell.o
- .debug_line    0x0000b600      0xcb5 ./Core/Src/vibecheck_strobe.o
- .debug_line    0x0000c2b5      0xc85 ./Core/Src/vibecheck_strobe_handler.o
- .debug_line    0x0000cf3a      0xfa4 ./Core/Src/vibecheck_wavegen.o
- .debug_line    0x0000dede      0xd45 ./Core/Src/vibecheck_wavegen_handler.o
- .debug_line    0x0000ec23       0x7a ./Core/Startup/startup_stm32h723vgtx.o
- .debug_line    0x0000ec9d     0x110b ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o
- .debug_line    0x0000fda8     0x29c6 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.o
- .debug_line    0x0001276e     0x249c ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.o
- .debug_line    0x00014c0a     0x10a9 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.o
- .debug_line    0x00015cb3      0xfca ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac.o
- .debug_line    0x00016c7d      0xf7e ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac_ex.o
- .debug_line    0x00017bfb     0x29e0 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.o
- .debug_line    0x0001a5db      0xf3e ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.o
- .debug_line    0x0001b519     0x40e6 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.o
- .debug_line    0x0001f5ff      0xce7 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.o
- .debug_line    0x000202e6     0x1895 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd.o
- .debug_line    0x00021b7b      0xcd7 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd_ex.o
- .debug_line    0x00022852     0x10f8 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.o
- .debug_line    0x0002394a     0x15a1 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.o
- .debug_line    0x00024eeb     0x1e70 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.o
- .debug_line    0x00026d5b     0x259a ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.o
- .debug_line    0x000292f5     0x429c ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o
- .debug_line    0x0002d591     0x216e ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o
- .debug_line    0x0002f6ff     0x4167 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.o
- .debug_line    0x00033866     0x1118 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.o
- .debug_line    0x0003497e     0x215b ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_usb.o
- .debug_line    0x00036ad9     0x111e ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
- .debug_line    0x00037bf7     0x1198 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
- .debug_line    0x00038d8f     0x13c5 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
- .debug_line    0x0003a154      0xcb2 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
- .debug_line    0x0003ae06      0xc71 ./USB_DEVICE/App/usb_device.o
- .debug_line    0x0003ba77      0xdf1 ./USB_DEVICE/App/usbd_cdc_if.o
- .debug_line    0x0003c868      0xd52 ./USB_DEVICE/App/usbd_desc.o
- .debug_line    0x0003d5ba     0x1057 ./USB_DEVICE/Target/usbd_conf.o
+ .debug_line    0x00001401     0x14a1 ./Core/Src/main.o
+ .debug_line    0x000028a2      0x514 ./Core/Src/sequencer.o
+ .debug_line    0x00002db6      0xeeb ./Core/Src/stm32h7xx_hal_msp.o
+ .debug_line    0x00003ca1      0xc7d ./Core/Src/stm32h7xx_it.o
+ .debug_line    0x0000491e      0xa61 ./Core/Src/syscalls.o
+ .debug_line    0x0000537f      0x678 ./Core/Src/sysmem.o
+ .debug_line    0x000059f7      0xc7a ./Core/Src/system_stm32h7xx.o
+ .debug_line    0x00006671      0xdf9 ./Core/Src/vibecheck.o
+ .debug_line    0x0000746a      0xdb8 ./Core/Src/vibecheck_rgb.o
+ .debug_line    0x00008222      0xc16 ./Core/Src/vibecheck_rgb_handler.o
+ .debug_line    0x00008e38     0x106f ./Core/Src/vibecheck_sensor.o
+ .debug_line    0x00009ea7      0xc8b ./Core/Src/vibecheck_sensor_handler.o
+ .debug_line    0x0000ab32      0xad9 ./Core/Src/vibecheck_shell.o
+ .debug_line    0x0000b60b      0xcb5 ./Core/Src/vibecheck_strobe.o
+ .debug_line    0x0000c2c0      0xc85 ./Core/Src/vibecheck_strobe_handler.o
+ .debug_line    0x0000cf45      0xfa4 ./Core/Src/vibecheck_wavegen.o
+ .debug_line    0x0000dee9      0xd45 ./Core/Src/vibecheck_wavegen_handler.o
+ .debug_line    0x0000ec2e       0x7a ./Core/Startup/startup_stm32h723vgtx.o
+ .debug_line    0x0000eca8     0x110b ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o
+ .debug_line    0x0000fdb3     0x29c6 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.o
+ .debug_line    0x00012779     0x249c ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.o
+ .debug_line    0x00014c15     0x10a9 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.o
+ .debug_line    0x00015cbe      0xfca ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac.o
+ .debug_line    0x00016c88      0xf7e ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac_ex.o
+ .debug_line    0x00017c06     0x29e0 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.o
+ .debug_line    0x0001a5e6      0xf3e ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.o
+ .debug_line    0x0001b524     0x40e6 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.o
+ .debug_line    0x0001f60a      0xce7 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.o
+ .debug_line    0x000202f1     0x1895 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd.o
+ .debug_line    0x00021b86      0xcd7 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd_ex.o
+ .debug_line    0x0002285d     0x10f8 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.o
+ .debug_line    0x00023955     0x15a1 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.o
+ .debug_line    0x00024ef6     0x1e70 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.o
+ .debug_line    0x00026d66     0x259a ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.o
+ .debug_line    0x00029300     0x429c ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o
+ .debug_line    0x0002d59c     0x216e ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o
+ .debug_line    0x0002f70a     0x4167 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.o
+ .debug_line    0x00033871     0x1118 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.o
+ .debug_line    0x00034989     0x215b ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_usb.o
+ .debug_line    0x00036ae4     0x111e ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ .debug_line    0x00037c02     0x1198 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+ .debug_line    0x00038d9a     0x13c5 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+ .debug_line    0x0003a15f      0xcb2 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+ .debug_line    0x0003ae11      0xc71 ./USB_DEVICE/App/usb_device.o
+ .debug_line    0x0003ba82      0xdf3 ./USB_DEVICE/App/usbd_cdc_if.o
+ .debug_line    0x0003c875      0xd52 ./USB_DEVICE/App/usbd_desc.o
+ .debug_line    0x0003d5c7     0x1057 ./USB_DEVICE/Target/usbd_conf.o
 
-.debug_str      0x00000000   0x172ce3
+.debug_str      0x00000000   0x172d12
  .debug_str     0x00000000   0x161e6e ./Core/Src/LSM6DS3.o
                              0x1625aa (size before relaxing)
  .debug_str     0x00161e6e       0x17 ./Core/Src/fast_spi.o
                               0xcdd90 (size before relaxing)
- .debug_str     0x00161e85     0x4804 ./Core/Src/main.o
-                             0x166fb4 (size before relaxing)
- .debug_str     0x00166689       0x81 ./Core/Src/sequencer.o
+ .debug_str     0x00161e85     0x4815 ./Core/Src/main.o
+                             0x166fc5 (size before relaxing)
+ .debug_str     0x0016669a       0x81 ./Core/Src/sequencer.o
                                0x41c2 (size before relaxing)
- .debug_str     0x0016670a      0x190 ./Core/Src/stm32h7xx_hal_msp.o
+ .debug_str     0x0016671b      0x190 ./Core/Src/stm32h7xx_hal_msp.o
                              0x1636ab (size before relaxing)
- .debug_str     0x0016689a      0x59d ./Core/Src/stm32h7xx_it.o
+ .debug_str     0x001668ab      0x59d ./Core/Src/stm32h7xx_it.o
                              0x162112 (size before relaxing)
- .debug_str     0x00166e37     0x1fbc ./Core/Src/syscalls.o
+ .debug_str     0x00166e48     0x1fbc ./Core/Src/syscalls.o
                                0x990c (size before relaxing)
- .debug_str     0x00168df3       0x6b ./Core/Src/sysmem.o
+ .debug_str     0x00168e04       0x6b ./Core/Src/sysmem.o
                                0x6124 (size before relaxing)
- .debug_str     0x00168e5e      0x2a4 ./Core/Src/system_stm32h7xx.o
+ .debug_str     0x00168e6f      0x2a4 ./Core/Src/system_stm32h7xx.o
                              0x161215 (size before relaxing)
- .debug_str     0x00169102      0x589 ./Core/Src/vibecheck.o
-                             0x16557b (size before relaxing)
- .debug_str     0x0016968b      0x2ae ./Core/Src/vibecheck_accel.o
-                             0x162a0f (size before relaxing)
- .debug_str     0x00169939       0xf4 ./Core/Src/vibecheck_accel_handler.o
-                             0x1638ca (size before relaxing)
- .debug_str     0x00169a2d      0x110 ./Core/Src/vibecheck_rgb.o
+ .debug_str     0x00169113      0x591 ./Core/Src/vibecheck.o
+                             0x165593 (size before relaxing)
+ .debug_str     0x001696a4      0x11c ./Core/Src/vibecheck_rgb.o
                              0x1617af (size before relaxing)
- .debug_str     0x00169b3d       0x48 ./Core/Src/vibecheck_rgb_handler.o
+ .debug_str     0x001697c0       0xeb ./Core/Src/vibecheck_rgb_handler.o
                              0x162907 (size before relaxing)
- .debug_str     0x00169b85       0x96 ./Core/Src/vibecheck_shell.o
+ .debug_str     0x001698ab      0x2b7 ./Core/Src/vibecheck_sensor.o
+                             0x162a36 (size before relaxing)
+ .debug_str     0x00169b62       0x52 ./Core/Src/vibecheck_sensor_handler.o
+                             0x1638e2 (size before relaxing)
+ .debug_str     0x00169bb4       0x96 ./Core/Src/vibecheck_shell.o
                                0x8739 (size before relaxing)
- .debug_str     0x00169c1b      0x143 ./Core/Src/vibecheck_strobe.o
+ .debug_str     0x00169c4a      0x143 ./Core/Src/vibecheck_strobe.o
                              0x1616a3 (size before relaxing)
- .debug_str     0x00169d5e       0x55 ./Core/Src/vibecheck_strobe_handler.o
+ .debug_str     0x00169d8d       0x55 ./Core/Src/vibecheck_strobe_handler.o
                              0x162870 (size before relaxing)
- .debug_str     0x00169db3      0x22d ./Core/Src/vibecheck_wavegen.o
+ .debug_str     0x00169de2      0x22d ./Core/Src/vibecheck_wavegen.o
                              0x162352 (size before relaxing)
- .debug_str     0x00169fe0       0x58 ./Core/Src/vibecheck_wavegen_handler.o
+ .debug_str     0x0016a00f       0x58 ./Core/Src/vibecheck_wavegen_handler.o
                              0x1633a7 (size before relaxing)
- .debug_str     0x0016a038       0x44 ./Core/Startup/startup_stm32h723vgtx.o
+ .debug_str     0x0016a067       0x44 ./Core/Startup/startup_stm32h723vgtx.o
                                  0x8e (size before relaxing)
- .debug_str     0x0016a07c      0x985 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o
+ .debug_str     0x0016a0ab      0x985 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal.o
                              0x16229f (size before relaxing)
- .debug_str     0x0016aa01      0xca6 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.o
+ .debug_str     0x0016aa30      0xca6 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc.o
                              0x1622a6 (size before relaxing)
- .debug_str     0x0016b6a7      0x7d8 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.o
+ .debug_str     0x0016b6d6      0x7d8 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_adc_ex.o
                              0x1621c6 (size before relaxing)
- .debug_str     0x0016be7f      0x2af ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.o
+ .debug_str     0x0016beae      0x2af ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_cortex.o
                              0x161bb9 (size before relaxing)
- .debug_str     0x0016c12e      0x1e0 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac.o
+ .debug_str     0x0016c15d      0x1e0 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac.o
                              0x161551 (size before relaxing)
- .debug_str     0x0016c30e      0x1fd ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac_ex.o
+ .debug_str     0x0016c33d      0x1fd ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dac_ex.o
                              0x161589 (size before relaxing)
- .debug_str     0x0016c50b      0x883 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.o
+ .debug_str     0x0016c53a      0x883 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_dma.o
                              0x1619ca (size before relaxing)
- .debug_str     0x0016cd8e       0xa2 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.o
+ .debug_str     0x0016cdbd       0xa2 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_gpio.o
                              0x161260 (size before relaxing)
- .debug_str     0x0016ce30      0xdb5 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.o
+ .debug_str     0x0016ce5f      0xdb5 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c.o
                              0x1622f6 (size before relaxing)
- .debug_str     0x0016dbe5       0xb8 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.o
+ .debug_str     0x0016dc14       0xb8 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_i2c_ex.o
                              0x1616a5 (size before relaxing)
- .debug_str     0x0016dc9d      0x826 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd.o
+ .debug_str     0x0016dccc      0x826 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd.o
                              0x161a12 (size before relaxing)
- .debug_str     0x0016e4c3      0x16f ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd_ex.o
+ .debug_str     0x0016e4f2      0x16f ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pcd_ex.o
                              0x1613b0 (size before relaxing)
- .debug_str     0x0016e632      0x5d0 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.o
+ .debug_str     0x0016e661      0x5d0 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_pwr_ex.o
                              0x161668 (size before relaxing)
- .debug_str     0x0016ec02      0x21a ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.o
+ .debug_str     0x0016ec31      0x21a ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc.o
                              0x1615e3 (size before relaxing)
- .debug_str     0x0016ee1c      0x61e ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.o
+ .debug_str     0x0016ee4b      0x61e ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_rcc_ex.o
                              0x161afb (size before relaxing)
- .debug_str     0x0016f43a      0x4f5 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.o
+ .debug_str     0x0016f469      0x4f5 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_spi.o
                              0x161966 (size before relaxing)
- .debug_str     0x0016f92f      0xd00 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o
+ .debug_str     0x0016f95e      0xd00 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim.o
                              0x1623e1 (size before relaxing)
- .debug_str     0x0017062f      0x5f6 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o
+ .debug_str     0x0017065e      0x5f6 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_tim_ex.o
                              0x161d8e (size before relaxing)
- .debug_str     0x00170c25      0x9d0 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.o
+ .debug_str     0x00170c54      0x9d0 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart.o
                              0x162183 (size before relaxing)
- .debug_str     0x001715f5      0x266 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.o
+ .debug_str     0x00171624      0x266 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_hal_uart_ex.o
                              0x161743 (size before relaxing)
- .debug_str     0x0017185b      0x4b0 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_usb.o
+ .debug_str     0x0017188a      0x4b0 ./Drivers/STM32H7xx_HAL_Driver/Src/stm32h7xx_ll_usb.o
                              0x16190c (size before relaxing)
- .debug_str     0x00171d0b      0x6bc ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
+ .debug_str     0x00171d3a      0x6bc ./Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.o
                              0x163606 (size before relaxing)
- .debug_str     0x001723c7      0x356 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
+ .debug_str     0x001723f6      0x356 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.o
                              0x162f14 (size before relaxing)
- .debug_str     0x0017271d      0x139 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
+ .debug_str     0x0017274c      0x139 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.o
                              0x162d3f (size before relaxing)
- .debug_str     0x00172856       0x51 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
+ .debug_str     0x00172885       0x51 ./Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.o
                              0x162c14 (size before relaxing)
- .debug_str     0x001728a7       0xc6 ./USB_DEVICE/App/usb_device.o
+ .debug_str     0x001728d6       0xc6 ./USB_DEVICE/App/usb_device.o
                              0x162fea (size before relaxing)
- .debug_str     0x0017296d       0x8a ./USB_DEVICE/App/usbd_cdc_if.o
-                             0x1655be (size before relaxing)
- .debug_str     0x001729f7      0x284 ./USB_DEVICE/App/usbd_desc.o
+ .debug_str     0x0017299c       0x8a ./USB_DEVICE/App/usbd_cdc_if.o
+                             0x1655ce (size before relaxing)
+ .debug_str     0x00172a26      0x284 ./USB_DEVICE/App/usbd_desc.o
                              0x162b2a (size before relaxing)
- .debug_str     0x00172c7b       0x68 ./USB_DEVICE/Target/usbd_conf.o
+ .debug_str     0x00172caa       0x68 ./USB_DEVICE/Target/usbd_conf.o
                              0x164617 (size before relaxing)
 
 .comment        0x00000000       0x43
@@ -13516,10 +13515,10 @@ LOAD C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.
  .comment       0x00000043       0x44 ./Core/Src/sysmem.o
  .comment       0x00000043       0x44 ./Core/Src/system_stm32h7xx.o
  .comment       0x00000043       0x44 ./Core/Src/vibecheck.o
- .comment       0x00000043       0x44 ./Core/Src/vibecheck_accel.o
- .comment       0x00000043       0x44 ./Core/Src/vibecheck_accel_handler.o
  .comment       0x00000043       0x44 ./Core/Src/vibecheck_rgb.o
  .comment       0x00000043       0x44 ./Core/Src/vibecheck_rgb_handler.o
+ .comment       0x00000043       0x44 ./Core/Src/vibecheck_sensor.o
+ .comment       0x00000043       0x44 ./Core/Src/vibecheck_sensor_handler.o
  .comment       0x00000043       0x44 ./Core/Src/vibecheck_shell.o
  .comment       0x00000043       0x44 ./Core/Src/vibecheck_strobe.o
  .comment       0x00000043       0x44 ./Core/Src/vibecheck_strobe_handler.o
@@ -13566,10 +13565,10 @@ LOAD C:/Program Files/STM32CubeIDE_1.13.2/STM32CubeIDE/plugins/com.st.stm32cube.
  .debug_frame   0x00000d54       0x34 ./Core/Src/sysmem.o
  .debug_frame   0x00000d88       0x58 ./Core/Src/system_stm32h7xx.o
  .debug_frame   0x00000de0       0x64 ./Core/Src/vibecheck.o
- .debug_frame   0x00000e44      0x384 ./Core/Src/vibecheck_accel.o
- .debug_frame   0x000011c8       0x7c ./Core/Src/vibecheck_accel_handler.o
- .debug_frame   0x00001244      0x1d4 ./Core/Src/vibecheck_rgb.o
- .debug_frame   0x00001418       0x38 ./Core/Src/vibecheck_rgb_handler.o
+ .debug_frame   0x00000e44      0x1d4 ./Core/Src/vibecheck_rgb.o
+ .debug_frame   0x00001018       0x38 ./Core/Src/vibecheck_rgb_handler.o
+ .debug_frame   0x00001050      0x384 ./Core/Src/vibecheck_sensor.o
+ .debug_frame   0x000013d4       0x7c ./Core/Src/vibecheck_sensor_handler.o
  .debug_frame   0x00001450      0x22c ./Core/Src/vibecheck_shell.o
  .debug_frame   0x0000167c      0x194 ./Core/Src/vibecheck_strobe.o
  .debug_frame   0x00001810       0x7c ./Core/Src/vibecheck_strobe_handler.o

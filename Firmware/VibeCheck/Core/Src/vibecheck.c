@@ -41,49 +41,49 @@ void VibeCheck_Init(VibeCheck* vc,
 			.obj = &vc->rgb
 	};
 
-	VibeCheckShell_InputHandler accel_cmd = {
-			.name = "accel",
-			.execute = VibeCheckAccelCMD_Execute,
-			.obj = &vc->accel
+	VibeCheckShell_InputHandler sensor_cmd = {
+			.name = "sensor",
+			.execute = VibeCheckSensorCMD_Execute,
+			.obj = &vc->sensor
 	};
 
 	VibeCheckShell_RegisterInputHandler(&vc->shell, strobe_cmd);
 	VibeCheckShell_RegisterInputHandler(&vc->shell, wavegen_cmd);
 	VibeCheckShell_RegisterInputHandler(&vc->shell, rgb_cmd);
-	VibeCheckShell_RegisterInputHandler(&vc->shell, accel_cmd);
+	VibeCheckShell_RegisterInputHandler(&vc->shell, sensor_cmd);
 
 	VibeCheckShell_OutputHandler wavegen_sender = {
 			.execute = VibeCheckWaveGenSender_Execute,
 			.obj = &vc->wavegen
 	};
 
-	VibeCheckShell_OutputHandler accel_data_sender = {
-			.execute = VibeCheckAccelSender_Data_Execute,
-			.obj = &vc->accel
+	VibeCheckShell_OutputHandler sensor_data_sender = {
+			.execute = VibeCheckSensorSender_Data_Execute,
+			.obj = &vc->sensor
 	};
 
-	VibeCheckShell_OutputHandler accel_status_sender = {
-			.execute = VibeCheckAccelSender_Status_Execute,
-			.obj = &vc->accel
+	VibeCheckShell_OutputHandler sensor_status_sender = {
+			.execute = VibeCheckSensorSender_Status_Execute,
+			.obj = &vc->sensor
 	};
 
 	VibeCheckShell_RegisterOutputHandler(&vc->shell, wavegen_sender);
-	VibeCheckShell_RegisterOutputHandler(&vc->shell, accel_data_sender);
-	VibeCheckShell_RegisterOutputHandler(&vc->shell, accel_status_sender);
+	VibeCheckShell_RegisterOutputHandler(&vc->shell, sensor_data_sender);
+	VibeCheckShell_RegisterOutputHandler(&vc->shell, sensor_status_sender);
 
 	VibeCheckStrobe_Init(&vc->strobe, htim_strobe);
 	VibeCheckWaveGen_Init(&vc->wavegen, hdac_wavegen, htim_wavegen);
 	VibeCheckRGB_Init(&vc->rgb, htim_rgb);
 	VibeCheckRGB_SetBaseSequence(&vc->rgb, base_sequence_times, base_sequence_colors, base_sequence_len);
 	VibeCheckRGB_SetTopSequence(&vc->rgb, top_sequence_times, top_sequence_colors, top_sequence_len);
-	VibeCheckAccel_Init(&vc->accel, hspi_accel0, hspi_accel1, hspi_accel2);
+	VibeCheckSensor_Init(&vc->sensor, hspi_accel0, hspi_accel1, hspi_accel2);
 }
 
 void VibeCheck_Loop(VibeCheck* vc)
 {
 	VibeCheckWaveGen_Update(&vc->wavegen);
 	VibeCheckRGB_Update(&vc->rgb);
-	VibeCheckAccel_Update(&vc->accel);
+	VibeCheckSensor_Update(&vc->sensor);
 
 	VibeCheckShell_Status shell_status = VibeCheckShell_Update(&vc->shell);
 

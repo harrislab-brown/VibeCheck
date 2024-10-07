@@ -1,3 +1,0 @@
-../Core/Src/vibecheck_accel_handler.c:10:10:VibeCheckAccelCMD_Execute	88	static
-../Core/Src/vibecheck_accel_handler.c:43:10:VibeCheckAccelSender_Data_Execute	32	static
-../Core/Src/vibecheck_accel_handler.c:82:10:VibeCheckAccelSender_Status_Execute	32	static

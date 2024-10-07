@@ -1,15 +1,15 @@
 /*
- * vibecheck_accel_handler.c
+ * vibecheck_sensor_handler.c
  *
  *  Created on: Sep 20, 2024
  *      Author: johnt
  */
 
-#include "vibecheck_accel_handler.h"
+#include "vibecheck_sensor_handler.h"
 
-uint32_t VibeCheckAccelCMD_Execute(void* obj, VibeCheckShell* shell)
+uint32_t VibeCheckSensorCMD_Execute(void* obj, VibeCheckShell* shell)
 {
-	VibeCheckAccel* accel = (VibeCheckAccel*)obj;
+	VibeCheckSensor* sensor = (VibeCheckSensor*)obj;
 
 	char str[VC_SHELL_MAX_TOKEN_LEN];
 	if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
@@ -20,14 +20,14 @@ uint32_t VibeCheckAccelCMD_Execute(void* obj, VibeCheckShell* shell)
 			{
 				if (!strcmp(str, "start"))
 				{
-					VibeCheckAccel_StartFakeData(accel);
+					VibeCheckSensor_StartFakeData(sensor);
 					VibeCheckShell_PutOutputString(shell, "ack");
 					VibeCheckShell_PutOutputDelimiter(shell);
 					return 1;
 				}
 				else if (!strcmp(str, "stop"))
 				{
-					VibeCheckAccel_StopFakeData(accel);
+					VibeCheckSensor_StopFakeData(sensor);
 					VibeCheckShell_PutOutputString(shell, "ack");
 					VibeCheckShell_PutOutputDelimiter(shell);
 					return 1;
@@ -40,19 +40,19 @@ uint32_t VibeCheckAccelCMD_Execute(void* obj, VibeCheckShell* shell)
 }
 
 
-uint32_t VibeCheckAccelSender_Data_Execute(void* obj, VibeCheckShell* shell)
+uint32_t VibeCheckSensorSender_Data_Execute(void* obj, VibeCheckShell* shell)
 {
-	VibeCheckAccel* accel = (VibeCheckAccel*)obj;
+	VibeCheckSensor* sensor = (VibeCheckSensor*)obj;
 
-	VibeCheckAccel_Data* data;
-	if (VibeCheckAccel_GetDataReady(accel, &data))
+	VibeCheckSensor_Data* data;
+	if (VibeCheckSensor_GetDataReady(sensor, &data))
 	{
 		VibeCheckShell_PutOutputString(shell, "data");
 		VibeCheckShell_PutOutputSeparator(shell);
-		VibeCheckShell_PutOutputInt(shell, VC_ACCEL_DATA_PER_PACKET);
+		VibeCheckShell_PutOutputInt(shell, VC_SENSOR_DATA_PER_PACKET);
 
 		uint32_t data_written = 0;
-		while (data_written < VC_ACCEL_DATA_PER_PACKET)
+		while (data_written < VC_SENSOR_DATA_PER_PACKET)
 		{
 			VibeCheckShell_PutOutputSeparator(shell);
 			VibeCheckShell_PutOutputInt(shell, data->id);
@@ -79,12 +79,12 @@ uint32_t VibeCheckAccelSender_Data_Execute(void* obj, VibeCheckShell* shell)
 }
 
 
-uint32_t VibeCheckAccelSender_Status_Execute(void* obj, VibeCheckShell* shell)
+uint32_t VibeCheckSensorSender_Status_Execute(void* obj, VibeCheckShell* shell)
 {
-	VibeCheckAccel* accel = (VibeCheckAccel*)obj;
+	VibeCheckSensor* sensor = (VibeCheckSensor*)obj;
 
 	uint32_t channel, is_connected;
-	if (VibeCheckAccel_ConnectionChanged(accel, &channel, &is_connected))
+	if (VibeCheckSensor_ConnectionChanged(sensor, &channel, &is_connected))
 	{
 		VibeCheckShell_PutOutputString(shell, "msg");
 		VibeCheckShell_PutOutputSeparator(shell);

@@ -112,7 +112,7 @@ void HAL_DAC_ConvCpltCallbackCh1(DAC_HandleTypeDef* hdac)
 
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
-	VibeCheckAccel_EXTICallback(&vc.accel, GPIO_Pin);
+	VibeCheckSensor_EXTICallback(&vc.sensor, GPIO_Pin);
 }
 
 /* USER CODE END 0 */
