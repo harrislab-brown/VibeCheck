@@ -42,7 +42,7 @@ Core/Src/vibecheck_accel_handler.o: ../Core/Src/vibecheck_accel_handler.c \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h \
  ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h \
- ../Core/Inc/vibecheck_shell.h
+ ../Core/Inc/LSM6DS3.h ../Core/Inc/main.h ../Core/Inc/vibecheck_shell.h
 ../Core/Inc/vibecheck_accel_handler.h:
 ../Core/Inc/vibecheck_accel.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal.h:
@@ -87,4 +87,6 @@ Core/Src/vibecheck_accel_handler.o: ../Core/Src/vibecheck_accel_handler.c \
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_ll_usb.h:
 ../Drivers/STM32H7xx_HAL_Driver/Inc/stm32h7xx_hal_pcd_ex.h:
+../Core/Inc/LSM6DS3.h:
+../Core/Inc/main.h:
 ../Core/Inc/vibecheck_shell.h:

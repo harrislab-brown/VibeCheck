@@ -15,6 +15,9 @@ void VibeCheck_Init(VibeCheck* vc,
 		DAC_HandleTypeDef* hdac_wavegen,
 		TIM_HandleTypeDef* htim_rgb)
 {
+
+	HAL_Delay(10);  /* wait for steady power so the RGB LEDs don't get into a weird state */
+
 	VibeCheckShell_Init(&vc->shell);  /* the shell is linked to the USB middle-ware in usbd_cdc_if.c */
 
 	VibeCheckShell_InputHandler strobe_cmd = {
@@ -78,7 +81,5 @@ void VibeCheck_Loop(VibeCheck* vc)
 	char* usb_tx;
 	uint32_t usb_tx_len;
 	if (VibeCheckShell_GetOutput(&vc->shell, &usb_tx, &usb_tx_len))
-	{
-		CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len);
-	}
+		while (CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len) != USBD_OK);  /* block until the USB transmission starts to make sure we send all data */
 }

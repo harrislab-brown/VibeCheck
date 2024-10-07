@@ -49,7 +49,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/main.h ../Core/Inc/sequencer.h \
  ../Core/Inc/vibecheck_wavegen_handler.h ../Core/Inc/vibecheck_rgb.h \
  ../Core/Inc/vibecheck_rgb_handler.h ../Core/Inc/vibecheck_accel.h \
- ../Core/Inc/vibecheck_accel_handler.h ../USB_DEVICE/App/usbd_cdc_if.h \
+ ../Core/Inc/LSM6DS3.h ../Core/Inc/vibecheck_accel_handler.h \
+ ../USB_DEVICE/App/usbd_cdc_if.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
@@ -113,6 +114,7 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/vibecheck_rgb.h:
 ../Core/Inc/vibecheck_rgb_handler.h:
 ../Core/Inc/vibecheck_accel.h:
+../Core/Inc/LSM6DS3.h:
 ../Core/Inc/vibecheck_accel_handler.h:
 ../USB_DEVICE/App/usbd_cdc_if.h:
 ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h:
