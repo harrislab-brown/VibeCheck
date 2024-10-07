@@ -22,6 +22,8 @@ void LSM6DS3_Init(LSM6DS3* sensor, LSM6DS3_Config* config, SPI_HandleTypeDef* sp
 	sensor->int1_pin = int1_pin;
 	sensor->int2_port = int2_port;
 	sensor->int2_pin = int2_pin;
+
+	HAL_GPIO_WritePin(cs_port, cs_pin, GPIO_PIN_SET);
 }
 
 
@@ -34,11 +36,12 @@ uint32_t LSM6DS3_TestCommunication(LSM6DS3* sensor)  /* check that the sensor is
 	return 0;
 }
 
-/* configure the sensor and start gathering data */
+/* configure the sensor */
 /* this should be called each time we change a sensor setting so the chip can be updated */
-void LSM6DS3_Enable(LSM6DS3* sensor)
+void LSM6DS3_Configure(LSM6DS3* sensor)
 {
-	LSM6DS3_Disable(sensor);  /* disable the sensor before messing with the parameters */
+	LSM6DS3_StopAccel(sensor);  /* disable the sensor before messing with the parameters */
+	LSM6DS3_StopGyro(sensor);
 
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_INT1_CTRL, 0x01);  /* INT1 set when accel data ready (p. 59) */
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_INT2_CTRL, 0x02);  /* INT2 set when gyro data ready (p. 60) */
@@ -48,15 +51,6 @@ void LSM6DS3_Enable(LSM6DS3* sensor)
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL8_XL, 0b00000000);  /* acceleration filters, configured to keep us on the LPF1 path (p. 67) */
 
 	LSM6DS3_WriteOffsets(sensor);
-	LSM6DS3_StartAccel(sensor);
-	LSM6DS3_StartGyro(sensor);
-}
-
-
-void LSM6DS3_Disable(LSM6DS3* sensor)
-{
-	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL1_XL, LSM6DS3_ACCEL_ODR_DISABLE);  /* power down accel. (p. 61) */
-	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL2_G, LSM6DS3_GYRO_ODR_DISABLE);  /* power down gyro. (p. 62) */
 }
 
 
@@ -205,6 +199,18 @@ void LSM6DS3_StartGyro(LSM6DS3* sensor)
 	}
 
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL2_G, (odr_data | range_data));
+}
+
+
+void LSM6DS3_StopAccel(LSM6DS3* sensor)
+{
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL1_XL, LSM6DS3_ACCEL_ODR_DISABLE);  /* power down accel. (p. 61) */
+}
+
+
+void LSM6DS3_StopGyro(LSM6DS3* sensor)
+{
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL2_G, LSM6DS3_GYRO_ODR_DISABLE);  /* power down gyro. (p. 62) */
 }
 
 

@@ -39,7 +39,10 @@ void VibeCheck_Init(VibeCheck* vc,
 		TIM_HandleTypeDef* htim_strobe,
 		TIM_HandleTypeDef* htim_wavegen,
 		DAC_HandleTypeDef* hdac_wavegen,
-		TIM_HandleTypeDef* htim_rgb);
+		TIM_HandleTypeDef* htim_rgb,
+		SPI_HandleTypeDef* hspi_accel0,
+		SPI_HandleTypeDef* hspi_accel1,
+		SPI_HandleTypeDef* hspi_accel2);
 
 void VibeCheck_Loop(VibeCheck* vc);
 

@@ -40,7 +40,7 @@ uint32_t VibeCheckAccelCMD_Execute(void* obj, VibeCheckShell* shell)
 }
 
 
-uint32_t VibeCheckAccelSender_Execute(void* obj, VibeCheckShell* shell)
+uint32_t VibeCheckAccelSender_Data_Execute(void* obj, VibeCheckShell* shell)
 {
 	VibeCheckAccel* accel = (VibeCheckAccel*)obj;
 
@@ -73,10 +73,36 @@ uint32_t VibeCheckAccelSender_Execute(void* obj, VibeCheckShell* shell)
 
 		return 1;
 	}
-	else
+
+	return 0;
+
+}
+
+
+uint32_t VibeCheckAccelSender_Status_Execute(void* obj, VibeCheckShell* shell)
+{
+	VibeCheckAccel* accel = (VibeCheckAccel*)obj;
+
+	uint32_t channel, is_connected;
+	if (VibeCheckAccel_ConnectionChanged(accel, &channel, &is_connected))
 	{
-		return 0;
+		VibeCheckShell_PutOutputString(shell, "msg");
+		VibeCheckShell_PutOutputSeparator(shell);
+		VibeCheckShell_PutOutputString(shell, "sensor");
+		VibeCheckShell_PutOutputSeparator(shell);
+		VibeCheckShell_PutOutputInt(shell, channel);
+		VibeCheckShell_PutOutputSeparator(shell);
+
+		if (is_connected)
+			VibeCheckShell_PutOutputString(shell, "connected");
+		else
+			VibeCheckShell_PutOutputString(shell, "disconnected");
+
+		VibeCheckShell_PutOutputDelimiter(shell);
+		return 1;
 	}
+
+	return 0;
 }
 
 

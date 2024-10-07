@@ -13,7 +13,10 @@ void VibeCheck_Init(VibeCheck* vc,
 		TIM_HandleTypeDef* htim_strobe,
 		TIM_HandleTypeDef* htim_wavegen,
 		DAC_HandleTypeDef* hdac_wavegen,
-		TIM_HandleTypeDef* htim_rgb)
+		TIM_HandleTypeDef* htim_rgb,
+		SPI_HandleTypeDef* hspi_accel0,
+		SPI_HandleTypeDef* hspi_accel1,
+		SPI_HandleTypeDef* hspi_accel2)
 {
 
 	HAL_Delay(10);  /* wait for steady power so the RGB LEDs don't get into a weird state */
@@ -54,20 +57,26 @@ void VibeCheck_Init(VibeCheck* vc,
 			.obj = &vc->wavegen
 	};
 
-	VibeCheckShell_OutputHandler accel_sender = {
-			.execute = VibeCheckAccelSender_Execute,
+	VibeCheckShell_OutputHandler accel_data_sender = {
+			.execute = VibeCheckAccelSender_Data_Execute,
+			.obj = &vc->accel
+	};
+
+	VibeCheckShell_OutputHandler accel_status_sender = {
+			.execute = VibeCheckAccelSender_Status_Execute,
 			.obj = &vc->accel
 	};
 
 	VibeCheckShell_RegisterOutputHandler(&vc->shell, wavegen_sender);
-	VibeCheckShell_RegisterOutputHandler(&vc->shell, accel_sender);
+	VibeCheckShell_RegisterOutputHandler(&vc->shell, accel_data_sender);
+	VibeCheckShell_RegisterOutputHandler(&vc->shell, accel_status_sender);
 
 	VibeCheckStrobe_Init(&vc->strobe, htim_strobe);
 	VibeCheckWaveGen_Init(&vc->wavegen, hdac_wavegen, htim_wavegen);
 	VibeCheckRGB_Init(&vc->rgb, htim_rgb);
 	VibeCheckRGB_SetBaseSequence(&vc->rgb, base_sequence_times, base_sequence_colors, base_sequence_len);
 	VibeCheckRGB_SetTopSequence(&vc->rgb, top_sequence_times, top_sequence_colors, top_sequence_len);
-	VibeCheckAccel_Init(&vc->accel);
+	VibeCheckAccel_Init(&vc->accel, hspi_accel0, hspi_accel1, hspi_accel2);
 }
 
 void VibeCheck_Loop(VibeCheck* vc)

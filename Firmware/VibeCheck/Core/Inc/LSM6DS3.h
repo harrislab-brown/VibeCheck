@@ -133,13 +133,13 @@ void LSM6DS3_Init(LSM6DS3* sensor, LSM6DS3_Config* config, SPI_HandleTypeDef* sp
 		GPIO_TypeDef* int2_port, uint16_t int2_pin);
 
 uint32_t LSM6DS3_TestCommunication(LSM6DS3* sensor);
-
-void LSM6DS3_Enable(LSM6DS3* sensor);
-void LSM6DS3_Disable(LSM6DS3* sensor);
+void LSM6DS3_Configure(LSM6DS3* sensor);
 
 void LSM6DS3_WriteOffsets(LSM6DS3* sensor);
 void LSM6DS3_StartAccel(LSM6DS3* sensor);
 void LSM6DS3_StartGyro(LSM6DS3* sensor);
+void LSM6DS3_StopAccel(LSM6DS3* sensor);
+void LSM6DS3_StopGyro(LSM6DS3* sensor);
 
 void LSM6DS3_ReadAccel(LSM6DS3* sensor, float* x, float* y, float * z);  /* get the acceleration in g */
 void LSM6DS3_ReadGyro(LSM6DS3* sensor, float* x, float* y, float * z);  /* get the rotation rate in degrees per second */
