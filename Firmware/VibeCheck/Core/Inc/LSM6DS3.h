@@ -57,20 +57,47 @@
 #define LSM6DS3_REG_Z_OFS_USR 		0x75
 
 /* register values */
-#define LSM6DS3_ODR_DISABLE 		0b00000000  /* CTRL1_XL register */
-
+#define LSM6DS3_ACCEL_ODR_DISABLE 0b00000000  /* CTRL1_XL register */
+#define LSM6DS3_ACCEL_ODR_13HZ    0b00010000
+#define LSM6DS3_ACCEL_ODR_26HZ    0b00100000
+#define LSM6DS3_ACCEL_ODR_52HZ    0b00110000
+#define LSM6DS3_ACCEL_ODR_104HZ   0b01000000
+#define LSM6DS3_ACCEL_ODR_208HZ   0b01010000
+#define LSM6DS3_ACCEL_ODR_416HZ   0b01100000
+#define LSM6DS3_ACCEL_ODR_833HZ   0b01110000
+#define LSM6DS3_ACCEL_ODR_1660HZ  0b10000000
+#define LSM6DS3_ACCEL_ODR_3330HZ  0b10010000
+#define LSM6DS3_ACCEL_ODR_6660HZ  0b10100000
 
 #define LSM6DS3_G_RANGE_2  			0b00000000  /* CTRL1_XL register */
 #define LSM6DS3_G_RANGE_4  			0b00001000
 #define LSM6DS3_G_RANGE_8  			0b00001100
 #define LSM6DS3_G_RANGE_16 			0b00000100
 
+#define LSM6DS3_GYRO_ODR_DISABLE 0b00000000  /* CTRL2_G register */
+#define LSM6DS3_GYRO_ODR_13HZ    0b00010000
+#define LSM6DS3_GYRO_ODR_26HZ    0b00100000
+#define LSM6DS3_GYRO_ODR_52HZ    0b00110000
+#define LSM6DS3_GYRO_ODR_104HZ   0b01000000
+#define LSM6DS3_GYRO_ODR_208HZ   0b01010000
+#define LSM6DS3_GYRO_ODR_416HZ   0b01100000
+#define LSM6DS3_GYRO_ODR_833HZ   0b01110000
+#define LSM6DS3_GYRO_ODR_1660HZ  0b10000000
+#define LSM6DS3_GYRO_ODR_3330HZ  0b10010000
+#define LSM6DS3_GYRO_ODR_6660HZ  0b10100000
+
+#define LSM6DS3_DPS_RANGE_125  0b00000010  /* CTRL2_G register */
+#define LSM6DS3_DPS_RANGE_245  0b00000000
+#define LSM6DS3_DPS_RANGE_500  0b00000100
+#define LSM6DS3_DPS_RANGE_1000 0b00001000
+#define LSM6DS3_DPS_RANGE_2000 0b00001100
+
 typedef struct
 {
 	/* disable the HPF, set the LPFs so everything is Nyquist frequency ODR/2, implement filters upstream if desired */
 	/* functions to put in user offset values, but calibration done through JavaScript UI */
 
-	float usr_offset_x, usr_offset_y, usr_offset_z;
+	float usr_offset_x, usr_offset_y, usr_offset_z;  /* DC offsets in g */
 
 	uint32_t accel_odr_hz;  /* 13, 26, 52, 104, 208, 416, 833, 1660, 3330, 6660 */
 	uint32_t g_range;  /* 2, 4, 8, or 16 */
@@ -110,7 +137,11 @@ uint32_t LSM6DS3_TestCommunication(LSM6DS3* sensor);
 void LSM6DS3_Enable(LSM6DS3* sensor);
 void LSM6DS3_Disable(LSM6DS3* sensor);
 
-void LSM6DS3_ReadAcceleration(LSM6DS3* sensor, float* x, float* y, float * z);  /* get the acceleration in g */
+void LSM6DS3_WriteOffsets(LSM6DS3* sensor);
+void LSM6DS3_StartAccel(LSM6DS3* sensor);
+void LSM6DS3_StartGyro(LSM6DS3* sensor);
+
+void LSM6DS3_ReadAccel(LSM6DS3* sensor, float* x, float* y, float * z);  /* get the acceleration in g */
 void LSM6DS3_ReadGyro(LSM6DS3* sensor, float* x, float* y, float * z);  /* get the rotation rate in degrees per second */
 
 HAL_StatusTypeDef LSM6DS3_ReadRegister(LSM6DS3* sensor, uint8_t reg, uint8_t* data);

@@ -34,55 +34,181 @@ uint32_t LSM6DS3_TestCommunication(LSM6DS3* sensor)  /* check that the sensor is
 	return 0;
 }
 
-
-void LSM6DS3_Enable(LSM6DS3* sensor)  /* configure the sensor and start gathering data */
+/* configure the sensor and start gathering data */
+/* this should be called each time we change a sensor setting so the chip can be updated */
+void LSM6DS3_Enable(LSM6DS3* sensor)
 {
+	LSM6DS3_Disable(sensor);  /* disable the sensor before messing with the parameters */
+
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_INT1_CTRL, 0x01);  /* INT1 set when accel data ready (p. 59) */
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_INT2_CTRL, 0x02);  /* INT2 set when gyro data ready (p. 60) */
-	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL4_C, 0b00000100);  /* disable the I2C interface, also disables the gyro LPF1 (p. 64)  TODO: handle the gyro LPF */
-	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL6_C, 0b00000000);  /* sets the user offset weights and the gyro LPF bandwidth (p. 66)  TODO: handle the gyro LPF */
-	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL7_G, 0b00000000);  /* handles gyro HPF (p. 67)  TODO: implement this in the configuration */
-	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL8_XL, 0b00000000);  /* acceleration filters (p. 67)  TODO: implement this in the configuration */
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL4_C, 0b00000100);  /* disable the I2C interface, also disables the gyro LPF1 (p. 64) */
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL6_C, 0b00000000);  /* sets the user offset weights to 2^(-10) g/LSB and the gyro LPF bandwidth (p. 66) */
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL7_G, 0b00000000);  /* disables the gyro HPF (p. 67) */
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL8_XL, 0b00000000);  /* acceleration filters, configured to keep us on the LPF1 path (p. 67) */
 
-	/* TODO: write the user offsets */
-
-	/* enable the sensor with the configured range (p. 32) */
-//	uint8_t range_data;
-//	switch(sensor->config->g_range)
-//	{
-//	case 2:
-//		range_data = LSM6DS3_G_RANGE_2;
-//		break;
-//	case 4:
-//		range_data = LSM6DS3_G_RANGE_4;
-//		break;
-//	case 8:
-//		range_data = LSM6DS3_G_RANGE_8;
-//		break;
-//	case 16:
-//		range_data = LSM6DS3_G_RANGE_16;
-//		break;
-//	default:
-//		range_data = LSM6DS3_G_RANGE_2;
-//		break;
-//	}
-//
-//	reg_data = (LSM6DS3_ODR_26667HZ | range_data);
-//	status = LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL1_XL, &reg_data);
-//	err_num += (status != HAL_OK);
-//
-//	return err_num;
+	LSM6DS3_WriteOffsets(sensor);
+	LSM6DS3_StartAccel(sensor);
+	LSM6DS3_StartGyro(sensor);
 }
 
 
 void LSM6DS3_Disable(LSM6DS3* sensor)
 {
-	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL1_XL, LSM6DS3_ODR_DISABLE);  /* power down accel. (p. 61) */
-	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL2_G, LSM6DS3_ODR_DISABLE);  /* power down gyro. (p. 62) */
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL1_XL, LSM6DS3_ACCEL_ODR_DISABLE);  /* power down accel. (p. 61) */
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL2_G, LSM6DS3_GYRO_ODR_DISABLE);  /* power down gyro. (p. 62) */
 }
 
 
-void LSM6DS3_ReadAcceleration(LSM6DS3* sensor, float* x, float* y, float * z)
+void LSM6DS3_WriteOffsets(LSM6DS3* sensor)
+{
+	/* x, y, z are the DC offsets of the sensor in g */
+	/* this function will write to the user offset registers of the accelerometer chip to correct the offset */
+	/* we assume the weight of the user offsets is 2^(-10) g/LSB */
+
+	int8_t x_b = (int8_t)(sensor->config->usr_offset_x / 0.0009765625f);
+	int8_t y_b = (int8_t)(sensor->config->usr_offset_y / 0.0009765625f);
+	int8_t z_b = (int8_t)(sensor->config->usr_offset_z / 0.0009765625f);
+
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_X_OFS_USR, x_b);
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_Y_OFS_USR, y_b);
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_Z_OFS_USR, z_b);
+}
+
+
+void LSM6DS3_StartAccel(LSM6DS3* sensor)
+{
+	uint8_t odr_data;
+	switch(sensor->config->accel_odr_hz)
+	{
+	case 13:
+		odr_data = LSM6DS3_ACCEL_ODR_13HZ;
+		break;
+	case 26:
+		odr_data = LSM6DS3_ACCEL_ODR_26HZ;
+		break;
+	case 52:
+		odr_data = LSM6DS3_ACCEL_ODR_52HZ;
+		break;
+	case 104:
+		odr_data = LSM6DS3_ACCEL_ODR_104HZ;
+		break;
+	case 208:
+		odr_data = LSM6DS3_ACCEL_ODR_208HZ;
+		break;
+	case 416:
+		odr_data = LSM6DS3_ACCEL_ODR_416HZ;
+		break;
+	case 833:
+		odr_data = LSM6DS3_ACCEL_ODR_833HZ;
+		break;
+	case 1660:
+		odr_data = LSM6DS3_ACCEL_ODR_1660HZ;
+		break;
+	case 3330:
+		odr_data = LSM6DS3_ACCEL_ODR_3330HZ;
+		break;
+	case 6660:
+		odr_data = LSM6DS3_ACCEL_ODR_6660HZ;
+		break;
+	default:
+		odr_data = LSM6DS3_ACCEL_ODR_DISABLE;
+		break;
+	}
+
+	uint8_t range_data;
+	switch(sensor->config->g_range)
+	{
+	case 2:
+		range_data = LSM6DS3_G_RANGE_2;
+		break;
+	case 4:
+		range_data = LSM6DS3_G_RANGE_4;
+		break;
+	case 8:
+		range_data = LSM6DS3_G_RANGE_8;
+		break;
+	case 16:
+		range_data = LSM6DS3_G_RANGE_16;
+		break;
+	default:
+		range_data = LSM6DS3_G_RANGE_2;
+		break;
+	}
+
+	/* this register also contains LPF1_BW_SEL, here we will set BW to ODR/2 */
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL1_XL, (odr_data | range_data));
+}
+
+
+void LSM6DS3_StartGyro(LSM6DS3* sensor)
+{
+	uint8_t odr_data;
+	switch(sensor->config->gyro_odr_hz)
+	{
+	case 13:
+		odr_data = LSM6DS3_GYRO_ODR_13HZ;
+		break;
+	case 26:
+		odr_data = LSM6DS3_GYRO_ODR_26HZ;
+		break;
+	case 52:
+		odr_data = LSM6DS3_GYRO_ODR_52HZ;
+		break;
+	case 104:
+		odr_data = LSM6DS3_GYRO_ODR_104HZ;
+		break;
+	case 208:
+		odr_data = LSM6DS3_GYRO_ODR_208HZ;
+		break;
+	case 416:
+		odr_data = LSM6DS3_GYRO_ODR_416HZ;
+		break;
+	case 833:
+		odr_data = LSM6DS3_GYRO_ODR_833HZ;
+		break;
+	case 1660:
+		odr_data = LSM6DS3_GYRO_ODR_1660HZ;
+		break;
+	case 3330:
+		odr_data = LSM6DS3_GYRO_ODR_3330HZ;
+		break;
+	case 6660:
+		odr_data = LSM6DS3_GYRO_ODR_6660HZ;
+		break;
+	default:
+		odr_data = LSM6DS3_GYRO_ODR_DISABLE;
+		break;
+	}
+
+	uint8_t range_data;
+	switch(sensor->config->dps_range)
+	{
+	case 125:
+		range_data = LSM6DS3_DPS_RANGE_125;
+		break;
+	case 245:
+		range_data = LSM6DS3_DPS_RANGE_245;
+		break;
+	case 500:
+		range_data = LSM6DS3_DPS_RANGE_500;
+		break;
+	case 1000:
+		range_data = LSM6DS3_DPS_RANGE_1000;
+		break;
+	case 2000:
+		range_data = LSM6DS3_DPS_RANGE_2000;
+		break;
+	default:
+		range_data = LSM6DS3_DPS_RANGE_245;
+		break;
+	}
+
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL2_G, (odr_data | range_data));
+}
+
+
+void LSM6DS3_ReadAccel(LSM6DS3* sensor, float* x, float* y, float * z)
 {
 	/* get the acceleration in g */
 
