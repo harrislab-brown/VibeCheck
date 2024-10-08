@@ -2,7 +2,7 @@
 
 import React, { createContext, useState, useContext, useCallback, ReactNode, useRef, useEffect } from 'react';
 import { SerialService } from '../services/SerialService';
-import { parseSerialData, DataPoint } from '../utils/dataParser';
+import { parseSerialData, DataPoint, Message } from '../utils/dataParser';
 
 interface SerialContextType {
   isConnected: boolean;
@@ -10,6 +10,8 @@ interface SerialContextType {
   disconnect: () => Promise<void>;
   sendData: (data: string) => Promise<void>;
   parsedData: DataPoint[];
+  event: Record<string, any>;
+  lastError: string | null;
 }
 
 const SerialContext = createContext<SerialContextType | undefined>(undefined);
@@ -18,18 +20,36 @@ interface SerialProviderProps {
   children: ReactNode;
 }
 
-const UPDATE_INTERVAL = 100; // Update every 100ms
+const UPDATE_INTERVAL = 50; // Update every 100ms
 
 export const SerialProvider: React.FC<SerialProviderProps> = ({ children }) => {
   const [isConnected, setIsConnected] = useState(false);
   const [parsedData, setParsedData] = useState<DataPoint[]>([]);
+  const [event, setEvent] = useState<Record<string, any>>({});
+  const [lastError, setLastError] = useState<string | null>(null);
   const serialService = useRef(new SerialService());
-  const dataBuffer = useRef<DataPoint[]>([]);
+  const dataBuffer = useRef<Message[]>([]);
 
   useEffect(() => {
     const intervalId = setInterval(() => {
       if (dataBuffer.current.length > 0) {
-        setParsedData(prevData => [...prevData, ...dataBuffer.current]);
+        const newDataPoints: DataPoint[] = [];
+        dataBuffer.current.forEach(message => {
+          switch (message.type) {
+            case 'data':
+              newDataPoints.push(...message.data);
+              break;
+            case 'event':
+              setEvent(prev => ({ ...prev, ...message.data }));
+              break;
+            case 'error':
+              setLastError(message.data);
+              break;
+          }
+        });
+        if (newDataPoints.length > 0) {
+          setParsedData(prevData => [...prevData, ...newDataPoints]);
+        }
         dataBuffer.current = [];
       }
     }, UPDATE_INTERVAL);
@@ -38,22 +58,28 @@ export const SerialProvider: React.FC<SerialProviderProps> = ({ children }) => {
   }, []);
 
   const connect = useCallback(async (baudRate: number) => {
-    await serialService.current.connect(baudRate);
-    setIsConnected(true);
-    serialService.current.readData(
-      (data) => {
-        const newDataPoints = parseSerialData(data);
-        dataBuffer.current.push(...newDataPoints);
-      },
-      (data) => {
-        console.log('Received serial data:', data);
-      }
-    );
+    try {
+      await serialService.current.connect(baudRate);
+      setIsConnected(true);
+      serialService.current.readData(
+        (data) => {
+          const messages = parseSerialData(data);
+          dataBuffer.current.push(...messages);
+        },
+        (data) => {
+          console.log('Received serial data:', data);
+        }
+      );
+    } catch (error) {
+      console.error('Failed to connect:', error);
+      setIsConnected(false);
+    }
   }, []);
 
   const disconnect = useCallback(async () => {
     await serialService.current.disconnect();
     setIsConnected(false);
+    dataBuffer.current = [];
   }, []);
 
   const sendData = useCallback(async (data: string) => {
@@ -66,6 +92,8 @@ export const SerialProvider: React.FC<SerialProviderProps> = ({ children }) => {
     disconnect,
     sendData,
     parsedData,
+    event,
+    lastError,
   };
 
   return <SerialContext.Provider value={value}>{children}</SerialContext.Provider>;

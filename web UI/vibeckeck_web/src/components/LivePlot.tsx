@@ -1,93 +1,137 @@
 // src/components/LivePlot.tsx
 
-import React, { useEffect, useState, useCallback } from 'react';
-import { XYPlot, LineSeries, XAxis, YAxis, HorizontalGridLines, VerticalGridLines, DiscreteColorLegend } from 'react-vis';
+import React, { useEffect, useState, useMemo } from 'react';
+import {
+  Chart as ChartJS,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend,
+  ChartOptions,
+  ChartData
+} from 'chart.js';
+import { Line } from 'react-chartjs-2';
 import '../styles/LivePlot.css';
 import { useSerial } from '../contexts/SerialContext';
 import { DataPoint } from '../utils/dataParser';
 
-// Make sure to import the react-vis CSS
-import 'react-vis/dist/style.css';
-
-const TIME_WINDOW = 2000; // 2 seconds in milliseconds
-const MAX_DATA_POINTS = 100; // Maximum number of data points to display per channel
+ChartJS.register(
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 interface LivePlotProps {}
 
 const colors = [
-  '#19CDD7', '#DDB27C', '#88572C', '#FF991F', '#F15C17', '#223F9A', '#DA70BF', '#125C77', '#4DC19C', '#776E57'
+  'rgb(75, 192, 192)', 'rgb(255, 99, 132)', 'rgb(54, 162, 235)',
+  'rgb(255, 206, 86)', 'rgb(153, 102, 255)', 'rgb(255, 159, 64)',
+  'rgb(0, 128, 0)', 'rgb(128, 0, 128)', 'rgb(128, 128, 0)'
 ];
 
 const LivePlot: React.FC<LivePlotProps> = () => {
   const { parsedData } = useSerial();
-  const [plotData, setPlotData] = useState<{ [key: string]: { x: number; y: number }[] }>({});
-  const [yDomain, setYDomain] = useState<[number, number]>([-1, 1]);
+  const [chartData, setChartData] = useState<ChartData<'line'>>({ datasets: [] });
+  const [xRange, setXRange] = useState({ min: 0, max: 1 });
 
-  const processData = useCallback((data: DataPoint[]) => {
-    const currentTime = data[data.length - 1]?.timestamp || 0;
-    const startTime = Math.max(currentTime - TIME_WINDOW, data[0]?.timestamp || 0);
-    
-    const newPlotData: { [key: string]: { x: number; y: number }[] } = {};
-    let minY = Infinity;
-    let maxY = -Infinity;
+  const processData = useMemo(() => {
+    return (data: DataPoint[]) => {
+      if (data.length === 0) return { datasets: [], xMin: 0, xMax: 1 };
 
-    data.forEach((dp) => {
-      if (dp.timestamp >= startTime) {
-        const key = `Channel ${dp.channel}`;
-        if (!newPlotData[key]) {
-          newPlotData[key] = [];
+      const channels = new Set(data.map(dp => dp.channel));
+      const xValues = data.map(dp => dp.timestamp);
+      const xMin = Math.min(...xValues);
+      const xMax = Math.max(...xValues);
+
+      const datasets = Array.from(channels).flatMap(channel => [
+        {
+          label: `Channel ${channel} - X`,
+          data: data
+            .filter(dp => dp.channel === channel)
+            .map(dp => ({ x: dp.timestamp, y: dp.x })),
+          borderColor: colors[(channel * 3) % colors.length],
+          backgroundColor: colors[(channel * 3) % colors.length],
+          tension: 0,
+          pointRadius: 1,
+          pointHoverRadius: 3,
+        },
+        {
+          label: `Channel ${channel} - Y`,
+          data: data
+            .filter(dp => dp.channel === channel)
+            .map(dp => ({ x: dp.timestamp, y: dp.y })),
+          borderColor: colors[(channel * 3 + 1) % colors.length],
+          backgroundColor: colors[(channel * 3 + 1) % colors.length],
+          tension: 0,
+          pointRadius: 1,
+          pointHoverRadius: 3,
+        },
+        {
+          label: `Channel ${channel} - Z`,
+          data: data
+            .filter(dp => dp.channel === channel)
+            .map(dp => ({ x: dp.timestamp, y: dp.z })),
+          borderColor: colors[(channel * 3 + 2) % colors.length],
+          backgroundColor: colors[(channel * 3 + 2) % colors.length],
+          tension: 0,
+          pointRadius: 1,
+          pointHoverRadius: 3,
         }
-        const x = (dp.timestamp - startTime) / 1000;
-        const y = dp.x; // Using x acceleration, change to dp.y or dp.z if needed
-        newPlotData[key].push({ x, y });
-        minY = Math.min(minY, y);
-        maxY = Math.max(maxY, y);
+      ]);
 
-        // Keep only the last MAX_DATA_POINTS for each channel
-        if (newPlotData[key].length > MAX_DATA_POINTS) {
-          newPlotData[key] = newPlotData[key].slice(-MAX_DATA_POINTS);
-        }
-      }
-    });
-
-    // Add a 10% buffer to y-axis
-    const yBuffer = (maxY - minY) * 0.1;
-    setYDomain([minY - yBuffer, maxY + yBuffer]);
-
-    return newPlotData;
+      return { datasets, xMin, xMax };
+    };
   }, []);
 
   useEffect(() => {
-    setPlotData(processData(parsedData));
+    const { datasets, xMin, xMax } = processData(parsedData);
+    setChartData({ datasets });
+    setXRange({ min: xMin, max: xMax });
   }, [parsedData, processData]);
 
-  const legendItems = Object.keys(plotData).map((key, index) => ({
-    title: key,
-    color: colors[index % colors.length]
-  }));
+  const options: ChartOptions<'line'> = {
+    responsive: true,
+    maintainAspectRatio: false,
+    animation: { duration: 0 },
+    scales: {
+      x: {
+        type: 'linear',
+        position: 'bottom',
+        title: { display: true, text: 'Time (us)' },
+        beginAtZero: false,
+        min: xRange.min,
+        max: xRange.max,
+        ticks: {
+          stepSize: Math.max(1, Math.floor((xRange.max - xRange.min) / 10))
+          //stepSize: 100
+        }
+      },
+      y: {
+        beginAtZero: false,
+        title: { display: true, text: 'Acceleration' },
+      }
+    },
+    plugins: {
+      legend: { position: 'top' as const },
+      title: { display: true, text: 'Accelerometer Data' },
+    },
+    elements: {
+      line: { tension: 0 },
+      point: {
+        radius: 1,
+        hoverRadius: 3,
+      },
+    },
+  };
 
   return (
     <div className="plot-container">
-      <XYPlot
-        width={600}
-        height={300}
-        xDomain={[0, 2]}
-        yDomain={yDomain}
-        margin={{left: 60, right: 10, top: 10, bottom: 40}}
-      >
-        <HorizontalGridLines />
-        <VerticalGridLines />
-        <XAxis title="Time (s)" />
-        <YAxis title="Acceleration" />
-        {Object.entries(plotData).map(([key, data], index) => (
-          <LineSeries
-            key={key}
-            data={data}
-            color={colors[index % colors.length]}
-          />
-        ))}
-      </XYPlot>
-      <DiscreteColorLegend items={legendItems} orientation="horizontal" />
+      <Line options={options} data={chartData} />
     </div>
   );
 };

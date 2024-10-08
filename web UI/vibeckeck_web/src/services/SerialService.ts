@@ -3,6 +3,8 @@
 export class SerialService {
   private port: SerialPort | null = null;
   private reader: ReadableStreamDefaultReader | null = null;
+  private isReading: boolean = false;
+  private buffer: string = '';
 
   async connect(baudRate: number): Promise<void> {
     try {
@@ -17,14 +19,28 @@ export class SerialService {
   }
 
   async disconnect(): Promise<void> {
+    this.isReading = false;
+    
     if (this.reader) {
-      await this.reader.cancel();
-      this.reader = null;
+      try {
+        await this.reader.cancel();
+      } catch (error) {
+        console.error('Error cancelling reader:', error);
+      } finally {
+        this.reader.releaseLock();
+        this.reader = null;
+      }
     }
+    
     if (this.port) {
-      await this.port.close();
-      this.port = null;
-      console.log('Disconnected from serial port');
+      try {
+        await this.port.close();
+      } catch (error) {
+        console.error('Error closing port:', error);
+      } finally {
+        this.port = null;
+        console.log('Disconnected from serial port');
+      }
     }
   }
 
@@ -33,17 +49,27 @@ export class SerialService {
       throw new Error('Not connected to a serial port');
     }
 
-    while (this.port.readable) {
+    this.isReading = true;
+
+    while (this.port.readable && this.isReading) {
       this.reader = this.port.readable.getReader();
       try {
-        while (true) {
+        while (this.isReading) {
           const { value, done } = await this.reader.read();
           if (done) {
             break;
           }
           const decodedValue = new TextDecoder().decode(value);
-          onDataReceived(decodedValue);
+          this.buffer += decodedValue;
           onLog(decodedValue); // Log the received data
+
+          // Process complete messages
+          let newlineIndex;
+          while ((newlineIndex = this.buffer.indexOf('\n')) !== -1) {
+            const completeMessage = this.buffer.slice(0, newlineIndex + 1);
+            onDataReceived(completeMessage);
+            this.buffer = this.buffer.slice(newlineIndex + 1);
+          }
         }
       } catch (error) {
         console.error('Error reading data:', error);
@@ -51,5 +77,9 @@ export class SerialService {
         this.reader.releaseLock();
       }
     }
+  }
+
+  isConnected(): boolean {
+    return this.port !== null;
   }
 }
