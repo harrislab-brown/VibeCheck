@@ -20,7 +20,7 @@ interface SerialProviderProps {
   children: ReactNode;
 }
 
-const UPDATE_INTERVAL = 50; // Update every 100ms
+const UPDATE_INTERVAL = 16; // Update every 100ms
 
 export const SerialProvider: React.FC<SerialProviderProps> = ({ children }) => {
   const [isConnected, setIsConnected] = useState(false);

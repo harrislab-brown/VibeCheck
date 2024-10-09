@@ -1,6 +1,4 @@
-// ./Layout.tsx
-
-import React, { useState } from 'react';
+import React, { useState, useRef, useCallback } from 'react';
 import '../styles/Layout.css';
 import SerialPortConnect from '../components/SerialPortConnect';
 import DataSettings from '../components/DataSettings';
@@ -18,8 +16,34 @@ const Layout: React.FC = () => {
         scrollSpeed: 50,
     });
 
+    const plotRef = useRef<any>(null);
+
     const handleUpdateControls = (newControls: PlotControlsState) => {
         setPlotControls(newControls);
+    };
+
+    const handleYAutoScaleChange = useCallback((autoScale: boolean) => {
+        console.log('Auto scale changed:', autoScale);
+        // Implement your logic here, e.g., update state or perform some action
+    }, []);
+
+    const handleYRangeChange = useCallback((min: number | null, max: number | null) => {
+        console.log('Y range changed:', { min, max });
+        // Implement your logic here, e.g., update state or perform some action
+    }, []);
+
+    const getYRange = useCallback(() => {
+        // Implement your logic here to return the current Y range
+        // For now, we'll return null values
+        return { min: null, max: null };
+    }, []);
+
+    // Example of how you might use the plotRef
+    const resetPlot = () => {
+        if (plotRef.current) {
+            plotRef.current.setYAutoScale(true);
+            plotRef.current.setYRange(null, null);
+        }
     };
 
     return (
@@ -30,16 +54,21 @@ const Layout: React.FC = () => {
             <div className="grid-item session_settings">
                 <SerialPortConnect/>
                 <DataSettings/>
-
             </div>
             <div className="grid-item tabbed_interface">
                 <TabbedInterface/>
             </div>
             <div className="grid-item live_plot">
-                <LivePlot controls={plotControls} />
+                <LivePlot
+                    ref={plotRef}
+                    setYAutoScale={handleYAutoScaleChange}
+                    setYRange={handleYRangeChange}
+                    getYRange={getYRange}
+                />
             </div>
             <div className="grid-item plot_controls">
                 <PlotControls onUpdateControls={handleUpdateControls} />
+                <button onClick={resetPlot}>Reset Plot</button>
             </div>
             <div className="grid-item hardware_controls">
                 <HardwareControl/>
