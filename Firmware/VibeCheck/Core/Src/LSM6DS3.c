@@ -266,7 +266,7 @@ HAL_StatusTypeDef LSM6DS3_ReadRegister(LSM6DS3* sensor, uint8_t reg, uint8_t* da
 	uint8_t rx_buf[2];
 
 	HAL_GPIO_WritePin(sensor->cs_port, sensor->cs_pin, GPIO_PIN_RESET);
-	HAL_StatusTypeDef status = HAL_SPI_TransmitReceive(sensor->spi, tx_buf, rx_buf, 2, HAL_MAX_DELAY);
+	HAL_StatusTypeDef status = HAL_SPI_TransmitReceive(sensor->spi, tx_buf, rx_buf, 2, LSM6DS3_SPI_TIMEOUT_MS);
 	HAL_GPIO_WritePin(sensor->cs_port, sensor->cs_pin, GPIO_PIN_SET);
 
 	*data = rx_buf[1];
@@ -280,7 +280,7 @@ HAL_StatusTypeDef LSM6DS3_WriteRegister(LSM6DS3* sensor, uint8_t reg, uint8_t da
 	uint8_t tx_buf[2] = {reg, data};
 
 	HAL_GPIO_WritePin(sensor->cs_port, sensor->cs_pin, GPIO_PIN_RESET);
-	HAL_StatusTypeDef status = HAL_SPI_Transmit(sensor->spi, tx_buf, 2, HAL_MAX_DELAY);
+	HAL_StatusTypeDef status = HAL_SPI_Transmit(sensor->spi, tx_buf, 2, LSM6DS3_SPI_TIMEOUT_MS);
 	HAL_GPIO_WritePin(sensor->cs_port, sensor->cs_pin, GPIO_PIN_SET);
 
 	return status;

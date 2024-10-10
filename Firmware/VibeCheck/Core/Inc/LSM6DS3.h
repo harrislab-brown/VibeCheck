@@ -12,6 +12,9 @@
 #include "main.h"
 
 
+#define LSM6DS3_SPI_TIMEOUT_MS 1
+
+
 /* device defines */
 #define LSM6DS3_DEVICE_ID 			0b01101010 /* fixed value of WHO_AM_I register */
 #define LSM6DS3_RESOLUTION 			16  /* bit depth of sensor */
