@@ -36,7 +36,7 @@ const colors = [
   'rgb(0, 128, 0)', 'rgb(128, 0, 128)', 'rgb(128, 128, 0)'
 ];
 
-const WINDOW_DURATION = 2; // time in seconds
+const WINDOW_DURATION = .005; // time in seconds
 const TIME_RES = 1000000; // timestamp is reported in microseconds: 1/1000000 s 
 
 const LivePlot = React.forwardRef<any, LivePlotProps>(({ setYAutoScale, setYRange, getYRange }, ref) => {

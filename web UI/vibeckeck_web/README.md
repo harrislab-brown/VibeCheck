@@ -1,3 +1,68 @@
+# Application Structure:
+vibecheck_web
+│
+├── src
+│   ├── components
+│   │   ├── Layout
+│   │   ├── SerialPortConnect
+│   │   ├── DataSettings
+│   │   ├── LivePlot
+│   │   ├── PlotControls
+│   │   ├── TabbedInterface
+│   │   ├── HardwareControl
+│   │   └── StatusDisplay
+│   │
+│   ├── containers
+│   │   ├── LayoutContainer
+│   │   ├── SerialPortConnectContainer
+│   │   ├── LivePlotContainer
+│   │   └── StatusDisplayContainer
+│   │
+│   ├── redux
+│   │   ├── store.ts
+│   │   ├── rootReducer.ts
+│   │   ├── middlewares
+│   │   │   └── serialMiddleware.ts
+│   │   │
+│   │   ├── serial
+│   │   │   ├── actions.ts
+│   │   │   ├── reducer.ts
+│   │   │   ├── selectors.ts
+│   │   │   └── types.ts
+│   │   │
+│   │   ├── data
+│   │   │   ├── actions.ts
+│   │   │   ├── reducer.ts
+│   │   │   ├── selectors.ts
+│   │   │   └── types.ts
+│   │   │
+│   │   └── ui
+│   │       ├── actions.ts
+│   │       ├── reducer.ts
+│   │       ├── selectors.ts
+│   │       └── types.ts
+│   │
+│   ├── services
+│   │   ├── SerialService.ts
+│   │   └── DataParserService.ts
+│   │
+│   ├── utils
+│   │   └── dataParser.ts
+│   │
+│   └── App.tsx
+│
+├── index.tsx
+└── package.json
+
+
+
+
+
+
+
+
+
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
