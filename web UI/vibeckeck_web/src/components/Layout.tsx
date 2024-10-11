@@ -8,7 +8,6 @@ import TabbedInterface from './TabbedInterface';
 import StatusDisplay from './StatusDIsplay';
 import HardwareControl from './HardwareControl';
 import VibeCheckLogo from '../assets/VibeCheck_Logo.png';
-import { useSerial } from '../contexts/SerialContext';
 
 const Layout: React.FC = () => {
     const [plotControls, setPlotControls] = useState<PlotControlsState>({
@@ -18,7 +17,6 @@ const Layout: React.FC = () => {
     });
 
     const plotRef = useRef<any>(null);
-    const { statusMessage } = useSerial();  // Get the statusMessage from SerialContext
 
     const handleUpdateControls = (newControls: PlotControlsState) => {
         setPlotControls(newControls);
@@ -76,7 +74,7 @@ const Layout: React.FC = () => {
                 <HardwareControl/>
             </div>
             <div className="grid-item status_display">
-                <StatusDisplay message={statusMessage}/>
+                <StatusDisplay/>
             </div>
         </div>
     );
