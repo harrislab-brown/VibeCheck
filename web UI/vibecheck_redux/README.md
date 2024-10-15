@@ -11,6 +11,7 @@ VibeCheck_Web uses the WebSerial API to communicate with the hardware.
 
 This app is based on Vite + React + Redux. The folder heirarchy for this project is meant to be descriptive of the function of each file that makes up the app.
 
+```
 vibecheck_redux/
 ├── src/
 │   ├── components/
@@ -47,8 +48,7 @@ vibecheck_redux/
 ├── tsconfig.json
 ├── README.md
 └── index.html
-
-
+```
 
 
 ## Installation Guide
