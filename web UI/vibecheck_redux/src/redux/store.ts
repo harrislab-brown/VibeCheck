@@ -4,6 +4,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './rootReducer';
 import serialDataMiddleware from '../middleware/serialDataMiddleware';
 import { SerialService } from '../services/SerialService';
+import serialOutputMiddleware from '../middleware/serialOutputMiddleware';
 
 const serialService = new SerialService();
 
@@ -14,7 +15,7 @@ const store = configureStore({
       thunk: {
         extraArgument: { serialService },
       },
-    }).concat(serialDataMiddleware),
+    }).concat(serialDataMiddleware, serialOutputMiddleware),
 });
 
 // Set the dispatch function on the SerialService after store creation

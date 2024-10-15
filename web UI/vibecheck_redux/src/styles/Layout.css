@@ -70,6 +70,11 @@
     margin: 10px;
     padding: 10px;
   }
+
+  .settings.scrollable.container {
+    overflow-y: auto;
+    max-height: 65vh; /* Adjust this value as needed */
+  }
   
   .container {
     margin-bottom: 10px;

@@ -2,10 +2,12 @@
 import { combineReducers } from '@reduxjs/toolkit';
 import serialReducer from '../features/serialSlice';
 import systemStatusReducer from '../features/systemStatusSlice'
+import { serialOutputReducer } from '../features/serialOutputSlice';
 
 const rootReducer = combineReducers({
   serial: serialReducer,
   systemStatus: systemStatusReducer,
+  serialOutput: serialOutputReducer,
   // ... other reducers
 });
 

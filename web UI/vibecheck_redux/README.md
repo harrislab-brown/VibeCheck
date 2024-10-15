@@ -3,8 +3,51 @@
 This application is meant to serve most usecases that students are likely to have when using the VibeCheck sensor system for vibration measurement and data visualization. It is built using modern web front end frameworks.
 
 ## Browser Compatability
-VibeCheck_Web uses the WebSerial API to communicate with the hardware. 
+The VibeCheck_Web relies on the WebSerial API for communication with hardware devices. It's important to note that the WebSerial API is not supported by all browsers. Here's a detailed compatibility breakdown:
 
+## Compatible Browsers
+
+- Google Chrome: Version 89 or later
+- Microsoft Edge: Version 89 or later (Chromium-based Edge)
+- Opera: Version 76 or later
+
+## Incompatible Browsers
+
+- Mozilla Firefox: No support (as of October 2024)
+- Safari: No support (as of October 2024)
+- Internet Explorer: No support
+
+## Mobile Browsers
+
+The WebSerial API is primarily designed for desktop use. As of October 2024:
+
+- No mobile browsers officially support the WebSerial API
+- Chrome for Android may have experimental support, but it's not reliable for production use
+
+## Notes on Compatibility
+
+1. **Chrome OS**: Fully supports the WebSerial API.
+
+2. **Linux**: Support can vary depending on the system configuration. Users may need to add themselves to the `dialout` group or adjust udev rules to access serial ports.
+
+3. **Windows**: Requires no additional setup for most users.
+
+4. **macOS**: Users may need to install drivers for certain USB-to-Serial adapters.
+
+
+## Checking for Browser Support
+
+VibeCheck_Web checks for browser compatibility on startup. If your browser is compatible, the system status message will reflect this and the 'connect' button will be selectable. Clicking it will open a dialog box to select a serial port from the available options. If your VibeCheck hardware is connected, it will appear as a device called 'VibeCheck.' If your browser is not compatible, the system status message will give a compatibility error and the connect button will be grayed out.
+
+To check compatibility without the VibeCheck_Web app, you can use the following JavaScript code to check if the current browser supports the WebSerial API:
+
+```javascript
+if ('serial' in navigator) {
+  console.log('This browser supports WebSerial');
+} else {
+  console.log('This browser does not support WebSerial');
+}
+```
 
 
 # Developer Guide
@@ -12,7 +55,7 @@ VibeCheck_Web uses the WebSerial API to communicate with the hardware.
 This app is based on Vite + React + Redux. The folder heirarchy for this project is meant to be descriptive of the function of each file that makes up the app.
 
 ```
-vibecheck_redux/
+vibecheck_web/
 ├── src/
 │   ├── components/
 │   │   ├── Layout.tsx

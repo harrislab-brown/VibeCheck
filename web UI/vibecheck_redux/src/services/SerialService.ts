@@ -104,6 +104,20 @@ export class SerialService {
             }
         }
     }
+    
+    async sendData(message: string): Promise<void> {
+        if (!this.port || !this.port.writable) {
+            throw new Error('Not connected to a serial port');
+        }
+
+        const writer = this.port.writable.getWriter();
+        try {
+            const data = new TextEncoder().encode(message + '\n');
+            await writer.write(data);
+        } finally {
+            writer.releaseLock();
+        }
+    }
 
     isConnected(): boolean {
         return this.port !== null;

@@ -1,10 +1,10 @@
 // src/components/Layout.tsx
 import React from 'react';
 import '../styles/layout.css';
-
 import Logo from './Logo'
 import SerialConnect from './SerialConnect';
 import SystemStatus from './SystemStatus';
+import SettingsAccordion from './SettingsAccordion';
 
 const Layout: React.FC = () => {
   return (
@@ -27,10 +27,9 @@ const Layout: React.FC = () => {
         <div className = "status-settings-files container">
             <div className = "status container">
                 <SystemStatus/>
-
             </div>
             <div className = "settings scrollable container">
-
+            <SettingsAccordion />
             </div>
             <div className = "file container">
 
