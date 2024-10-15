@@ -128,6 +128,10 @@ typedef struct
 	/* pointer to object that stores configuration parameters */
 	LSM6DS3_Config* config;
 
+	/* latest data */
+	volatile float accel_x, accel_y, accel_z;
+	volatile float gyro_x, gyro_y, gyro_z;
+
 } LSM6DS3;
 
 void LSM6DS3_Init(LSM6DS3* sensor, LSM6DS3_Config* config, SPI_HandleTypeDef* spi,

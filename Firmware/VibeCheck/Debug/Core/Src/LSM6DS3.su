@@ -7,8 +7,8 @@
 ../Core/Src/LSM6DS3.c:205:6:LSM6DS3_StopAccel	16	static
 ../Core/Src/LSM6DS3.c:211:6:LSM6DS3_StopGyro	16	static
 ../Core/Src/LSM6DS3.c:217:6:LSM6DS3_ReadAccel	64	static
-../Core/Src/LSM6DS3.c:240:6:LSM6DS3_ReadGyro	64	static
-../Core/Src/LSM6DS3.c:263:19:LSM6DS3_ReadRegister	40	static
-../Core/Src/LSM6DS3.c:278:19:LSM6DS3_WriteRegister	24	static
-../Core/Src/LSM6DS3.c:290:10:LSM6DS3_GetInt1State	16	static
-../Core/Src/LSM6DS3.c:296:10:LSM6DS3_GetInt2State	16	static
+../Core/Src/LSM6DS3.c:244:6:LSM6DS3_ReadGyro	64	static
+../Core/Src/LSM6DS3.c:271:19:LSM6DS3_ReadRegister	40	static
+../Core/Src/LSM6DS3.c:286:19:LSM6DS3_WriteRegister	24	static
+../Core/Src/LSM6DS3.c:298:10:LSM6DS3_GetInt1State	16	static
+../Core/Src/LSM6DS3.c:304:10:LSM6DS3_GetInt2State	16	static

@@ -9,6 +9,10 @@
 #include "vibecheck.h"
 #include "vibecheck_rgb_sequences.h"
 
+
+static uint32_t time_prev_led_update;
+
+
 void VibeCheck_Init(VibeCheck* vc,
 		TIM_HandleTypeDef* htim_strobe,
 		TIM_HandleTypeDef* htim_wavegen,
@@ -82,14 +86,61 @@ void VibeCheck_Init(VibeCheck* vc,
 
 void VibeCheck_Loop(VibeCheck* vc)
 {
+	/* call object update functions */
 	VibeCheckWaveGen_Update(&vc->wavegen);
 	VibeCheckRGB_Update(&vc->rgb);
 	VibeCheckSensor_Update(&vc->sensor);
 
+	/* update the shell */
 	VibeCheckShell_Status shell_status = VibeCheckShell_Update(&vc->shell);
 
+	/* FIXME: don't block because then mute doesn't work on disconnect */
 	char* usb_tx;
 	uint32_t usb_tx_len;
 	if (VibeCheckShell_GetOutput(&vc->shell, &usb_tx, &usb_tx_len))
 		while (CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len) != USBD_OK);  /* block until the USB transmission starts to make sure we send all data */
+
+	if (shell_status.ihandl_status == VC_SHELL_INPUT_PROCESSED)  /* blink indicator LEDs based on shell status */
+	{
+		VibeCheckRGB_SetTopSequence(&vc->rgb, led_shell_success_times, led_shell_success_colors, led_shell_success_len);
+		VibeCheckRGB_StartTopSequence(&vc->rgb);
+	}
+	else if (shell_status.ihandl_status == VC_SHELL_INPUT_ERROR_NO_HANDLER || shell_status.ihandl_status == VC_SHELL_INPUT_ERROR_EXECUTING)
+	{
+		VibeCheckRGB_SetTopSequence(&vc->rgb, led_shell_failure_times, led_shell_failure_colors, led_shell_failure_len);
+		VibeCheckRGB_StartTopSequence(&vc->rgb);
+	}
+
+	/* visualize the acceleration with the RGB LEDs */
+	uint32_t time = HAL_GetTick();
+	if (time - time_prev_led_update > 30)
+	{
+		time_prev_led_update = time;
+
+		if (!vc->rgb.top_sequence.is_running)  /* let the top sequence have precedence over the visualization */
+		{
+			for (uint32_t i = 0; i < VC_SENSOR_NUM_SENSORS; i++)
+			{
+				if (vc->sensor.status[i].is_connected)
+				{
+					if (vc->sensor.status[i].accel_measuring)
+					{
+						/* write the LEDs */
+						VibeCheckRGB_SetColor(&vc->rgb, 3 * i + 0, 255 * fabs(vc->sensor.sensor_array[i].accel_x) / vc->sensor.sensor_config[i].g_range, 0, 0);
+						VibeCheckRGB_SetColor(&vc->rgb, 3 * i + 1, 0, 255 * fabs(vc->sensor.sensor_array[i].accel_y) / vc->sensor.sensor_config[i].g_range, 0);
+						VibeCheckRGB_SetColor(&vc->rgb, 3 * i + 2, 0, 0, 255 * fabs(vc->sensor.sensor_array[i].accel_z) / vc->sensor.sensor_config[i].g_range);
+						VibeCheckRGB_SendColors(&vc->rgb);
+					}
+					else if (vc->sensor.status[i].gyro_measuring)
+					{
+						/* write the LEDs */
+						VibeCheckRGB_SetColor(&vc->rgb, 3 * i + 0, 255 * fabs(vc->sensor.sensor_array[i].gyro_x) / vc->sensor.sensor_config[i].dps_range, 0, 0);
+						VibeCheckRGB_SetColor(&vc->rgb, 3 * i + 1, 0, 255 * fabs(vc->sensor.sensor_array[i].gyro_y) / vc->sensor.sensor_config[i].dps_range, 0);
+						VibeCheckRGB_SetColor(&vc->rgb, 3 * i + 2, 0, 0, 255 * fabs(vc->sensor.sensor_array[i].gyro_z) / vc->sensor.sensor_config[i].dps_range);
+						VibeCheckRGB_SendColors(&vc->rgb);
+					}
+				}
+			}
+		}
+	}
 }

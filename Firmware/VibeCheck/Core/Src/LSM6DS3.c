@@ -230,9 +230,13 @@ void LSM6DS3_ReadAccel(LSM6DS3* sensor, float* x, float* y, float * z)
 	int16_t raw_data_y = ((int16_t)(rx_buf[3])) | (((int16_t)(rx_buf[4])) << 8);
 	int16_t raw_data_z = ((int16_t)(rx_buf[5])) | (((int16_t)(rx_buf[6])) << 8);
 
-	*x = sensor->config->g_range * (float)raw_data_x / (float)(1 << (LSM6DS3_RESOLUTION - 1));
-	*y = sensor->config->g_range * (float)raw_data_y / (float)(1 << (LSM6DS3_RESOLUTION - 1));
-	*z = sensor->config->g_range * (float)raw_data_z / (float)(1 << (LSM6DS3_RESOLUTION - 1));
+	sensor->accel_x = sensor->config->g_range * (float)raw_data_x / (float)(1 << (LSM6DS3_RESOLUTION - 1));
+	sensor->accel_y = sensor->config->g_range * (float)raw_data_y / (float)(1 << (LSM6DS3_RESOLUTION - 1));
+	sensor->accel_z = sensor->config->g_range * (float)raw_data_z / (float)(1 << (LSM6DS3_RESOLUTION - 1));
+
+	*x = sensor->accel_x;
+	*y = sensor->accel_y;
+	*z = sensor->accel_z;
 
 }
 
@@ -253,9 +257,13 @@ void LSM6DS3_ReadGyro(LSM6DS3* sensor, float* x, float* y, float * z)
 	int16_t raw_data_y = ((int16_t)(rx_buf[3])) | (((int16_t)(rx_buf[4])) << 8);
 	int16_t raw_data_z = ((int16_t)(rx_buf[5])) | (((int16_t)(rx_buf[6])) << 8);
 
-	*x = sensor->config->dps_range * (float)raw_data_x / (float)(1 << (LSM6DS3_RESOLUTION - 1));
-	*y = sensor->config->dps_range * (float)raw_data_y / (float)(1 << (LSM6DS3_RESOLUTION - 1));
-	*z = sensor->config->dps_range * (float)raw_data_z / (float)(1 << (LSM6DS3_RESOLUTION - 1));
+	sensor->gyro_x = sensor->config->dps_range * (float)raw_data_x / (float)(1 << (LSM6DS3_RESOLUTION - 1));
+	sensor->gyro_y = sensor->config->dps_range * (float)raw_data_y / (float)(1 << (LSM6DS3_RESOLUTION - 1));
+	sensor->gyro_z = sensor->config->dps_range * (float)raw_data_z / (float)(1 << (LSM6DS3_RESOLUTION - 1));
+
+	*x = sensor->gyro_x;
+	*y = sensor->gyro_y;
+	*z = sensor->gyro_z;
 }
 
 
