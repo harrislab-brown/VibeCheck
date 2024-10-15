@@ -86,6 +86,11 @@ void VibeCheck_Init(VibeCheck* vc,
 
 void VibeCheck_Loop(VibeCheck* vc)
 {
+
+
+	/* FIXME: sometimes the accelerometers disconnected unexpectedly */
+
+
 	/* call object update functions */
 	VibeCheckWaveGen_Update(&vc->wavegen);
 	VibeCheckRGB_Update(&vc->rgb);
@@ -93,14 +98,15 @@ void VibeCheck_Loop(VibeCheck* vc)
 
 	/* update the shell */
 	VibeCheckShell_Status shell_status = VibeCheckShell_Update(&vc->shell);
-
-	/* FIXME: don't block because then mute doesn't work on disconnect */
 	char* usb_tx;
 	uint32_t usb_tx_len;
 	if (VibeCheckShell_GetOutput(&vc->shell, &usb_tx, &usb_tx_len))
-		while (CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len) != USBD_OK);  /* block until the USB transmission starts to make sure we send all data */
+		if (CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len) == USBD_OK)
+			VibeCheckShell_UpdateOutputBuffer(&vc->shell, usb_tx_len);
 
-	if (shell_status.ihandl_status == VC_SHELL_INPUT_PROCESSED)  /* blink indicator LEDs based on shell status */
+
+	/* blink indicator LEDs based on shell status */
+	if (shell_status.ihandl_status == VC_SHELL_INPUT_PROCESSED)
 	{
 		VibeCheckRGB_SetTopSequence(&vc->rgb, led_shell_success_times, led_shell_success_colors, led_shell_success_len);
 		VibeCheckRGB_StartTopSequence(&vc->rgb);
@@ -110,6 +116,7 @@ void VibeCheck_Loop(VibeCheck* vc)
 		VibeCheckRGB_SetTopSequence(&vc->rgb, led_shell_failure_times, led_shell_failure_colors, led_shell_failure_len);
 		VibeCheckRGB_StartTopSequence(&vc->rgb);
 	}
+
 
 	/* visualize the acceleration with the RGB LEDs */
 	uint32_t time = HAL_GetTick();

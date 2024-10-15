@@ -43,7 +43,7 @@
  * it parsed inputs or outputs - this flag can be used to know when to start the hardware data transfer.
  */
 
-#define VC_SHELL_IO_BUF_LEN 2048
+#define VC_SHELL_IO_BUF_LEN 8192
 #define VC_SHELL_MAX_TOKEN_LEN 64
 #define VC_SHELL_MAX_NUM_HANDLERS 64
 
@@ -134,6 +134,7 @@ void VibeCheckShell_RegisterOutputHandler(VibeCheckShell* shell, VibeCheckShell_
 
 void VibeCheckShell_PutInput(VibeCheckShell* shell, char* input, uint32_t input_max_len);  /* add to the input buffer */
 uint32_t VibeCheckShell_GetOutput(VibeCheckShell* shell, char** output, uint32_t* len);  /* returns true if there is stuff in the output buffer we haven't yet sent */
+void VibeCheckShell_UpdateOutputBuffer(VibeCheckShell* shell, uint32_t len);  /* once we have successfully sent the output data, update the buffer pointers */
 
 uint32_t VibeCheckShell_GetNextString(VibeCheckShell* shell, char* next, uint32_t max_len);
 uint32_t VibeCheckShell_GetNextInt(VibeCheckShell* shell, int32_t* next);

@@ -150,8 +150,6 @@ uint32_t VibeCheckShell_GetOutput(VibeCheckShell* shell, char** output, uint32_t
 		/* the output doesn't wrap so send it 'normally' */
 		*output = &shell->output[shell->output_tail];
 		*len = shell->output_head - shell->output_tail;
-		shell->output_count -= shell->output_head - shell->output_tail;
-		shell->output_tail = shell->output_head;
 		return 1;
 	}
 	else
@@ -159,11 +157,21 @@ uint32_t VibeCheckShell_GetOutput(VibeCheckShell* shell, char** output, uint32_t
 		/* the output wraps: only return up to the end of the buffer region so our output is contiguous in memory */
 		*output = &shell->output[shell->output_tail];
 		*len = VC_SHELL_IO_BUF_LEN - shell->output_tail;
-		shell->output_count -= VC_SHELL_IO_BUF_LEN - shell->output_tail;
-		shell->output_tail = 0;
 		return 1;
 	}
 
+}
+
+
+void VibeCheckShell_UpdateOutputBuffer(VibeCheckShell* shell, uint32_t len)
+{
+	/* length argument tells how many characters we successfully transmitted */
+
+	/* update the tail of the output buffer now that we have confirmed transmission */
+	shell->output_count -= len;
+	shell->output_tail += len;
+	while (shell->output_tail >= VC_SHELL_IO_BUF_LEN)
+		shell->output_tail -= VC_SHELL_IO_BUF_LEN;
 }
 
 
