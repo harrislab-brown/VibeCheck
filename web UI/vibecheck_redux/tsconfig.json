@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "typeRoots": ["./node_modules/@types", "./src/types"],
+    "target": "es2015",  // or a later version like "es2016", "es2017", "es2018", etc.
+    "lib": ["dom", "es2015", "es2016", "es2017", "es2018", "es2019", "es2020"],  // Include all the versions you want to support
+    "jsx": "react",
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "module": "esnext",
+    "moduleResolution": "node"
+  },
+  "include" : ["src/**/*"],
+
+}

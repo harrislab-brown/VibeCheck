@@ -1,0 +1,95 @@
+/* src/components/Layout.css */
+
+.layout {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    min-height: 100vh;
+    width: 100vw;
+  }
+  
+  .logo-serial-plot-controls{
+    flex: 1;
+    border: 2px solid white;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow:2;
+    min-width: 600px;
+  }
+  .logo-serial {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: stretch;
+
+
+  }
+  .vibecheck-logo { 
+    width: 100%; /* Makes the logo responsive to the grid item's width */
+    height:auto; /* Maintains the aspect ratio */
+    max-width: 200px; /* Or any other max-width you prefer */
+    }
+    .serial-connect-button{
+        width: 100%;
+
+    }
+    
+
+  .status-settings-files {
+    flex: 1;
+    border: 2px solid white;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-grow:1;
+    min-width: 300px;
+    max-width: 500px;
+  }
+  .status {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.status > * {
+        width: 100%;
+        height: 100%;
+        padding: 5px;
+        border: 2px solid white;
+        box-sizing: border-box;
+        display: 'flex'
+    }
+  .logo-serial-plot-controls {
+    margin-right: 5px;
+    border: 2px solid white;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .container {
+    margin-bottom: 10px;
+    border: 2px solid white;
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  .scrollable {
+    overflow-y: auto;
+    border: 2px solid white;
+    margin: 10px;
+    padding: 10px;
+  }
+  
+  /* You can adjust these to control the height of each section */
+  .logo-serial { height: 15%; }
+  .plot { height: 65%; }
+  .plot-controls { height: 20%; }
+  .status { height: 15%; }
+  .settings { height: 65%; }
+  .file { height: 20%; }
