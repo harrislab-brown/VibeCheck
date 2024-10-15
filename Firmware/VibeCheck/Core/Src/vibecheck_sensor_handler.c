@@ -339,7 +339,7 @@ uint32_t VibeCheckSensorSender_Status_Execute(void* obj, VibeCheckShell* shell)
 	uint32_t channel, is_connected;
 	if (VibeCheckSensor_ConnectionChanged(sensor, &channel, &is_connected))
 	{
-		VibeCheckShell_PutOutputString(shell, "msg");
+		VibeCheckShell_PutOutputString(shell, "event");
 		VibeCheckShell_PutOutputSeparator(shell);
 		VibeCheckShell_PutOutputString(shell, "sensor");
 		VibeCheckShell_PutOutputSeparator(shell);
