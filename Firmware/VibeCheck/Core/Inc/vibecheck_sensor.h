@@ -98,6 +98,7 @@ void VibeCheckSensor_StopFakeData(VibeCheckSensor* sensor);
 
 void VibeCheckSensor_ResetTime(VibeCheckSensor* sensor);
 
+uint32_t VibeCheckSensor_IsConnected(VibeCheckSensor* sensor, uint32_t channel);
 uint32_t VibeCheckSensor_ConnectionChanged(VibeCheckSensor* sensor, uint32_t* channel, uint32_t* is_connected);
 
 /* helper functions */

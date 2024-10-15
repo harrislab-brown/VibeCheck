@@ -17,8 +17,9 @@
 ../Core/Src/vibecheck_sensor.c:246:6:VibeCheckSensor_StartFakeData	16	static
 ../Core/Src/vibecheck_sensor.c:252:6:VibeCheckSensor_StopFakeData	16	static
 ../Core/Src/vibecheck_sensor.c:258:6:VibeCheckSensor_ResetTime	16	static
-../Core/Src/vibecheck_sensor.c:264:10:VibeCheckSensor_ConnectionChanged	32	static
-../Core/Src/vibecheck_sensor.c:281:6:VibeCheckSensor_UpdateSensor	16	static
-../Core/Src/vibecheck_sensor.c:296:6:VibeCheckSensor_AddData	32	static
-../Core/Src/vibecheck_sensor.c:317:10:VibeCheckSensor_GetDataReady	16	static
-../Core/Src/vibecheck_sensor.c:338:6:VibeCheckSensor_EXTICallback	48	static
+../Core/Src/vibecheck_sensor.c:264:10:VibeCheckSensor_IsConnected	16	static
+../Core/Src/vibecheck_sensor.c:271:10:VibeCheckSensor_ConnectionChanged	32	static
+../Core/Src/vibecheck_sensor.c:288:6:VibeCheckSensor_UpdateSensor	16	static
+../Core/Src/vibecheck_sensor.c:303:6:VibeCheckSensor_AddData	32	static
+../Core/Src/vibecheck_sensor.c:324:10:VibeCheckSensor_GetDataReady	16	static
+../Core/Src/vibecheck_sensor.c:345:6:VibeCheckSensor_EXTICallback	48	static

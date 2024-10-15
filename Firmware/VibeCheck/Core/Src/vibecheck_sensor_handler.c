@@ -42,6 +42,8 @@ Set of commands:
 
 >>sensor [channel] get offsets
 
+>>sensor [channel] get connected
+
 */
 
 
@@ -190,6 +192,14 @@ static uint32_t VibeCheckSensorCMD_Get(VibeCheckSensor* sensor, VibeCheckShell* 
 			VibeCheckShell_PutOutputFloat(shell, y);
 			VibeCheckShell_PutOutputSeparator(shell);
 			VibeCheckShell_PutOutputFloat(shell, z);
+			VibeCheckShell_PutOutputDelimiter(shell);
+			return 1;
+		}
+		else if (!strcmp(str, "connected"))
+		{
+			VibeCheckShell_PutOutputString(shell, "ack");
+			VibeCheckShell_PutOutputSeparator(shell);
+			VibeCheckShell_PutOutputInt(shell, VibeCheckSensor_IsConnected(sensor, channel));
 			VibeCheckShell_PutOutputDelimiter(shell);
 			return 1;
 		}

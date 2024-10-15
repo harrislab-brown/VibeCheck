@@ -261,6 +261,13 @@ void VibeCheckSensor_ResetTime(VibeCheckSensor* sensor)
 }
 
 
+uint32_t VibeCheckSensor_IsConnected(VibeCheckSensor* sensor, uint32_t channel)
+{
+	if (channel >= VC_SENSOR_NUM_SENSORS) channel = VC_SENSOR_NUM_SENSORS - 1;
+	return sensor->status[channel].is_connected;
+}
+
+
 uint32_t VibeCheckSensor_ConnectionChanged(VibeCheckSensor* sensor, uint32_t* channel, uint32_t* is_connected)
 {
 	for (uint32_t i = 0; i < VC_SENSOR_NUM_SENSORS; i++)
