@@ -43,7 +43,7 @@
  * it parsed inputs or outputs - this flag can be used to know when to start the hardware data transfer.
  */
 
-#define VC_SHELL_IO_BUF_LEN 8192
+#define VC_SHELL_IO_BUF_LEN 32768
 #define VC_SHELL_MAX_TOKEN_LEN 64
 #define VC_SHELL_MAX_NUM_HANDLERS 64
 
