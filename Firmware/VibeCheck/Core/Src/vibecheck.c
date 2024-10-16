@@ -11,6 +11,7 @@
 
 
 static uint32_t time_prev_led_update;
+volatile uint32_t usb_ready = 1;
 
 
 void VibeCheck_Init(VibeCheck* vc,
@@ -100,9 +101,11 @@ void VibeCheck_Loop(VibeCheck* vc)
 	VibeCheckShell_Status shell_status = VibeCheckShell_Update(&vc->shell);
 	char* usb_tx;
 	uint32_t usb_tx_len;
-	if (VibeCheckShell_GetOutput(&vc->shell, &usb_tx, &usb_tx_len))
-		if (CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len) == USBD_OK)
-			VibeCheckShell_UpdateOutputBuffer(&vc->shell, usb_tx_len);
+	if (VibeCheckShell_GetOutput(&vc->shell, &usb_tx, &usb_tx_len) && usb_ready)
+	{
+		CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len);
+		VibeCheckShell_UpdateOutputBuffer(&vc->shell, usb_tx_len);
+	}
 
 
 	/* blink indicator LEDs based on shell status */

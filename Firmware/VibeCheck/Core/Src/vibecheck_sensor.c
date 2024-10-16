@@ -323,7 +323,7 @@ void VibeCheckSensor_AddData(VibeCheckSensor* sensor, uint8_t id, uint32_t time,
 
 uint32_t VibeCheckSensor_GetDataReady(VibeCheckSensor* sensor, VibeCheckSensor_Data** data)
 {
-	if (sensor->data_ready)
+	if (sensor->data_ready)  /* FIXME: race condition with data_ind being changed in the EXTI interrupt */
 	{
 		sensor->data_ready = 0;
 		if (sensor->data_ind < VC_SENSOR_DATA_PER_PACKET)
