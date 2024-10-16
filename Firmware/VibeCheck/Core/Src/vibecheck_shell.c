@@ -157,10 +157,6 @@ uint32_t VibeCheckShell_GetOutput(VibeCheckShell* shell, char** output, uint32_t
 		/* the output wraps: only return up to the end of the buffer region so our output is contiguous in memory */
 		*output = &shell->output[shell->output_tail];
 		*len = VC_SHELL_IO_BUF_LEN - shell->output_tail;
-
-		/* XXX: just for debugging */
-		shell->output[shell->output_tail] = '!';
-
 		return 1;
 	}
 
