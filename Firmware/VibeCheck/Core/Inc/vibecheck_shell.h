@@ -47,6 +47,8 @@
 #define VC_SHELL_MAX_TOKEN_LEN 64
 #define VC_SHELL_MAX_NUM_HANDLERS 64
 
+//#define VC_SHELL_OUTPUT_PACKET_SIZE 2048  /* send an output packet once we have this many bytes available */
+
 #define VC_SHELL_DELIMITER "\n"
 #define VC_SHELL_INPUT_SEPARATORS " ,"
 #define VC_SHELL_OUTPUT_SEPARATOR " "

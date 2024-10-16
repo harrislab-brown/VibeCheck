@@ -160,6 +160,32 @@ uint32_t VibeCheckShell_GetOutput(VibeCheckShell* shell, char** output, uint32_t
 		return 1;
 	}
 
+	// TODO: remove once we figure out the serial bug
+//	if (shell->output_head > shell->output_tail)
+//	{
+//		if (shell->output_head - shell->output_tail > VC_SHELL_OUTPUT_PACKET_SIZE)
+//		{
+//			*output = &shell->output[shell->output_tail];
+//			*len = VC_SHELL_OUTPUT_PACKET_SIZE;
+//			return 1;
+//		}
+//		else
+//			return 0;
+//	}
+//	else
+//	{
+//		if (shell->output_head + VC_SHELL_IO_BUF_LEN - shell->output_tail > VC_SHELL_OUTPUT_PACKET_SIZE)
+//		{
+//			*output = &shell->output[shell->output_tail];
+//			*len = VC_SHELL_OUTPUT_PACKET_SIZE;
+//			return 1;
+//		}
+//		else
+//			return 0;
+//
+//	}
+
+
 }
 
 

@@ -59,9 +59,9 @@ typedef struct
 	VibeCheckSensor_Status status[VC_SENSOR_NUM_SENSORS];
 
 	/* combined sensor data buffer, and flags to handle double buffering */
-	VibeCheckSensor_Data data[2 * VC_SENSOR_DATA_PER_PACKET];
-	uint32_t data_ind;
-	uint32_t data_ready;
+	volatile VibeCheckSensor_Data data[2 * VC_SENSOR_DATA_PER_PACKET];
+	volatile uint32_t data_ind;
+	volatile uint32_t data_ready;
 
 	uint32_t time_prev_update;
 	uint32_t generate_fake_data;  /* for testing */
@@ -106,7 +106,7 @@ void VibeCheckSensor_UpdateSensor(VibeCheckSensor* sensor, uint32_t channel);  /
 
 /* data handling */
 void VibeCheckSensor_AddData(VibeCheckSensor* sensor, uint8_t id, uint32_t time, float x, float y, float z);
-uint32_t VibeCheckSensor_GetDataReady(VibeCheckSensor* sensor, VibeCheckSensor_Data** data);
+uint32_t VibeCheckSensor_GetDataReady(VibeCheckSensor* sensor, volatile VibeCheckSensor_Data** data);
 void VibeCheckSensor_EXTICallback(VibeCheckSensor* sensor, uint16_t GPIO_Pin);  /* call when the accelerometer data ready signal occurs */
 
 

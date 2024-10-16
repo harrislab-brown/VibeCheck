@@ -32,7 +32,6 @@
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
 extern VibeCheck vc;
-extern volatile uint32_t usb_ready;
 /* USER CODE END PV */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -292,8 +291,6 @@ uint8_t CDC_Transmit_HS(uint8_t* Buf, uint16_t Len)
   USBD_CDC_SetTxBuffer(&hUsbDeviceHS, Buf, Len);
   result = USBD_CDC_TransmitPacket(&hUsbDeviceHS);
 
-  usb_ready = 0;
-
   /* USER CODE END 12 */
   return result;
 }
@@ -317,9 +314,6 @@ static int8_t CDC_TransmitCplt_HS(uint8_t *Buf, uint32_t *Len, uint8_t epnum)
   UNUSED(Buf);
   UNUSED(Len);
   UNUSED(epnum);
-
-  usb_ready = 1;
-
   /* USER CODE END 14 */
   return result;
 }

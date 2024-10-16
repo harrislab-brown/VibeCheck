@@ -9,10 +9,7 @@
 #include "vibecheck.h"
 #include "vibecheck_rgb_sequences.h"
 
-
 static uint32_t time_prev_led_update;
-volatile uint32_t usb_ready = 1;
-
 
 void VibeCheck_Init(VibeCheck* vc,
 		TIM_HandleTypeDef* htim_strobe,
@@ -87,7 +84,7 @@ void VibeCheck_Init(VibeCheck* vc,
 
 void VibeCheck_Loop(VibeCheck* vc)
 {
-
+	uint32_t time = HAL_GetTick();
 
 	/* FIXME: sometimes the accelerometers disconnected unexpectedly */
 
@@ -97,16 +94,9 @@ void VibeCheck_Loop(VibeCheck* vc)
 	VibeCheckRGB_Update(&vc->rgb);
 	VibeCheckSensor_Update(&vc->sensor);
 
+
 	/* update the shell */
 	VibeCheckShell_Status shell_status = VibeCheckShell_Update(&vc->shell);
-	char* usb_tx;
-	uint32_t usb_tx_len;
-	if (VibeCheckShell_GetOutput(&vc->shell, &usb_tx, &usb_tx_len) && usb_ready)
-	{
-		CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len);
-		VibeCheckShell_UpdateOutputBuffer(&vc->shell, usb_tx_len);
-	}
-
 
 	/* blink indicator LEDs based on shell status */
 	if (shell_status.ihandl_status == VC_SHELL_INPUT_PROCESSED)
@@ -121,8 +111,21 @@ void VibeCheck_Loop(VibeCheck* vc)
 	}
 
 
+	/* send stuff over USB */
+	char* usb_tx;
+	uint32_t usb_tx_len;
+	if (VibeCheckShell_GetOutput(&vc->shell, &usb_tx, &usb_tx_len))
+	{
+		NVIC_DisableIRQ(OTG_HS_IRQn);
+		if (CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len) == USBD_OK)
+			VibeCheckShell_UpdateOutputBuffer(&vc->shell, usb_tx_len);
+		NVIC_EnableIRQ(OTG_HS_IRQn);
+
+	}
+
+
 	/* visualize the acceleration with the RGB LEDs */
-	uint32_t time = HAL_GetTick();
+
 	if (time - time_prev_led_update > 30)
 	{
 		time_prev_led_update = time;

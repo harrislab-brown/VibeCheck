@@ -307,7 +307,7 @@ uint32_t VibeCheckSensorSender_Data_Execute(void* obj, VibeCheckShell* shell)
 {
 	VibeCheckSensor* sensor = (VibeCheckSensor*)obj;
 
-	VibeCheckSensor_Data* data;
+	volatile VibeCheckSensor_Data* data;
 	if (VibeCheckSensor_GetDataReady(sensor, &data))
 	{
 		VibeCheckShell_PutOutputString(shell, "data");
@@ -315,6 +315,7 @@ uint32_t VibeCheckSensorSender_Data_Execute(void* obj, VibeCheckShell* shell)
 		VibeCheckShell_PutOutputInt(shell, VC_SENSOR_DATA_PER_PACKET);
 
 		uint32_t data_written = 0;
+
 		while (data_written < VC_SENSOR_DATA_PER_PACKET)
 		{
 			VibeCheckShell_PutOutputSeparator(shell);
@@ -327,6 +328,7 @@ uint32_t VibeCheckSensorSender_Data_Execute(void* obj, VibeCheckShell* shell)
 			VibeCheckShell_PutOutputFloat(shell, data->y);
 			VibeCheckShell_PutOutputSeparator(shell);
 			VibeCheckShell_PutOutputFloat(shell, data->z);
+
 
 			data++;
 			data_written++;
