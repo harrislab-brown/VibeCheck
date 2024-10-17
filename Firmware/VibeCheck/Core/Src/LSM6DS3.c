@@ -43,12 +43,23 @@ void LSM6DS3_Configure(LSM6DS3* sensor)
 	LSM6DS3_StopAccel(sensor);  /* disable the sensor before messing with the parameters */
 	LSM6DS3_StopGyro(sensor);
 
+	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_DRDY_PULSE_CFG_G, 0b10000000);  /* pulse the data ready pins instead of latching them */
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_INT1_CTRL, 0x01);  /* INT1 set when accel data ready (p. 59) */
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_INT2_CTRL, 0x02);  /* INT2 set when gyro data ready (p. 60) */
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL4_C, 0b00000100);  /* disable the I2C interface, also disables the gyro LPF1 (p. 64) */
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL6_C, 0b00000000);  /* sets the user offset weights to 2^(-10) g/LSB and the gyro LPF bandwidth (p. 66) */
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL7_G, 0b00000000);  /* disables the gyro HPF (p. 67) */
 	(void)LSM6DS3_WriteRegister(sensor, LSM6DS3_REG_CTRL8_XL, 0b00000000);  /* acceleration filters, configured to keep us on the LPF1 path (p. 67) */
+
+	float x, y, z;
+	LSM6DS3_ReadAccel(sensor, &x, &y, &z);  /* just to make sure no status flags get stuck high, read out the data registers (this will reset the data status flags) */
+	LSM6DS3_ReadGyro(sensor, &x, &y, &z);
+	sensor->accel_x = 0;  /* then reset the local data storage since the values read will likely be garbage */
+	sensor->accel_y = 0;
+	sensor->accel_z = 0;
+	sensor->gyro_x = 0;
+	sensor->gyro_y = 0;
+	sensor->gyro_z = 0;
 
 	LSM6DS3_WriteOffsets(sensor);
 }

@@ -20,44 +20,45 @@
 #define LSM6DS3_RESOLUTION 			16  /* bit depth of sensor */
 
 /* device register addresses (p.49) */
-#define LSM6DS3_REG_INT1_CTRL		0x0D
-#define LSM6DS3_REG_INT2_CTRL 		0x0E
+#define LSM6DS3_REG_DRDY_PULSE_CFG_G 0x0B
+#define LSM6DS3_REG_INT1_CTRL		 0x0D
+#define LSM6DS3_REG_INT2_CTRL 		 0x0E
 
-#define LSM6DS3_REG_WHO_AM_I 		0x0F
+#define LSM6DS3_REG_WHO_AM_I 		 0x0F
 
-#define LSM6DS3_REG_CTRL1_XL  		0x10
-#define LSM6DS3_REG_CTRL2_G  		0x11
-#define LSM6DS3_REG_CTRL3_G  		0x12
-#define LSM6DS3_REG_CTRL4_C  		0x13
-#define LSM6DS3_REG_CTRL5_C  		0x14
-#define LSM6DS3_REG_CTRL6_C 		0x15
-#define LSM6DS3_REG_CTRL7_G 		0x16
-#define LSM6DS3_REG_CTRL8_XL        0x17
-#define LSM6DS3_REG_CTRL9_XL        0x18
-#define LSM6DS3_REG_CTRL10_C        0x19
+#define LSM6DS3_REG_CTRL1_XL  		 0x10
+#define LSM6DS3_REG_CTRL2_G  		 0x11
+#define LSM6DS3_REG_CTRL3_G  		 0x12
+#define LSM6DS3_REG_CTRL4_C  		 0x13
+#define LSM6DS3_REG_CTRL5_C  		 0x14
+#define LSM6DS3_REG_CTRL6_C 		 0x15
+#define LSM6DS3_REG_CTRL7_G 		 0x16
+#define LSM6DS3_REG_CTRL8_XL         0x17
+#define LSM6DS3_REG_CTRL9_XL         0x18
+#define LSM6DS3_REG_CTRL10_C         0x19
 
-#define LSM6DS3_REG_STATUS_REG      0x1E
+#define LSM6DS3_REG_STATUS_REG       0x1E
 
-#define LSM6DS3_REG_OUT_TEMP_L 		0x20  /* temperature sensor data */
-#define LSM6DS3_REG_OUT_TEMP_H 		0x21
+#define LSM6DS3_REG_OUT_TEMP_L 		 0x20  /* temperature sensor data */
+#define LSM6DS3_REG_OUT_TEMP_H 		 0x21
 
-#define LSM6DS3_REG_OUTX_L_G 		0x22  /* gyroscope output registers */
-#define LSM6DS3_REG_OUTX_H_G 		0x23
-#define LSM6DS3_REG_OUTY_L_G 		0x24
-#define LSM6DS3_REG_OUTY_H_G 		0x25
-#define LSM6DS3_REG_OUTZ_L_G 		0x26
-#define LSM6DS3_REG_OUTZ_H_G 		0x27
+#define LSM6DS3_REG_OUTX_L_G 		 0x22  /* gyroscope output registers */
+#define LSM6DS3_REG_OUTX_H_G 		 0x23
+#define LSM6DS3_REG_OUTY_L_G 		 0x24
+#define LSM6DS3_REG_OUTY_H_G 		 0x25
+#define LSM6DS3_REG_OUTZ_L_G 		 0x26
+#define LSM6DS3_REG_OUTZ_H_G 		 0x27
 
-#define LSM6DS3_REG_OUTX_L_XL 		0x28  /* accelerometer output registers */
-#define LSM6DS3_REG_OUTX_H_XL 		0x29
-#define LSM6DS3_REG_OUTY_L_XL 		0x2A
-#define LSM6DS3_REG_OUTY_H_XL 		0x2B
-#define LSM6DS3_REG_OUTZ_L_XL 		0x2C
-#define LSM6DS3_REG_OUTZ_H_XL 		0x2D
+#define LSM6DS3_REG_OUTX_L_XL 		 0x28  /* accelerometer output registers */
+#define LSM6DS3_REG_OUTX_H_XL 		 0x29
+#define LSM6DS3_REG_OUTY_L_XL 		 0x2A
+#define LSM6DS3_REG_OUTY_H_XL 		 0x2B
+#define LSM6DS3_REG_OUTZ_L_XL 		 0x2C
+#define LSM6DS3_REG_OUTZ_H_XL 		 0x2D
 
-#define LSM6DS3_REG_X_OFS_USR 		0x73  /* user offsets */
-#define LSM6DS3_REG_Y_OFS_USR 		0x74
-#define LSM6DS3_REG_Z_OFS_USR 		0x75
+#define LSM6DS3_REG_X_OFS_USR 		 0x73  /* user offsets */
+#define LSM6DS3_REG_Y_OFS_USR 		 0x74
+#define LSM6DS3_REG_Z_OFS_USR 		 0x75
 
 /* register values */
 #define LSM6DS3_ACCEL_ODR_DISABLE 0b00000000  /* CTRL1_XL register */
