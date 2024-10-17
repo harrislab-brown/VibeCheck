@@ -19,7 +19,8 @@
 ../Core/Src/vibecheck_sensor.c:258:6:VibeCheckSensor_ResetTime	1
 ../Core/Src/vibecheck_sensor.c:264:10:VibeCheckSensor_IsConnected	2
 ../Core/Src/vibecheck_sensor.c:271:10:VibeCheckSensor_ConnectionChanged	3
-../Core/Src/vibecheck_sensor.c:288:6:VibeCheckSensor_UpdateSensor	5
-../Core/Src/vibecheck_sensor.c:303:6:VibeCheckSensor_AddData	3
-../Core/Src/vibecheck_sensor.c:324:10:VibeCheckSensor_GetDataReady	3
-../Core/Src/vibecheck_sensor.c:345:6:VibeCheckSensor_EXTICallback	6
+../Core/Src/vibecheck_sensor.c:287:6:VibeCheckSensor_ResetConnectionFlag	2
+../Core/Src/vibecheck_sensor.c:294:6:VibeCheckSensor_UpdateSensor	5
+../Core/Src/vibecheck_sensor.c:309:6:VibeCheckSensor_AddData	3
+../Core/Src/vibecheck_sensor.c:330:10:VibeCheckSensor_GetDataReady	3
+../Core/Src/vibecheck_sensor.c:351:6:VibeCheckSensor_EXTICallback	6

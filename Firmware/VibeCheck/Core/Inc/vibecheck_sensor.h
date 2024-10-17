@@ -100,6 +100,7 @@ void VibeCheckSensor_ResetTime(VibeCheckSensor* sensor);
 
 uint32_t VibeCheckSensor_IsConnected(VibeCheckSensor* sensor, uint32_t channel);
 uint32_t VibeCheckSensor_ConnectionChanged(VibeCheckSensor* sensor, uint32_t* channel, uint32_t* is_connected);
+void VibeCheckSensor_ResetConnectionFlag(VibeCheckSensor* sensor, uint32_t channel);
 
 /* helper functions */
 void VibeCheckSensor_UpdateSensor(VibeCheckSensor* sensor, uint32_t channel);  /* send the new configuration parameters to a sensor chip */

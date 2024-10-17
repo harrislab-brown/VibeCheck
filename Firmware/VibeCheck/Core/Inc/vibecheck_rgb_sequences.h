@@ -309,4 +309,286 @@ static const VibeCheckRGB_Color led_shell_failure_colors[] = {
 };
 
 
+
+static const uint32_t led_sensor0_connected_len = 4;
+static const uint32_t led_sensor0_connected_times[] = {100, 100, 100, 100};
+static const VibeCheckRGB_Color led_sensor0_connected_colors[] = {
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+};
+
+
+static const uint32_t led_sensor0_disconnected_len = 4;
+static const uint32_t led_sensor0_disconnected_times[] = {100, 100, 100, 100};
+static const VibeCheckRGB_Color led_sensor0_disconnected_colors[] = {
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+};
+
+
+static const uint32_t led_sensor1_connected_len = 4;
+static const uint32_t led_sensor1_connected_times[] = {100, 100, 100, 100};
+static const VibeCheckRGB_Color led_sensor1_connected_colors[] = {
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+};
+
+
+static const uint32_t led_sensor1_disconnected_len = 4;
+static const uint32_t led_sensor1_disconnected_times[] = {100, 100, 100, 100};
+static const VibeCheckRGB_Color led_sensor1_disconnected_colors[] = {
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+};
+
+
+
+
+static const uint32_t led_sensor2_connected_len = 4;
+static const uint32_t led_sensor2_connected_times[] = {100, 100, 100, 100};
+static const VibeCheckRGB_Color led_sensor2_connected_colors[] = {
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+		{.r = 0, .g = 100, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+};
+
+
+static const uint32_t led_sensor2_disconnected_len = 4;
+static const uint32_t led_sensor2_disconnected_times[] = {100, 100, 100, 100};
+static const VibeCheckRGB_Color led_sensor2_disconnected_colors[] = {
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+		{.r = 100, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+};
+
+
+static const uint32_t led_sensor_connected_len[] = {led_sensor0_connected_len, led_sensor1_connected_len, led_sensor2_connected_len};
+static const uint32_t* led_sensor_connected_times[] = {led_sensor0_connected_times, led_sensor1_connected_times, led_sensor2_connected_times};
+static const VibeCheckRGB_Color* led_sensor_connected_colors[] = {led_sensor0_connected_colors, led_sensor1_connected_colors, led_sensor2_connected_colors};
+
+
+static const uint32_t led_sensor_disconnected_len[] = {led_sensor0_disconnected_len, led_sensor1_disconnected_len, led_sensor2_disconnected_len};
+static const uint32_t* led_sensor_disconnected_times[] = {led_sensor0_disconnected_times, led_sensor1_disconnected_times, led_sensor2_disconnected_times};
+static const VibeCheckRGB_Color* led_sensor_disconnected_colors[] = {led_sensor0_disconnected_colors, led_sensor1_disconnected_colors, led_sensor2_disconnected_colors};
+
 #endif /* INC_VIBECHECK_RGB_SEQUENCES_H_ */

@@ -86,8 +86,6 @@ void VibeCheck_Loop(VibeCheck* vc)
 {
 	uint32_t time = HAL_GetTick();
 
-	/* FIXME: sometimes the accelerometers disconnected unexpectedly */
-
 
 	/* call object update functions */
 	VibeCheckWaveGen_Update(&vc->wavegen);
@@ -125,7 +123,7 @@ void VibeCheck_Loop(VibeCheck* vc)
 
 
 	/* visualize the acceleration with the RGB LEDs */
-
+	/* TODO: turn off the LEDs when done measuring */
 	if (time - time_prev_led_update > 30)
 	{
 		time_prev_led_update = time;
@@ -155,5 +153,25 @@ void VibeCheck_Loop(VibeCheck* vc)
 				}
 			}
 		}
+	}
+
+
+	/* use RGB LEDs to indicate when sensors are connected or disconnected */
+	uint32_t channel;
+	uint32_t is_connected;
+	if (VibeCheckSensor_ConnectionChanged(&vc->sensor, &channel, &is_connected))
+	{
+		if (is_connected)
+		{
+			VibeCheckRGB_SetTopSequence(&vc->rgb, led_sensor_connected_times[channel], led_sensor_connected_colors[channel], led_sensor_connected_len[channel]);
+			VibeCheckRGB_StartTopSequence(&vc->rgb);
+		}
+		else
+		{
+			VibeCheckRGB_SetTopSequence(&vc->rgb, led_sensor_disconnected_times[channel], led_sensor_disconnected_colors[channel], led_sensor_disconnected_len[channel]);
+			VibeCheckRGB_StartTopSequence(&vc->rgb);
+		}
+
+		VibeCheckSensor_ResetConnectionFlag(&vc->sensor, channel);
 	}
 }

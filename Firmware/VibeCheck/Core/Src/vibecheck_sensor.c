@@ -274,7 +274,6 @@ uint32_t VibeCheckSensor_ConnectionChanged(VibeCheckSensor* sensor, uint32_t* ch
 	{
 		if (sensor->status[i].connection_change_flag)
 		{
-			sensor->status[i].connection_change_flag = 0;
 			*channel = i;
 			*is_connected = sensor->status[i].is_connected;
 			return 1;
@@ -282,6 +281,13 @@ uint32_t VibeCheckSensor_ConnectionChanged(VibeCheckSensor* sensor, uint32_t* ch
 	}
 
 	return 0;
+}
+
+
+void VibeCheckSensor_ResetConnectionFlag(VibeCheckSensor* sensor, uint32_t channel)
+{
+	if (channel >= VC_SENSOR_NUM_SENSORS) channel = VC_SENSOR_NUM_SENSORS - 1;
+	sensor->status[channel].connection_change_flag = 0;
 }
 
 
