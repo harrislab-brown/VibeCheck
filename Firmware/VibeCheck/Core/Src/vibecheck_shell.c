@@ -142,50 +142,26 @@ void VibeCheckShell_PutInput(VibeCheckShell* shell, char* input, uint32_t input_
 uint32_t VibeCheckShell_GetOutput(VibeCheckShell* shell, char** output, uint32_t* len)
 {
 	/* returns true if there is stuff in the output buffer we haven't yet sent */
-	if (shell->output_head == shell->output_tail)
+	uint32_t head = shell->output_head;
+	uint32_t tail = shell->output_tail;
+
+	if (head == tail)
 		return 0;
 
-	if (shell->output_head > shell->output_tail)
+	if (head > tail)
 	{
 		/* the output doesn't wrap so send it 'normally' */
-		*output = &shell->output[shell->output_tail];
-		*len = shell->output_head - shell->output_tail;
+		*output = &shell->output[tail];
+		*len = head - tail;
 		return 1;
 	}
 	else
 	{
 		/* the output wraps: only return up to the end of the buffer region so our output is contiguous in memory */
-		*output = &shell->output[shell->output_tail];
-		*len = VC_SHELL_IO_BUF_LEN - shell->output_tail;
+		*output = &shell->output[tail];
+		*len = VC_SHELL_IO_BUF_LEN - tail;
 		return 1;
 	}
-
-	// TODO: remove once we figure out the serial bug
-//	if (shell->output_head > shell->output_tail)
-//	{
-//		if (shell->output_head - shell->output_tail > VC_SHELL_OUTPUT_PACKET_SIZE)
-//		{
-//			*output = &shell->output[shell->output_tail];
-//			*len = VC_SHELL_OUTPUT_PACKET_SIZE;
-//			return 1;
-//		}
-//		else
-//			return 0;
-//	}
-//	else
-//	{
-//		if (shell->output_head + VC_SHELL_IO_BUF_LEN - shell->output_tail > VC_SHELL_OUTPUT_PACKET_SIZE)
-//		{
-//			*output = &shell->output[shell->output_tail];
-//			*len = VC_SHELL_OUTPUT_PACKET_SIZE;
-//			return 1;
-//		}
-//		else
-//			return 0;
-//
-//	}
-
-
 }
 
 
@@ -318,7 +294,7 @@ void VibeCheckShell_PutOutputInt(VibeCheckShell* shell, uint32_t val)
 void VibeCheckShell_PutOutputFloat(VibeCheckShell* shell, float val)
 {
 	char str[VC_SHELL_MAX_TOKEN_LEN];
-	sprintf(str, "%f", val);
+	sprintf(str, "%.3f", val);
 	VibeCheckShell_PutOutputString(shell, str);
 }
 

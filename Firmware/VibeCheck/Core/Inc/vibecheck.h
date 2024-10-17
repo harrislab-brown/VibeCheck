@@ -19,6 +19,7 @@
 #include "vibecheck_rgb_handler.h"
 #include "usbd_cdc_if.h"
 
+
 /* main application code */
 
 /*
@@ -46,6 +47,7 @@ void VibeCheck_Init(VibeCheck* vc,
 		SPI_HandleTypeDef* hspi_accel2);
 
 void VibeCheck_Loop(VibeCheck* vc);
+
 
 
 #endif /* INC_VIBECHECK_H_ */

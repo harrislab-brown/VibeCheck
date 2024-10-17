@@ -108,17 +108,13 @@ void VibeCheck_Loop(VibeCheck* vc)
 		VibeCheckRGB_StartTopSequence(&vc->rgb);
 	}
 
-
-	/* send stuff over USB */
+	/* send over USB */
 	char* usb_tx;
 	uint32_t usb_tx_len;
 	if (VibeCheckShell_GetOutput(&vc->shell, &usb_tx, &usb_tx_len))
 	{
-		NVIC_DisableIRQ(OTG_HS_IRQn);
 		if (CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len) == USBD_OK)
 			VibeCheckShell_UpdateOutputBuffer(&vc->shell, usb_tx_len);
-		NVIC_EnableIRQ(OTG_HS_IRQn);
-
 	}
 
 
@@ -157,6 +153,8 @@ void VibeCheck_Loop(VibeCheck* vc)
 
 
 	/* use RGB LEDs to indicate when sensors are connected or disconnected */
+
+	/* TODO: make these only affect the LEDs corresponding the recently connected sensor (transparency?) */
 	uint32_t channel;
 	uint32_t is_connected;
 	if (VibeCheckSensor_ConnectionChanged(&vc->sensor, &channel, &is_connected))
