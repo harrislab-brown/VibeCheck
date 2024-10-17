@@ -108,11 +108,33 @@ void VibeCheck_Loop(VibeCheck* vc)
 		VibeCheckRGB_StartTopSequence(&vc->rgb);
 	}
 
+
 	/* send over USB */
 	char* usb_tx;
 	uint32_t usb_tx_len;
 	if (VibeCheckShell_GetOutput(&vc->shell, &usb_tx, &usb_tx_len))
 	{
+		/*
+		 * CDC_Transmit_HS is a mystery and seems to sometimes reorder messages.
+		 * However, it seems every call to CDC_Transmit_HS keeps its buffer intact.
+		 * And it seems that all data is getting to the host with this scheme, but it
+		 * will need to be sorted on the host side (this is easy because we have the time-stamps).
+		 * Another requirement seems to be not calling CDC_Transmit_HS too fast, or else it will
+		 * reorder the packets anyways. (calling every 15 ms seems safe but calling every 1.5 ms re-orders the packets)
+		 */
+
+		/*
+		 * We can keep track of whether all data is reaching the host based on the shell output buffer count.
+		 * If this buffer overflows then we need to reduce the data rate. The shell status output will tell us
+		 * if a buffer overflow occurs.
+		 */
+
+		/*
+		 * The only real issue is what to do when a data packet wraps the shell output buffer - we need to send this
+		 * with a single call to CDC_Transmit_HS but the memory is not contiguous. We fixed this by having the shell
+		 * output buffer wrap before getting the next packet so that each packet is continuous in memory
+		 */
+
 		if (CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len) == USBD_OK)
 			VibeCheckShell_UpdateOutputBuffer(&vc->shell, usb_tx_len);
 	}

@@ -44,10 +44,15 @@
  */
 
 #define VC_SHELL_IO_BUF_LEN 32768
+
+#define VC_SHELL_MAX_OUTPUT_PACKET_LEN 2048  /*
+												this is the assumed longest output packet - we always want to send a complete packet with delimiter if possible.
+												If we exceed the assumed packet length, it should send in two separate outputs without breaking everything.
+												*/
+
 #define VC_SHELL_MAX_TOKEN_LEN 64
 #define VC_SHELL_MAX_NUM_HANDLERS 64
 
-//#define VC_SHELL_OUTPUT_PACKET_SIZE 2048  /* send an output packet once we have this many bytes available */
 
 #define VC_SHELL_DELIMITER "\n"
 #define VC_SHELL_INPUT_SEPARATORS " ,"
@@ -118,6 +123,7 @@ struct VibeCheckShell_s
 
 	char output[VC_SHELL_IO_BUF_LEN];
 	uint32_t output_head, output_tail;
+	uint32_t output_end;  /* 0 if no output packet has wrapped, else it is the location of the end of the packet */
 	uint32_t output_count;  /* keeps track of how full the output buffer is */
 
 	VibeCheckShell_InputHandler input_handlers[VC_SHELL_MAX_NUM_HANDLERS];

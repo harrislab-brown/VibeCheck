@@ -17,6 +17,7 @@ void VibeCheckShell_Init(VibeCheckShell* shell)
 
 	shell->output_head = 0;
 	shell->output_tail = 0;
+	shell->output_end = 0;
 	shell->output_count = 0;
 
 	shell->ih_count = 0;
@@ -93,6 +94,13 @@ VibeCheckShell_Status VibeCheckShell_Update(VibeCheckShell* shell)
 		if (shell->output_handlers[i].execute(shell->output_handlers[i].obj, shell))
 		{
 			status.ohandl_status = VC_SHELL_OUTPUT_PROCESSED;
+
+			/* wrap the output buffer if necessary so that an output packet doesn't get split up */
+			if (VC_SHELL_IO_BUF_LEN - shell->output_head < VC_SHELL_MAX_OUTPUT_PACKET_LEN)
+			{
+				shell->output_end = shell->output_head;
+				shell->output_head = 0;
+			}
 		}
 	}
 
@@ -157,10 +165,20 @@ uint32_t VibeCheckShell_GetOutput(VibeCheckShell* shell, char** output, uint32_t
 	}
 	else
 	{
-		/* the output wraps: only return up to the end of the buffer region so our output is contiguous in memory */
-		*output = &shell->output[tail];
-		*len = VC_SHELL_IO_BUF_LEN - tail;
-		return 1;
+		if (shell->output_end)
+		{
+			/* the output would have wrapped but we caught it - only send up to the delimited end of the output */
+			*output = &shell->output[tail];
+			*len = shell->output_end - tail;
+			return 1;
+		}
+		else
+		{
+			/* the output wraps: only return up to the end of the buffer region so our output is contiguous in memory */
+			*output = &shell->output[tail];
+			*len = VC_SHELL_IO_BUF_LEN - tail;
+			return 1;
+		}
 	}
 }
 
@@ -172,8 +190,20 @@ void VibeCheckShell_UpdateOutputBuffer(VibeCheckShell* shell, uint32_t len)
 	/* update the tail of the output buffer now that we have confirmed transmission */
 	shell->output_count -= len;
 	shell->output_tail += len;
-	while (shell->output_tail >= VC_SHELL_IO_BUF_LEN)
-		shell->output_tail -= VC_SHELL_IO_BUF_LEN;
+
+	if (shell->output_end)
+	{
+		/* sent a packet which ends in the wrapping boundary region */
+		shell->output_end = 0;
+		shell->output_tail = 0;
+	}
+	else
+	{
+		if (shell->output_tail >= VC_SHELL_IO_BUF_LEN)
+				shell->output_tail -= VC_SHELL_IO_BUF_LEN;  /* we tried to send a message that wrapped because it was bigger than the assumed maximum packet length */
+	}
+
+
 }
 
 
