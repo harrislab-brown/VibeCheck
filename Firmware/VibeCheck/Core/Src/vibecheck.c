@@ -135,6 +135,14 @@ void VibeCheck_Loop(VibeCheck* vc)
 		 * output buffer wrap before getting the next packet so that each packet is continuous in memory
 		 */
 
+		/* XXX */
+		char start = usb_tx[0];  /* should be 'd', 'a', or 'e' */
+		char end = usb_tx[usb_tx_len - 1];  /* should be '\n' */
+
+		if ((end != '\n') || (start != 'a' && start != 'd' && start != 'e'))
+			HAL_Delay(1000);
+			/* XXX */
+
 		if (CDC_Transmit_HS((uint8_t*)usb_tx, usb_tx_len) == USBD_OK)
 			VibeCheckShell_UpdateOutputBuffer(&vc->shell, usb_tx_len);
 	}
