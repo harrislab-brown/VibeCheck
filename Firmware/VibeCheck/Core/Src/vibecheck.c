@@ -230,16 +230,29 @@ void VibeCheck_Loop(VibeCheck* vc)
 				VibeCheckRGB_SetUpdateWithSequence(&vc->rgb, 3 * channel + 1, 0);
 				VibeCheckRGB_SetUpdateWithSequence(&vc->rgb, 3 * channel + 2, 0);
 			}
-			VibeCheckRGB_SetTopSequence(&vc->rgb, led_sensor_connected_times[channel], led_sensor_connected_colors[channel], led_sensor_connected_len[channel]);
-			VibeCheckRGB_StartTopSequence(&vc->rgb);
+			else
+			{
+				VibeCheckRGB_SetTopSequence(&vc->rgb, led_sensor_connected_times[channel], led_sensor_connected_colors[channel], led_sensor_connected_len[channel]);
+				VibeCheckRGB_StartTopSequence(&vc->rgb);
+			}
 		}
 		else
 		{
-			VibeCheckRGB_SetUpdateWithSequence(&vc->rgb, 3 * channel + 0, 1);
-			VibeCheckRGB_SetUpdateWithSequence(&vc->rgb, 3 * channel + 1, 1);
-			VibeCheckRGB_SetUpdateWithSequence(&vc->rgb, 3 * channel + 2, 1);
-			VibeCheckRGB_SetTopSequence(&vc->rgb, led_sensor_disconnected_times[channel], led_sensor_disconnected_colors[channel], led_sensor_disconnected_len[channel]);
-			VibeCheckRGB_StartTopSequence(&vc->rgb);
+			if (vc->sensor.status[channel].accel_measuring || vc->sensor.status[channel].gyro_measuring)
+			{
+				VibeCheckRGB_SetUpdateWithSequence(&vc->rgb, 3 * channel + 0, 1);
+				VibeCheckRGB_SetUpdateWithSequence(&vc->rgb, 3 * channel + 1, 1);
+				VibeCheckRGB_SetUpdateWithSequence(&vc->rgb, 3 * channel + 2, 1);
+				VibeCheckRGB_SetColor(&vc->rgb, 3 * channel + 0, 0, 0, 0);
+				VibeCheckRGB_SetColor(&vc->rgb, 3 * channel + 1, 0, 0, 0);
+				VibeCheckRGB_SetColor(&vc->rgb, 3 * channel + 2, 0, 0, 0);
+				VibeCheckRGB_SendColors(&vc->rgb);
+			}
+			else
+			{
+				VibeCheckRGB_SetTopSequence(&vc->rgb, led_sensor_disconnected_times[channel], led_sensor_disconnected_colors[channel], led_sensor_disconnected_len[channel]);
+				VibeCheckRGB_StartTopSequence(&vc->rgb);
+			}
 		}
 
 		VibeCheckSensor_ResetConnectionFlag(&vc->sensor, channel);

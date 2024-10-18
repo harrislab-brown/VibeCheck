@@ -10,6 +10,8 @@
 
 #include "stm32h723xx.h"
 
+#define FSPI_MAX_ITER 200000  /* timeout because sometimes the hardware gets stuck */
+
 /* this uses the SPI FIFO on the H7, so it only works for transactions 16 bytes or less */
 /* (the FIFO size depends on the specific SPI channel too, so check the RM) */
 /* On the H723, SPI1, 2, 3 have 16 byte FIFO and SPI4, 5, 6 have 8 bytes FIFO */
@@ -28,15 +30,16 @@ __attribute__((optimize("-Ofast"))) inline void SPI_TxRx_Fast(uint8_t* tx, uint8
 	spi->CR1 |= SPI_CR1_SPE;  /* enable SPI */
 	spi->CR1 |= SPI_CR1_CSTART;  /* start transmission */
 
-	for (uint8_t i = 0; i < len; )  /* put all the TX data in the FIFO at once - this FIFO is 16 bytes max so this won't work for arbitrary amounts of data */
+	uint32_t j = 0;
+	for (uint8_t i = 0; i < len && j < FSPI_MAX_ITER; j++)  /* put all the TX data in the FIFO at once - this FIFO is 16 bytes max so this won't work for arbitrary amounts of data */
 	{
 		if(((spi->SR) & SPI_SR_TXP) == SPI_SR_TXP)  /* wait until TX FIFO has enough space for a data packet */
 		   *(__IO uint8_t*)&(spi->TXDR) = tx[i++];  /* put data in TXDR */
 	}
 
-	/* FIXME: this can potentially get stuck -- add a timeout or max iteration limit */
 
-	for (uint8_t i = 0; i < len; )  /* read out everything from the RX buffer */
+	j = 0;
+	for (uint8_t i = 0; i < len && j < FSPI_MAX_ITER; j++)  /* read out everything from the RX buffer */
 	{
 		if(((spi->SR) & SPI_SR_RXP) == SPI_SR_RXP)  /* wait until RX FIFO contains a data packet */
 			rx[i++] = *(__IO uint8_t*)&(spi->RXDR);  /* read the data from RXDR */
