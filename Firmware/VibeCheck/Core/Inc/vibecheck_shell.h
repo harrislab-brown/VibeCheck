@@ -45,7 +45,7 @@
 
 #define VC_SHELL_IO_BUF_LEN 32768
 
-#define VC_SHELL_MAX_OUTPUT_PACKET_LEN 2048  /*
+#define VC_SHELL_MAX_OUTPUT_PACKET_LEN 4096  /*
 												this is the assumed longest output packet - we always want to send a complete packet with delimiter if possible.
 												If we exceed the assumed packet length, it should send in two separate outputs without breaking everything.
 												*/
