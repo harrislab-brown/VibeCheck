@@ -468,7 +468,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "vibrometer_h7.kicad_pro",
+    "filename": "vibecheck_mainboard.kicad_pro",
     "version": 1
   },
   "net_settings": {
@@ -639,6 +639,9 @@
       "/ACCEL/ACCEL.NCS2": "SPI",
       "/ACCEL/ACCEL.NCS3": "SPI",
       "/ACCEL/ACCEL.NCS[1..3]": "SPI",
+      "/ACCEL/ACCEL.SCK1": "SPI",
+      "/ACCEL/ACCEL.SCK2": "SPI",
+      "/ACCEL/ACCEL.SCK3": "SPI",
       "/ACCEL/ACCEL.SCK[1..3]": "SPI",
       "/ACCEL/ACCEL{SCK[1..3] MISO[1..3] MOSI[1..3] NCS[1..3] INTA[1..3] INTB[1..3]}": "SPI",
       "/ACCEL/LED_ACCEL": "digital_IO",

@@ -465,7 +465,7 @@
     "pinned_symbol_libs": []
   },
   "meta": {
-    "filename": "VibeCheck_Daughterboard.kicad_pro",
+    "filename": "vibecheck_sensorboard.kicad_pro",
     "version": 1
   },
   "net_settings": {
