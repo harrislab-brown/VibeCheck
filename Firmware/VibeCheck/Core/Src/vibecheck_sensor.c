@@ -12,6 +12,7 @@ void VibeCheckSensor_Init(VibeCheckSensor* sensor, volatile uint32_t* time_micro
 {
 	sensor->data_ind = 0;
 	sensor->data_ready = 0;
+	sensor->data_packet_size = VC_SENSOR_DEFAULT_PACKET_SIZE;
 	sensor->time_prev_update = 0;
 	sensor->generate_fake_data = 0;
 
@@ -255,6 +256,24 @@ void VibeCheckSensor_StopFakeData(VibeCheckSensor* sensor)
 }
 
 
+void VibeCheckSensor_SetPacketSize(VibeCheckSensor* sensor, uint32_t size)
+{
+	if (size < 1) size = 1;
+	if (size > VC_SENSOR_MAX_PACKET_SIZE) size = VC_SENSOR_MAX_PACKET_SIZE;
+
+	/* reset the state of the data buffer */
+	sensor->data_packet_size = size;
+	sensor->data_ready = 0;
+	sensor->data_ind = 0;
+}
+
+
+uint32_t VibeCheckSensor_GetPacketSize(VibeCheckSensor* sensor)
+{
+	return sensor->data_packet_size;
+}
+
+
 void VibeCheckSensor_ResetTime(VibeCheckSensor* sensor)
 {
 	sensor->start_time = *sensor->time_micros;
@@ -315,11 +334,11 @@ void VibeCheckSensor_AddData(VibeCheckSensor* sensor, uint8_t id, uint32_t time,
 	sensor->data[sensor->data_ind].z = z;
 
 	sensor->data_ind++;
-	if (sensor->data_ind == VC_SENSOR_DATA_PER_PACKET)
+	if (sensor->data_ind == sensor->data_packet_size)
 	{
 		sensor->data_ready = 1;
 	}
-	else if (sensor->data_ind == 2 * VC_SENSOR_DATA_PER_PACKET)
+	else if (sensor->data_ind == 2 * sensor->data_packet_size)
 	{
 		sensor->data_ind = 0;
 		sensor->data_ready = 1;
@@ -332,10 +351,10 @@ uint32_t VibeCheckSensor_GetDataReady(VibeCheckSensor* sensor, volatile VibeChec
 	if (sensor->data_ready)
 	{
 		sensor->data_ready = 0;
-		if (sensor->data_ind < VC_SENSOR_DATA_PER_PACKET)
+		if (sensor->data_ind < sensor->data_packet_size)
 		{
 			/* ready to send the second half */
-			*data = &sensor->data[VC_SENSOR_DATA_PER_PACKET];
+			*data = &sensor->data[sensor->data_packet_size];
 		}
 		else
 		{

@@ -16,6 +16,14 @@ This is a list of serial commands for the VibeCheck separated into categories by
   
   Stops sending fake accelerometer data.
 
+- `sensor set packetsize [size:int]`
+
+  Sets how many data points are included in each data transmission. This value can be adjusted to balance latency in receiving samples (smaller packet size might be better at low data rates) versus avoiding overloading the data link by calling the USB transmission function too often (large packet size might be better at high data rates). The minimum value is 1 and the maximum value is defined in the firmware (*currently 512 but could change*).
+
+- `sensor get packetsize`
+
+  Gets how many data points are included in each data transmission.
+
 - `sensor [channel:int] start accel`
   
   Starts measuring acceleration on the specified channel. The channel refers to the physical port on the board, zero indexed (so the allowed values are 0, 1 and 2). If that channel is not currently connected but the acceleration measurement is started, it will start measuring data immediately upon connection.

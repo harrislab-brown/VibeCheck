@@ -18,7 +18,8 @@
 /* interfaces with and manages data from the sensor array */
 
 #define VC_SENSOR_NUM_SENSORS 3
-#define VC_SENSOR_DATA_PER_PACKET 25  /* make sure this fits in the shell overflow region */  /* TODO: have the user set the data per packet on the fly to account for different data rates */
+#define VC_SENSOR_MAX_PACKET_SIZE 512  /* make sure this fits in the shell overflow region */  /* TODO: have the user set the data per packet on the fly to account for different data rates */
+#define VC_SENSOR_DEFAULT_PACKET_SIZE 10
 #define VC_SENSOR_UPDATE_INTERVAL_MS 500
 
 #define VC_SENSOR_DEFAULT_ODR 52
@@ -59,9 +60,10 @@ typedef struct
 	VibeCheckSensor_Status status[VC_SENSOR_NUM_SENSORS];
 
 	/* combined sensor data buffer, and flags to handle double buffering */
-	volatile VibeCheckSensor_Data data[2 * VC_SENSOR_DATA_PER_PACKET];
+	volatile VibeCheckSensor_Data data[2 * VC_SENSOR_MAX_PACKET_SIZE];
 	volatile uint32_t data_ind;
 	volatile uint32_t data_ready;
+	uint32_t data_packet_size;  /* user setting for how many data points to send at a time */
 
 	uint32_t time_prev_update;
 	uint32_t generate_fake_data;  /* for testing */
@@ -95,6 +97,9 @@ void VibeCheckSensor_GetOffsets(VibeCheckSensor* sensor, uint32_t channel, float
 
 void VibeCheckSensor_StartFakeData(VibeCheckSensor* sensor);  /* for testing the host UI */
 void VibeCheckSensor_StopFakeData(VibeCheckSensor* sensor);
+
+void VibeCheckSensor_SetPacketSize(VibeCheckSensor* sensor, uint32_t size);
+uint32_t VibeCheckSensor_GetPacketSize(VibeCheckSensor* sensor);
 
 void VibeCheckSensor_ResetTime(VibeCheckSensor* sensor);
 

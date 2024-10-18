@@ -14,6 +14,10 @@ Set of commands:
 
 >>sensor fakedata stop
 
+>>sensor set packetsize [size]
+
+>>sensor get packetsize
+
 >>sensor [channel] start accel
 
 >>sensor [channel] stop accel
@@ -237,6 +241,39 @@ uint32_t VibeCheckSensorCMD_Execute(void* obj, VibeCheckShell* shell)
 				}
 			}
 		}
+		else if (!strcmp(str, "set"))
+		{
+			/* setters for overall sensor subsystem (not channel specific) */
+			if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
+			{
+				if (!strcmp(str, "packetsize"))
+				{
+					int32_t size;
+					if (VibeCheckShell_GetNextInt(shell, &size))
+					{
+						VibeCheckSensor_SetPacketSize(sensor, size);
+						VibeCheckShell_PutOutputString(shell, "ack");
+						VibeCheckShell_PutOutputDelimiter(shell);
+						return 1;
+					}
+				}
+			}
+		}
+		else if (!strcmp(str, "get"))
+		{
+			/* getters for overall sensor subsystem (not channel specific) */
+			if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
+			{
+				if (!strcmp(str, "packetsize"))
+				{
+					VibeCheckShell_PutOutputString(shell, "ack");
+					VibeCheckShell_PutOutputSeparator(shell);
+					VibeCheckShell_PutOutputInt(shell, VibeCheckSensor_GetPacketSize(sensor));
+					VibeCheckShell_PutOutputDelimiter(shell);
+					return 1;
+				}
+			}
+		}
 		else if (VibeCheckShell_TurnToInt(str, &channel))
 		{
 			if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
@@ -312,11 +349,11 @@ uint32_t VibeCheckSensorSender_Data_Execute(void* obj, VibeCheckShell* shell)
 	{
 		VibeCheckShell_PutOutputString(shell, "data");
 		VibeCheckShell_PutOutputSeparator(shell);
-		VibeCheckShell_PutOutputInt(shell, VC_SENSOR_DATA_PER_PACKET);
+		VibeCheckShell_PutOutputInt(shell, sensor->data_packet_size);
 
 		uint32_t data_written = 0;
 
-		while (data_written < VC_SENSOR_DATA_PER_PACKET)
+		while (data_written < sensor->data_packet_size)
 		{
 			VibeCheckShell_PutOutputSeparator(shell);
 			VibeCheckShell_PutOutputInt(shell, data->id);
