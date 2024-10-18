@@ -6,6 +6,16 @@ All communications with the VibeCheck are UTF8 (plain text) encoded, with spaces
 
 This is a list of serial commands for the VibeCheck separated into categories by subsystem. Arguments for the commands and types are indicated with brackets: [argument name:type]. The VibeCheck will respond first with "ack" after successfully processing a command, and then with the requested value(s) if calling a getter command. Remember to terminate the command with a newline (LF) character when sending to the VibeCheck or else it will not respond.
 
+### Recording
+
+- `record start`
+
+Turns on the recording LED on the VibeCheck board.
+
+- `record stop`
+
+Turns off the recording LED on the VibeCheck board.`
+
 ### Sensors
 
 - `sensor fakedata start`
@@ -215,8 +225,9 @@ Events correspond to user interactions directly with the VibeCheck board (not th
 *The currently implemented events are as follows. This is all likely to change as we refine the UX.*
 
 ```
-"event wavegen muted"
-"event wavegen unmuted"
+"event muted"
+"event unmuted"
+"event record"
 "event sensor [channel:int] connected"
 "event sensor [channel:int] disconnected"
 ```

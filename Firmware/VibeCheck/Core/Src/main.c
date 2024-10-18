@@ -1053,8 +1053,8 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
 
-  /*Configure GPIO pins : MUTE_BUTTON_Pin BIG_RED_BUTTON_Pin */
-  GPIO_InitStruct.Pin = MUTE_BUTTON_Pin|BIG_RED_BUTTON_Pin;
+  /*Configure GPIO pins : MUTE_BUTTON_Pin RECORD_BUTTON_Pin */
+  GPIO_InitStruct.Pin = MUTE_BUTTON_Pin|RECORD_BUTTON_Pin;
   GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);

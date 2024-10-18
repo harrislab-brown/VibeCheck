@@ -9,7 +9,15 @@
 #include "vibecheck.h"
 #include "vibecheck_rgb_sequences.h"
 
+
 static uint32_t time_prev_led_update;
+static uint32_t time_prev_mute_press;
+static uint32_t time_prev_record_press;
+
+
+extern uint32_t is_muted, mute_pressed, record_pressed;
+static uint32_t was_strobing;
+
 
 void VibeCheck_Init(VibeCheck* vc,
 		TIM_HandleTypeDef* htim_strobe,
@@ -50,15 +58,18 @@ void VibeCheck_Init(VibeCheck* vc,
 			.obj = &vc->sensor
 	};
 
+	VibeCheckShell_InputHandler record_cmd = {
+			.name = "record",
+			.execute = VibeCheckRecordCMD_Execute,
+			.obj = NULL
+	};
+
 	VibeCheckShell_RegisterInputHandler(&vc->shell, strobe_cmd);
 	VibeCheckShell_RegisterInputHandler(&vc->shell, wavegen_cmd);
 	VibeCheckShell_RegisterInputHandler(&vc->shell, rgb_cmd);
 	VibeCheckShell_RegisterInputHandler(&vc->shell, sensor_cmd);
+	VibeCheckShell_RegisterInputHandler(&vc->shell, record_cmd);
 
-	VibeCheckShell_OutputHandler wavegen_sender = {
-			.execute = VibeCheckWaveGenSender_Execute,
-			.obj = &vc->wavegen
-	};
 
 	VibeCheckShell_OutputHandler sensor_data_sender = {
 			.execute = VibeCheckSensorSender_Data_Execute,
@@ -70,9 +81,22 @@ void VibeCheck_Init(VibeCheck* vc,
 			.obj = &vc->sensor
 	};
 
-	VibeCheckShell_RegisterOutputHandler(&vc->shell, wavegen_sender);
+	VibeCheckShell_OutputHandler mute_button_sender = {
+			.execute = VibeCheckMuteSender_Execute,
+			.obj = NULL
+	};
+
+	VibeCheckShell_OutputHandler record_button_sender = {
+			.execute = VibeCheckRecordSender_Execute,
+			.obj = NULL
+	};
+
+
 	VibeCheckShell_RegisterOutputHandler(&vc->shell, sensor_data_sender);
 	VibeCheckShell_RegisterOutputHandler(&vc->shell, sensor_status_sender);
+	VibeCheckShell_RegisterOutputHandler(&vc->shell, mute_button_sender);
+	VibeCheckShell_RegisterOutputHandler(&vc->shell, record_button_sender);
+
 
 	VibeCheckStrobe_Init(&vc->strobe, htim_strobe);
 	VibeCheckWaveGen_Init(&vc->wavegen, hdac_wavegen, htim_wavegen);
@@ -85,6 +109,9 @@ void VibeCheck_Init(VibeCheck* vc,
 void VibeCheck_Loop(VibeCheck* vc)
 {
 	uint32_t time = HAL_GetTick();
+
+	/* TODO: record button should just send a message any time it is pressed. Record LED should be turned on/off from serial cmd only */
+	/* TODO: mute button should mute output, turn off strobe, and send message */
 
 
 	/* call object update functions */
@@ -201,5 +228,39 @@ void VibeCheck_Loop(VibeCheck* vc)
 		}
 
 		VibeCheckSensor_ResetConnectionFlag(&vc->sensor, channel);
+	}
+
+
+	/* check the buttons */
+	if (time - time_prev_mute_press > 250 && HAL_GPIO_ReadPin(MUTE_BUTTON_GPIO_Port, MUTE_BUTTON_Pin))
+	{
+		time_prev_mute_press = time;
+		mute_pressed = 1;
+
+		if (is_muted)
+		{
+			is_muted = 0;
+			HAL_GPIO_WritePin(MUTE_SIGNAL_GPIO_Port, MUTE_SIGNAL_Pin, GPIO_PIN_RESET);  /* un-mute the output */
+			HAL_GPIO_WritePin(MUTE_INDICATOR_GPIO_Port, MUTE_INDICATOR_Pin, GPIO_PIN_RESET);  /* turn off the LED */
+			if (was_strobing)
+				VibeCheckStrobe_Start(&vc->strobe);
+		}
+		else
+		{
+			is_muted = 1;
+			HAL_GPIO_WritePin(MUTE_SIGNAL_GPIO_Port, MUTE_SIGNAL_Pin, GPIO_PIN_SET);  /* mute the output */
+			HAL_GPIO_WritePin(MUTE_INDICATOR_GPIO_Port, MUTE_INDICATOR_Pin, GPIO_PIN_SET);  /* turn on the LED */
+			if (VibeCheckStrobe_IsRunning(&vc->strobe))
+			{
+				was_strobing = 1;
+				VibeCheckStrobe_Stop(&vc->strobe);
+			}
+		}
+	}
+
+	if (time - time_prev_record_press > 250 && HAL_GPIO_ReadPin(RECORD_BUTTON_GPIO_Port, RECORD_BUTTON_Pin))
+	{
+		time_prev_record_press = time;
+		record_pressed = 1;
 	}
 }

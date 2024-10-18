@@ -45,6 +45,8 @@ typedef struct
 	float exposure_ms;
 	float phase_deg;
 
+	uint32_t is_running;
+
 	/* for changing the phase */
 	uint32_t arr_steady, arr_phase;
 	uint32_t phase_change_pending, revert_arr_pending;
@@ -55,6 +57,8 @@ void VibeCheckStrobe_Init(VibeCheckStrobe* strobe, TIM_HandleTypeDef* htim);
 
 void VibeCheckStrobe_Start(VibeCheckStrobe* strobe);
 void VibeCheckStrobe_Stop(VibeCheckStrobe* strobe);
+
+uint32_t VibeCheckStrobe_IsRunning(VibeCheckStrobe* strobe);
 
 void VibeCheckStrobe_SetFrequency(VibeCheckStrobe* strobe, float freq_hz);
 float VibeCheckStrobe_GetFrequency(VibeCheckStrobe* strobe);

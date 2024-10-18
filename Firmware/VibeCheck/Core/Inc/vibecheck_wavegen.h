@@ -76,10 +76,6 @@ typedef struct
 	float amplitude;  /* amplitude of the wave, between 0 and 1 */
 
 	uint32_t is_running;
-	uint32_t is_muted;
-	uint32_t mute_button_flag;
-	uint32_t time_prev_button_press;
-
 
 	uint32_t demo_num;
 	Sequencer sequencer;  /* in case we want to do frequency sweeps or something */
@@ -100,8 +96,6 @@ float VibeCheckWaveGen_GetAmplitude(VibeCheckWaveGen* wavegen);
 
 void VibeCheckWaveGen_SetWaveform(VibeCheckWaveGen* wavegen, VibeCheckWaveGen_Waveform waveform);
 VibeCheckWaveGen_Waveform VibeCheckWaveGen_GetWaveform(VibeCheckWaveGen* wavegen);
-
-uint32_t VibeCheckWaveGen_WasMuteButtonPressed(VibeCheckWaveGen* wavegen, uint32_t* is_muted);
 
 /* keeps track of which end of the double buffer to compute when updating the wave */
 void VibeCheckWaveGen_DMAHalfCpltCallback(VibeCheckWaveGen* wavegen);

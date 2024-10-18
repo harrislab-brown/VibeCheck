@@ -15,6 +15,7 @@ void VibeCheckStrobe_Init(VibeCheckStrobe* strobe, TIM_HandleTypeDef* htim)
 	strobe->freq_hz = VC_STROBE_DEFAULT_FREQ_HZ;
 	strobe->exposure_ms = VC_STROBE_DEFAULT_EXPOSURE_MS;
 	strobe->phase_deg = 0.0f;
+	strobe->is_running = 0;
 
 	/* set up the timer registers */
 	strobe->htim->Instance->PSC = VC_STROBE_TIM_PSC - 1;
@@ -27,6 +28,7 @@ void VibeCheckStrobe_Init(VibeCheckStrobe* strobe, TIM_HandleTypeDef* htim)
 void VibeCheckStrobe_Start(VibeCheckStrobe* strobe)
 {
 	/* start the timers with interrupts when period completes */
+	strobe->is_running = 1;
 	HAL_TIM_Base_Start_IT(strobe->htim);
 	HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_2);
@@ -35,10 +37,17 @@ void VibeCheckStrobe_Start(VibeCheckStrobe* strobe)
 
 void VibeCheckStrobe_Stop(VibeCheckStrobe* strobe)
 {
+	strobe->is_running = 0;
 	HAL_TIM_Base_Start_IT(strobe->htim);
 	HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_1);
 	HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_2);
 	HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_3);
+}
+
+
+uint32_t VibeCheckStrobe_IsRunning(VibeCheckStrobe* strobe)
+{
+	return strobe->is_running;
 }
 
 void VibeCheckStrobe_SetFrequency(VibeCheckStrobe* strobe, float freq_hz)

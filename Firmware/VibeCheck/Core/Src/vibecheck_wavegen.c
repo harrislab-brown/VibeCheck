@@ -94,9 +94,6 @@ void VibeCheckWaveGen_Init(VibeCheckWaveGen* wavegen, DAC_HandleTypeDef *hdac, T
 	wavegen->waveform = VC_WAVE_SINE;
 
 	wavegen->is_running = 0;
-	wavegen->is_muted = 0;
-	wavegen->mute_button_flag = 0;
-	wavegen->time_prev_button_press = 0;
 
 	wavegen->wave_ping_compute_pending = 0;
 	wavegen->wave_pong_compute_pending = 0;
@@ -127,31 +124,8 @@ void VibeCheckWaveGen_Update(VibeCheckWaveGen* wavegen)
 {
 	/* call in the main loop */
 
-	/* check the mute button */
 	uint32_t time = HAL_GetTick();
-	if (time - wavegen->time_prev_button_press > VC_WAVE_BUTTON_DEBOUNCE_MS && HAL_GPIO_ReadPin(MUTE_BUTTON_GPIO_Port, MUTE_BUTTON_Pin))
-	{
 
-		/*
-		 * the line driver seems to have some kind of slow start built in so no
-		 * need to worry about pops when muting via the hardware pin
-		 */
-		if (wavegen->is_muted)
-		{
-			wavegen->is_muted = 0;
-			HAL_GPIO_WritePin(MUTE_SIGNAL_GPIO_Port, MUTE_SIGNAL_Pin, GPIO_PIN_RESET);  /* un-mute the output */
-			HAL_GPIO_WritePin(MUTE_INDICATOR_GPIO_Port, MUTE_INDICATOR_Pin, GPIO_PIN_RESET);  /* turn off the LED */
-		}
-		else
-		{
-			wavegen->is_muted = 1;
-			HAL_GPIO_WritePin(MUTE_SIGNAL_GPIO_Port, MUTE_SIGNAL_Pin, GPIO_PIN_SET);  /* mute the output */
-			HAL_GPIO_WritePin(MUTE_INDICATOR_GPIO_Port, MUTE_INDICATOR_Pin, GPIO_PIN_SET);  /* turn on the LED */
-		}
-
-		wavegen->mute_button_flag = 1;  /* can alert the shell via this flag when we press the mute button */
-		wavegen->time_prev_button_press = time;
-	}
 
 	/*
 	 * to make a smooth transition between waves when a parameter is changed, change the two halves of the double buffer separately
@@ -243,18 +217,6 @@ void VibeCheckWaveGen_SetWaveform(VibeCheckWaveGen* wavegen, VibeCheckWaveGen_Wa
 VibeCheckWaveGen_Waveform VibeCheckWaveGen_GetWaveform(VibeCheckWaveGen* wavegen)
 {
 	return wavegen->waveform;
-}
-
-uint32_t VibeCheckWaveGen_WasMuteButtonPressed(VibeCheckWaveGen* wavegen, uint32_t* is_muted)
-{
-	if (wavegen->mute_button_flag)
-	{
-		wavegen->mute_button_flag = 0;
-		*is_muted = wavegen->is_muted;
-		return 1;
-	}
-
-	return 0;
 }
 
 

@@ -9,6 +9,7 @@
 "./Core/Src/system_stm32h7xx.o"
 "./Core/Src/util.o"
 "./Core/Src/vibecheck.o"
+"./Core/Src/vibecheck_button_handler.o"
 "./Core/Src/vibecheck_rgb.o"
 "./Core/Src/vibecheck_rgb_handler.o"
 "./Core/Src/vibecheck_sensor.o"

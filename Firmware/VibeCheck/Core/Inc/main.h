@@ -107,8 +107,8 @@ void Error_Handler(void);
 #define LED_STROBE_3_GPIO_Port GPIOC
 #define DAC_EXT_Pin GPIO_PIN_9
 #define DAC_EXT_GPIO_Port GPIOC
-#define BIG_RED_BUTTON_Pin GPIO_PIN_15
-#define BIG_RED_BUTTON_GPIO_Port GPIOA
+#define RECORD_BUTTON_Pin GPIO_PIN_15
+#define RECORD_BUTTON_GPIO_Port GPIOA
 #define ACCEL_SCK2_Pin GPIO_PIN_10
 #define ACCEL_SCK2_GPIO_Port GPIOC
 #define ACCEL_MISO2_Pin GPIO_PIN_11

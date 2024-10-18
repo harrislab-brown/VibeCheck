@@ -212,31 +212,3 @@ uint32_t VibeCheckWaveGenCMD_Execute(void* obj, VibeCheckShell* shell)
 
 	return 0;
 }
-
-
-uint32_t VibeCheckWaveGenSender_Execute(void* obj, VibeCheckShell* shell)
-{
-	/* this will send a message to the host when the mute button is pressed */
-
-	VibeCheckWaveGen* wavegen = (VibeCheckWaveGen*)obj;
-
-	uint32_t is_muted;
-	if (VibeCheckWaveGen_WasMuteButtonPressed(wavegen, &is_muted))
-	{
-		VibeCheckShell_PutOutputString(shell, "event");
-		VibeCheckShell_PutOutputSeparator(shell);
-		VibeCheckShell_PutOutputString(shell, "wavegen");
-		VibeCheckShell_PutOutputSeparator(shell);
-
-		if (is_muted)
-			VibeCheckShell_PutOutputString(shell, "muted");
-		else
-			VibeCheckShell_PutOutputString(shell, "unmuted");
-
-		VibeCheckShell_PutOutputDelimiter(shell);
-
-		return 1;
-	}
-
-	return 0;
-}
