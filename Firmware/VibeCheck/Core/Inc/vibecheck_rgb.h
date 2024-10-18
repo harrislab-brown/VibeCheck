@@ -58,6 +58,7 @@ typedef struct
 	TIM_HandleTypeDef* htim;  /* timer to signal the LEDs */
 
 	VibeCheckRGB_Color colors[VC_RGB_NUM_LEDS];  /* array of LED colors */
+	uint32_t update_with_sequence[VC_RGB_NUM_LEDS];  /* flags for whether each LED should update with the sequence */
 	uint16_t bit_stream[VC_RGB_BUF_LEN];  /* the stream of pulse widths to send to the LED array */
 
 
@@ -89,6 +90,7 @@ void VibeCheckRGB_StopTopSequence(VibeCheckRGB* rgb);
 void VibeCheckRGB_SetColor(VibeCheckRGB* rgb, uint32_t index, uint8_t r, uint8_t g, uint8_t b);  /* set the color of an individual LED */
 VibeCheckRGB_Color VibeCheckRGB_GetColor(VibeCheckRGB* rgb, uint32_t index);
 void VibeCheckRGB_SetAllOff(VibeCheckRGB* rgb);
+void VibeCheckRGB_SetUpdateWithSequence(VibeCheckRGB* rgb, uint32_t index, uint32_t update);
 void VibeCheckRGB_SendColors(VibeCheckRGB* rgb);  /* send the colors to the LEDs */
 
 #endif /* INC_VIBECHECK_RGB_H_ */

@@ -17,6 +17,9 @@ void VibeCheckRGB_Init(VibeCheckRGB* rgb, TIM_HandleTypeDef* htim)
 	htim->Instance->ARR = VC_RGB_TIM_ARR - 1;
 	rgb->htim = htim;
 
+	for (uint32_t i = 0; i < VC_RGB_NUM_LEDS; i++)
+		rgb->update_with_sequence[i] = 1;  /* LEDs follow the sequence by default */
+
 	/* clear the DMA buffer, particularly setting all zeros during the reset time */
 	for (uint32_t i = 0; i < VC_RGB_BUF_LEN; i++)
 		rgb->bit_stream[i] = 0;
@@ -36,7 +39,8 @@ void VibeCheckRGB_Update(VibeCheckRGB* rgb)  /* call repeatedly in the main loop
 		for (uint32_t i = 0; i < VC_RGB_NUM_LEDS; i++)
 		{
 			VibeCheckRGB_Color color = rgb->top_sequence_colors[VC_RGB_NUM_LEDS * step + i];
-			VibeCheckRGB_SetColor(rgb, i, color.r, color.g, color.b);
+			if (rgb->update_with_sequence[i])
+				VibeCheckRGB_SetColor(rgb, i, color.r, color.g, color.b);
 		}
 		VibeCheckRGB_SendColors(rgb);
 	}
@@ -46,7 +50,8 @@ void VibeCheckRGB_Update(VibeCheckRGB* rgb)  /* call repeatedly in the main loop
 		for (uint32_t i = 0; i < VC_RGB_NUM_LEDS; i++)
 		{
 			VibeCheckRGB_Color color = rgb->base_sequence_colors[VC_RGB_NUM_LEDS * step + i];
-			VibeCheckRGB_SetColor(rgb, i, color.r, color.g, color.b);
+			if (rgb->update_with_sequence[i])
+				VibeCheckRGB_SetColor(rgb, i, color.r, color.g, color.b);
 		}
 		VibeCheckRGB_SendColors(rgb);
 	}
@@ -110,6 +115,15 @@ void VibeCheckRGB_SetAllOff(VibeCheckRGB* rgb)
 {
 	for (uint32_t i = 0; i < VC_RGB_NUM_LEDS; i++)
 		VibeCheckRGB_SetColor(rgb, i, 0, 0, 0);
+}
+
+
+void VibeCheckRGB_SetUpdateWithSequence(VibeCheckRGB* rgb, uint32_t index, uint32_t update)
+{
+	if (index > VC_RGB_NUM_LEDS - 1)
+			index = VC_RGB_NUM_LEDS - 1;
+
+	rgb->update_with_sequence[index] = update;
 }
 
 

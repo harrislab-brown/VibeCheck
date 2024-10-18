@@ -127,6 +127,7 @@ void VibeCheckSensor_StartAccel(VibeCheckSensor* sensor, uint32_t channel)  /* s
 	 */
 
 	sensor->status[channel].accel_measuring = 1;
+	sensor->status[channel].measuring_change_flag = 1;
 }
 
 void VibeCheckSensor_StopAccel(VibeCheckSensor* sensor, uint32_t channel)
@@ -137,6 +138,7 @@ void VibeCheckSensor_StopAccel(VibeCheckSensor* sensor, uint32_t channel)
 		LSM6DS3_StopAccel(&sensor->sensor_array[channel]);
 
 	sensor->status[channel].accel_measuring = 0;
+	sensor->status[channel].measuring_change_flag = 1;
 }
 
 void VibeCheckSensor_StartGyro(VibeCheckSensor* sensor, uint32_t channel)  /* start gyroscope measurement of specified channel */
@@ -147,6 +149,7 @@ void VibeCheckSensor_StartGyro(VibeCheckSensor* sensor, uint32_t channel)  /* st
 		LSM6DS3_StartGyro(&sensor->sensor_array[channel]);
 
 	sensor->status[channel].gyro_measuring = 1;
+	sensor->status[channel].measuring_change_flag = 1;
 }
 
 void VibeCheckSensor_StopGyro(VibeCheckSensor* sensor, uint32_t channel)
@@ -157,6 +160,7 @@ void VibeCheckSensor_StopGyro(VibeCheckSensor* sensor, uint32_t channel)
 		LSM6DS3_StopGyro(&sensor->sensor_array[channel]);
 
 	sensor->status[channel].gyro_measuring = 0;
+	sensor->status[channel].measuring_change_flag = 1;
 }
 
 void VibeCheckSensor_SetAccelODR(VibeCheckSensor* sensor, uint32_t channel, uint32_t odr)
@@ -295,6 +299,25 @@ uint32_t VibeCheckSensor_ConnectionChanged(VibeCheckSensor* sensor, uint32_t* ch
 		{
 			*channel = i;
 			*is_connected = sensor->status[i].is_connected;
+			return 1;
+		}
+	}
+
+	return 0;
+}
+
+
+uint32_t VibeCheckSensor_MeasuringChanged(VibeCheckSensor* sensor, uint32_t* channel, uint32_t* accel_measuring, uint32_t* gyro_measuring)
+{
+
+	for (uint32_t i = 0; i < VC_SENSOR_NUM_SENSORS; i++)
+	{
+		if (sensor->status[i].measuring_change_flag)
+		{
+			sensor->status[i].measuring_change_flag = 0;
+			*channel = i;
+			*accel_measuring = sensor->status[i].accel_measuring;
+			*gyro_measuring = sensor->status[i].gyro_measuring;
 			return 1;
 		}
 	}

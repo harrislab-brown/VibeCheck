@@ -46,6 +46,7 @@ typedef struct
 	uint32_t gyro_measuring;
 	volatile uint32_t received_data_flag;  /* flag set in interrupt when data received */
 	uint32_t connection_change_flag;  /* flag set when the connection status was changed */
+	uint32_t measuring_change_flag;
 } VibeCheckSensor_Status;
 
 typedef struct
@@ -105,6 +106,7 @@ void VibeCheckSensor_ResetTime(VibeCheckSensor* sensor);
 
 uint32_t VibeCheckSensor_IsConnected(VibeCheckSensor* sensor, uint32_t channel);
 uint32_t VibeCheckSensor_ConnectionChanged(VibeCheckSensor* sensor, uint32_t* channel, uint32_t* is_connected);
+uint32_t VibeCheckSensor_MeasuringChanged(VibeCheckSensor* sensor, uint32_t* channel, uint32_t* accel_measuring, uint32_t* gyro_measuring);
 void VibeCheckSensor_ResetConnectionFlag(VibeCheckSensor* sensor, uint32_t channel);
 
 /* helper functions */
