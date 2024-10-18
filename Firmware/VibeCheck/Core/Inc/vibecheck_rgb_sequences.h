@@ -54,9 +54,9 @@ static const VibeCheckRGB_Color top_sequence_colors[] = {
 		{.r = 0, .g = 0, .b = 0},
 };
 
-static const uint32_t base_sequence_len = 16;
-static const uint32_t base_sequence_times[] = {50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50};
-static const VibeCheckRGB_Color base_sequence_colors[] = {
+static const uint32_t connect_sequence_len = 18;
+static const uint32_t connect_sequence_times[] = {50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50, 50};
+static const VibeCheckRGB_Color connect_sequence_colors[] = {
 		{.r = 0, .g = 0, .b = 255},
 		{.r = 0, .g = 0, .b = 0},
 		{.r = 0, .g = 0, .b = 0},
@@ -209,6 +209,26 @@ static const VibeCheckRGB_Color base_sequence_colors[] = {
 
 		{.r = 0, .g = 0, .b = 0},
 		{.r = 0, .g = 85, .b = 255},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 255},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
+
+		{.r = 0, .g = 0, .b = 0},
+		{.r = 0, .g = 0, .b = 0},
 		{.r = 0, .g = 0, .b = 0},
 		{.r = 0, .g = 0, .b = 0},
 		{.r = 0, .g = 0, .b = 0},

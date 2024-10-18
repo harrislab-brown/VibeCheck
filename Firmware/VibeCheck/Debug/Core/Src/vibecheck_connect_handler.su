@@ -1,0 +1,2 @@
+../Core/Src/vibecheck_connect_handler.c:12:10:VibeCheckConnectCMD_Execute	24	static
+../Core/Src/vibecheck_connect_handler.c:23:10:VibeCheckDisconnectCMD_Execute	24	static

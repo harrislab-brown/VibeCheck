@@ -1,2 +1,2 @@
-../Core/Src/vibecheck.c:22:6:VibeCheck_Init	504	static
-../Core/Src/vibecheck.c:109:6:VibeCheck_Loop	64	static
+../Core/Src/vibecheck.c:21:6:VibeCheck_Init	648	static
+../Core/Src/vibecheck.c:122:6:VibeCheck_Loop	64	static

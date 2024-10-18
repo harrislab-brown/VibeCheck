@@ -46,6 +46,7 @@ typedef struct
 	float phase_deg;
 
 	uint32_t is_running;
+	uint32_t is_muted;  /* block the strobe from running with user button but still accept state changes through the shell */
 
 	/* for changing the phase */
 	uint32_t arr_steady, arr_phase;
@@ -57,6 +58,9 @@ void VibeCheckStrobe_Init(VibeCheckStrobe* strobe, TIM_HandleTypeDef* htim);
 
 void VibeCheckStrobe_Start(VibeCheckStrobe* strobe);
 void VibeCheckStrobe_Stop(VibeCheckStrobe* strobe);
+
+void VibeCheckStrobe_Mute(VibeCheckStrobe* strobe);
+void VibeCheckStrobe_Unmute(VibeCheckStrobe* strobe);
 
 uint32_t VibeCheckStrobe_IsRunning(VibeCheckStrobe* strobe);
 

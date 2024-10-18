@@ -16,7 +16,6 @@ static uint32_t time_prev_record_press;
 
 
 extern uint32_t is_muted, mute_pressed, record_pressed;
-static uint32_t was_strobing;
 
 
 void VibeCheck_Init(VibeCheck* vc,
@@ -64,11 +63,25 @@ void VibeCheck_Init(VibeCheck* vc,
 			.obj = NULL
 	};
 
+	VibeCheckShell_InputHandler connect_cmd = {
+			.name = "connect",
+			.execute = VibeCheckConnectCMD_Execute,
+			.obj = &vc->rgb
+	};
+
+	VibeCheckShell_InputHandler disconnect_cmd = {
+			.name = "disconnect",
+			.execute = VibeCheckDisconnectCMD_Execute,
+			.obj = &vc->rgb
+	};
+
 	VibeCheckShell_RegisterInputHandler(&vc->shell, strobe_cmd);
 	VibeCheckShell_RegisterInputHandler(&vc->shell, wavegen_cmd);
 	VibeCheckShell_RegisterInputHandler(&vc->shell, rgb_cmd);
 	VibeCheckShell_RegisterInputHandler(&vc->shell, sensor_cmd);
 	VibeCheckShell_RegisterInputHandler(&vc->shell, record_cmd);
+	VibeCheckShell_RegisterInputHandler(&vc->shell, connect_cmd);
+	VibeCheckShell_RegisterInputHandler(&vc->shell, disconnect_cmd);
 
 
 	VibeCheckShell_OutputHandler sensor_data_sender = {
@@ -101,7 +114,7 @@ void VibeCheck_Init(VibeCheck* vc,
 	VibeCheckStrobe_Init(&vc->strobe, htim_strobe);
 	VibeCheckWaveGen_Init(&vc->wavegen, hdac_wavegen, htim_wavegen);
 	VibeCheckRGB_Init(&vc->rgb, htim_rgb);
-	VibeCheckRGB_SetBaseSequence(&vc->rgb, base_sequence_times, base_sequence_colors, base_sequence_len);
+	VibeCheckRGB_SetBaseSequence(&vc->rgb, connect_sequence_times, connect_sequence_colors, connect_sequence_len);
 	VibeCheckRGB_SetTopSequence(&vc->rgb, top_sequence_times, top_sequence_colors, top_sequence_len);
 	VibeCheckSensor_Init(&vc->sensor, time_micros, hspi_accel0, hspi_accel1, hspi_accel2);
 }
@@ -109,9 +122,6 @@ void VibeCheck_Init(VibeCheck* vc,
 void VibeCheck_Loop(VibeCheck* vc)
 {
 	uint32_t time = HAL_GetTick();
-
-	/* TODO: record button should just send a message any time it is pressed. Record LED should be turned on/off from serial cmd only */
-	/* TODO: mute button should mute output, turn off strobe, and send message */
 
 
 	/* call object update functions */
@@ -124,16 +134,16 @@ void VibeCheck_Loop(VibeCheck* vc)
 	VibeCheckShell_Status shell_status = VibeCheckShell_Update(&vc->shell);
 
 	/* blink indicator LEDs based on shell status */
-	if (shell_status.ihandl_status == VC_SHELL_INPUT_PROCESSED)
-	{
-		VibeCheckRGB_SetTopSequence(&vc->rgb, led_shell_success_times, led_shell_success_colors, led_shell_success_len);
-		VibeCheckRGB_StartTopSequence(&vc->rgb);
-	}
-	else if (shell_status.ihandl_status == VC_SHELL_INPUT_ERROR_NO_HANDLER || shell_status.ihandl_status == VC_SHELL_INPUT_ERROR_EXECUTING)
-	{
-		VibeCheckRGB_SetTopSequence(&vc->rgb, led_shell_failure_times, led_shell_failure_colors, led_shell_failure_len);
-		VibeCheckRGB_StartTopSequence(&vc->rgb);
-	}
+//	if (shell_status.ihandl_status == VC_SHELL_INPUT_PROCESSED)
+//	{
+//		VibeCheckRGB_SetTopSequence(&vc->rgb, led_shell_success_times, led_shell_success_colors, led_shell_success_len);
+//		VibeCheckRGB_StartTopSequence(&vc->rgb);
+//	}
+//	else if (shell_status.ihandl_status == VC_SHELL_INPUT_ERROR_NO_HANDLER || shell_status.ihandl_status == VC_SHELL_INPUT_ERROR_EXECUTING)
+//	{
+//		VibeCheckRGB_SetTopSequence(&vc->rgb, led_shell_failure_times, led_shell_failure_colors, led_shell_failure_len);
+//		VibeCheckRGB_StartTopSequence(&vc->rgb);
+//	}
 
 
 	/* send over USB */
@@ -242,19 +252,14 @@ void VibeCheck_Loop(VibeCheck* vc)
 			is_muted = 0;
 			HAL_GPIO_WritePin(MUTE_SIGNAL_GPIO_Port, MUTE_SIGNAL_Pin, GPIO_PIN_RESET);  /* un-mute the output */
 			HAL_GPIO_WritePin(MUTE_INDICATOR_GPIO_Port, MUTE_INDICATOR_Pin, GPIO_PIN_RESET);  /* turn off the LED */
-			if (was_strobing)
-				VibeCheckStrobe_Start(&vc->strobe);
+			VibeCheckStrobe_Unmute(&vc->strobe);
 		}
 		else
 		{
 			is_muted = 1;
 			HAL_GPIO_WritePin(MUTE_SIGNAL_GPIO_Port, MUTE_SIGNAL_Pin, GPIO_PIN_SET);  /* mute the output */
 			HAL_GPIO_WritePin(MUTE_INDICATOR_GPIO_Port, MUTE_INDICATOR_Pin, GPIO_PIN_SET);  /* turn on the LED */
-			if (VibeCheckStrobe_IsRunning(&vc->strobe))
-			{
-				was_strobing = 1;
-				VibeCheckStrobe_Stop(&vc->strobe);
-			}
+			VibeCheckStrobe_Mute(&vc->strobe);
 		}
 	}
 

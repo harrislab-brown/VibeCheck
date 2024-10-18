@@ -16,6 +16,7 @@ void VibeCheckStrobe_Init(VibeCheckStrobe* strobe, TIM_HandleTypeDef* htim)
 	strobe->exposure_ms = VC_STROBE_DEFAULT_EXPOSURE_MS;
 	strobe->phase_deg = 0.0f;
 	strobe->is_running = 0;
+	strobe->is_muted = 0;
 
 	/* set up the timer registers */
 	strobe->htim->Instance->PSC = VC_STROBE_TIM_PSC - 1;
@@ -29,19 +30,56 @@ void VibeCheckStrobe_Start(VibeCheckStrobe* strobe)
 {
 	/* start the timers with interrupts when period completes */
 	strobe->is_running = 1;
-	HAL_TIM_Base_Start_IT(strobe->htim);
-	HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_3);
+	if (!strobe->is_muted)
+	{
+		HAL_TIM_Base_Start_IT(strobe->htim);
+		HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_2);
+		HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_3);
+	}
 }
 
 void VibeCheckStrobe_Stop(VibeCheckStrobe* strobe)
 {
 	strobe->is_running = 0;
-	HAL_TIM_Base_Start_IT(strobe->htim);
-	HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_2);
-	HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_3);
+	if (!strobe->is_muted)
+	{
+		HAL_TIM_Base_Stop_IT(strobe->htim);
+		HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_1);
+		HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_2);
+		HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_3);
+	}
+}
+
+void VibeCheckStrobe_Mute(VibeCheckStrobe* strobe)
+{
+	/* stop the lights without affecting the state */
+	if (!strobe->is_muted)
+	{
+		strobe->is_muted = 1;
+		if (strobe->is_running)
+		{
+			HAL_TIM_Base_Stop_IT(strobe->htim);
+			HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_1);
+			HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_2);
+			HAL_TIM_PWM_Stop(strobe->htim, TIM_CHANNEL_3);
+		}
+	}
+}
+
+void VibeCheckStrobe_Unmute(VibeCheckStrobe* strobe)
+{
+	if (strobe->is_muted)
+	{
+		strobe->is_muted = 0;
+		if (strobe->is_running)
+		{
+			HAL_TIM_Base_Start_IT(strobe->htim);
+			HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_1);
+			HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_2);
+			HAL_TIM_PWM_Start(strobe->htim, TIM_CHANNEL_3);
+		}
+	}
 }
 
 

@@ -61,7 +61,6 @@ typedef struct
 	uint16_t bit_stream[VC_RGB_BUF_LEN];  /* the stream of pulse widths to send to the LED array */
 
 
-	/* TODO: revisit the sequence behavior and priority once we have a clear idea of how the whole system should work */
 	Sequencer base_sequence;  /* this sequence loops in the background */
 	const VibeCheckRGB_Color* base_sequence_colors;
 	Sequencer top_sequence;  /* this sequence runs once but takes precedence */

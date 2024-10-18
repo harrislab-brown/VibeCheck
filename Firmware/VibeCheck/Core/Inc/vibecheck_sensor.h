@@ -18,7 +18,7 @@
 /* interfaces with and manages data from the sensor array */
 
 #define VC_SENSOR_NUM_SENSORS 3
-#define VC_SENSOR_MAX_PACKET_SIZE 100  /* make sure this fits in the shell overflow region */  /* TODO: have the user set the data per packet on the fly to account for different data rates */
+#define VC_SENSOR_MAX_PACKET_SIZE 100  /* make sure this fits in the shell overflow region */
 #define VC_SENSOR_DEFAULT_PACKET_SIZE 10
 #define VC_SENSOR_UPDATE_INTERVAL_MS 500
 

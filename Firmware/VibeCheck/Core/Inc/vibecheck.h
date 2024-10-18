@@ -18,6 +18,7 @@
 #include "vibecheck_rgb.h"
 #include "vibecheck_rgb_handler.h"
 #include "vibecheck_button_handler.h"
+#include "vibecheck_connect_handler.h"
 #include "usbd_cdc_if.h"
 
 

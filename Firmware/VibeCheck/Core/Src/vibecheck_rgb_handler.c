@@ -63,7 +63,7 @@ uint32_t VibeCheckRGBCMD_Execute(void* obj, VibeCheckShell* shell)
 				return 1;
 			}
 		}
-		else if (!strcmp(str, "start"))  /* TODO: revisit this once we have a clearer idea of how the LED sequence should behave */
+		else if (!strcmp(str, "start"))
 		{
 			VibeCheckRGB_StartBaseSequence(rgb);
 			VibeCheckRGB_StartTopSequence(rgb);
