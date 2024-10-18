@@ -47,6 +47,9 @@
 
 #define VC_WAVE_BUTTON_DEBOUNCE_MS 250
 
+#define VC_WAVE_DEFAULT_FREQ_HZ 60.0f;
+#define VC_WAVE_DEFAULT_AMPLITUDE 0.5f;
+
 typedef enum
 {
 	VC_WAVE_SINE,

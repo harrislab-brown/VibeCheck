@@ -21,8 +21,8 @@
 #define VC_SENSOR_DATA_PER_PACKET 25  /* make sure this fits in the shell overflow region */  /* TODO: have the user set the data per packet on the fly to account for different data rates */
 #define VC_SENSOR_UPDATE_INTERVAL_MS 500
 
-#define VC_SENSOR_DEFAULT_ODR 13
-#define VC_SENSOR_DEFAULT_G_RANGE 2
+#define VC_SENSOR_DEFAULT_ODR 52
+#define VC_SENSOR_DEFAULT_G_RANGE 4
 #define VC_SENSOR_DEFAULT_DPS_RANGE 125
 
 #define VC_SENSOR_MAX_OFFSET 0.1240234375f

@@ -89,8 +89,8 @@ void VibeCheckWaveGen_Init(VibeCheckWaveGen* wavegen, DAC_HandleTypeDef *hdac, T
 {
 	wavegen->hdac = hdac;
 	wavegen->htim = htim;
-	wavegen->freq_hz = 440.0f;
-	wavegen->amplitude = 0.001f;
+	wavegen->freq_hz = VC_WAVE_DEFAULT_FREQ_HZ;
+	wavegen->amplitude = VC_WAVE_DEFAULT_AMPLITUDE;
 	wavegen->waveform = VC_WAVE_SINE;
 
 	wavegen->is_running = 0;

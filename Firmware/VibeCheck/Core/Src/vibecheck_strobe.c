@@ -12,8 +12,8 @@
 void VibeCheckStrobe_Init(VibeCheckStrobe* strobe, TIM_HandleTypeDef* htim)
 {
 	strobe->htim = htim;
-	strobe->freq_hz = VC_STROBE_MIN_FREQ_HZ;
-	strobe->exposure_ms = 1.0f;
+	strobe->freq_hz = VC_STROBE_DEFAULT_FREQ_HZ;
+	strobe->exposure_ms = VC_STROBE_DEFAULT_EXPOSURE_MS;
 	strobe->phase_deg = 0.0f;
 
 	/* set up the timer registers */

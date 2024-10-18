@@ -27,6 +27,9 @@
 #define VC_STROBE_MIN_PHASE_DEG -180.0f
 #define VC_STROBE_MAX_PHASE_DEG 180.0f
 
+#define VC_STROBE_DEFAULT_FREQ_HZ 60.0f
+#define VC_STROBE_DEFAULT_EXPOSURE_MS 1.0f
+
 
 /*
  * The strobe is on a 16 bit timer. Need to pick a suitable pre-scaler. With PSC 2400 every count will be 10 us, minimum frequency will be about 2 Hz.

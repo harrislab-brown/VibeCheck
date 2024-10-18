@@ -34,7 +34,7 @@ __attribute__((optimize("-Ofast"))) inline void SPI_TxRx_Fast(uint8_t* tx, uint8
 		   *(__IO uint8_t*)&(spi->TXDR) = tx[i++];  /* put data in TXDR */
 	}
 
-	/* FIXME: this can get stuck -- add a timeout or max iteration limit */
+	/* FIXME: this can potentially get stuck -- add a timeout or max iteration limit */
 
 	for (uint8_t i = 0; i < len; )  /* read out everything from the RX buffer */
 	{
