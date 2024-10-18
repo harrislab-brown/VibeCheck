@@ -1,0 +1,6 @@
+../Core/Src/sequencer.c:10:6:Sequencer_Init	16	static
+../Core/Src/sequencer.c:21:6:Sequencer_SetSequence	24	static
+../Core/Src/sequencer.c:28:10:Sequencer_Update	24	static
+../Core/Src/sequencer.c:57:6:Sequencer_Start	16	static
+../Core/Src/sequencer.c:64:6:Sequencer_Stop	16	static
+../Core/Src/sequencer.c:69:10:Sequencer_IsRunning	16	static

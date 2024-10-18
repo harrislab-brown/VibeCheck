@@ -1,0 +1,14 @@
+../Core/Src/LSM6DS3.c:12:6:LSM6DS3_Init	12	static
+../Core/Src/LSM6DS3.c:228:6:LSM6DS3_ReadAccel	48	static
+../Core/Src/LSM6DS3.c:255:6:LSM6DS3_ReadGyro	48	static
+../Core/Src/LSM6DS3.c:282:19:LSM6DS3_ReadRegister	40	static
+../Core/Src/LSM6DS3.c:30:10:LSM6DS3_TestCommunication	16	static
+../Core/Src/LSM6DS3.c:297:19:LSM6DS3_WriteRegister	24	static
+../Core/Src/LSM6DS3.c:68:6:LSM6DS3_WriteOffsets	24	static
+../Core/Src/LSM6DS3.c:84:6:LSM6DS3_StartAccel	0	static
+../Core/Src/LSM6DS3.c:149:6:LSM6DS3_StartGyro	0	static
+../Core/Src/LSM6DS3.c:216:6:LSM6DS3_StopAccel	0	static
+../Core/Src/LSM6DS3.c:222:6:LSM6DS3_StopGyro	0	static
+../Core/Src/LSM6DS3.c:41:6:LSM6DS3_Configure	24	static
+../Core/Src/LSM6DS3.c:309:10:LSM6DS3_GetInt1State	8	static
+../Core/Src/LSM6DS3.c:315:10:LSM6DS3_GetInt2State	8	static

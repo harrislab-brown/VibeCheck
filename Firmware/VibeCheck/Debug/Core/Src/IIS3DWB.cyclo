@@ -1,0 +1,6 @@
+../Core/Src/IIS3DWB.c:11:9:IIS3DWB_Init	6
+../Core/Src/IIS3DWB.c:107:6:IIS3DWB_ReadAcceleration	1
+../Core/Src/IIS3DWB.c:127:19:IIS3DWB_ReadRegister	1
+../Core/Src/IIS3DWB.c:141:19:IIS3DWB_WriteRegister	1
+../Core/Src/IIS3DWB.c:152:9:IIS3DWB_GetInt1State	1
+../Core/Src/IIS3DWB.c:157:9:IIS3DWB_GetInt2State	1

@@ -1,0 +1,2 @@
+../Core/Src/vibecheck_wavegen_handler.c:156:10:VibeCheckWaveGenCMD_Execute	29
+../Core/Src/vibecheck_wavegen_handler.c:217:10:VibeCheckWaveGenSender_Execute	3
