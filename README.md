@@ -24,7 +24,7 @@ All communication between a host computer application and the MCU uses the onboa
 Users can also communicate with the VibeCheck hardware directly using the serial interface. A complete list of the available commands and examples of their use can be found in the /Firmware/README file. Since the protocol uses plain text encoding, users should be able to easily extend the behavior of the VibeCheck (e.g. to perform frequency sweeps) using simple scripts in languages like Python or MATLAB. 
 
 # Hardware
-The hardware was designed using [KiCad](https://www.kicad.org/), an open source electronics design tool. All design and manufacturing files can be found in the /VibeCheck/Hardware folder. We ordered the boards from JLCPCB (Aug. 2024) and the cost was $20 per main board (qty. 10) and $1.60 per sensor board (qty. 50).
+The hardware was designed using [KiCad](https://www.kicad.org/), an open source electronics design tool. All design and manufacturing files can be found in the /VibeCheck/Hardware folder. We ordered the boards from JLCPCB (Aug. 2024) and the cost was $25 per main board (qty. 10) and $1.60 per sensor board (qty. 50).
 
 There are two boards in this project, the main board that acts as a data acquisition and communication hub and sensor boards that can be used to measure acceleration and angular rate. Each mainboard can connect to three sensor boards. 
 
