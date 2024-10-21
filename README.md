@@ -66,9 +66,12 @@ Programming and debugging of the board is accomplished using an ST-Link V3 Minie
 The sensor boards use the LSM6DS3 accelerometer chip. This MEMS device designed for mobile phone applications has a 3-axis accelerometer with selectable measurement ranges from +/-2 g to +/-16 g and variable sample rates up to 6.6kHz. The sensor also has an onboard 3-axis angular rate sensor. The sensor board connects to the main board with an 8-pin JST-SH cable which provies power to the sensor board and enables communication. The sensor board can be mounted to the vibrating system of interest using 2x M3 screws with 25 mm hole spacing. Or, for the most compact form factor, the mounting holes can be removed by breaking the mouse bites and the sensor board can be mounted directly with adhesive or to an adhesive-backed magnet.
 
 ## Additional parts
-
-Source for magnets, cables, rubber feet? 
-
+- 6 mm x 2 mm round cabinet door bumpers. [example](https://www.amazon.com/BEADNOVA-Cupboard-Adhesive-Furniture-Hemispherical/dp/B08CDH2CYM/ref=sr_1_1?crid=1H0Q0RLPF1QUN&dib=eyJ2IjoiMSJ9.3eFtt-xO59aST7PCK-ldGw.1I_h_kXtGnVY530z0LrJxBAUwvpMIdPoANvSxtTsXKI&dib_tag=se&keywords=B08CDH2cym&qid=1729535368&sprefix=b08cdh2cym%2Caps%2C112&sr=8-1&th=1)
+- 10 mm x 2 mm round neodymium magnets. [example](https://www.amazon.com/TRYMAG-Magnets-Neodymium-Refrigerator-Whiteboard/dp/B0CXPFXF5Z/ref=sr_1_1?crid=1L4ZMEAZZIAU4&dib=eyJ2IjoiMSJ9.VhVYUiKhIgAyaX1o-OoDjw.x5CdsLOP0B1rwaTvfEqbXug7m5A7FyWrf2v4gOSrHP0&dib_tag=se&keywords=B0CXPFXF5Z&qid=1729535495&sprefix=b0cxpfxf5z%2Caps%2C104&sr=8-1&th=1)
+- Sensor board cables: JST-PH 8 conductor crossover cables. From digikey:
+  - 6" (digikey part number 455-3004-ND)
+  - 8" (digikey part number 455-3657-ND)
+  - 12" (digikey part number 455-3008-ND) 
 # Firmware
 The microcontroller firmware for this project is written in C. The STM32CubeIDE development environment is used to write, flash, and debug code for this project. A combination of ST's HAL and direct register maniulation are used to interface with the hardware peripherals depending on the performance requirements of each section of code. The firmware was designed using a quasi-object oriented approach in which each subsystem (e.g. strobe, waveform generator, etc.) is represented by a struct. Interface methods are emulated using functions which take a pointer to the struct to which they pertain.    
 
