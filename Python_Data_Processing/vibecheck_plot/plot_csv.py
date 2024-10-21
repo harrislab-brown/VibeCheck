@@ -1,7 +1,7 @@
 import csv
 import matplotlib.pyplot as plt
 
-fileName = 'data_2024-10-16_16-05-00.csv'
+fileName = 'data_20241021_180309.csv'
 
 sensor0 = []
 sensor1 = []
