@@ -68,7 +68,7 @@ The sensor boards use the LSM6DS3 accelerometer chip. This MEMS device designed 
 ## Additional parts
 - 6 mm x 2 mm round cabinet door bumpers. [example](https://www.amazon.com/BEADNOVA-Cupboard-Adhesive-Furniture-Hemispherical/dp/B08CDH2CYM/ref=sr_1_1?crid=1H0Q0RLPF1QUN&dib=eyJ2IjoiMSJ9.3eFtt-xO59aST7PCK-ldGw.1I_h_kXtGnVY530z0LrJxBAUwvpMIdPoANvSxtTsXKI&dib_tag=se&keywords=B08CDH2cym&qid=1729535368&sprefix=b08cdh2cym%2Caps%2C112&sr=8-1&th=1)
 - 10 mm x 2 mm round neodymium magnets. [example](https://www.amazon.com/TRYMAG-Magnets-Neodymium-Refrigerator-Whiteboard/dp/B0CXPFXF5Z/ref=sr_1_1?crid=1L4ZMEAZZIAU4&dib=eyJ2IjoiMSJ9.VhVYUiKhIgAyaX1o-OoDjw.x5CdsLOP0B1rwaTvfEqbXug7m5A7FyWrf2v4gOSrHP0&dib_tag=se&keywords=B0CXPFXF5Z&qid=1729535495&sprefix=b0cxpfxf5z%2Caps%2C104&sr=8-1&th=1)
-- Sensor board cables: JST-PH 8 conductor crossover cables. From digikey:
+- Sensor board cables: JST-PS 8 conductor crossover cables. From digikey:
   - 6" (digikey part number 455-3004-ND)
   - 8" (digikey part number 455-3657-ND)
   - 12" (digikey part number 455-3008-ND) 
