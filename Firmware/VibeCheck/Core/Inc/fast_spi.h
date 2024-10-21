@@ -10,7 +10,7 @@
 
 #include "stm32h723xx.h"
 
-#define FSPI_MAX_ITER 200000  /* timeout because sometimes the hardware gets stuck */
+#define FSPI_MAX_ITER 2400000  /* timeout because sometimes the hardware gets stuck */
 
 /* this uses the SPI FIFO on the H7, so it only works for transactions 16 bytes or less */
 /* (the FIFO size depends on the specific SPI channel too, so check the RM) */

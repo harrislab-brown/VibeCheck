@@ -70,7 +70,6 @@ typedef struct
 	uint32_t generate_fake_data;  /* for testing */
 
 	volatile uint32_t* time_micros;  /* pointer to CNT register of free-running microsecond timer */
-	uint32_t start_time;
 
 } VibeCheckSensor;
 

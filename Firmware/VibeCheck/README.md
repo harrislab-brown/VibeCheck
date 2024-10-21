@@ -10,13 +10,17 @@ This is a list of serial commands for the VibeCheck separated into categories by
 
 - `record start`
 
-Turns on the recording LED on the VibeCheck board.
+  Turns on the recording LED on the VibeCheck board.
 
 - `record stop`
 
-Turns off the recording LED on the VibeCheck board.`
+  Turns off the recording LED on the VibeCheck board.`
 
 ### Sensors
+
+- `sensor resettime`
+
+  Resets the sensor data time stamps to zero.
 
 - `sensor fakedata start`
   

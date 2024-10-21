@@ -280,7 +280,7 @@ uint32_t VibeCheckSensor_GetPacketSize(VibeCheckSensor* sensor)
 
 void VibeCheckSensor_ResetTime(VibeCheckSensor* sensor)
 {
-	sensor->start_time = *sensor->time_micros;
+	*sensor->time_micros = 0;  /* zero out the CNT register of the time-stamp timer */
 }
 
 
@@ -403,7 +403,7 @@ void VibeCheckSensor_EXTICallback(VibeCheckSensor* sensor, uint16_t GPIO_Pin)
 		{
 			float x, y, z;
 			LSM6DS3_ReadAccel(&sensor->sensor_array[i], &x, &y, &z);
-			VibeCheckSensor_AddData(sensor, 2 * i, *sensor->time_micros - sensor->start_time, x, y, z);  /* time stamps are in microseconds */
+			VibeCheckSensor_AddData(sensor, 2 * i, *sensor->time_micros, x, y, z);  /* time stamps are in microseconds */
 			sensor->status[i].received_data_flag = 1;
 			break;
 		}
@@ -412,7 +412,7 @@ void VibeCheckSensor_EXTICallback(VibeCheckSensor* sensor, uint16_t GPIO_Pin)
 		{
 			float x, y, z;
 			LSM6DS3_ReadGyro(&sensor->sensor_array[i], &x, &y, &z);
-			VibeCheckSensor_AddData(sensor, 2 * i + 1, *sensor->time_micros - sensor->start_time, x, y, z);  /* time stamps are in microseconds */
+			VibeCheckSensor_AddData(sensor, 2 * i + 1, *sensor->time_micros, x, y, z);  /* time stamps are in microseconds */
 			sensor->status[i].received_data_flag = 1;
 			break;
 		}

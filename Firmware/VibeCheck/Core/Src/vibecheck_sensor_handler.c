@@ -221,7 +221,14 @@ uint32_t VibeCheckSensorCMD_Execute(void* obj, VibeCheckShell* shell)
 	int32_t channel;
 	if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
 	{
-		if (!strcmp(str, "fakedata"))
+		if (!strcmp(str, "resettime"))
+		{
+			VibeCheckSensor_ResetTime(sensor);
+			VibeCheckShell_PutOutputString(shell, "ack");
+			VibeCheckShell_PutOutputDelimiter(shell);
+			return 1;
+		}
+		else if (!strcmp(str, "fakedata"))
 		{
 			if (VibeCheckShell_GetNextString(shell, str, VC_SHELL_MAX_TOKEN_LEN))
 			{

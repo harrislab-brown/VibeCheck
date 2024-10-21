@@ -317,7 +317,7 @@ void VibeCheckShell_PutOutputString(VibeCheckShell* shell, char* str)
 void VibeCheckShell_PutOutputInt(VibeCheckShell* shell, uint32_t val)
 {
 	char str[VC_SHELL_MAX_TOKEN_LEN];
-	sprintf(str, "%ld", val);
+	sprintf(str, "%lu", val);
 	VibeCheckShell_PutOutputString(shell, str);
 }
 
