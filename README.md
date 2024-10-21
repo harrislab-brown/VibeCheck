@@ -1,6 +1,6 @@
 # VibeCheck Hardware Repository
 
-VibeCheck is a vibration measurement system developed for the Vibration of Mechanical Systems at Brown.
+VibeCheck is a vibration measurement system developed for the course Vibration of Mechanical Systems (ENGN 1735/2735) at Brown.
 While many of the features of VibeCheck are tailored specifically to meet the needs of the course laboratory component, the hardware
 offers a robust solution for interrogating a wide range of vibrating mechanical systems. 
 
