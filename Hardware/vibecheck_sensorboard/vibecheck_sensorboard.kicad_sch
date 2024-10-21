@@ -2005,7 +2005,7 @@
 		)
 		(uuid "1c0f310b-bc51-4f12-912b-d044cc72b09d")
 	)
-	(text "SPI accelerometer and anular rate sensor"
+	(text "SPI accelerometer and angular rate sensor"
 		(exclude_from_sim no)
 		(at 158.75 113.284 0)
 		(effects
