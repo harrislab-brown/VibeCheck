@@ -10,11 +10,11 @@ This is a list of serial commands for the VibeCheck separated into categories by
 
 - `record start`
 
-  Turns on the recording LED on the VibeCheck board.
+  Turns on the recording LED on the VibeCheck board. This doesn't do anything else on the embedded side.
 
 - `record stop`
 
-  Turns off the recording LED on the VibeCheck board.`
+  Turns off the recording LED on the VibeCheck board. This doesn't do anything else on the embedded side.
 
 ### Sensors
 
@@ -32,7 +32,7 @@ This is a list of serial commands for the VibeCheck separated into categories by
 
 - `sensor set packetsize [size:int]`
 
-  Sets how many data points are included in each data transmission. This value can be adjusted to balance latency in receiving samples (smaller packet size might be better at low data rates) versus avoiding overloading the data link by calling the USB transmission function too often (large packet size might be better at high data rates). The minimum value is 1 and the maximum value is defined in the firmware (*currently 512 but could change*).
+  Sets how many data points are included in each data transmission. This value can be adjusted to balance latency in receiving samples (smaller packet size might be better at low data rates) versus avoiding overloading the data link by calling the USB transmission function too often (large packet size might be better at high data rates). The minimum value is 1 and the maximum value is defined in the firmware (*currently 100 but could change*).
 
 - `sensor get packetsize`
 
@@ -226,12 +226,24 @@ It begins with the data keyword and then lists the number of data points that wi
 
 Events correspond to user interactions directly with the VibeCheck board (not through the web UI). Currently the only sources of events are the user pressing a button (mute or record) or the connection/disconnection of a sensor. 
 
-*The currently implemented events are as follows. This is all likely to change as we refine the UX.*
+*The currently implemented events are as follows. These are likely to change as we refine the UX.*
 
-```
-"event muted"
-"event unmuted"
-"event record"
-"event sensor [channel:int] connected"
-"event sensor [channel:int] disconnected"
-```
+- `event muted`
+
+  User pressed the physical mute button on the VibeCheck main board to mute the audio output and disable the strobe.
+  
+- `event unmuted`
+
+   User pressed the physical mute button on the VibeCheck main board to unmute the audio output and enable the strobe.
+
+- `event record`
+
+    User pressed the physical record button on the VibeCheck main board. This does nothing on the embedded side but it can be useful to send an event message so the host application can begin logging data to a file, for instance.
+
+- `event sensor [channel:int] connected`
+
+  Notifies the host when a sensor board is connected to the main board. The channel refers to the physical port on the board, zero indexed (so the allowed values are 0, 1 and 2).
+
+- `event sensor [channel:int] disconnected`
+
+  Notifies the host when a sensor board is disconnected from the main board. The channel refers to the physical port on the board, zero indexed (so the allowed values are 0, 1 and 2).
