@@ -53540,37 +53540,37 @@
 			(justify bottom mirror)
 		)
 	)
-	(gr_text "ACCEL 3"
+	(gr_text "SENSOR 2"
 		(at 161.41 119.62 30)
 		(layer "F.SilkS")
 		(uuid "04778509-05f8-4120-a69b-e72d13b48732")
 		(effects
 			(font
-				(size 1.5 1.5)
+				(size 1.2 1.2)
 				(thickness 0.15)
 			)
 			(justify bottom)
 		)
 	)
-	(gr_text "ACCEL 1"
+	(gr_text "SENSOR 0"
 		(at 138.68 119.64 330)
 		(layer "F.SilkS")
 		(uuid "25328686-47bd-4ee2-b865-9950af7a7205")
 		(effects
 			(font
-				(size 1.5 1.5)
+				(size 1.2 1.2)
 				(thickness 0.15)
 			)
 			(justify bottom)
 		)
 	)
-	(gr_text "ACCEL 2"
+	(gr_text "SENSOR 1"
 		(at 150.01 122.79 0)
 		(layer "F.SilkS")
 		(uuid "3abfdcac-6afa-4105-9fc5-6e5d4c6902f8")
 		(effects
 			(font
-				(size 1.5 1.5)
+				(size 1.2 1.2)
 				(thickness 0.15)
 			)
 			(justify bottom)
