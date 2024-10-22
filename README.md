@@ -18,7 +18,7 @@ Key features:
 All communication between a host computer application and the MCU uses the onboard USB-C port and standard serial protocol. There are two main ways to communicate with the board. 
 
 - Graphical web app:
-[VibeCheck_Web](https://eli-silver.github.io/vibecheck_web/) is a companion web application for communicating with the VibeCheck hardware. It provides a simple interface to access all of the commonly used functions of the device. This includes plotting real-time acceleration data measured by the sensors and logging incoming data to a file in CSV format. 
+[VibeCheck_Web](https://harrislab-brown.github.io/VibeCheck_Web/) is a companion web application for communicating with the VibeCheck hardware. It provides a simple interface to access all of the commonly used functions of the device. This includes plotting real-time acceleration data measured by the sensors and logging incoming data to a file in CSV format. 
 
 - Serial Protocol:
 Users can also communicate with the VibeCheck hardware directly using the serial interface. A complete list of the available commands and examples of their use can be found in the /Firmware/README file. Since the protocol uses plain text encoding, users should be able to easily extend the behavior of the VibeCheck (e.g. to perform frequency sweeps) using simple scripts in languages like Python or MATLAB. 
