@@ -2979,7 +2979,7 @@
 		(at 96.52 133.35 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "153962d2-cbd5-4df0-80cb-0bf13c195d19")
@@ -3374,7 +3374,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 161.29 73.66 0)
 			(effects
 				(font
@@ -3450,7 +3450,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 237.49 63.5 0)
 			(effects
 				(font
@@ -3526,7 +3526,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 110.49 63.5 0)
 			(effects
 				(font
@@ -3671,7 +3671,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 212.09 73.66 0)
 			(effects
 				(font
@@ -3749,7 +3749,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 224.79 73.66 0)
 			(effects
 				(font
@@ -3825,7 +3825,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 212.09 63.5 0)
 			(effects
 				(font
@@ -3901,7 +3901,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 186.69 63.5 0)
 			(effects
 				(font
@@ -3977,7 +3977,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 123.19 63.5 0)
 			(effects
 				(font
@@ -4352,7 +4352,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 148.59 63.5 0)
 			(effects
 				(font
@@ -4508,7 +4508,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 237.49 73.66 0)
 			(effects
 				(font
@@ -4694,7 +4694,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 199.39 73.66 0)
 			(effects
 				(font
@@ -4982,7 +4982,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 135.89 63.5 0)
 			(effects
 				(font
@@ -5138,7 +5138,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 123.19 73.66 0)
 			(effects
 				(font
@@ -5612,7 +5612,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 97.79 63.5 0)
 			(effects
 				(font
@@ -5900,7 +5900,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 224.79 63.5 0)
 			(effects
 				(font
@@ -6043,7 +6043,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 173.99 63.5 0)
 			(effects
 				(font
@@ -6148,7 +6148,7 @@
 		(at 83.82 107.95 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "b22a26e5-eabd-4966-b362-88da93f1674d")
@@ -6264,7 +6264,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 186.69 73.66 0)
 			(effects
 				(font
@@ -6342,7 +6342,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 110.49 73.66 0)
 			(effects
 				(font
@@ -6418,7 +6418,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 199.39 63.5 0)
 			(effects
 				(font
@@ -6650,7 +6650,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 173.99 73.66 0)
 			(effects
 				(font
@@ -6728,7 +6728,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 148.59 73.66 0)
 			(effects
 				(font
@@ -6951,7 +6951,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 97.79 73.66 0)
 			(effects
 				(font
@@ -6980,7 +6980,7 @@
 		(at 80.01 73.66 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp yes)
 		(uuid "e0d603bd-e547-4c94-bce2-05b884669912")
@@ -7181,7 +7181,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C5552472 "
+		(property "LCSC" "C17622"
 			(at 161.29 63.5 0)
 			(effects
 				(font
@@ -7277,7 +7277,7 @@
 		(at 109.22 157.48 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "f300fc3b-2aab-43cc-aab9-9ad8f0c75f96")
@@ -7568,7 +7568,7 @@
 				(hide yes)
 			)
 		)
-		(property "LCSC" "C540978 "
+		(property "LCSC" "C540978"
 			(at 135.89 73.66 0)
 			(effects
 				(font

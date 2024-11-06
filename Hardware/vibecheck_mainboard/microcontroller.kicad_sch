@@ -8317,6 +8317,17 @@
 		)
 		(uuid "978ab535-924d-4a19-bbed-22105f4726a2")
 	)
+	(text "JST part out of stock. Replacement chosen: C7430446"
+		(exclude_from_sim no)
+		(at 22.098 156.21 0)
+		(effects
+			(font
+				(size 1 1)
+			)
+			(justify left)
+		)
+		(uuid "9f14b180-f706-424c-9b11-f5ca19ab2b94")
+	)
 	(text "- CHECK PUSH SWITCH FOOTPRINT SIZE / CONNECTION "
 		(exclude_from_sim no)
 		(at 209.804 108.204 0)
@@ -10049,7 +10060,7 @@
 		(at 227.33 45.72 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "0703cc3f-2317-4e96-902d-d8340bcaf091")
@@ -10115,7 +10126,7 @@
 		(at 250.19 35.56 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp yes)
 		(uuid "0bc73b0d-b397-40de-bd8a-60c187d7d2d7")
@@ -10446,7 +10457,7 @@
 		(at 193.04 34.29 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "259fbb4c-70f5-4612-894e-0a86b5913df9")
@@ -10603,7 +10614,7 @@
 			)
 		)
 		(property "Value" "Conn_01x04_Socket"
-			(at 30.734 155.448 0)
+			(at 31.75 154.178 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -11537,7 +11548,7 @@
 		(at 193.04 125.73 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "5e2b6512-9d00-401b-ba8c-f85dedfd0d31")
@@ -12641,7 +12652,7 @@
 		(at 38.1 106.68 0)
 		(unit 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
 		(dnp no)
 		(uuid "b0b7087c-e23b-4ad0-9085-44c0834b6534")
